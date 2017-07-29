@@ -1,7 +1,7 @@
 var width = 1000,
     height = 1000,
-    nodeMin = 3;
-var force, nodes, links, svg, OP;
+    nodeMin = 5;
+var force, nodes, links, svg;
 var names = {};
 var nodecolor = {};
 var discussion_url;
@@ -23,79 +23,6 @@ var tooltip = d3.select("#chart")
 .style("position", "absolute")
 .style("z-index", "10")
 .style("opacity", 0);
-
-
-function setupGraph(){
-  $(".network").empty();
-  names = {};
-  nodecolor = {};
-
-  force = d3.layout.force()
-    .charge(-100)
-    .linkDistance(20)
-    .size([width, height]);
-
-  nodes = force.nodes(),
-        links = force.links();
-
-  force.on("tick", function () {
-    svg.selectAll("line.link")
-    .attr("x1", function (d) { return d.source.x; })
-    .attr("y1", function (d) { return d.source.y; })
-    .attr("x2", function (d) { return d.target.x; })
-    .attr("y2", function (d) { return d.target.y; });
-
-  svg.selectAll("circle.node")
-    .attr("cx", function (d) { return d.x; })
-    .attr("cy", function (d) { return d.y; });
-  });
-
-
-  d3.select("svg").remove();
-  svg = d3.select("#chart").append("svg:svg")
-    .attr("width", width)
-    .attr("height", height)
-    .attr("class","network");
-}
-
-function updateNetwork(){
-	
-	console.log("Links value:");
-	console.log(links);
-	console.log("Nodes value:");
-	console.log(nodes);
-	
-  var link = svg.selectAll("line.link")
-    .data(links, function (d) { return d.srcId + "-" + d.tarId;});
-
-  link.enter().insert("svg:line", "circle.node")
-    .attr("class", "link")
-    .style("stroke-width", function(d) { return d.weight * 1000; })
-    .style("stroke", "gray")
-    .style("opacity",0.8);
-
-  var node = svg.selectAll("circle.node")
-    .data(nodes, function (d) {return d.id;});
-
-  var nodeEnter = node.enter().append("svg:circle")
-    .attr("class", "node")
-    .call(force.drag)
-    .attr("r", function(d){
-      if(d.degree>=0){
-        return nodeMin + Math.pow(d.degree, 1/(2.7));
-      }
-      return 1;
-    })
-  .style("opacity",0.8)
-    .on("mouseover", displayTooltip)
-    .on("mousemove", moveTooltip)
-    .on("mouseout", removeTooltip)
-    .call(force.drag)
-
-	 colorNodes();
-	
-    force.start();
- }
 
 function colorNodes(){
 	
@@ -126,10 +53,7 @@ function colorNodes(){
 function displayTooltip(node){
   var pos = d3.mouse(this);
 
-  tooltip.html(
-      "<span id='name'>"+node.name+"</span> : "+
-      showLinks(node.body)
-      )
+  tooltip.html( "<span id='name'>"+node.name+"</span>" )
     .style("top", (pos[1])+"px")
     .style("left",(pos[0])+"px")
     .style("z-index", 10)
@@ -157,12 +81,6 @@ function removeTooltip(node){
     .style("opacity", 0.8);
 }
 
-// from http://dzone.com/snippets/validate-url-regexp
-function showLinks(text) {
-  var exp = /(\b(https?|ftp|file):\/\/[-A-Z0-9+&@#\/%?=~_|!:,.;]*[-A-Z0-9+&@#\/%=~_|])/ig;
-  return text.replace(exp,"<a href='$1'>$1</a>");
-}
-
 function displayPreview(e, preview){
   var pos = [e.pageX, e.pageY+20]
     tooltip.html(preview.innerHTML)
@@ -172,41 +90,84 @@ function displayPreview(e, preview){
     .style("opacity", .9)
 }
 
-$("#input").click(function(){
-  buildNetwork($("input").val());
-})
-
+// 程序从这里开始执行
 $(document).ready(function(){
   
-	$.getJSON( "graph.json", function( data ) {
+	$.getJSON( "graph.json", function( graph ) {
 		
-			$("#topic_title").html("<h4 class='subheader'>Loading new Network...</h4>");
-			$("#preview").empty();
-			$("#preview").append(loading_gif);
-						setupGraph();
-		readJSON(data);
-		updateNetwork();
-		
-		 $("#preview").empty();
- // $("#preview").append(a);
+		 $(".network").empty();
+  names = {};
+  nodecolor = {};
 
-  var title = document.createElement("a");
-  title.target="_blank";
-  title.innerHTML = "<h4 class='subheader'>"+data.style+"</h4>";
-  $("#topic_title").empty();
-  $("#topic_title").append(title);
+  force = d3.layout.force()
+    .charge(-100)
+    .linkDistance(20)
+    .size([width, height]);
+
+	svg = d3.select("#chart").append("svg:svg")
+    .attr("width", width)
+    .attr("height", height)
+    .attr("class","network");
+	
+	force.nodes(graph.nodes).links(graph.edges);
+	
+	nodes = force.nodes()
+        links = force.links();
+	
+	 nodes.forEach(function(d) {
+	
+	 nodecolor[d.name] = d.name;
+	
+ })
+		
+		
+		  var link = svg.selectAll("line.link")
+    .data(graph.edges)
+	.enter()
+	.insert("svg:line", "circle.node")
+    .attr("class", "link")
+    .style("stroke-width", function(d) { return d.weight * 1000; })
+    .style("stroke", "gray")
+    .style("opacity",0.8);
+
+  var node = svg.selectAll("circle.node")
+    .data(graph.nodes)
+	.enter()
+	.append("svg:circle")
+    .attr("class", "node")
+    .call(force.drag)
+    .attr("r", function(d){
+      if(d.degree>0){
+        return nodeMin + Math.pow(d.degree, 1/(2.7));
+      }
+      return nodeMin;
+    })
+  .style("opacity",0.8)
+    .on("mouseover", displayTooltip)
+    .on("mousemove", moveTooltip)
+    .on("mouseout", removeTooltip)
+    .call(force.drag)
+
+	 colorNodes();
+	 
+	 
+	 console.log(force);
+	
+    force.start();
+		
+		
+  force.on("tick", function () {
+    svg.selectAll("line.link")
+    .attr("x1", function (d) { return d.source.x; })
+    .attr("y1", function (d) { return d.source.y; })
+    .attr("x2", function (d) { return d.target.x; })
+    .attr("y2", function (d) { return d.target.y; });
+    	
+svg.selectAll("circle.node")
+    .attr("cx", function (d) { return d.x; })
+    .attr("cy", function (d) { return d.y; });
+  });
+		
 	});
 });
 
-function readJSON(input) {
-	  svg.selectAll("circle.node").remove();
-  svg.selectAll("line.link").remove();
-nodes = input.nodes;
-links = input.edges;  
-
-nodes.forEach(function(d) {
-	
-	nodecolor[d.name] = d.name;
-	
-})
-}
