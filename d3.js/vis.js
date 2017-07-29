@@ -1,5 +1,5 @@
-var width = 1000,
-    height = 1000,
+var width = 1024,
+    height = 800,
     nodeMin = 5;
 var force, nodes, links, svg;
 var names = {};
@@ -99,6 +99,9 @@ $(document).ready(function(){
     .linkDistance(20)
     .size([width, height]);
 
+	console.log(width);
+	console.log(height);
+	
 	svg = d3.select("#chart").append("svg:svg")
     .attr("width", width)
     .attr("height", height)
@@ -121,7 +124,15 @@ $(document).ready(function(){
 	.enter()
 	.insert("svg:line", "circle.node")
     .attr("class", "link")
-    .style("stroke-width", function(d) { return d.weight * 1000; })
+    .style("stroke-width", function(d) { 
+		var w = -Math.log10( d.weight ) ;
+		
+		if (w < 1) {
+			w =1;
+		}
+		
+		return w; 
+	})
     .style("stroke", "gray")
     .style("opacity",0.8);
 
