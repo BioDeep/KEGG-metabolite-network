@@ -1,7 +1,3 @@
-$(document).ready(function(){
-  getFrontPage();
-});
-
 var width = 1000,
     height = 1000,
     nodeMin = 3;
@@ -10,12 +6,12 @@ var names = {};
 var nodecolor = {};
 var discussion_url;
 var loading_gif = new Image();
+
 loading_gif.src = "./img/ajax-loader.gif";
 
 var baseURL= location.pathname
-
-
 var loading_gif_small = new Image();
+
 loading_gif_small.src = "./img/small-loader.gif";
 
 
@@ -63,12 +59,18 @@ function setupGraph(){
 }
 
 function updateNetwork(){
+	
+	console.log("Links value:");
+	console.log(links);
+	console.log("Nodes value:");
+	console.log(nodes);
+	
   var link = svg.selectAll("line.link")
-    .data(links, function (d) { return d.source.id + "-" + d.target.id;});
+    .data(links, function (d) { return d.srcId + "-" + d.tarId;});
 
   link.enter().insert("svg:line", "circle.node")
     .attr("class", "link")
-    .style("stroke-width", function(d) { return 2; })
+    .style("stroke-width", function(d) { return d.weight * 1000; })
     .style("stroke", "gray")
     .style("opacity",0.8);
 
@@ -79,8 +81,8 @@ function updateNetwork(){
     .attr("class", "node")
     .call(force.drag)
     .attr("r", function(d){
-      if(d.score>=0){
-        return nodeMin + Math.pow(d.score, 1/(2.7));
+      if(d.degree>=0){
+        return nodeMin + Math.pow(d.degree, 1/(2.7));
       }
       return 1;
     })
@@ -90,11 +92,16 @@ function updateNetwork(){
     .on("mouseout", removeTooltip)
     .call(force.drag)
 
+	 colorNodes();
+	
     force.start();
-  colorNodes();
-}
+ }
 
 function colorNodes(){
+	
+	console.log("nodecolor values:");
+	console.log(nodecolor);
+	
   for(name in nodecolor){
     nodecolor[name]=d3.rgb(255*Math.random(), 255*Math.random(), 255*Math.random())
   }
@@ -102,15 +109,15 @@ function colorNodes(){
   //set colors
   svg.selectAll("circle")
     .style("fill", function(d){
-      if (d.name === OP.name){
-        return "orange";
-      }
-      else if (names[d.name]===1){
-        return "black"
-      }
-      else{
+      // if (d.name === OP.name){
+        // return "orange";
+      // }
+     // if (names[d.name]===1){
+     //   return "black"
+     // }
+      //else{
         return nodecolor[d.name];
-      }
+     //}
     }
     )
 }
@@ -168,3 +175,38 @@ function displayPreview(e, preview){
 $("#input").click(function(){
   buildNetwork($("input").val());
 })
+
+$(document).ready(function(){
+  
+	$.getJSON( "graph.json", function( data ) {
+		
+			$("#topic_title").html("<h4 class='subheader'>Loading new Network...</h4>");
+			$("#preview").empty();
+			$("#preview").append(loading_gif);
+						setupGraph();
+		readJSON(data);
+		updateNetwork();
+		
+		 $("#preview").empty();
+ // $("#preview").append(a);
+
+  var title = document.createElement("a");
+  title.target="_blank";
+  title.innerHTML = "<h4 class='subheader'>"+data.style+"</h4>";
+  $("#topic_title").empty();
+  $("#topic_title").append(title);
+	});
+});
+
+function readJSON(input) {
+	  svg.selectAll("circle.node").remove();
+  svg.selectAll("line.link").remove();
+nodes = input.nodes;
+links = input.edges;  
+
+nodes.forEach(function(d) {
+	
+	nodecolor[d.name] = d.name;
+	
+})
+}
