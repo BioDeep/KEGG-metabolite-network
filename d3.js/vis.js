@@ -2,8 +2,8 @@ var width   = 1024,
     height  = 800,
     nodeMin = 5;
 var force, nodes, links, svg;
-var names = {};
-var nodecolor = {};
+var names       = {};
+var nodecolor   = {};
 var loading_gif = new Image();
 
 loading_gif.src = "./img/ajax-loader.gif";
@@ -121,16 +121,18 @@ function setupGraph(graph) {
 		.attr("class", "link")
 		.style("stroke-width", function(d) { 
 		
-			var w = -Math.log10( d.weight ) ;
+			var w = -Math.log10( d.weight * 2 ) ;
 			
 			if (w < 1) {
-				w =1;
+				w = 1;
+			} else if ( w > 6 ) {
+				w = 6;
 			}
 		
 			return w; 
 		})
 		.style("stroke", "gray")
-		.style("opacity",0.8);
+		.style("opacity", 0.8);
 
 	var node = svg.selectAll("circle.node")
 		.data(graph.nodes)
@@ -140,7 +142,7 @@ function setupGraph(graph) {
 		.call(force.drag)
 		.attr("r", function(d){
 			if(d.degree>0){
-				return nodeMin + Math.pow(d.degree, 1/(2.7));
+				return nodeMin + Math.pow(d.degree, 2/(2.7));
 			}
 			return nodeMin;
 		})
