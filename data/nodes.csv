@@ -1,4 +1,4 @@
-names,degree,p,fdr,log2FC
+name,degree,p,fdr,log2FC
 Glycine,3,0.128,0.256,-1.08
 Succinic acid,3,0.298,0.427,-0.346
 Serine,1,0.936,0.949,-0.0804

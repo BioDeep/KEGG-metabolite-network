@@ -6,9 +6,10 @@ Namespace csv
     Public Class nodeData
 
         Public Property name As String
-        Public Property CompoundType As String
-        Public Property NODE_WIDTH As Double
-        Public Property Data As Dictionary(Of String, String)
+        Public Property degree As Integer
+        Public Property p As Double
+        Public Property fdr As Double
+        Public Property log2FC As Double
 
         Public Overrides Function ToString() As String
             Return Me.GetJson

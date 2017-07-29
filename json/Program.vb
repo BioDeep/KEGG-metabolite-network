@@ -40,13 +40,17 @@ Module Program
                 data _
                 .Where(Function(x) x.source = label OrElse x.target = label) _
                 .Count,
-                n.NODE_WIDTH)
+                n.degree)
             Select New node With {
-                .type = n.CompoundType,
+                .type = 1,
                 .id = name.i,
                 .name = label,
                 .degree = d,
-                .Data = n.Data
+                .Data = New Dictionary(Of String, String) From {
+                    {NameOf(nodeData.fdr), n.fdr},
+                    {NameOf(nodeData.log2FC), n.log2FC},
+                    {NameOf(nodeData.p), n.p}
+                }
             }
 
         Dim nodeTable = nodes.ToDictionary(Function(x) x.name)

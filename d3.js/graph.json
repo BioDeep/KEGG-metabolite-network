@@ -1563,438 +1563,686 @@
     ],
     "nodes": [
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.256",
+                "log2FC": "-1.08",
+                "p": "0.128"
+            },
+            "degree": 3,
             "id": 0,
             "name": "Glycine",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.514",
+                "log2FC": "-0.474",
+                "p": "0.378"
+            },
+            "degree": 4,
             "id": 1,
             "name": "Alanine",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.427",
+                "log2FC": "-0.346",
+                "p": "0.298"
+            },
+            "degree": 3,
             "id": 2,
             "name": "Succinic acid",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.949",
+                "log2FC": "-0.0804",
+                "p": "0.936"
+            },
+            "degree": 1,
             "id": 3,
             "name": "Serine",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.128",
+                "log2FC": "-0.551",
+                "p": "0.0453"
+            },
+            "degree": 4,
             "id": 4,
             "name": "Threonine",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.128",
+                "log2FC": "1.49",
+                "p": "0.0453"
+            },
+            "degree": 1,
             "id": 5,
             "name": "Salicylic acid",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.111",
+                "log2FC": "1.43",
+                "p": "0.0306"
+            },
+            "degree": 1,
             "id": 6,
             "name": "Oxalic acid ",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.081",
+                "log2FC": "-0.367",
+                "p": "0.0202"
+            },
+            "degree": 3,
             "id": 7,
             "name": "Fumaric acid",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.081",
+                "log2FC": "-0.525",
+                "p": "0.0202"
+            },
+            "degree": 1,
             "id": 8,
             "name": "Monomethyl phosphate",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.0429",
+                "log2FC": "1.33",
+                "p": "0.00507"
+            },
+            "degree": 10,
             "id": 9,
             "name": "Leucine",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.587",
+                "log2FC": "0.434",
+                "p": "0.471"
+            },
+            "degree": 7,
             "id": 10,
             "name": "Valine",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.128",
+                "log2FC": "0.767",
+                "p": "0.0453"
+            },
+            "degree": 9,
             "id": 11,
             "name": "Isoleucine",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.673",
+                "log2FC": "0.492",
+                "p": "0.575"
+            },
+            "degree": 8,
             "id": 12,
             "name": "Pyroglutamate",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.0709",
+                "log2FC": "1.41",
+                "p": "0.0131"
+            },
+            "degree": 10,
             "id": 13,
             "name": "Asparagine",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.22",
+                "log2FC": "1.22",
+                "p": "0.0927"
+            },
+            "degree": 9,
             "id": 14,
             "name": "Glutamine",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.166",
+                "log2FC": "-0.536",
+                "p": "0.0656"
+            },
+            "degree": 8,
             "id": 15,
             "name": "Shikimic acid",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.322",
+                "log2FC": "0.935",
+                "p": "0.173"
+            },
+            "degree": 9,
             "id": 16,
             "name": "Lysine",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.0429",
+                "log2FC": "1.62",
+                "p": "0.00507"
+            },
+            "degree": 2,
             "id": 17,
             "name": "Caffeic acid",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.256",
+                "log2FC": "0.857",
+                "p": "0.128"
+            },
+            "degree": 2,
             "id": 18,
             "name": "Urea",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.0709",
+                "log2FC": "3.56",
+                "p": "0.0131"
+            },
+            "degree": 2,
             "id": 19,
             "name": "3-trans-Caffeoylquinic acid",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.748",
+                "log2FC": "0.142",
+                "p": "0.689"
+            },
+            "degree": 2,
             "id": 20,
             "name": "Itaconic acid",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.356",
+                "log2FC": "0.238",
+                "p": "0.23"
+            },
+            "degree": 5,
             "id": 21,
             "name": "Benzoic acid",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.427",
+                "log2FC": "0.22",
+                "p": "0.298"
+            },
+            "degree": 5,
             "id": 22,
             "name": "beta-Alanine",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.514",
+                "log2FC": "0.171",
+                "p": "0.378"
+            },
+            "degree": 4,
             "id": 23,
             "name": "Putrescine",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.356",
+                "log2FC": "0.304",
+                "p": "0.23"
+            },
+            "degree": 2,
             "id": 24,
             "name": "Azelaic acid",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.356",
+                "log2FC": "0.315",
+                "p": "0.23"
+            },
+            "degree": 5,
             "id": 25,
             "name": "1-Monohexadecanoylglycerol",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.0429",
+                "log2FC": "-0.742",
+                "p": "0.00507"
+            },
+            "degree": 3,
             "id": 26,
             "name": "Ethanolamine",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.0429",
+                "log2FC": "2.17",
+                "p": "0.00507"
+            },
+            "degree": 8,
             "id": 27,
             "name": "Tyrosine",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.356",
+                "log2FC": "0.728",
+                "p": "0.23"
+            },
+            "degree": 4,
             "id": 28,
             "name": "Arabinose",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.673",
+                "log2FC": "-0.0895",
+                "p": "0.575"
+            },
+            "degree": 1,
             "id": 29,
             "name": "Hexadecanoic acid",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.748",
+                "log2FC": "0.0255",
+                "p": "0.689"
+            },
+            "degree": 1,
             "id": 30,
             "name": "Glycerol",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.0569",
+                "log2FC": "-1.14",
+                "p": "0.00824"
+            },
+            "degree": 3,
             "id": 31,
             "name": "Glutaric acid",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.0429",
+                "log2FC": "-0.976",
+                "p": "0.00507"
+            },
+            "degree": 5,
             "id": 32,
             "name": "Phosphoric acid",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.111",
+                "log2FC": "-0.492",
+                "p": "0.0306"
+            },
+            "degree": 1,
             "id": 33,
             "name": "Adipic acid",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.0429",
+                "log2FC": "-1.39",
+                "p": "0.00507"
+            },
+            "degree": 5,
             "id": 34,
             "name": "Glucaric acid",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.0569",
+                "log2FC": "-1.51",
+                "p": "0.00824"
+            },
+            "degree": 8,
             "id": 35,
             "name": "Docosanoic acid",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.081",
+                "log2FC": "-0.979",
+                "p": "0.0202"
+            },
+            "degree": 7,
             "id": 36,
             "name": "Tetracosanoic acid",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.081",
+                "log2FC": "-0.959",
+                "p": "0.0202"
+            },
+            "degree": 1,
             "id": 37,
             "name": "Glyceric acid",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.514",
+                "log2FC": "0.245",
+                "p": "0.378"
+            },
+            "degree": 6,
             "id": 38,
             "name": "Nonanoic acid",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.0429",
+                "log2FC": "-0.672",
+                "p": "0.00507"
+            },
+            "degree": 4,
             "id": 39,
             "name": "Aspartic acid",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.166",
+                "log2FC": "0.442",
+                "p": "0.0656"
+            },
+            "degree": 1,
             "id": 40,
             "name": "2,4,6-Tri-tert.-butylbenzenethiol",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.832",
+                "log2FC": "-0.119",
+                "p": "0.81"
+            },
+            "degree": 2,
             "id": 41,
             "name": "Fructose",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.356",
+                "log2FC": "0.485",
+                "p": "0.23"
+            },
+            "degree": 1,
             "id": 42,
             "name": "Galactosylglycerol",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.128",
+                "log2FC": "1.34",
+                "p": "0.0453"
+            },
+            "degree": 2,
             "id": 43,
             "name": "Threonic acid",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.673",
+                "log2FC": "0.077",
+                "p": "0.575"
+            },
+            "degree": 4,
             "id": 44,
             "name": "Quinic acid",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.748",
+                "log2FC": "-0.0202",
+                "p": "0.689"
+            },
+            "degree": 1,
             "id": 45,
             "name": "Malic acid",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.256",
+                "log2FC": "0.555",
+                "p": "0.128"
+            },
+            "degree": 1,
             "id": 46,
             "name": "myo-inositol",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.128",
+                "log2FC": "0.418",
+                "p": "0.0453"
+            },
+            "degree": 2,
             "id": 47,
             "name": "Methionine",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.356",
+                "log2FC": "0.836",
+                "p": "0.23"
+            },
+            "degree": 2,
             "id": 48,
             "name": "Gulose",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.0429",
+                "log2FC": "-0.767",
+                "p": "0.00507"
+            },
+            "degree": 2,
             "id": 49,
             "name": "Glutamate",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "1",
+                "log2FC": "-0.0135",
+                "p": "1"
+            },
+            "degree": 4,
             "id": 50,
             "name": "IS",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.832",
+                "log2FC": "0.951",
+                "p": "0.81"
+            },
+            "degree": 1,
             "id": 51,
             "name": "Gluconic acid",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.587",
+                "log2FC": "-0.0423",
+                "p": "0.471"
+            },
+            "degree": 4,
             "id": 52,
             "name": "Dehydroascorbic acid dimer",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.748",
+                "log2FC": "0.756",
+                "p": "0.689"
+            },
+            "degree": 3,
             "id": 53,
             "name": "Adenosine",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.748",
+                "log2FC": "-0.163",
+                "p": "0.689"
+            },
+            "degree": 1,
             "id": 54,
             "name": "9-(Z)-Octadecenoic acid",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.427",
+                "log2FC": "0.33",
+                "p": "0.298"
+            },
+            "degree": 1,
             "id": 55,
             "name": "Galactose",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.356",
+                "log2FC": "0.354",
+                "p": "0.23"
+            },
+            "degree": 1,
             "id": 56,
             "name": "Glucose",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.128",
+                "log2FC": "-0.514",
+                "p": "0.0453"
+            },
+            "degree": 6,
             "id": 57,
             "name": "Octadecanoic acid",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.166",
+                "log2FC": "-0.446",
+                "p": "0.0656"
+            },
+            "degree": 6,
             "id": 58,
             "name": "Heptadecanoic acid",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.22",
+                "log2FC": "-0.495",
+                "p": "0.0927"
+            },
+            "degree": 6,
             "id": 59,
             "name": "Nonadecanoic acid",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.081",
+                "log2FC": "-1.05",
+                "p": "0.0202"
+            },
+            "degree": 6,
             "id": 60,
             "name": "Eicosanoic acid",
-            "type": null
+            "type": "1"
         },
         {
-            "Data": null,
-            "degree": 0,
+            "Data": {
+                "fdr": "0.0709",
+                "log2FC": "-1.64",
+                "p": "0.0131"
+            },
+            "degree": 6,
             "id": 61,
             "name": "Docosanol",
-            "type": null
+            "type": "1"
         }
     ],
     "style": "default"

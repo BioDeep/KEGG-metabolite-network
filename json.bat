@@ -1,1 +1,1 @@
-"App/json" /convert /in correlation_graph.csv > ./d3.js/graph.json
+"App/json" /convert /in data/correlation_graph.csv /nodes data/nodes.csv> ./d3.js/graph.json
