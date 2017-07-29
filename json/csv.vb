@@ -1,4 +1,5 @@
-﻿Imports Microsoft.VisualBasic.Serialization.JSON
+﻿Imports Microsoft.VisualBasic.Data.csv.StorageProvider.Reflection
+Imports Microsoft.VisualBasic.Serialization.JSON
 
 Namespace csv
 
@@ -18,8 +19,8 @@ Namespace csv
 
         Public Property canonicalName As String
         Public Property interaction As String
-        Public Property source As String
-        Public Property target As String
+        <Column("compoundA")> Public Property source As String
+        <Column("compoundB")> Public Property target As String
         Public Property Data As Dictionary(Of String, String)
 
         Public Overrides Function ToString() As String
