@@ -58,11 +58,6 @@ function displayTooltip(node){
     .style("left",(pos[0])+"px")
     .style("z-index", 10)
     .style("opacity", .9)
-    $("#tooltip a").append(loading_gif_small);
-    $("#tooltip a").embedly({
-      query: {maxheight: 100},
-      done: function(){$(this).remove(loading_gif_small);}
-    });
 }
 
 function moveTooltip(node){

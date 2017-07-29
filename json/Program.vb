@@ -55,13 +55,13 @@ Module Program
             From x As network_Csv
             In data
             Select New edges With {
-                .correlation = x.Data.TryGetValue("correlation", [default]:=0),'x.correlation,
+                .value = x.Data.TryGetValue("correlation", [default]:=0),'x.correlation,
                 .id = $"{x.source}..{x.target}",
-                .source = x.source,
-                .target = x.target,
+                .A = x.source,
+                .B = x.target,
                 .weight = x.Data.TryGetValue("fdr", [default]:=0),' x.fdr,
-                .srcId = nodeTable(x.source).id,
-                .tarId = nodeTable(x.target).id,
+                .source = nodeTable(x.source).id,
+                .target = nodeTable(x.target).id,
                 .Data = x.Data
             }
 
