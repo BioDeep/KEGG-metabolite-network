@@ -21,7 +21,9 @@ Module Program
     <ExportAPI("/Convert", Usage:="/Convert /in <data.csv> [/nodes <nodes.csv> /degree_size /min /style <default> /out <out.json/std_out>]")>
     Public Function Convert(args As CommandLine) As Integer
         Dim data = (args <= "/in").LoadCsv(Of network_Csv)
-        Dim nodeDatas = (args <= "/nodes").LoadCsv(Of nodeData).ToDictionary(Function(x) x.name)
+        Dim nodeDatas = (args <= "/nodes") _
+            .LoadCsv(Of nodeData) _
+            .ToDictionary(Function(x) x.name)
         Dim degreeSize As Boolean = args.GetBoolean("/degree_size")
         Dim compress As Boolean = args.GetBoolean("/min")
         Dim nodes = LinqAPI.Exec(Of node) <=
@@ -46,7 +48,7 @@ Module Program
                 .Data = n.Data
             }
 
-        Dim nodeHash = nodes.ToDictionary(Function(x) x.name)
+        Dim nodeTable = nodes.ToDictionary(Function(x) x.name)
         Dim edges = LinqAPI.Exec(Of edges) <=
  _
             From x As network_Csv
@@ -57,8 +59,8 @@ Module Program
                 .source = x.source,
                 .target = x.target,
                 .weight = 1,' x.fdr,
-                .srcId = nodeHash(x.source).id,
-                .tarId = nodeHash(x.target).id,
+                .srcId = nodeTable(x.source).id,
+                .tarId = nodeTable(x.target).id,
                 .Data = x.Data
             }
 
