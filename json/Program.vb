@@ -18,7 +18,8 @@ Module Program
         Return GetType(Program).RunCLI(App.CommandLine)
     End Function
 
-    <ExportAPI("/Convert", Usage:="/Convert /in <data.csv> [/nodes <nodes.csv> /degree_size /min /style <default> /out <out.json/std_out>]")>
+    <ExportAPI("/Convert")>
+    <Usage("/Convert /in <data.csv> [/nodes <nodes.csv> /degree_size /min /style <default> /out <out.json/std_out>]")>
     Public Function Convert(args As CommandLine) As Integer
         Dim data = (args <= "/in").LoadCsv(Of network_Csv)
         Dim nodeDatas = (args <= "/nodes") _
@@ -54,11 +55,11 @@ Module Program
             From x As network_Csv
             In data
             Select New edges With {
-                .correlation = 1,'x.correlation,
+                .correlation = x.Data.TryGetValue("correlation", [default]:=0),'x.correlation,
                 .id = $"{x.source}..{x.target}",
                 .source = x.source,
                 .target = x.target,
-                .weight = 1,' x.fdr,
+                .weight = x.Data.TryGetValue("fdr", [default]:=0),' x.fdr,
                 .srcId = nodeTable(x.source).id,
                 .tarId = nodeTable(x.target).id,
                 .Data = x.Data
