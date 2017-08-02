@@ -5,6 +5,7 @@ var force, nodes, links, svg;
 var names       = {};
 var nodecolor   = {};
 var loading_gif = new Image();
+var type_groups = {};
 
 loading_gif.src = "./img/ajax-loader.gif";
 
@@ -100,6 +101,12 @@ function setupGraph(graph) {
 		.nodes(graph.nodes)
 		.links(graph.edges);
 	
+	type_groups = {};
+	
+	graph.types.forEach(function(t) {
+		type_groups[t] = [];
+	})
+	
 	nodes = force.nodes()
 	links = force.links();
 	
@@ -139,6 +146,10 @@ function setupGraph(graph) {
 			}
 			return nodeMin;
 		})
+		.attr("type_group", function(d) {
+			type_groups[d.type].push(this);
+			return d.type;
+		})
 		.style("opacity",0.8)
 		.on("mouseover", displayTooltip)
 		.on("mousemove", moveTooltip)
@@ -147,6 +158,8 @@ function setupGraph(graph) {
 
 	colorNodes();	
 	force.start();
+		
+	console.log(type_groups);
 		
 	force.on("tick", function () {
 		svg.selectAll("line.link")
@@ -158,5 +171,15 @@ function setupGraph(graph) {
 		svg.selectAll("circle.node")
 			.attr("cx", function (d) { return d.x; })
 			.attr("cy", function (d) { return d.y; });
+			
+		convexHull_update();
 	});
+}
+
+/**
+ * 实时计算出凸包，并绘制出凸包的多边形
+ *
+ */
+function convexHull_update() {
+	
 }
