@@ -42,7 +42,7 @@ Module Program
 
         With nodeDatas.Values.VectorShadows
 
-            !ref = !ref(!ref.log2FC > 0).log2FC
+            !Me = !Me(.log2FC > 0).log2FC
 
             Dim tmp#() = .ref
 
