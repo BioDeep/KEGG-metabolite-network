@@ -208,16 +208,22 @@ function convexHull_update() {
 
 function drawPolygons(polygons) {
 	
-	Object.keys(polygons).forEach(function(polygon) {
-		var g = d3.select("svg")
-			.selectAll("g")
-			.data(dataset)
-			.enter()
-			.append("g")
-			.append("polygon")
-			.attr("points", function(d) {
-				return d.values.map(function(e) { return e.x + "," + e.y; }).join(" ");
+	d3.select(".pl").remove();
+	
+	Object.keys(polygons).forEach(function(group) {
+		
+		var poly = polygons[group]; 
+		
+		svg.selectAll("polygon")
+		   .data([poly])
+		   .enter().append("polygon")
+		   .attr("points",function(d) { 
+				return d.map(function(d) {
+					return [d.x,d.y].join(",");
+				}).join(" ");
 			})
-			.style("fill", "brown");
+		   .attr("stroke","black")
+		   .attr("stroke-width",2)
+		   .classed("pl", true);
 	});	
 }
