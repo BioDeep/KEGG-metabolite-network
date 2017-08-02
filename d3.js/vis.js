@@ -1,5 +1,5 @@
-var width   = 1024,
-    height  = 650,
+var width   = 1000,
+    height  = 800,
     nodeMin = 5;
 var force, nodes, links, svg;
 var names       = {};
@@ -213,10 +213,10 @@ function convexHull_update() {
 		
 		// 绘制多边形
 		// console.log(polygon);
-		polygons[type] = polygon;
+		polygons.push(polygon);
 	})
 	
-	console.log(polygons);
+	// console.log(polygons);
 	
 	drawPolygons(polygons);
 	adjustLayouts();
@@ -241,6 +241,8 @@ function adjustLayouts() {
  * 2. 将polygon多边形放在最下层
  */
 function drawPolygons(polygons) {
+	
+	// console.log(polygons)
 	
 	d3.select(".pl").remove();	
 	svg.selectAll("polygon")
