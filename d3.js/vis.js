@@ -224,6 +224,11 @@ function drawPolygons(polygons) {
 			})
 		   .attr("stroke","black")
 		   .attr("stroke-width",2)
-		   .classed("pl", true);
+		   .style("opacity",0.25)
+		   .classed("pl", true)
+		   .style("fill", function(d) {
+				return "blue";
+		   })
+		   .attr("z", -1000);
 	});	
 }
