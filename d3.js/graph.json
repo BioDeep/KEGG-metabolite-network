@@ -3548,6 +3548,9 @@
             "type": "1"
         }
     ],
-    "style": "default"
+    "style": "default",
+    "types": [
+        "1"
+    ]
 }
 

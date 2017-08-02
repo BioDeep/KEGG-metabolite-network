@@ -114,7 +114,11 @@ Module Program
         Dim net As New net With {
             .edges = edges,
             .nodes = nodes,
-            .style = args.GetValue("/style", "default")
+            .style = args.GetValue("/style", "default"),
+            .types = .nodes _
+                .Select(Function(x) x.type) _
+                .Distinct _
+                .ToArray
         }
 
         Using out As StreamWriter = args.OpenStreamOutput("/out")
