@@ -59,6 +59,7 @@ Module Program
             End With
         End With
 
+        Dim rnd As New Random
         Dim nodes = LinqAPI.Exec(Of node) <=
  _
             From name As SeqValue(Of String)
@@ -83,7 +84,7 @@ Module Program
                                      End If
                                  End Function()
             Select New node With {
-                .type = 1,
+                .type = rnd.Next(1, 5),
                 .id = name.i,
                 .name = label,
                 .degree = d,

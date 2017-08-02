@@ -1,5 +1,5 @@
 var width   = 1024,
-    height  = 800,
+    height  = 650,
     nodeMin = 5;
 var force, nodes, links, svg;
 var names       = {};
@@ -93,6 +93,8 @@ function setupGraph(graph) {
 	
 	svg = d3.select("#chart")
 		.append("svg:svg")
+		// .attr("viewBox", "0 0 " +height+ " "+width+"")
+		// .attr("preserveAspectRatio", "xMinYMin meet")
 		.attr("width", width)
 		.attr("height", height)
 		.attr("class","network");
