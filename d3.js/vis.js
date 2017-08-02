@@ -101,7 +101,7 @@ function setupGraph(graph) {
 		.nodes(graph.nodes)
 		.links(graph.edges);
 	
-	type_groups = {};
+	type_groups = [];
 	
 	graph.types.forEach(function(t) {
 		type_groups[t] = [];
@@ -147,7 +147,7 @@ function setupGraph(graph) {
 			return nodeMin;
 		})
 		.attr("type_group", function(d) {
-			type_groups[d.type].push(this);
+			type_groups[d.type.toString()].push(this);
 			return d.type;
 		})
 		.style("opacity",0.8)
@@ -181,5 +181,21 @@ function setupGraph(graph) {
  *
  */
 function convexHull_update() {
+	var types = Object.keys(type_groups);
 	
+	types.forEach(function(type) {
+		var group = type_groups[type];
+		var points = [];
+		
+		group.forEach(function(d) {
+			points.push({x:d.x,y:d.y});
+		});
+		
+		// 计算出凸包
+		// 获取得到的是多边形的顶点坐标集合
+		var polygon = JarvisMatch(points);
+		
+		// 绘制多边形
+		console.log(polygon);
+	})
 }
