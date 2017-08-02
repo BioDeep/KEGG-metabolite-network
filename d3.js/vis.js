@@ -182,6 +182,7 @@ function setupGraph(graph) {
  */
 function convexHull_update() {
 	var types = Object.keys(type_groups);
+	var polygons = [];
 	
 	types.forEach(function(type) {
 		var group = type_groups[type];
@@ -198,6 +199,25 @@ function convexHull_update() {
 		var polygon = JarvisMatch(points);
 		
 		// 绘制多边形
-		console.log(polygon);
+		// console.log(polygon);
+		polygons[type] = polygon;
 	})
+	
+	drawPolygons(polygons);
+}
+
+function drawPolygons(polygons) {
+	
+	Object.keys(polygons).forEach(function(polygon) {
+		var g = d3.select("svg")
+			.selectAll("g")
+			.data(dataset)
+			.enter()
+			.append("g")
+			.append("polygon")
+			.attr("points", function(d) {
+				return d.values.map(function(e) { return e.x + "," + e.y; }).join(" ");
+			})
+			.style("fill", "brown");
+	});	
 }
