@@ -187,9 +187,11 @@ function convexHull_update() {
 		var group = type_groups[type];
 		var points = [];
 		
-		group.forEach(function(d) {
-			points.push({x:d.x,y:d.y});
+		group.forEach(function(d) {			
+			points.push({x:d.cx.baseVal.value,y:d.cy.baseVal.value});
 		});
+		
+		// console.log(points);
 		
 		// 计算出凸包
 		// 获取得到的是多边形的顶点坐标集合
