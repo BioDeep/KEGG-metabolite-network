@@ -41,16 +41,22 @@ Module Program
         Dim down As New Dictionary(Of Double, Integer)
 
         With nodeDatas.Values.VectorShadows
-
-            !Me = !Me(.log2FC > 0).log2FC
-
-            Dim tmp#() = .ref
-
-            For Each i In .RangeTransform("0,100").SeqIterator
-                If Not up.ContainsKey(tmp(i)) Then
-                    Call up.Add(tmp(i), CInt(i.value))
-                End If
-            Next
+            With DirectCast(!Me(.log2FC > 0).log2FC.As(Of Double), Double())
+                For Each i In .RangeTransform("0,100").SeqIterator
+                    If Not up.ContainsKey(.ref(i)) Then
+                        Call up.Add(.ref(i), CInt(i.value))
+                    End If
+                Next
+            End With
+        End With
+        With nodeDatas.Values.VectorShadows
+            With DirectCast(!Me(.log2FC < 0).log2FC.As(Of Double), Double())
+                For Each i In .RangeTransform("0,100").SeqIterator
+                    If Not down.ContainsKey(.ref(i)) Then
+                        Call down.Add(.ref(i), CInt(i.value))
+                    End If
+                Next
+            End With
         End With
 
         Dim nodes = LinqAPI.Exec(Of node) <=
