@@ -201,11 +201,20 @@ function convexHull_update() {
 		// 计算出凸包
 		// 获取得到的是多边形的顶点坐标集合
 		var polygon = JarvisMatch(points);
+		var typedPolygons = [];
+
+		polygon.forEach(function(d) {
+			d = {x:d.x,y:d.y,group:type};
+			typedPolygons.push(d);
+		})
+		polygon = typedPolygons;
 		
 		// 绘制多边形
 		// console.log(polygon);
 		polygons[type] = polygon;
 	})
+	
+	console.log(polygons);
 	
 	drawPolygons(polygons);
 	adjustLayouts();
@@ -231,28 +240,22 @@ function adjustLayouts() {
  */
 function drawPolygons(polygons) {
 	
-	d3.select(".pl").remove();
-	
-	Object.keys(polygons).forEach(function(group) {
-		
-		var poly = polygons[group]; 
-		
-		svg.selectAll("polygon")
-		   .data([poly])
-		   .enter().append("polygon")
-		   .attr("points",function(d) { 
-				return d.map(function(d) {
-					return [d.x,d.y].join(",");
-				}).join(" ");
-			})
-		   .attr("stroke","black")
-		   .attr("stroke-width",2)
-		   .style("opacity",0.25)
-		   .attr("id", "polygon")
-		   .classed("pl", true)
-		   .style("fill", function(d) {
-				return "blue";
-		   })
-		   .attr("z-index", -1000);
-	});	
+	d3.select(".pl").remove();	
+	svg.selectAll("polygon")
+	   .data(polygons)
+	   .enter().append("polygon")
+	   .attr("points",function(d) { 
+			return d.map(function(d) {
+				return [d.x,d.y].join(",");
+			}).join(" ");
+		})
+	   .attr("stroke","black")
+	   .attr("stroke-width",2)
+	   .style("opacity",0.25)
+	   .attr("id", "polygon")
+	   .classed("pl", true)
+	   .style("fill", function(d) {
+			return "blue";
+	   })
+	   .attr("z-index", -1000);
 }

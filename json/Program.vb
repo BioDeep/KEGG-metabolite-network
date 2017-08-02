@@ -84,7 +84,7 @@ Module Program
                                      End If
                                  End Function()
             Select New node With {
-                .type = rnd.Next(1, 5),
+                .type = rnd.Next(1, 8),
                 .id = name.i,
                 .name = label,
                 .degree = d,
@@ -112,6 +112,7 @@ Module Program
                 .Data = x.Data
             }
 
+        Dim groupColors As Color() = Designer.GetColors("Set1:c8")
         Dim net As New net With {
             .edges = edges,
             .nodes = nodes,
@@ -119,7 +120,9 @@ Module Program
             .types = .nodes _
                 .Select(Function(x) x.type) _
                 .Distinct _
-                .ToArray
+                .SeqIterator _
+                .ToDictionary(Function(t) t.value,
+                              Function(c) groupColors(c).ToHtmlColor)
         }
 
         Using out As StreamWriter = args.OpenStreamOutput("/out")
