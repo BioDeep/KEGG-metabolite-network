@@ -206,6 +206,15 @@ function convexHull_update() {
 	drawPolygons(polygons);
 }
 
+/**
+ * 这个函数所绘制的多边形将网络之中的节点都遮住了
+ * 鼠标点击操作都无法进行了。。。。。
+ *
+ * 可能的解决方法有两个：
+ *
+ * 1. 现在需要通过位置判断来进行模拟点击？？？？
+ * 2. 将polygon多边形放在最下层
+ */
 function drawPolygons(polygons) {
 	
 	d3.select(".pl").remove();
@@ -229,6 +238,6 @@ function drawPolygons(polygons) {
 		   .style("fill", function(d) {
 				return "blue";
 		   })
-		   .attr("z", -1000);
+		   .attr("z-index", -1000);
 	});	
 }
