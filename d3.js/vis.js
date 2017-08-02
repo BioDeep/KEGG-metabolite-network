@@ -107,6 +107,8 @@ function setupGraph(graph) {
 	type_groups = [];
 	type_colors = graph.types;
 	
+	console.log(type_colors);
+	
 	Object.keys(graph.types).forEach(function(t) {
 		type_groups[t.toString()] = [];
 	})
@@ -213,7 +215,7 @@ function convexHull_update() {
 		
 		// 绘制多边形
 		// console.log(polygon);
-		polygons.push(polygon);
+		polygons.push({group:type, points:polygon});
 	})
 	
 	// console.log(polygons);
@@ -245,22 +247,30 @@ function drawPolygons(polygons) {
 	// console.log(polygons)
 	
 	d3.select(".pl").remove();	
-	svg.selectAll("polygon")
-	   .data(polygons)
-	   .enter().append("polygon")
-	   .attr("points",function(d) { 
-			// console.log(d);
-			return d.map(function(d) {
-				return [d.x,d.y].join(",");
-			}).join(" ");
-		})
-	   .attr("stroke","black")
-	   .attr("stroke-width",2)
-	   .style("opacity",0.25)
-	   .attr("id", "polygon")
-	   .classed("pl", true)
-	   .style("fill", function(d) {
-			return type_colors[d.type];
-	   })
-	   .attr("z-index", -1000);
+		
+	//polygons.forEach(function(poly) {
+		// console.log(poly);
+		
+		svg.selectAll("polygon")
+		   .data(polygons)
+		   .enter()
+		   .append("polygon")
+		   .attr("points",function(d) { 
+				// console.log(d);
+				return d.points.map(function(d) {
+					return [d.x, d.y].join(",");
+				}).join(" ");
+			})
+			.attr("type", function(d) {return d.group;})
+		   .attr("stroke","black")
+		   .attr("stroke-width",2)
+		   .style("opacity",0.25)
+		   .attr("id", "polygon")
+		   .classed("pl", true)
+		   .style("fill", function(d) {
+				var color = type_colors[d.group];				
+				return color;
+		   })
+		   .attr("z-index", -1000);		
+	//})
 }
