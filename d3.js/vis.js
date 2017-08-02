@@ -119,6 +119,7 @@ function setupGraph(graph) {
 		.enter()
 		.insert("svg:line", "circle.node")
 		.attr("class", "link")
+		.attr("id", "network")
 		.style("stroke-width", function(d) { 
 		
 			var w = -Math.log10( d.weight * 2 ) ;
@@ -154,6 +155,7 @@ function setupGraph(graph) {
 		.on("mouseover", displayTooltip)
 		.on("mousemove", moveTooltip)
 		.on("mouseout", removeTooltip)
+		.attr("id", "network")
 		.call(force.drag)
 
 	colorNodes();	
@@ -204,6 +206,16 @@ function convexHull_update() {
 	})
 	
 	drawPolygons(polygons);
+	adjustLayouts();
+}
+
+function adjustLayouts() {
+	
+	svg.selectAll("use")
+	   .data([" "])
+	   .enter()
+	   .append("use")
+       .attr("xlink:href","#network");
 }
 
 /**
@@ -234,6 +246,7 @@ function drawPolygons(polygons) {
 		   .attr("stroke","black")
 		   .attr("stroke-width",2)
 		   .style("opacity",0.25)
+		   .attr("id", "polygon")
 		   .classed("pl", true)
 		   .style("fill", function(d) {
 				return "blue";
