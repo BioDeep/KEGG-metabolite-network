@@ -27,18 +27,11 @@ var tooltip = d3.select("#chart")
  */
 function colorNodes(){
 	
-	console.log("nodecolor values:");
-	console.log(nodecolor);
-	
-	for(name in nodecolor){
-		nodecolor[name] = d3.rgb(255*Math.random(), 255*Math.random(), 255*Math.random());
-	}
-
 	// set colors
 	svg.selectAll("circle")
-		.style("fill", function(d) {
-			return nodecolor[d.name];
-		});
+	   .style("fill", function(d) {
+	       return d.Data.color;
+	});
 }
 
 function displayTooltip(node){
