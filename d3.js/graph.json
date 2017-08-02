@@ -53,6 +53,19 @@
             "weight": "0.004826398"
         },
         {
+            "A": "myo-inositol",
+            "B": "Alanine",
+            "Data": {
+                "correlation": "-0.752280831",
+                "fdr": "0.078451034"
+            },
+            "id": "myo-inositol..Alanine",
+            "source": 5,
+            "target": 1,
+            "value": "-0.752280831",
+            "weight": "0.078451034"
+        },
+        {
             "A": "Salicylic acid",
             "B": "Oxalic acid ",
             "Data": {
@@ -60,10 +73,62 @@
                 "fdr": "0.039019865"
             },
             "id": "Salicylic acid..Oxalic acid ",
-            "source": 5,
-            "target": 6,
+            "source": 6,
+            "target": 7,
             "value": "0.807868183",
             "weight": "0.039019865"
+        },
+        {
+            "A": "Phosphoric acid",
+            "B": "Heptanoic acid",
+            "Data": {
+                "correlation": "0.73579973",
+                "fdr": "0.092368016"
+            },
+            "id": "Phosphoric acid..Heptanoic acid",
+            "source": 8,
+            "target": 9,
+            "value": "0.73579973",
+            "weight": "0.092368016"
+        },
+        {
+            "A": "Ethanolamine",
+            "B": "Monomethyl phosphate",
+            "Data": {
+                "correlation": "0.766984165",
+                "fdr": "0.065818579"
+            },
+            "id": "Ethanolamine..Monomethyl phosphate",
+            "source": 10,
+            "target": 11,
+            "value": "0.766984165",
+            "weight": "0.065818579"
+        },
+        {
+            "A": "Phosphoric acid",
+            "B": "Monomethyl phosphate",
+            "Data": {
+                "correlation": "0.794268012",
+                "fdr": "0.045930328"
+            },
+            "id": "Phosphoric acid..Monomethyl phosphate",
+            "source": 8,
+            "target": 11,
+            "value": "0.794268012",
+            "weight": "0.045930328"
+        },
+        {
+            "A": "Glyceric acid",
+            "B": "Monomethyl phosphate",
+            "Data": {
+                "correlation": "0.749243319",
+                "fdr": "0.080460493"
+            },
+            "id": "Glyceric acid..Monomethyl phosphate",
+            "source": 12,
+            "target": 11,
+            "value": "0.749243319",
+            "weight": "0.080460493"
         },
         {
             "A": "Fumaric acid",
@@ -73,10 +138,36 @@
                 "fdr": "0.030693813"
             },
             "id": "Fumaric acid..Monomethyl phosphate",
-            "source": 7,
-            "target": 8,
+            "source": 13,
+            "target": 11,
             "value": "0.822840929",
             "weight": "0.030693813"
+        },
+        {
+            "A": "Tyrosine",
+            "B": "Monomethyl phosphate",
+            "Data": {
+                "correlation": "-0.770786107",
+                "fdr": "0.063769925"
+            },
+            "id": "Tyrosine..Monomethyl phosphate",
+            "source": 14,
+            "target": 11,
+            "value": "-0.770786107",
+            "weight": "0.063769925"
+        },
+        {
+            "A": "Glucaric acid",
+            "B": "Monomethyl phosphate",
+            "Data": {
+                "correlation": "0.755224109",
+                "fdr": "0.076969907"
+            },
+            "id": "Glucaric acid..Monomethyl phosphate",
+            "source": 15,
+            "target": 11,
+            "value": "0.755224109",
+            "weight": "0.076969907"
         },
         {
             "A": "Leucine",
@@ -86,8 +177,8 @@
                 "fdr": "0.004014001"
             },
             "id": "Leucine..Valine",
-            "source": 9,
-            "target": 10,
+            "source": 16,
+            "target": 17,
             "value": "0.901433408",
             "weight": "0.004014001"
         },
@@ -99,8 +190,8 @@
                 "fdr": "0.001051801"
             },
             "id": "Isoleucine..Valine",
-            "source": 11,
-            "target": 10,
+            "source": 18,
+            "target": 17,
             "value": "0.933425009",
             "weight": "0.001051801"
         },
@@ -112,8 +203,8 @@
                 "fdr": "0.002934745"
             },
             "id": "Pyroglutamate..Valine",
-            "source": 12,
-            "target": 10,
+            "source": 19,
+            "target": 17,
             "value": "0.909888268",
             "weight": "0.002934745"
         },
@@ -125,10 +216,23 @@
                 "fdr": "0.006430979"
             },
             "id": "Asparagine..Valine",
-            "source": 13,
-            "target": 10,
+            "source": 20,
+            "target": 17,
             "value": "0.888380229",
             "weight": "0.006430979"
+        },
+        {
+            "A": "Arabinose",
+            "B": "Valine",
+            "Data": {
+                "correlation": "0.761592448",
+                "fdr": "0.070800789"
+            },
+            "id": "Arabinose..Valine",
+            "source": 21,
+            "target": 17,
+            "value": "0.761592448",
+            "weight": "0.070800789"
         },
         {
             "A": "Glutamine",
@@ -138,8 +242,8 @@
                 "fdr": "0.002169359"
             },
             "id": "Glutamine..Valine",
-            "source": 14,
-            "target": 10,
+            "source": 22,
+            "target": 17,
             "value": "0.918711245",
             "weight": "0.002169359"
         },
@@ -151,10 +255,23 @@
                 "fdr": "0.013887132"
             },
             "id": "Shikimic acid..Valine",
-            "source": 15,
-            "target": 10,
+            "source": 23,
+            "target": 17,
             "value": "-0.859738708",
             "weight": "0.013887132"
+        },
+        {
+            "A": "Citric acid",
+            "B": "Valine",
+            "Data": {
+                "correlation": "0.771580935",
+                "fdr": "0.063443087"
+            },
+            "id": "Citric acid..Valine",
+            "source": 24,
+            "target": 17,
+            "value": "0.771580935",
+            "weight": "0.063443087"
         },
         {
             "A": "Lysine",
@@ -164,10 +281,23 @@
                 "fdr": "0.00020271"
             },
             "id": "Lysine..Valine",
-            "source": 16,
-            "target": 10,
+            "source": 25,
+            "target": 17,
             "value": "0.958981752",
             "weight": "0.00020271"
+        },
+        {
+            "A": "Tyrosine",
+            "B": "Valine",
+            "Data": {
+                "correlation": "0.738340318",
+                "fdr": "0.090588359"
+            },
+            "id": "Tyrosine..Valine",
+            "source": 14,
+            "target": 17,
+            "value": "0.738340318",
+            "weight": "0.090588359"
         },
         {
             "A": "Caffeic acid",
@@ -177,8 +307,8 @@
                 "fdr": "0.006791126"
             },
             "id": "Caffeic acid..Urea",
-            "source": 17,
-            "target": 18,
+            "source": 26,
+            "target": 27,
             "value": "0.885728955",
             "weight": "0.006791126"
         },
@@ -190,8 +320,8 @@
                 "fdr": "0.000676338"
             },
             "id": "3-trans-Caffeoylquinic acid..Urea",
-            "source": 19,
-            "target": 18,
+            "source": 28,
+            "target": 27,
             "value": "0.943838239",
             "weight": "0.000676338"
         },
@@ -203,8 +333,8 @@
                 "fdr": "0.031505282"
             },
             "id": "Itaconic acid..Benzoic acid",
-            "source": 20,
-            "target": 21,
+            "source": 29,
+            "target": 30,
             "value": "0.82144779",
             "weight": "0.031505282"
         },
@@ -216,8 +346,8 @@
                 "fdr": "0.006963793"
             },
             "id": "beta-Alanine..Benzoic acid",
-            "source": 22,
-            "target": 21,
+            "source": 31,
+            "target": 30,
             "value": "0.884681463",
             "weight": "0.006963793"
         },
@@ -229,8 +359,8 @@
                 "fdr": "0.007294981"
             },
             "id": "Putrescine..Benzoic acid",
-            "source": 23,
-            "target": 21,
+            "source": 32,
+            "target": 30,
             "value": "0.882239163",
             "weight": "0.007294981"
         },
@@ -242,10 +372,23 @@
                 "fdr": "0.00283913"
             },
             "id": "Azelaic acid..Benzoic acid",
-            "source": 24,
-            "target": 21,
+            "source": 33,
+            "target": 30,
             "value": "0.911766589",
             "weight": "0.00283913"
+        },
+        {
+            "A": "Hexadecanoic acid",
+            "B": "Benzoic acid",
+            "Data": {
+                "correlation": "0.733276308",
+                "fdr": "0.094072063"
+            },
+            "id": "Hexadecanoic acid..Benzoic acid",
+            "source": 34,
+            "target": 30,
+            "value": "0.733276308",
+            "weight": "0.094072063"
         },
         {
             "A": "1-Monohexadecanoylglycerol",
@@ -255,8 +398,8 @@
                 "fdr": "0.016657102"
             },
             "id": "1-Monohexadecanoylglycerol..Benzoic acid",
-            "source": 25,
-            "target": 21,
+            "source": 35,
+            "target": 30,
             "value": "0.851260483",
             "weight": "0.016657102"
         },
@@ -268,10 +411,23 @@
                 "fdr": "0.02762144"
             },
             "id": "Leucine..Ethanolamine",
-            "source": 9,
-            "target": 26,
+            "source": 16,
+            "target": 10,
             "value": "-0.827177048",
             "weight": "0.02762144"
+        },
+        {
+            "A": "Phosphoric acid",
+            "B": "Ethanolamine",
+            "Data": {
+                "correlation": "0.763968349",
+                "fdr": "0.068486674"
+            },
+            "id": "Phosphoric acid..Ethanolamine",
+            "source": 8,
+            "target": 10,
+            "value": "0.763968349",
+            "weight": "0.068486674"
         },
         {
             "A": "Isoleucine",
@@ -281,10 +437,75 @@
                 "fdr": "0.018638539"
             },
             "id": "Isoleucine..Ethanolamine",
-            "source": 11,
-            "target": 26,
+            "source": 18,
+            "target": 10,
             "value": "-0.846025825",
             "weight": "0.018638539"
+        },
+        {
+            "A": "Glyceric acid",
+            "B": "Ethanolamine",
+            "Data": {
+                "correlation": "0.77618444",
+                "fdr": "0.059696153"
+            },
+            "id": "Glyceric acid..Ethanolamine",
+            "source": 12,
+            "target": 10,
+            "value": "0.77618444",
+            "weight": "0.059696153"
+        },
+        {
+            "A": "Asparagine",
+            "B": "Ethanolamine",
+            "Data": {
+                "correlation": "-0.735709071",
+                "fdr": "0.092368016"
+            },
+            "id": "Asparagine..Ethanolamine",
+            "source": 20,
+            "target": 10,
+            "value": "-0.735709071",
+            "weight": "0.092368016"
+        },
+        {
+            "A": "Glutamine",
+            "B": "Ethanolamine",
+            "Data": {
+                "correlation": "-0.769778669",
+                "fdr": "0.063769925"
+            },
+            "id": "Glutamine..Ethanolamine",
+            "source": 22,
+            "target": 10,
+            "value": "-0.769778669",
+            "weight": "0.063769925"
+        },
+        {
+            "A": "Shikimic acid",
+            "B": "Ethanolamine",
+            "Data": {
+                "correlation": "0.79684031",
+                "fdr": "0.044040742"
+            },
+            "id": "Shikimic acid..Ethanolamine",
+            "source": 23,
+            "target": 10,
+            "value": "0.79684031",
+            "weight": "0.044040742"
+        },
+        {
+            "A": "Lysine",
+            "B": "Ethanolamine",
+            "Data": {
+                "correlation": "-0.739032388",
+                "fdr": "0.090074094"
+            },
+            "id": "Lysine..Ethanolamine",
+            "source": 25,
+            "target": 10,
+            "value": "-0.739032388",
+            "weight": "0.090074094"
         },
         {
             "A": "Tyrosine",
@@ -294,8 +515,8 @@
                 "fdr": "0.015902974"
             },
             "id": "Tyrosine..Ethanolamine",
-            "source": 27,
-            "target": 26,
+            "source": 14,
+            "target": 10,
             "value": "-0.853533864",
             "weight": "0.015902974"
         },
@@ -307,8 +528,8 @@
                 "fdr": "0.001805068"
             },
             "id": "Isoleucine..Leucine",
-            "source": 11,
-            "target": 9,
+            "source": 18,
+            "target": 16,
             "value": "0.922235906",
             "weight": "0.001805068"
         },
@@ -320,8 +541,8 @@
                 "fdr": "0.018053375"
             },
             "id": "Pyroglutamate..Leucine",
-            "source": 12,
-            "target": 9,
+            "source": 19,
+            "target": 16,
             "value": "0.847877443",
             "weight": "0.018053375"
         },
@@ -333,8 +554,8 @@
                 "fdr": "0.000202144"
             },
             "id": "Asparagine..Leucine",
-            "source": 13,
-            "target": 9,
+            "source": 20,
+            "target": 16,
             "value": "0.959722042",
             "weight": "0.000202144"
         },
@@ -346,8 +567,8 @@
                 "fdr": "0.025078155"
             },
             "id": "Arabinose..Leucine",
-            "source": 28,
-            "target": 9,
+            "source": 21,
+            "target": 16,
             "value": "0.831477642",
             "weight": "0.025078155"
         },
@@ -359,8 +580,8 @@
                 "fdr": "0.000976677"
             },
             "id": "Glutamine..Leucine",
-            "source": 14,
-            "target": 9,
+            "source": 22,
+            "target": 16,
             "value": "0.936693013",
             "weight": "0.000976677"
         },
@@ -372,8 +593,8 @@
                 "fdr": "0.035088178"
             },
             "id": "Shikimic acid..Leucine",
-            "source": 15,
-            "target": 9,
+            "source": 23,
+            "target": 16,
             "value": "-0.814426661",
             "weight": "0.035088178"
         },
@@ -385,8 +606,8 @@
                 "fdr": "0.001093202"
             },
             "id": "Lysine..Leucine",
-            "source": 16,
-            "target": 9,
+            "source": 25,
+            "target": 16,
             "value": "0.931797981",
             "weight": "0.001093202"
         },
@@ -398,10 +619,49 @@
                 "fdr": "0.006699784"
             },
             "id": "Tyrosine..Leucine",
-            "source": 27,
-            "target": 9,
+            "source": 14,
+            "target": 16,
             "value": "0.886785209",
             "weight": "0.006699784"
+        },
+        {
+            "A": "Nonanoic acid",
+            "B": "Glycerol",
+            "Data": {
+                "correlation": "0.757299781",
+                "fdr": "0.075397173"
+            },
+            "id": "Nonanoic acid..Glycerol",
+            "source": 36,
+            "target": 37,
+            "value": "0.757299781",
+            "weight": "0.075397173"
+        },
+        {
+            "A": "beta-Alanine",
+            "B": "Glycerol",
+            "Data": {
+                "correlation": "0.748989701",
+                "fdr": "0.080460493"
+            },
+            "id": "beta-Alanine..Glycerol",
+            "source": 31,
+            "target": 37,
+            "value": "0.748989701",
+            "weight": "0.080460493"
+        },
+        {
+            "A": "Putrescine",
+            "B": "Glycerol",
+            "Data": {
+                "correlation": "0.750507414",
+                "fdr": "0.080108954"
+            },
+            "id": "Putrescine..Glycerol",
+            "source": 32,
+            "target": 37,
+            "value": "0.750507414",
+            "weight": "0.080108954"
         },
         {
             "A": "Hexadecanoic acid",
@@ -411,10 +671,49 @@
                 "fdr": "0.039580587"
             },
             "id": "Hexadecanoic acid..Glycerol",
-            "source": 29,
-            "target": 30,
+            "source": 34,
+            "target": 37,
             "value": "0.805765808",
             "weight": "0.039580587"
+        },
+        {
+            "A": "9-(Z)-Octadecenoic acid",
+            "B": "Glycerol",
+            "Data": {
+                "correlation": "0.728526056",
+                "fdr": "0.098956004"
+            },
+            "id": "9-(Z)-Octadecenoic acid..Glycerol",
+            "source": 38,
+            "target": 37,
+            "value": "0.728526056",
+            "weight": "0.098956004"
+        },
+        {
+            "A": "1-Monohexadecanoylglycerol",
+            "B": "Glycerol",
+            "Data": {
+                "correlation": "0.773838937",
+                "fdr": "0.06175861"
+            },
+            "id": "1-Monohexadecanoylglycerol..Glycerol",
+            "source": 35,
+            "target": 37,
+            "value": "0.773838937",
+            "weight": "0.06175861"
+        },
+        {
+            "A": "Fumaric acid",
+            "B": "Phosphoric acid",
+            "Data": {
+                "correlation": "0.749581516",
+                "fdr": "0.080460493"
+            },
+            "id": "Fumaric acid..Phosphoric acid",
+            "source": 13,
+            "target": 8,
+            "value": "0.749581516",
+            "weight": "0.080460493"
         },
         {
             "A": "Glutaric acid",
@@ -424,8 +723,8 @@
                 "fdr": "0.033652171"
             },
             "id": "Glutaric acid..Phosphoric acid",
-            "source": 31,
-            "target": 32,
+            "source": 39,
+            "target": 8,
             "value": "0.81730932",
             "weight": "0.033652171"
         },
@@ -437,8 +736,8 @@
                 "fdr": "0.003073977"
             },
             "id": "Adipic acid..Phosphoric acid",
-            "source": 33,
-            "target": 32,
+            "source": 40,
+            "target": 8,
             "value": "0.908080757",
             "weight": "0.003073977"
         },
@@ -450,10 +749,49 @@
                 "fdr": "0.006430979"
             },
             "id": "Glucaric acid..Phosphoric acid",
-            "source": 34,
-            "target": 32,
+            "source": 15,
+            "target": 8,
             "value": "0.888602972",
             "weight": "0.006430979"
+        },
+        {
+            "A": "Octadecanoic acid",
+            "B": "Phosphoric acid",
+            "Data": {
+                "correlation": "0.786460578",
+                "fdr": "0.051698108"
+            },
+            "id": "Octadecanoic acid..Phosphoric acid",
+            "source": 41,
+            "target": 8,
+            "value": "0.786460578",
+            "weight": "0.051698108"
+        },
+        {
+            "A": "Eicosanoic acid",
+            "B": "Phosphoric acid",
+            "Data": {
+                "correlation": "0.770443857",
+                "fdr": "0.063769925"
+            },
+            "id": "Eicosanoic acid..Phosphoric acid",
+            "source": 42,
+            "target": 8,
+            "value": "0.770443857",
+            "weight": "0.063769925"
+        },
+        {
+            "A": "Docosanol",
+            "B": "Phosphoric acid",
+            "Data": {
+                "correlation": "0.793404698",
+                "fdr": "0.045930328"
+            },
+            "id": "Docosanol..Phosphoric acid",
+            "source": 43,
+            "target": 8,
+            "value": "0.793404698",
+            "weight": "0.045930328"
         },
         {
             "A": "Docosanoic acid",
@@ -463,8 +801,8 @@
                 "fdr": "0.041951923"
             },
             "id": "Docosanoic acid..Phosphoric acid",
-            "source": 35,
-            "target": 32,
+            "source": 44,
+            "target": 8,
             "value": "0.80073452",
             "weight": "0.041951923"
         },
@@ -476,10 +814,23 @@
                 "fdr": "0.023290393"
             },
             "id": "Tetracosanoic acid..Phosphoric acid",
-            "source": 36,
-            "target": 32,
+            "source": 45,
+            "target": 8,
             "value": "0.834888816",
             "weight": "0.023290393"
+        },
+        {
+            "A": "Glyceric acid",
+            "B": "Isoleucine",
+            "Data": {
+                "correlation": "-0.776569545",
+                "fdr": "0.059696153"
+            },
+            "id": "Glyceric acid..Isoleucine",
+            "source": 12,
+            "target": 18,
+            "value": "-0.776569545",
+            "weight": "0.059696153"
         },
         {
             "A": "Pyroglutamate",
@@ -489,8 +840,8 @@
                 "fdr": "0.008113409"
             },
             "id": "Pyroglutamate..Isoleucine",
-            "source": 12,
-            "target": 11,
+            "source": 19,
+            "target": 18,
             "value": "0.878300369",
             "weight": "0.008113409"
         },
@@ -502,8 +853,8 @@
                 "fdr": "0.007217821"
             },
             "id": "Asparagine..Isoleucine",
-            "source": 13,
-            "target": 11,
+            "source": 20,
+            "target": 18,
             "value": "0.88337189",
             "weight": "0.007217821"
         },
@@ -515,8 +866,8 @@
                 "fdr": "0.003073977"
             },
             "id": "Glutamine..Isoleucine",
-            "source": 14,
-            "target": 11,
+            "source": 22,
+            "target": 18,
             "value": "0.9080773",
             "weight": "0.003073977"
         },
@@ -528,8 +879,8 @@
                 "fdr": "0.004044906"
             },
             "id": "Shikimic acid..Isoleucine",
-            "source": 15,
-            "target": 11,
+            "source": 23,
+            "target": 18,
             "value": "-0.900816202",
             "weight": "0.004044906"
         },
@@ -541,8 +892,8 @@
                 "fdr": "0.001805068"
             },
             "id": "Lysine..Isoleucine",
-            "source": 16,
-            "target": 11,
+            "source": 25,
+            "target": 18,
             "value": "0.922667623",
             "weight": "0.001805068"
         },
@@ -554,8 +905,8 @@
                 "fdr": "0.018467801"
             },
             "id": "Tyrosine..Isoleucine",
-            "source": 27,
-            "target": 11,
+            "source": 14,
+            "target": 18,
             "value": "0.84673351",
             "weight": "0.018467801"
         },
@@ -573,6 +924,19 @@
             "weight": "0.007294981"
         },
         {
+            "A": "Serine",
+            "B": "Glycine",
+            "Data": {
+                "correlation": "0.762531042",
+                "fdr": "0.069971996"
+            },
+            "id": "Serine..Glycine",
+            "source": 3,
+            "target": 0,
+            "value": "0.762531042",
+            "weight": "0.069971996"
+        },
+        {
             "A": "Threonine",
             "B": "Glycine",
             "Data": {
@@ -584,6 +948,19 @@
             "target": 0,
             "value": "0.91033113",
             "weight": "0.002934745"
+        },
+        {
+            "A": "Serine",
+            "B": "Succinic acid",
+            "Data": {
+                "correlation": "0.783343792",
+                "fdr": "0.054050293"
+            },
+            "id": "Serine..Succinic acid",
+            "source": 3,
+            "target": 2,
+            "value": "0.783343792",
+            "weight": "0.054050293"
         },
         {
             "A": "Threonine",
@@ -599,6 +976,45 @@
             "weight": "0.031659993"
         },
         {
+            "A": "myo-inositol",
+            "B": "Succinic acid",
+            "Data": {
+                "correlation": "-0.798998117",
+                "fdr": "0.042498389"
+            },
+            "id": "myo-inositol..Succinic acid",
+            "source": 5,
+            "target": 2,
+            "value": "-0.798998117",
+            "weight": "0.042498389"
+        },
+        {
+            "A": "Glutamate",
+            "B": "Glyceric acid",
+            "Data": {
+                "correlation": "0.741083264",
+                "fdr": "0.088252781"
+            },
+            "id": "Glutamate..Glyceric acid",
+            "source": 46,
+            "target": 12,
+            "value": "0.741083264",
+            "weight": "0.088252781"
+        },
+        {
+            "A": "Shikimic acid",
+            "B": "Glyceric acid",
+            "Data": {
+                "correlation": "0.736290932",
+                "fdr": "0.092368016"
+            },
+            "id": "Shikimic acid..Glyceric acid",
+            "source": 23,
+            "target": 12,
+            "value": "0.736290932",
+            "weight": "0.092368016"
+        },
+        {
             "A": "Tyrosine",
             "B": "Glyceric acid",
             "Data": {
@@ -606,10 +1022,23 @@
                 "fdr": "0.014088112"
             },
             "id": "Tyrosine..Glyceric acid",
-            "source": 27,
-            "target": 37,
+            "source": 14,
+            "target": 12,
             "value": "-0.858048141",
             "weight": "0.014088112"
+        },
+        {
+            "A": "Glucaric acid",
+            "B": "Glyceric acid",
+            "Data": {
+                "correlation": "0.742884994",
+                "fdr": "0.08685588"
+            },
+            "id": "Glucaric acid..Glyceric acid",
+            "source": 15,
+            "target": 12,
+            "value": "0.742884994",
+            "weight": "0.08685588"
         },
         {
             "A": "Nonanoic acid",
@@ -619,10 +1048,62 @@
                 "fdr": "0.037496638"
             },
             "id": "Nonanoic acid..Itaconic acid",
-            "source": 38,
-            "target": 20,
+            "source": 36,
+            "target": 29,
             "value": "0.80988425",
             "weight": "0.037496638"
+        },
+        {
+            "A": "beta-Alanine",
+            "B": "Itaconic acid",
+            "Data": {
+                "correlation": "0.756441534",
+                "fdr": "0.076154684"
+            },
+            "id": "beta-Alanine..Itaconic acid",
+            "source": 31,
+            "target": 29,
+            "value": "0.756441534",
+            "weight": "0.076154684"
+        },
+        {
+            "A": "Putrescine",
+            "B": "Itaconic acid",
+            "Data": {
+                "correlation": "0.734252751",
+                "fdr": "0.093265274"
+            },
+            "id": "Putrescine..Itaconic acid",
+            "source": 32,
+            "target": 29,
+            "value": "0.734252751",
+            "weight": "0.093265274"
+        },
+        {
+            "A": "Azelaic acid",
+            "B": "Itaconic acid",
+            "Data": {
+                "correlation": "0.793425024",
+                "fdr": "0.045930328"
+            },
+            "id": "Azelaic acid..Itaconic acid",
+            "source": 33,
+            "target": 29,
+            "value": "0.793425024",
+            "weight": "0.045930328"
+        },
+        {
+            "A": "Fructose",
+            "B": "Itaconic acid",
+            "Data": {
+                "correlation": "-0.740753472",
+                "fdr": "0.088252781"
+            },
+            "id": "Fructose..Itaconic acid",
+            "source": 47,
+            "target": 29,
+            "value": "-0.740753472",
+            "weight": "0.088252781"
         },
         {
             "A": "Aspartic acid",
@@ -632,10 +1113,23 @@
                 "fdr": "0.00159739"
             },
             "id": "Aspartic acid..Fumaric acid",
-            "source": 39,
-            "target": 7,
+            "source": 48,
+            "target": 13,
             "value": "0.925195336",
             "weight": "0.00159739"
+        },
+        {
+            "A": "Glutamate",
+            "B": "Fumaric acid",
+            "Data": {
+                "correlation": "0.767852068",
+                "fdr": "0.065121848"
+            },
+            "id": "Glutamate..Fumaric acid",
+            "source": 46,
+            "target": 13,
+            "value": "0.767852068",
+            "weight": "0.065121848"
         },
         {
             "A": "Glucaric acid",
@@ -645,10 +1139,62 @@
                 "fdr": "0.019726578"
             },
             "id": "Glucaric acid..Fumaric acid",
-            "source": 34,
-            "target": 7,
+            "source": 15,
+            "target": 13,
             "value": "0.842315674",
             "weight": "0.019726578"
+        },
+        {
+            "A": "Octadecanoic acid",
+            "B": "Fumaric acid",
+            "Data": {
+                "correlation": "0.72763896",
+                "fdr": "0.099691994"
+            },
+            "id": "Octadecanoic acid..Fumaric acid",
+            "source": 41,
+            "target": 13,
+            "value": "0.72763896",
+            "weight": "0.099691994"
+        },
+        {
+            "A": "Eicosanoic acid",
+            "B": "Fumaric acid",
+            "Data": {
+                "correlation": "0.765251398",
+                "fdr": "0.067224689"
+            },
+            "id": "Eicosanoic acid..Fumaric acid",
+            "source": 42,
+            "target": 13,
+            "value": "0.765251398",
+            "weight": "0.067224689"
+        },
+        {
+            "A": "Docosanol",
+            "B": "Fumaric acid",
+            "Data": {
+                "correlation": "0.759212911",
+                "fdr": "0.073438122"
+            },
+            "id": "Docosanol..Fumaric acid",
+            "source": 43,
+            "target": 13,
+            "value": "0.759212911",
+            "weight": "0.073438122"
+        },
+        {
+            "A": "Docosanoic acid",
+            "B": "Fumaric acid",
+            "Data": {
+                "correlation": "0.782567263",
+                "fdr": "0.054547307"
+            },
+            "id": "Docosanoic acid..Fumaric acid",
+            "source": 44,
+            "target": 13,
+            "value": "0.782567263",
+            "weight": "0.054547307"
         },
         {
             "A": "beta-Alanine",
@@ -658,8 +1204,8 @@
                 "fdr": "0.013887132"
             },
             "id": "beta-Alanine..Nonanoic acid",
-            "source": 22,
-            "target": 38,
+            "source": 31,
+            "target": 36,
             "value": "0.860030651",
             "weight": "0.013887132"
         },
@@ -671,8 +1217,8 @@
                 "fdr": "0.031659993"
             },
             "id": "Putrescine..Nonanoic acid",
-            "source": 23,
-            "target": 38,
+            "source": 32,
+            "target": 36,
             "value": "0.820102036",
             "weight": "0.031659993"
         },
@@ -684,10 +1230,23 @@
                 "fdr": "0.026494887"
             },
             "id": "2,4,6-Tri-tert.-butylbenzenethiol..Nonanoic acid",
-            "source": 40,
-            "target": 38,
+            "source": 49,
+            "target": 36,
             "value": "0.829097569",
             "weight": "0.026494887"
+        },
+        {
+            "A": "Azelaic acid",
+            "B": "Nonanoic acid",
+            "Data": {
+                "correlation": "0.752789676",
+                "fdr": "0.078173098"
+            },
+            "id": "Azelaic acid..Nonanoic acid",
+            "source": 33,
+            "target": 36,
+            "value": "0.752789676",
+            "weight": "0.078173098"
         },
         {
             "A": "Fructose",
@@ -697,8 +1256,8 @@
                 "fdr": "0.035606396"
             },
             "id": "Fructose..Nonanoic acid",
-            "source": 41,
-            "target": 38,
+            "source": 47,
+            "target": 36,
             "value": "-0.812360764",
             "weight": "0.035606396"
         },
@@ -710,10 +1269,23 @@
                 "fdr": "0.035088178"
             },
             "id": "1-Monohexadecanoylglycerol..Nonanoic acid",
-            "source": 25,
-            "target": 38,
+            "source": 35,
+            "target": 36,
             "value": "0.813711822",
             "weight": "0.035088178"
+        },
+        {
+            "A": "Threonine",
+            "B": "Serine",
+            "Data": {
+                "correlation": "0.776201904",
+                "fdr": "0.059696153"
+            },
+            "id": "Threonine..Serine",
+            "source": 4,
+            "target": 3,
+            "value": "0.776201904",
+            "weight": "0.059696153"
         },
         {
             "A": "Galactosylglycerol",
@@ -723,10 +1295,23 @@
                 "fdr": "0.034830688"
             },
             "id": "Galactosylglycerol..Threonine",
-            "source": 42,
+            "source": 50,
             "target": 4,
             "value": "-0.815561771",
             "weight": "0.034830688"
+        },
+        {
+            "A": "Methionine",
+            "B": "Glutaric acid",
+            "Data": {
+                "correlation": "-0.748712003",
+                "fdr": "0.080460493"
+            },
+            "id": "Methionine..Glutaric acid",
+            "source": 51,
+            "target": 39,
+            "value": "-0.748712003",
+            "weight": "0.080460493"
         },
         {
             "A": "Threonic acid",
@@ -736,10 +1321,23 @@
                 "fdr": "0.039742554"
             },
             "id": "Threonic acid..Glutaric acid",
-            "source": 43,
-            "target": 31,
+            "source": 52,
+            "target": 39,
             "value": "-0.80412221",
             "weight": "0.039742554"
+        },
+        {
+            "A": "Glutamate",
+            "B": "Glutaric acid",
+            "Data": {
+                "correlation": "0.734396756",
+                "fdr": "0.093265274"
+            },
+            "id": "Glutamate..Glutaric acid",
+            "source": 46,
+            "target": 39,
+            "value": "0.734396756",
+            "weight": "0.093265274"
         },
         {
             "A": "Glucaric acid",
@@ -749,10 +1347,36 @@
                 "fdr": "0.014354933"
             },
             "id": "Glucaric acid..Glutaric acid",
-            "source": 34,
-            "target": 31,
+            "source": 15,
+            "target": 39,
             "value": "0.857071698",
             "weight": "0.014354933"
+        },
+        {
+            "A": "Docosanol",
+            "B": "Glutaric acid",
+            "Data": {
+                "correlation": "0.743398011",
+                "fdr": "0.086542024"
+            },
+            "id": "Docosanol..Glutaric acid",
+            "source": 43,
+            "target": 39,
+            "value": "0.743398011",
+            "weight": "0.086542024"
+        },
+        {
+            "A": "Docosanoic acid",
+            "B": "Glutaric acid",
+            "Data": {
+                "correlation": "0.744920909",
+                "fdr": "0.085636697"
+            },
+            "id": "Docosanoic acid..Glutaric acid",
+            "source": 44,
+            "target": 39,
+            "value": "0.744920909",
+            "weight": "0.085636697"
         },
         {
             "A": "Putrescine",
@@ -762,10 +1386,23 @@
                 "fdr": "7.56456E-08"
             },
             "id": "Putrescine..beta-Alanine",
-            "source": 23,
-            "target": 22,
+            "source": 32,
+            "target": 31,
             "value": "0.993286908",
             "weight": "7.56456E-08"
+        },
+        {
+            "A": "2,4,6-Tri-tert.-butylbenzenethiol",
+            "B": "beta-Alanine",
+            "Data": {
+                "correlation": "0.733155906",
+                "fdr": "0.094072063"
+            },
+            "id": "2,4,6-Tri-tert.-butylbenzenethiol..beta-Alanine",
+            "source": 49,
+            "target": 31,
+            "value": "0.733155906",
+            "weight": "0.094072063"
         },
         {
             "A": "Azelaic acid",
@@ -775,10 +1412,23 @@
                 "fdr": "0.039268584"
             },
             "id": "Azelaic acid..beta-Alanine",
-            "source": 24,
-            "target": 22,
+            "source": 33,
+            "target": 31,
             "value": "0.807106853",
             "weight": "0.039268584"
+        },
+        {
+            "A": "Fructose",
+            "B": "beta-Alanine",
+            "Data": {
+                "correlation": "-0.780119836",
+                "fdr": "0.056604943"
+            },
+            "id": "Fructose..beta-Alanine",
+            "source": 47,
+            "target": 31,
+            "value": "-0.780119836",
+            "weight": "0.056604943"
         },
         {
             "A": "1-Monohexadecanoylglycerol",
@@ -788,10 +1438,49 @@
                 "fdr": "0.000676338"
             },
             "id": "1-Monohexadecanoylglycerol..beta-Alanine",
-            "source": 25,
-            "target": 22,
+            "source": 35,
+            "target": 31,
             "value": "0.942149878",
             "weight": "0.000676338"
+        },
+        {
+            "A": "Azelaic acid",
+            "B": "Putrescine",
+            "Data": {
+                "correlation": "0.799464107",
+                "fdr": "0.042493183"
+            },
+            "id": "Azelaic acid..Putrescine",
+            "source": 33,
+            "target": 32,
+            "value": "0.799464107",
+            "weight": "0.042493183"
+        },
+        {
+            "A": "Fructose",
+            "B": "Putrescine",
+            "Data": {
+                "correlation": "-0.77148968",
+                "fdr": "0.063443087"
+            },
+            "id": "Fructose..Putrescine",
+            "source": 47,
+            "target": 32,
+            "value": "-0.77148968",
+            "weight": "0.063443087"
+        },
+        {
+            "A": "Hexadecanoic acid",
+            "B": "Putrescine",
+            "Data": {
+                "correlation": "0.75902164",
+                "fdr": "0.073438122"
+            },
+            "id": "Hexadecanoic acid..Putrescine",
+            "source": 34,
+            "target": 32,
+            "value": "0.75902164",
+            "weight": "0.073438122"
         },
         {
             "A": "1-Monohexadecanoylglycerol",
@@ -801,10 +1490,23 @@
                 "fdr": "0.001087347"
             },
             "id": "1-Monohexadecanoylglycerol..Putrescine",
-            "source": 25,
-            "target": 23,
+            "source": 35,
+            "target": 32,
             "value": "0.932397366",
             "weight": "0.001087347"
+        },
+        {
+            "A": "Dehydroascorbic acid dimer",
+            "B": "Malic acid",
+            "Data": {
+                "correlation": "0.734839141",
+                "fdr": "0.093265274"
+            },
+            "id": "Dehydroascorbic acid dimer..Malic acid",
+            "source": 53,
+            "target": 54,
+            "value": "0.734839141",
+            "weight": "0.093265274"
         },
         {
             "A": "Quinic acid",
@@ -814,10 +1516,75 @@
                 "fdr": "0.003731048"
             },
             "id": "Quinic acid..Malic acid",
-            "source": 44,
-            "target": 45,
+            "source": 55,
+            "target": 54,
             "value": "0.903374493",
             "weight": "0.003731048"
+        },
+        {
+            "A": "9-(Z)-Octadecenoic acid",
+            "B": "Malic acid",
+            "Data": {
+                "correlation": "0.754816055",
+                "fdr": "0.077093861"
+            },
+            "id": "9-(Z)-Octadecenoic acid..Malic acid",
+            "source": 38,
+            "target": 54,
+            "value": "0.754816055",
+            "weight": "0.077093861"
+        },
+        {
+            "A": "Glucaric acid",
+            "B": "Adipic acid",
+            "Data": {
+                "correlation": "0.744127691",
+                "fdr": "0.085900262"
+            },
+            "id": "Glucaric acid..Adipic acid",
+            "source": 15,
+            "target": 40,
+            "value": "0.744127691",
+            "weight": "0.085900262"
+        },
+        {
+            "A": "Octadecanoic acid",
+            "B": "Adipic acid",
+            "Data": {
+                "correlation": "0.749967277",
+                "fdr": "0.080439812"
+            },
+            "id": "Octadecanoic acid..Adipic acid",
+            "source": 41,
+            "target": 40,
+            "value": "0.749967277",
+            "weight": "0.080439812"
+        },
+        {
+            "A": "Tetracosanoic acid",
+            "B": "Adipic acid",
+            "Data": {
+                "correlation": "0.740938604",
+                "fdr": "0.088252781"
+            },
+            "id": "Tetracosanoic acid..Adipic acid",
+            "source": 45,
+            "target": 40,
+            "value": "0.740938604",
+            "weight": "0.088252781"
+        },
+        {
+            "A": "Threonic acid",
+            "B": "Methionine",
+            "Data": {
+                "correlation": "0.769240081",
+                "fdr": "0.063769925"
+            },
+            "id": "Threonic acid..Methionine",
+            "source": 52,
+            "target": 51,
+            "value": "0.769240081",
+            "weight": "0.063769925"
         },
         {
             "A": "myo-inositol",
@@ -827,8 +1594,8 @@
                 "fdr": "0.039742554"
             },
             "id": "myo-inositol..Methionine",
-            "source": 46,
-            "target": 47,
+            "source": 5,
+            "target": 51,
             "value": "0.80518508",
             "weight": "0.039742554"
         },
@@ -840,8 +1607,8 @@
                 "fdr": "0.039742554"
             },
             "id": "Gulose..Methionine",
-            "source": 48,
-            "target": 47,
+            "source": 56,
+            "target": 51,
             "value": "0.804377794",
             "weight": "0.039742554"
         },
@@ -853,8 +1620,8 @@
                 "fdr": "0.003232752"
             },
             "id": "Glutamate..Aspartic acid",
-            "source": 49,
-            "target": 39,
+            "source": 46,
+            "target": 48,
             "value": "0.906652212",
             "weight": "0.003232752"
         },
@@ -866,10 +1633,36 @@
                 "fdr": "0.008704829"
             },
             "id": "Glucaric acid..Aspartic acid",
-            "source": 34,
-            "target": 39,
+            "source": 15,
+            "target": 48,
             "value": "0.87607044",
             "weight": "0.008704829"
+        },
+        {
+            "A": "Eicosanoic acid",
+            "B": "Aspartic acid",
+            "Data": {
+                "correlation": "0.77264452",
+                "fdr": "0.062835557"
+            },
+            "id": "Eicosanoic acid..Aspartic acid",
+            "source": 42,
+            "target": 48,
+            "value": "0.77264452",
+            "weight": "0.062835557"
+        },
+        {
+            "A": "Docosanol",
+            "B": "Aspartic acid",
+            "Data": {
+                "correlation": "0.794778943",
+                "fdr": "0.045779583"
+            },
+            "id": "Docosanol..Aspartic acid",
+            "source": 43,
+            "target": 48,
+            "value": "0.794778943",
+            "weight": "0.045779583"
         },
         {
             "A": "Docosanoic acid",
@@ -879,8 +1672,8 @@
                 "fdr": "0.035236296"
             },
             "id": "Docosanoic acid..Aspartic acid",
-            "source": 35,
-            "target": 39,
+            "source": 44,
+            "target": 48,
             "value": "0.813160717",
             "weight": "0.035236296"
         },
@@ -892,8 +1685,8 @@
                 "fdr": "0.013501099"
             },
             "id": "Asparagine..Pyroglutamate",
-            "source": 13,
-            "target": 12,
+            "source": 20,
+            "target": 19,
             "value": "0.861427784",
             "weight": "0.013501099"
         },
@@ -905,8 +1698,8 @@
                 "fdr": "0.019029163"
             },
             "id": "IS..Pyroglutamate",
-            "source": 50,
-            "target": 12,
+            "source": 57,
+            "target": 19,
             "value": "-0.844233632",
             "weight": "0.019029163"
         },
@@ -918,8 +1711,8 @@
                 "fdr": "0.000676338"
             },
             "id": "Glutamine..Pyroglutamate",
-            "source": 14,
-            "target": 12,
+            "source": 22,
+            "target": 19,
             "value": "0.94365865",
             "weight": "0.000676338"
         },
@@ -931,10 +1724,23 @@
                 "fdr": "0.006699784"
             },
             "id": "Shikimic acid..Pyroglutamate",
-            "source": 15,
-            "target": 12,
+            "source": 23,
+            "target": 19,
             "value": "-0.886501908",
             "weight": "0.006699784"
+        },
+        {
+            "A": "Quinic acid",
+            "B": "Pyroglutamate",
+            "Data": {
+                "correlation": "-0.751532733",
+                "fdr": "0.079076283"
+            },
+            "id": "Quinic acid..Pyroglutamate",
+            "source": 55,
+            "target": 19,
+            "value": "-0.751532733",
+            "weight": "0.079076283"
         },
         {
             "A": "Lysine",
@@ -944,10 +1750,49 @@
                 "fdr": "0.000676338"
             },
             "id": "Lysine..Pyroglutamate",
-            "source": 16,
-            "target": 12,
+            "source": 25,
+            "target": 19,
             "value": "0.941852391",
             "weight": "0.000676338"
+        },
+        {
+            "A": "Tyrosine",
+            "B": "Pyroglutamate",
+            "Data": {
+                "correlation": "0.788771033",
+                "fdr": "0.049917144"
+            },
+            "id": "Tyrosine..Pyroglutamate",
+            "source": 14,
+            "target": 19,
+            "value": "0.788771033",
+            "weight": "0.049917144"
+        },
+        {
+            "A": "Gluconic acid",
+            "B": "4-amino Butyric acid",
+            "Data": {
+                "correlation": "0.744555712",
+                "fdr": "0.085719855"
+            },
+            "id": "Gluconic acid..4-amino Butyric acid",
+            "source": 58,
+            "target": 59,
+            "value": "0.744555712",
+            "weight": "0.085719855"
+        },
+        {
+            "A": "Maltose",
+            "B": "2,4,6-Tri-tert.-butylbenzenethiol",
+            "Data": {
+                "correlation": "0.730684221",
+                "fdr": "0.096156092"
+            },
+            "id": "Maltose..2,4,6-Tri-tert.-butylbenzenethiol",
+            "source": 60,
+            "target": 49,
+            "value": "0.730684221",
+            "weight": "0.096156092"
         },
         {
             "A": "Gulose",
@@ -957,8 +1802,8 @@
                 "fdr": "0.021706463"
             },
             "id": "Gulose..Threonic acid",
-            "source": 48,
-            "target": 43,
+            "source": 56,
+            "target": 52,
             "value": "0.838519335",
             "weight": "0.021706463"
         },
@@ -970,10 +1815,23 @@
                 "fdr": "0.009466254"
             },
             "id": "Glucaric acid..Glutamate",
-            "source": 34,
-            "target": 49,
+            "source": 15,
+            "target": 46,
             "value": "0.873023391",
             "weight": "0.009466254"
+        },
+        {
+            "A": "Ribonic acid ",
+            "B": "Phenylalanine",
+            "Data": {
+                "correlation": "-0.736817122",
+                "fdr": "0.092035014"
+            },
+            "id": "Ribonic acid ..Phenylalanine",
+            "source": 61,
+            "target": 62,
+            "value": "-0.736817122",
+            "weight": "0.092035014"
         },
         {
             "A": "Arabinose",
@@ -983,8 +1841,8 @@
                 "fdr": "0.022039517"
             },
             "id": "Arabinose..Asparagine",
-            "source": 28,
-            "target": 13,
+            "source": 21,
+            "target": 20,
             "value": "0.837598801",
             "weight": "0.022039517"
         },
@@ -996,8 +1854,8 @@
                 "fdr": "0.000223529"
             },
             "id": "Glutamine..Asparagine",
-            "source": 14,
-            "target": 13,
+            "source": 22,
+            "target": 20,
             "value": "0.95683074",
             "weight": "0.000223529"
         },
@@ -1009,8 +1867,8 @@
                 "fdr": "0.040803992"
             },
             "id": "Shikimic acid..Asparagine",
-            "source": 15,
-            "target": 13,
+            "source": 23,
+            "target": 20,
             "value": "-0.802281559",
             "weight": "0.040803992"
         },
@@ -1022,8 +1880,8 @@
                 "fdr": "0.000364259"
             },
             "id": "Lysine..Asparagine",
-            "source": 16,
-            "target": 13,
+            "source": 25,
+            "target": 20,
             "value": "0.951655746",
             "weight": "0.000364259"
         },
@@ -1035,8 +1893,8 @@
                 "fdr": "0.019029163"
             },
             "id": "Tyrosine..Asparagine",
-            "source": 27,
-            "target": 13,
+            "source": 14,
+            "target": 20,
             "value": "0.844139099",
             "weight": "0.019029163"
         },
@@ -1048,8 +1906,8 @@
                 "fdr": "0.040803992"
             },
             "id": "Gluconic acid..Asparagine",
-            "source": 51,
-            "target": 13,
+            "source": 58,
+            "target": 20,
             "value": "0.802352726",
             "weight": "0.040803992"
         },
@@ -1061,8 +1919,8 @@
                 "fdr": "0.039742554"
             },
             "id": "Glutamine..Arabinose",
-            "source": 14,
-            "target": 28,
+            "source": 22,
+            "target": 21,
             "value": "0.804551363",
             "weight": "0.039742554"
         },
@@ -1074,10 +1932,36 @@
                 "fdr": "0.039268584"
             },
             "id": "Lysine..Arabinose",
-            "source": 16,
-            "target": 28,
+            "source": 25,
+            "target": 21,
             "value": "0.806845605",
             "weight": "0.039268584"
+        },
+        {
+            "A": "Gluconic acid",
+            "B": "Arabinose",
+            "Data": {
+                "correlation": "0.78751874",
+                "fdr": "0.050909391"
+            },
+            "id": "Gluconic acid..Arabinose",
+            "source": 58,
+            "target": 21,
+            "value": "0.78751874",
+            "weight": "0.050909391"
+        },
+        {
+            "A": "Glutamine",
+            "B": "IS",
+            "Data": {
+                "correlation": "-0.783850729",
+                "fdr": "0.053866138"
+            },
+            "id": "Glutamine..IS",
+            "source": 22,
+            "target": 57,
+            "value": "-0.783850729",
+            "weight": "0.053866138"
         },
         {
             "A": "Dehydroascorbic acid dimer",
@@ -1087,8 +1971,8 @@
                 "fdr": "0.016263238"
             },
             "id": "Dehydroascorbic acid dimer..IS",
-            "source": 52,
-            "target": 50,
+            "source": 53,
+            "target": 57,
             "value": "0.852422833",
             "weight": "0.016263238"
         },
@@ -1100,8 +1984,8 @@
                 "fdr": "0.031659993"
             },
             "id": "Quinic acid..IS",
-            "source": 44,
-            "target": 50,
+            "source": 55,
+            "target": 57,
             "value": "0.820069313",
             "weight": "0.031659993"
         },
@@ -1113,8 +1997,8 @@
                 "fdr": "0.007905556"
             },
             "id": "Adenosine..IS",
-            "source": 53,
-            "target": 50,
+            "source": 63,
+            "target": 57,
             "value": "0.879812002",
             "weight": "0.007905556"
         },
@@ -1126,8 +2010,8 @@
                 "fdr": "0.014088112"
             },
             "id": "Shikimic acid..Glutamine",
-            "source": 15,
-            "target": 14,
+            "source": 23,
+            "target": 22,
             "value": "-0.858424008",
             "weight": "0.014088112"
         },
@@ -1139,8 +2023,8 @@
                 "fdr": "2.98264E-05"
             },
             "id": "Lysine..Glutamine",
-            "source": 16,
-            "target": 14,
+            "source": 25,
+            "target": 22,
             "value": "0.973735392",
             "weight": "2.98264E-05"
         },
@@ -1152,10 +2036,49 @@
                 "fdr": "0.022229362"
             },
             "id": "Tyrosine..Glutamine",
-            "source": 27,
-            "target": 14,
+            "source": 14,
+            "target": 22,
             "value": "0.836907685",
             "weight": "0.022229362"
+        },
+        {
+            "A": "1-Monohexadecanoylglycerol",
+            "B": "Azelaic acid",
+            "Data": {
+                "correlation": "0.755521953",
+                "fdr": "0.076969907"
+            },
+            "id": "1-Monohexadecanoylglycerol..Azelaic acid",
+            "source": 35,
+            "target": 33,
+            "value": "0.755521953",
+            "weight": "0.076969907"
+        },
+        {
+            "A": "Gulose",
+            "B": "Azelaic acid",
+            "Data": {
+                "correlation": "0.753659725",
+                "fdr": "0.077745163"
+            },
+            "id": "Gulose..Azelaic acid",
+            "source": 56,
+            "target": 33,
+            "value": "0.753659725",
+            "weight": "0.077745163"
+        },
+        {
+            "A": "Quinic acid",
+            "B": "Shikimic acid",
+            "Data": {
+                "correlation": "0.731235564",
+                "fdr": "0.096009771"
+            },
+            "id": "Quinic acid..Shikimic acid",
+            "source": 55,
+            "target": 23,
+            "value": "0.731235564",
+            "weight": "0.096009771"
         },
         {
             "A": "Lysine",
@@ -1165,8 +2088,8 @@
                 "fdr": "0.007957641"
             },
             "id": "Lysine..Shikimic acid",
-            "source": 16,
-            "target": 15,
+            "source": 25,
+            "target": 23,
             "value": "-0.87921679",
             "weight": "0.007957641"
         },
@@ -1178,10 +2101,36 @@
                 "fdr": "0.014088112"
             },
             "id": "Tyrosine..Shikimic acid",
-            "source": 27,
-            "target": 15,
+            "source": 14,
+            "target": 23,
             "value": "-0.858130038",
             "weight": "0.014088112"
+        },
+        {
+            "A": "9-(Z)-Octadecenoic acid",
+            "B": "Shikimic acid",
+            "Data": {
+                "correlation": "0.769615412",
+                "fdr": "0.063769925"
+            },
+            "id": "9-(Z)-Octadecenoic acid..Shikimic acid",
+            "source": 38,
+            "target": 23,
+            "value": "0.769615412",
+            "weight": "0.063769925"
+        },
+        {
+            "A": "myo-inositol",
+            "B": "Citric acid",
+            "Data": {
+                "correlation": "-0.728377521",
+                "fdr": "0.098956004"
+            },
+            "id": "myo-inositol..Citric acid",
+            "source": 5,
+            "target": 24,
+            "value": "-0.728377521",
+            "weight": "0.098956004"
         },
         {
             "A": "Quinic acid",
@@ -1191,8 +2140,8 @@
                 "fdr": "0.011603186"
             },
             "id": "Quinic acid..Dehydroascorbic acid dimer",
-            "source": 44,
-            "target": 52,
+            "source": 55,
+            "target": 53,
             "value": "0.866619229",
             "weight": "0.011603186"
         },
@@ -1204,8 +2153,8 @@
                 "fdr": "0.042058976"
             },
             "id": "9-(Z)-Octadecenoic acid..Dehydroascorbic acid dimer",
-            "source": 54,
-            "target": 52,
+            "source": 38,
+            "target": 53,
             "value": "0.800265193",
             "weight": "0.042058976"
         },
@@ -1217,8 +2166,8 @@
                 "fdr": "0.012961832"
             },
             "id": "Adenosine..Dehydroascorbic acid dimer",
-            "source": 53,
-            "target": 52,
+            "source": 63,
+            "target": 53,
             "value": "0.863043487",
             "weight": "0.012961832"
         },
@@ -1230,10 +2179,36 @@
                 "fdr": "0.035088178"
             },
             "id": "Adenosine..Quinic acid",
-            "source": 53,
-            "target": 44,
+            "source": 63,
+            "target": 55,
             "value": "0.813721895",
             "weight": "0.035088178"
+        },
+        {
+            "A": "Glucose",
+            "B": "Fructose",
+            "Data": {
+                "correlation": "0.793230534",
+                "fdr": "0.045930328"
+            },
+            "id": "Glucose..Fructose",
+            "source": 64,
+            "target": 47,
+            "value": "0.793230534",
+            "weight": "0.045930328"
+        },
+        {
+            "A": "Galactose",
+            "B": "Fructose",
+            "Data": {
+                "correlation": "0.798748672",
+                "fdr": "0.042498389"
+            },
+            "id": "Galactose..Fructose",
+            "source": 65,
+            "target": 47,
+            "value": "0.798748672",
+            "weight": "0.042498389"
         },
         {
             "A": "1-Monohexadecanoylglycerol",
@@ -1243,8 +2218,8 @@
                 "fdr": "0.024750146"
             },
             "id": "1-Monohexadecanoylglycerol..Fructose",
-            "source": 25,
-            "target": 41,
+            "source": 35,
+            "target": 47,
             "value": "-0.832343519",
             "weight": "0.024750146"
         },
@@ -1256,10 +2231,23 @@
                 "fdr": "5.69544E-12"
             },
             "id": "Galactose..Glucose",
-            "source": 55,
-            "target": 56,
+            "source": 65,
+            "target": 64,
             "value": "0.999242306",
             "weight": "5.69544E-12"
+        },
+        {
+            "A": "Hexadecanoic acid",
+            "B": "Glucose",
+            "Data": {
+                "correlation": "-0.737449169",
+                "fdr": "0.091513227"
+            },
+            "id": "Hexadecanoic acid..Glucose",
+            "source": 34,
+            "target": 64,
+            "value": "-0.737449169",
+            "weight": "0.091513227"
         },
         {
             "A": "Tyrosine",
@@ -1269,10 +2257,140 @@
                 "fdr": "0.017427141"
             },
             "id": "Tyrosine..Lysine",
-            "source": 27,
-            "target": 16,
+            "source": 14,
+            "target": 25,
             "value": "0.849419177",
             "weight": "0.017427141"
+        },
+        {
+            "A": "9-(Z)-Octadecenoic acid",
+            "B": "Lysine",
+            "Data": {
+                "correlation": "-0.769427836",
+                "fdr": "0.063769925"
+            },
+            "id": "9-(Z)-Octadecenoic acid..Lysine",
+            "source": 38,
+            "target": 25,
+            "value": "-0.769427836",
+            "weight": "0.063769925"
+        },
+        {
+            "A": "Hexadecanoic acid",
+            "B": "Galactose",
+            "Data": {
+                "correlation": "-0.731066227",
+                "fdr": "0.096009771"
+            },
+            "id": "Hexadecanoic acid..Galactose",
+            "source": 34,
+            "target": 65,
+            "value": "-0.731066227",
+            "weight": "0.096009771"
+        },
+        {
+            "A": "Glucaric acid",
+            "B": "Tyrosine",
+            "Data": {
+                "correlation": "-0.738971829",
+                "fdr": "0.090074094"
+            },
+            "id": "Glucaric acid..Tyrosine",
+            "source": 15,
+            "target": 14,
+            "value": "-0.738971829",
+            "weight": "0.090074094"
+        },
+        {
+            "A": "Heptadecanoic acid",
+            "B": "Hexadecanoic acid",
+            "Data": {
+                "correlation": "0.753404438",
+                "fdr": "0.077745163"
+            },
+            "id": "Heptadecanoic acid..Hexadecanoic acid",
+            "source": 66,
+            "target": 34,
+            "value": "0.753404438",
+            "weight": "0.077745163"
+        },
+        {
+            "A": "Octadecanoic acid",
+            "B": "Hexadecanoic acid",
+            "Data": {
+                "correlation": "0.774237633",
+                "fdr": "0.061686053"
+            },
+            "id": "Octadecanoic acid..Hexadecanoic acid",
+            "source": 41,
+            "target": 34,
+            "value": "0.774237633",
+            "weight": "0.061686053"
+        },
+        {
+            "A": "Eicosanoic acid",
+            "B": "Glucaric acid",
+            "Data": {
+                "correlation": "0.732839644",
+                "fdr": "0.09410955"
+            },
+            "id": "Eicosanoic acid..Glucaric acid",
+            "source": 42,
+            "target": 15,
+            "value": "0.732839644",
+            "weight": "0.09410955"
+        },
+        {
+            "A": "Docosanol",
+            "B": "Glucaric acid",
+            "Data": {
+                "correlation": "0.778413534",
+                "fdr": "0.058234468"
+            },
+            "id": "Docosanol..Glucaric acid",
+            "source": 43,
+            "target": 15,
+            "value": "0.778413534",
+            "weight": "0.058234468"
+        },
+        {
+            "A": "Docosanoic acid",
+            "B": "Glucaric acid",
+            "Data": {
+                "correlation": "0.789258778",
+                "fdr": "0.049766978"
+            },
+            "id": "Docosanoic acid..Glucaric acid",
+            "source": 44,
+            "target": 15,
+            "value": "0.789258778",
+            "weight": "0.049766978"
+        },
+        {
+            "A": "Tetracosanoic acid",
+            "B": "Glucaric acid",
+            "Data": {
+                "correlation": "0.753750861",
+                "fdr": "0.077745163"
+            },
+            "id": "Tetracosanoic acid..Glucaric acid",
+            "source": 45,
+            "target": 15,
+            "value": "0.753750861",
+            "weight": "0.077745163"
+        },
+        {
+            "A": "Adenosine",
+            "B": "myo-inositol",
+            "Data": {
+                "correlation": "0.742276847",
+                "fdr": "0.0873174"
+            },
+            "id": "Adenosine..myo-inositol",
+            "source": 63,
+            "target": 5,
+            "value": "0.742276847",
+            "weight": "0.0873174"
         },
         {
             "A": "Octadecanoic acid",
@@ -1282,8 +2400,8 @@
                 "fdr": "7.25862E-05"
             },
             "id": "Octadecanoic acid..Heptadecanoic acid",
-            "source": 57,
-            "target": 58,
+            "source": 41,
+            "target": 66,
             "value": "0.967890859",
             "weight": "7.25862E-05"
         },
@@ -1295,8 +2413,8 @@
                 "fdr": "0.011395499"
             },
             "id": "Nonadecanoic acid..Heptadecanoic acid",
-            "source": 59,
-            "target": 58,
+            "source": 67,
+            "target": 66,
             "value": "0.867555141",
             "weight": "0.011395499"
         },
@@ -1308,8 +2426,8 @@
                 "fdr": "0.001051801"
             },
             "id": "Eicosanoic acid..Heptadecanoic acid",
-            "source": 60,
-            "target": 58,
+            "source": 42,
+            "target": 66,
             "value": "0.933532536",
             "weight": "0.001051801"
         },
@@ -1321,8 +2439,8 @@
                 "fdr": "0.004772968"
             },
             "id": "Docosanol..Heptadecanoic acid",
-            "source": 61,
-            "target": 58,
+            "source": 43,
+            "target": 66,
             "value": "0.896425009",
             "weight": "0.004772968"
         },
@@ -1334,8 +2452,8 @@
                 "fdr": "0.004772968"
             },
             "id": "Docosanoic acid..Heptadecanoic acid",
-            "source": 35,
-            "target": 58,
+            "source": 44,
+            "target": 66,
             "value": "0.896722436",
             "weight": "0.004772968"
         },
@@ -1347,8 +2465,8 @@
                 "fdr": "0.00283913"
             },
             "id": "Tetracosanoic acid..Heptadecanoic acid",
-            "source": 36,
-            "target": 58,
+            "source": 45,
+            "target": 66,
             "value": "0.911469102",
             "weight": "0.00283913"
         },
@@ -1360,8 +2478,8 @@
                 "fdr": "0.001301718"
             },
             "id": "3-trans-Caffeoylquinic acid..Caffeic acid",
-            "source": 19,
-            "target": 17,
+            "source": 28,
+            "target": 26,
             "value": "0.928785682",
             "weight": "0.001301718"
         },
@@ -1373,8 +2491,8 @@
                 "fdr": "0.009292238"
             },
             "id": "Nonadecanoic acid..Octadecanoic acid",
-            "source": 59,
-            "target": 57,
+            "source": 67,
+            "target": 41,
             "value": "0.873938262",
             "weight": "0.009292238"
         },
@@ -1386,8 +2504,8 @@
                 "fdr": "0.000676338"
             },
             "id": "Eicosanoic acid..Octadecanoic acid",
-            "source": 60,
-            "target": 57,
+            "source": 42,
+            "target": 41,
             "value": "0.942649245",
             "weight": "0.000676338"
         },
@@ -1399,8 +2517,8 @@
                 "fdr": "0.002538001"
             },
             "id": "Docosanol..Octadecanoic acid",
-            "source": 61,
-            "target": 57,
+            "source": 43,
+            "target": 41,
             "value": "0.914477766",
             "weight": "0.002538001"
         },
@@ -1412,8 +2530,8 @@
                 "fdr": "0.002538001"
             },
             "id": "Docosanoic acid..Octadecanoic acid",
-            "source": 35,
-            "target": 57,
+            "source": 44,
+            "target": 41,
             "value": "0.914681077",
             "weight": "0.002538001"
         },
@@ -1425,8 +2543,8 @@
                 "fdr": "0.000208626"
             },
             "id": "Tetracosanoic acid..Octadecanoic acid",
-            "source": 36,
-            "target": 57,
+            "source": 45,
+            "target": 41,
             "value": "0.958066344",
             "weight": "0.000208626"
         },
@@ -1438,8 +2556,8 @@
                 "fdr": "0.019029163"
             },
             "id": "Eicosanoic acid..Nonadecanoic acid",
-            "source": 60,
-            "target": 59,
+            "source": 42,
+            "target": 67,
             "value": "0.844248652",
             "weight": "0.019029163"
         },
@@ -1451,8 +2569,8 @@
                 "fdr": "0.035088178"
             },
             "id": "Docosanol..Nonadecanoic acid",
-            "source": 61,
-            "target": 59,
+            "source": 43,
+            "target": 67,
             "value": "0.813930213",
             "weight": "0.035088178"
         },
@@ -1464,8 +2582,8 @@
                 "fdr": "0.039580587"
             },
             "id": "Docosanoic acid..Nonadecanoic acid",
-            "source": 35,
-            "target": 59,
+            "source": 44,
+            "target": 67,
             "value": "0.805821836",
             "weight": "0.039580587"
         },
@@ -1477,10 +2595,36 @@
                 "fdr": "0.019726578"
             },
             "id": "Tetracosanoic acid..Nonadecanoic acid",
-            "source": 36,
-            "target": 59,
+            "source": 45,
+            "target": 67,
             "value": "0.842152596",
             "weight": "0.019726578"
+        },
+        {
+            "A": "Adenosine",
+            "B": "Galactosylglycerol",
+            "Data": {
+                "correlation": "0.786096394",
+                "fdr": "0.051717205"
+            },
+            "id": "Adenosine..Galactosylglycerol",
+            "source": 63,
+            "target": 50,
+            "value": "0.786096394",
+            "weight": "0.051717205"
+        },
+        {
+            "A": "Galactinol",
+            "B": "Galactosylglycerol",
+            "Data": {
+                "correlation": "0.765747249",
+                "fdr": "0.067002076"
+            },
+            "id": "Galactinol..Galactosylglycerol",
+            "source": 68,
+            "target": 50,
+            "value": "0.765747249",
+            "weight": "0.067002076"
         },
         {
             "A": "Docosanol",
@@ -1490,8 +2634,8 @@
                 "fdr": "3.11344E-07"
             },
             "id": "Docosanol..Eicosanoic acid",
-            "source": 61,
-            "target": 60,
+            "source": 43,
+            "target": 42,
             "value": "0.990676582",
             "weight": "3.11344E-07"
         },
@@ -1503,8 +2647,8 @@
                 "fdr": "7.23758E-08"
             },
             "id": "Docosanoic acid..Eicosanoic acid",
-            "source": 35,
-            "target": 60,
+            "source": 44,
+            "target": 42,
             "value": "0.993718922",
             "weight": "7.23758E-08"
         },
@@ -1516,8 +2660,8 @@
                 "fdr": "1.12269E-05"
             },
             "id": "Tetracosanoic acid..Eicosanoic acid",
-            "source": 36,
-            "target": 60,
+            "source": 45,
+            "target": 42,
             "value": "0.980122983",
             "weight": "1.12269E-05"
         },
@@ -1529,8 +2673,8 @@
                 "fdr": "3.67451E-09"
             },
             "id": "Docosanoic acid..Docosanol",
-            "source": 35,
-            "target": 61,
+            "source": 44,
+            "target": 43,
             "value": "0.996812224",
             "weight": "3.67451E-09"
         },
@@ -1542,8 +2686,8 @@
                 "fdr": "2.54842E-05"
             },
             "id": "Tetracosanoic acid..Docosanol",
-            "source": 36,
-            "target": 61,
+            "source": 45,
+            "target": 43,
             "value": "0.975660861",
             "weight": "2.54842E-05"
         },
@@ -1555,10 +2699,23 @@
                 "fdr": "2.54842E-05"
             },
             "id": "Tetracosanoic acid..Docosanoic acid",
-            "source": 36,
-            "target": 35,
+            "source": 45,
+            "target": 44,
             "value": "0.975153387",
             "weight": "2.54842E-05"
+        },
+        {
+            "A": "Galactinol",
+            "B": "Adenosine",
+            "Data": {
+                "correlation": "0.782192767",
+                "fdr": "0.054582871"
+            },
+            "id": "Galactinol..Adenosine",
+            "source": 68,
+            "target": 63,
+            "value": "0.782192767",
+            "weight": "0.054582871"
         }
     ],
     "nodes": [
@@ -1568,7 +2725,7 @@
                 "log2FC": "-1.08",
                 "p": "0.128"
             },
-            "degree": 3,
+            "degree": 4,
             "id": 0,
             "name": "Glycine",
             "type": "1"
@@ -1579,7 +2736,7 @@
                 "log2FC": "-0.474",
                 "p": "0.378"
             },
-            "degree": 4,
+            "degree": 5,
             "id": 1,
             "name": "Alanine",
             "type": "1"
@@ -1590,7 +2747,7 @@
                 "log2FC": "-0.346",
                 "p": "0.298"
             },
-            "degree": 3,
+            "degree": 5,
             "id": 2,
             "name": "Succinic acid",
             "type": "1"
@@ -1601,7 +2758,7 @@
                 "log2FC": "-0.0804",
                 "p": "0.936"
             },
-            "degree": 1,
+            "degree": 4,
             "id": 3,
             "name": "Serine",
             "type": "1"
@@ -1612,9 +2769,20 @@
                 "log2FC": "-0.551",
                 "p": "0.0453"
             },
-            "degree": 4,
+            "degree": 5,
             "id": 4,
             "name": "Threonine",
+            "type": "1"
+        },
+        {
+            "Data": {
+                "fdr": "0.256",
+                "log2FC": "0.555",
+                "p": "0.128"
+            },
+            "degree": 5,
+            "id": 5,
+            "name": "myo-inositol",
             "type": "1"
         },
         {
@@ -1624,7 +2792,7 @@
                 "p": "0.0453"
             },
             "degree": 1,
-            "id": 5,
+            "id": 6,
             "name": "Salicylic acid",
             "type": "1"
         },
@@ -1635,19 +2803,41 @@
                 "p": "0.0306"
             },
             "degree": 1,
-            "id": 6,
+            "id": 7,
             "name": "Oxalic acid ",
             "type": "1"
         },
         {
             "Data": {
-                "fdr": "0.081",
-                "log2FC": "-0.367",
-                "p": "0.0202"
+                "fdr": "0.0429",
+                "log2FC": "-0.976",
+                "p": "0.00507"
             },
-            "degree": 3,
-            "id": 7,
-            "name": "Fumaric acid",
+            "degree": 12,
+            "id": 8,
+            "name": "Phosphoric acid",
+            "type": "1"
+        },
+        {
+            "Data": {
+                "fdr": "0.322",
+                "log2FC": "-0.183",
+                "p": "0.173"
+            },
+            "degree": 1,
+            "id": 9,
+            "name": "Heptanoic acid",
+            "type": "1"
+        },
+        {
+            "Data": {
+                "fdr": "0.0429",
+                "log2FC": "-0.742",
+                "p": "0.00507"
+            },
+            "degree": 10,
+            "id": 10,
+            "name": "Ethanolamine",
             "type": "1"
         },
         {
@@ -1656,9 +2846,53 @@
                 "log2FC": "-0.525",
                 "p": "0.0202"
             },
-            "degree": 1,
-            "id": 8,
+            "degree": 6,
+            "id": 11,
             "name": "Monomethyl phosphate",
+            "type": "1"
+        },
+        {
+            "Data": {
+                "fdr": "0.081",
+                "log2FC": "-0.959",
+                "p": "0.0202"
+            },
+            "degree": 7,
+            "id": 12,
+            "name": "Glyceric acid",
+            "type": "1"
+        },
+        {
+            "Data": {
+                "fdr": "0.081",
+                "log2FC": "-0.367",
+                "p": "0.0202"
+            },
+            "degree": 9,
+            "id": 13,
+            "name": "Fumaric acid",
+            "type": "1"
+        },
+        {
+            "Data": {
+                "fdr": "0.0429",
+                "log2FC": "2.17",
+                "p": "0.00507"
+            },
+            "degree": 12,
+            "id": 14,
+            "name": "Tyrosine",
+            "type": "1"
+        },
+        {
+            "Data": {
+                "fdr": "0.0429",
+                "log2FC": "-1.39",
+                "p": "0.00507"
+            },
+            "degree": 13,
+            "id": 15,
+            "name": "Glucaric acid",
             "type": "1"
         },
         {
@@ -1668,7 +2902,7 @@
                 "p": "0.00507"
             },
             "degree": 10,
-            "id": 9,
+            "id": 16,
             "name": "Leucine",
             "type": "1"
         },
@@ -1678,8 +2912,8 @@
                 "log2FC": "0.434",
                 "p": "0.471"
             },
-            "degree": 7,
-            "id": 10,
+            "degree": 10,
+            "id": 17,
             "name": "Valine",
             "type": "1"
         },
@@ -1689,8 +2923,8 @@
                 "log2FC": "0.767",
                 "p": "0.0453"
             },
-            "degree": 9,
-            "id": 11,
+            "degree": 10,
+            "id": 18,
             "name": "Isoleucine",
             "type": "1"
         },
@@ -1700,8 +2934,8 @@
                 "log2FC": "0.492",
                 "p": "0.575"
             },
-            "degree": 8,
-            "id": 12,
+            "degree": 10,
+            "id": 19,
             "name": "Pyroglutamate",
             "type": "1"
         },
@@ -1711,9 +2945,20 @@
                 "log2FC": "1.41",
                 "p": "0.0131"
             },
-            "degree": 10,
-            "id": 13,
+            "degree": 11,
+            "id": 20,
             "name": "Asparagine",
+            "type": "1"
+        },
+        {
+            "Data": {
+                "fdr": "0.356",
+                "log2FC": "0.728",
+                "p": "0.23"
+            },
+            "degree": 6,
+            "id": 21,
+            "name": "Arabinose",
             "type": "1"
         },
         {
@@ -1722,8 +2967,8 @@
                 "log2FC": "1.22",
                 "p": "0.0927"
             },
-            "degree": 9,
-            "id": 14,
+            "degree": 11,
+            "id": 22,
             "name": "Glutamine",
             "type": "1"
         },
@@ -1733,9 +2978,20 @@
                 "log2FC": "-0.536",
                 "p": "0.0656"
             },
-            "degree": 8,
-            "id": 15,
+            "degree": 12,
+            "id": 23,
             "name": "Shikimic acid",
+            "type": "1"
+        },
+        {
+            "Data": {
+                "fdr": "0.587",
+                "log2FC": "-0.0133",
+                "p": "0.471"
+            },
+            "degree": 2,
+            "id": 24,
+            "name": "Citric acid",
             "type": "1"
         },
         {
@@ -1744,8 +3000,8 @@
                 "log2FC": "0.935",
                 "p": "0.173"
             },
-            "degree": 9,
-            "id": 16,
+            "degree": 11,
+            "id": 25,
             "name": "Lysine",
             "type": "1"
         },
@@ -1756,7 +3012,7 @@
                 "p": "0.00507"
             },
             "degree": 2,
-            "id": 17,
+            "id": 26,
             "name": "Caffeic acid",
             "type": "1"
         },
@@ -1767,7 +3023,7 @@
                 "p": "0.128"
             },
             "degree": 2,
-            "id": 18,
+            "id": 27,
             "name": "Urea",
             "type": "1"
         },
@@ -1778,7 +3034,7 @@
                 "p": "0.0131"
             },
             "degree": 2,
-            "id": 19,
+            "id": 28,
             "name": "3-trans-Caffeoylquinic acid",
             "type": "1"
         },
@@ -1788,8 +3044,8 @@
                 "log2FC": "0.142",
                 "p": "0.689"
             },
-            "degree": 2,
-            "id": 20,
+            "degree": 6,
+            "id": 29,
             "name": "Itaconic acid",
             "type": "1"
         },
@@ -1799,8 +3055,8 @@
                 "log2FC": "0.238",
                 "p": "0.23"
             },
-            "degree": 5,
-            "id": 21,
+            "degree": 6,
+            "id": 30,
             "name": "Benzoic acid",
             "type": "1"
         },
@@ -1810,8 +3066,8 @@
                 "log2FC": "0.22",
                 "p": "0.298"
             },
-            "degree": 5,
-            "id": 22,
+            "degree": 9,
+            "id": 31,
             "name": "beta-Alanine",
             "type": "1"
         },
@@ -1821,8 +3077,8 @@
                 "log2FC": "0.171",
                 "p": "0.378"
             },
-            "degree": 4,
-            "id": 23,
+            "degree": 9,
+            "id": 32,
             "name": "Putrescine",
             "type": "1"
         },
@@ -1832,53 +3088,9 @@
                 "log2FC": "0.304",
                 "p": "0.23"
             },
-            "degree": 2,
-            "id": 24,
+            "degree": 7,
+            "id": 33,
             "name": "Azelaic acid",
-            "type": "1"
-        },
-        {
-            "Data": {
-                "fdr": "0.356",
-                "log2FC": "0.315",
-                "p": "0.23"
-            },
-            "degree": 5,
-            "id": 25,
-            "name": "1-Monohexadecanoylglycerol",
-            "type": "1"
-        },
-        {
-            "Data": {
-                "fdr": "0.0429",
-                "log2FC": "-0.742",
-                "p": "0.00507"
-            },
-            "degree": 3,
-            "id": 26,
-            "name": "Ethanolamine",
-            "type": "1"
-        },
-        {
-            "Data": {
-                "fdr": "0.0429",
-                "log2FC": "2.17",
-                "p": "0.00507"
-            },
-            "degree": 8,
-            "id": 27,
-            "name": "Tyrosine",
-            "type": "1"
-        },
-        {
-            "Data": {
-                "fdr": "0.356",
-                "log2FC": "0.728",
-                "p": "0.23"
-            },
-            "degree": 4,
-            "id": 28,
-            "name": "Arabinose",
             "type": "1"
         },
         {
@@ -1887,9 +3099,31 @@
                 "log2FC": "-0.0895",
                 "p": "0.575"
             },
-            "degree": 1,
-            "id": 29,
+            "degree": 7,
+            "id": 34,
             "name": "Hexadecanoic acid",
+            "type": "1"
+        },
+        {
+            "Data": {
+                "fdr": "0.356",
+                "log2FC": "0.315",
+                "p": "0.23"
+            },
+            "degree": 7,
+            "id": 35,
+            "name": "1-Monohexadecanoylglycerol",
+            "type": "1"
+        },
+        {
+            "Data": {
+                "fdr": "0.514",
+                "log2FC": "0.245",
+                "p": "0.378"
+            },
+            "degree": 8,
+            "id": 36,
+            "name": "Nonanoic acid",
             "type": "1"
         },
         {
@@ -1898,9 +3132,20 @@
                 "log2FC": "0.0255",
                 "p": "0.689"
             },
-            "degree": 1,
-            "id": 30,
+            "degree": 6,
+            "id": 37,
             "name": "Glycerol",
+            "type": "1"
+        },
+        {
+            "Data": {
+                "fdr": "0.748",
+                "log2FC": "-0.163",
+                "p": "0.689"
+            },
+            "degree": 5,
+            "id": 38,
+            "name": "9-(Z)-Octadecenoic acid",
             "type": "1"
         },
         {
@@ -1909,20 +3154,9 @@
                 "log2FC": "-1.14",
                 "p": "0.00824"
             },
-            "degree": 3,
-            "id": 31,
+            "degree": 7,
+            "id": 39,
             "name": "Glutaric acid",
-            "type": "1"
-        },
-        {
-            "Data": {
-                "fdr": "0.0429",
-                "log2FC": "-0.976",
-                "p": "0.00507"
-            },
-            "degree": 5,
-            "id": 32,
-            "name": "Phosphoric acid",
             "type": "1"
         },
         {
@@ -1931,20 +3165,42 @@
                 "log2FC": "-0.492",
                 "p": "0.0306"
             },
-            "degree": 1,
-            "id": 33,
+            "degree": 4,
+            "id": 40,
             "name": "Adipic acid",
             "type": "1"
         },
         {
             "Data": {
-                "fdr": "0.0429",
-                "log2FC": "-1.39",
-                "p": "0.00507"
+                "fdr": "0.128",
+                "log2FC": "-0.514",
+                "p": "0.0453"
             },
-            "degree": 5,
-            "id": 34,
-            "name": "Glucaric acid",
+            "degree": 10,
+            "id": 41,
+            "name": "Octadecanoic acid",
+            "type": "1"
+        },
+        {
+            "Data": {
+                "fdr": "0.081",
+                "log2FC": "-1.05",
+                "p": "0.0202"
+            },
+            "degree": 10,
+            "id": 42,
+            "name": "Eicosanoic acid",
+            "type": "1"
+        },
+        {
+            "Data": {
+                "fdr": "0.0709",
+                "log2FC": "-1.64",
+                "p": "0.0131"
+            },
+            "degree": 11,
+            "id": 43,
+            "name": "Docosanol",
             "type": "1"
         },
         {
@@ -1953,8 +3209,8 @@
                 "log2FC": "-1.51",
                 "p": "0.00824"
             },
-            "degree": 8,
-            "id": 35,
+            "degree": 11,
+            "id": 44,
             "name": "Docosanoic acid",
             "type": "1"
         },
@@ -1964,31 +3220,31 @@
                 "log2FC": "-0.979",
                 "p": "0.0202"
             },
-            "degree": 7,
-            "id": 36,
+            "degree": 9,
+            "id": 45,
             "name": "Tetracosanoic acid",
             "type": "1"
         },
         {
             "Data": {
-                "fdr": "0.081",
-                "log2FC": "-0.959",
-                "p": "0.0202"
+                "fdr": "0.0429",
+                "log2FC": "-0.767",
+                "p": "0.00507"
             },
-            "degree": 1,
-            "id": 37,
-            "name": "Glyceric acid",
+            "degree": 5,
+            "id": 46,
+            "name": "Glutamate",
             "type": "1"
         },
         {
             "Data": {
-                "fdr": "0.514",
-                "log2FC": "0.245",
-                "p": "0.378"
+                "fdr": "0.832",
+                "log2FC": "-0.119",
+                "p": "0.81"
             },
-            "degree": 6,
-            "id": 38,
-            "name": "Nonanoic acid",
+            "degree": 7,
+            "id": 47,
+            "name": "Fructose",
             "type": "1"
         },
         {
@@ -1997,8 +3253,8 @@
                 "log2FC": "-0.672",
                 "p": "0.00507"
             },
-            "degree": 4,
-            "id": 39,
+            "degree": 6,
+            "id": 48,
             "name": "Aspartic acid",
             "type": "1"
         },
@@ -2008,20 +3264,9 @@
                 "log2FC": "0.442",
                 "p": "0.0656"
             },
-            "degree": 1,
-            "id": 40,
+            "degree": 3,
+            "id": 49,
             "name": "2,4,6-Tri-tert.-butylbenzenethiol",
-            "type": "1"
-        },
-        {
-            "Data": {
-                "fdr": "0.832",
-                "log2FC": "-0.119",
-                "p": "0.81"
-            },
-            "degree": 2,
-            "id": 41,
-            "name": "Fructose",
             "type": "1"
         },
         {
@@ -2030,53 +3275,9 @@
                 "log2FC": "0.485",
                 "p": "0.23"
             },
-            "degree": 1,
-            "id": 42,
+            "degree": 3,
+            "id": 50,
             "name": "Galactosylglycerol",
-            "type": "1"
-        },
-        {
-            "Data": {
-                "fdr": "0.128",
-                "log2FC": "1.34",
-                "p": "0.0453"
-            },
-            "degree": 2,
-            "id": 43,
-            "name": "Threonic acid",
-            "type": "1"
-        },
-        {
-            "Data": {
-                "fdr": "0.673",
-                "log2FC": "0.077",
-                "p": "0.575"
-            },
-            "degree": 4,
-            "id": 44,
-            "name": "Quinic acid",
-            "type": "1"
-        },
-        {
-            "Data": {
-                "fdr": "0.748",
-                "log2FC": "-0.0202",
-                "p": "0.689"
-            },
-            "degree": 1,
-            "id": 45,
-            "name": "Malic acid",
-            "type": "1"
-        },
-        {
-            "Data": {
-                "fdr": "0.256",
-                "log2FC": "0.555",
-                "p": "0.128"
-            },
-            "degree": 1,
-            "id": 46,
-            "name": "myo-inositol",
             "type": "1"
         },
         {
@@ -2085,9 +3286,53 @@
                 "log2FC": "0.418",
                 "p": "0.0453"
             },
-            "degree": 2,
-            "id": 47,
+            "degree": 4,
+            "id": 51,
             "name": "Methionine",
+            "type": "1"
+        },
+        {
+            "Data": {
+                "fdr": "0.128",
+                "log2FC": "1.34",
+                "p": "0.0453"
+            },
+            "degree": 3,
+            "id": 52,
+            "name": "Threonic acid",
+            "type": "1"
+        },
+        {
+            "Data": {
+                "fdr": "0.587",
+                "log2FC": "-0.0423",
+                "p": "0.471"
+            },
+            "degree": 5,
+            "id": 53,
+            "name": "Dehydroascorbic acid dimer",
+            "type": "1"
+        },
+        {
+            "Data": {
+                "fdr": "0.748",
+                "log2FC": "-0.0202",
+                "p": "0.689"
+            },
+            "degree": 3,
+            "id": 54,
+            "name": "Malic acid",
+            "type": "1"
+        },
+        {
+            "Data": {
+                "fdr": "0.673",
+                "log2FC": "0.077",
+                "p": "0.575"
+            },
+            "degree": 6,
+            "id": 55,
+            "name": "Quinic acid",
             "type": "1"
         },
         {
@@ -2096,20 +3341,9 @@
                 "log2FC": "0.836",
                 "p": "0.23"
             },
-            "degree": 2,
-            "id": 48,
+            "degree": 3,
+            "id": 56,
             "name": "Gulose",
-            "type": "1"
-        },
-        {
-            "Data": {
-                "fdr": "0.0429",
-                "log2FC": "-0.767",
-                "p": "0.00507"
-            },
-            "degree": 2,
-            "id": 49,
-            "name": "Glutamate",
             "type": "1"
         },
         {
@@ -2118,8 +3352,8 @@
                 "log2FC": "-0.0135",
                 "p": "1"
             },
-            "degree": 4,
-            "id": 50,
+            "degree": 5,
+            "id": 57,
             "name": "IS",
             "type": "1"
         },
@@ -2129,20 +3363,53 @@
                 "log2FC": "0.951",
                 "p": "0.81"
             },
-            "degree": 1,
-            "id": 51,
+            "degree": 3,
+            "id": 58,
             "name": "Gluconic acid",
             "type": "1"
         },
         {
             "Data": {
-                "fdr": "0.587",
-                "log2FC": "-0.0423",
-                "p": "0.471"
+                "fdr": "0.356",
+                "log2FC": "0.565",
+                "p": "0.23"
             },
-            "degree": 4,
-            "id": 52,
-            "name": "Dehydroascorbic acid dimer",
+            "degree": 1,
+            "id": 59,
+            "name": "4-amino Butyric acid",
+            "type": "1"
+        },
+        {
+            "Data": {
+                "fdr": "0.0429",
+                "log2FC": "1.08",
+                "p": "0.00507"
+            },
+            "degree": 1,
+            "id": 60,
+            "name": "Maltose",
+            "type": "1"
+        },
+        {
+            "Data": {
+                "fdr": "0.427",
+                "log2FC": "-0.225",
+                "p": "0.298"
+            },
+            "degree": 1,
+            "id": 61,
+            "name": "Ribonic acid ",
+            "type": "1"
+        },
+        {
+            "Data": {
+                "fdr": "0.256",
+                "log2FC": "0.439",
+                "p": "0.128"
+            },
+            "degree": 1,
+            "id": 62,
+            "name": "Phenylalanine",
             "type": "1"
         },
         {
@@ -2151,31 +3418,9 @@
                 "log2FC": "0.756",
                 "p": "0.689"
             },
-            "degree": 3,
-            "id": 53,
+            "degree": 6,
+            "id": 63,
             "name": "Adenosine",
-            "type": "1"
-        },
-        {
-            "Data": {
-                "fdr": "0.748",
-                "log2FC": "-0.163",
-                "p": "0.689"
-            },
-            "degree": 1,
-            "id": 54,
-            "name": "9-(Z)-Octadecenoic acid",
-            "type": "1"
-        },
-        {
-            "Data": {
-                "fdr": "0.427",
-                "log2FC": "0.33",
-                "p": "0.298"
-            },
-            "degree": 1,
-            "id": 55,
-            "name": "Galactose",
             "type": "1"
         },
         {
@@ -2184,20 +3429,20 @@
                 "log2FC": "0.354",
                 "p": "0.23"
             },
-            "degree": 1,
-            "id": 56,
+            "degree": 3,
+            "id": 64,
             "name": "Glucose",
             "type": "1"
         },
         {
             "Data": {
-                "fdr": "0.128",
-                "log2FC": "-0.514",
-                "p": "0.0453"
+                "fdr": "0.427",
+                "log2FC": "0.33",
+                "p": "0.298"
             },
-            "degree": 6,
-            "id": 57,
-            "name": "Octadecanoic acid",
+            "degree": 3,
+            "id": 65,
+            "name": "Galactose",
             "type": "1"
         },
         {
@@ -2206,8 +3451,8 @@
                 "log2FC": "-0.446",
                 "p": "0.0656"
             },
-            "degree": 6,
-            "id": 58,
+            "degree": 7,
+            "id": 66,
             "name": "Heptadecanoic acid",
             "type": "1"
         },
@@ -2218,30 +3463,19 @@
                 "p": "0.0927"
             },
             "degree": 6,
-            "id": 59,
+            "id": 67,
             "name": "Nonadecanoic acid",
             "type": "1"
         },
         {
             "Data": {
-                "fdr": "0.081",
-                "log2FC": "-1.05",
-                "p": "0.0202"
+                "fdr": "0.256",
+                "log2FC": "0.35",
+                "p": "0.128"
             },
-            "degree": 6,
-            "id": 60,
-            "name": "Eicosanoic acid",
-            "type": "1"
-        },
-        {
-            "Data": {
-                "fdr": "0.0709",
-                "log2FC": "-1.64",
-                "p": "0.0131"
-            },
-            "degree": 6,
-            "id": 61,
-            "name": "Docosanol",
+            "degree": 2,
+            "id": 68,
+            "name": "Galactinol",
             "type": "1"
         }
     ],

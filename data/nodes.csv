@@ -1,63 +1,70 @@
-name,degree,p,fdr,log2FC
-Glycine,3,0.128,0.256,-1.08
-Succinic acid,3,0.298,0.427,-0.346
-Serine,1,0.936,0.949,-0.0804
-Threonine,4,0.0453,0.128,-0.551
+names,degree,p,fdr,log2FC
+Glycine,4,0.128,0.256,-1.08
+Succinic acid,5,0.298,0.427,-0.346
+Serine,4,0.936,0.949,-0.0804
+Threonine,5,0.0453,0.128,-0.551
+myo-inositol,5,0.128,0.256,0.555
 Salicylic acid,1,0.0453,0.128,1.49
-Fumaric acid,3,0.0202,0.081,-0.367
+Phosphoric acid,12,0.00507,0.0429,-0.976
+Ethanolamine,10,0.00507,0.0429,-0.742
+Glyceric acid,7,0.0202,0.081,-0.959
+Fumaric acid,9,0.0202,0.081,-0.367
+Tyrosine,12,0.00507,0.0429,2.17
+Glucaric acid,13,0.00507,0.0429,-1.39
 Leucine,10,0.00507,0.0429,1.33
-Isoleucine,9,0.0453,0.128,0.767
-Pyroglutamate,8,0.575,0.673,0.492
-Asparagine,10,0.0131,0.0709,1.41
-Glutamine,9,0.0927,0.22,1.22
-Shikimic acid,8,0.0656,0.166,-0.536
-Lysine,9,0.173,0.322,0.935
+Isoleucine,10,0.0453,0.128,0.767
+Pyroglutamate,10,0.575,0.673,0.492
+Asparagine,11,0.0131,0.0709,1.41
+Arabinose,6,0.23,0.356,0.728
+Glutamine,11,0.0927,0.22,1.22
+Shikimic acid,12,0.0656,0.166,-0.536
+Citric acid,2,0.471,0.587,-0.0133
+Lysine,11,0.173,0.322,0.935
 Caffeic acid,2,0.00507,0.0429,1.62
 3-trans-Caffeoylquinic acid,2,0.0131,0.0709,3.56
-Itaconic acid,2,0.689,0.748,0.142
-beta-Alanine,5,0.298,0.427,0.22
-Putrescine,4,0.378,0.514,0.171
-Azelaic acid,2,0.23,0.356,0.304
-1-Monohexadecanoylglycerol,5,0.23,0.356,0.315
-Tyrosine,8,0.00507,0.0429,2.17
-Arabinose,4,0.23,0.356,0.728
-Hexadecanoic acid,1,0.575,0.673,-0.0895
-Glutaric acid,3,0.00824,0.0569,-1.14
-Adipic acid,1,0.0306,0.111,-0.492
-Glucaric acid,5,0.00507,0.0429,-1.39
-Docosanoic acid,8,0.00824,0.0569,-1.51
-Tetracosanoic acid,7,0.0202,0.081,-0.979
-Nonanoic acid,6,0.378,0.514,0.245
-Aspartic acid,4,0.00507,0.0429,-0.672
-"2,4,6-Tri-tert.-butylbenzenethiol",1,0.0656,0.166,0.442
-Fructose,2,0.81,0.832,-0.119
-Galactosylglycerol,1,0.23,0.356,0.485
-Threonic acid,2,0.0453,0.128,1.34
-Quinic acid,4,0.575,0.673,0.077
-myo-inositol,1,0.128,0.256,0.555
-Gulose,2,0.23,0.356,0.836
-Glutamate,2,0.00507,0.0429,-0.767
-IS,4,1,1,-0.0135
-Gluconic acid,1,0.81,0.832,0.951
-Dehydroascorbic acid dimer,4,0.471,0.587,-0.0423
-Adenosine,3,0.689,0.748,0.756
-9-(Z)-Octadecenoic acid,1,0.689,0.748,-0.163
-Galactose,1,0.298,0.427,0.33
-Octadecanoic acid,6,0.0453,0.128,-0.514
+Itaconic acid,6,0.689,0.748,0.142
+beta-Alanine,9,0.298,0.427,0.22
+Putrescine,9,0.378,0.514,0.171
+Azelaic acid,7,0.23,0.356,0.304
+Hexadecanoic acid,7,0.575,0.673,-0.0895
+1-Monohexadecanoylglycerol,7,0.23,0.356,0.315
+Nonanoic acid,8,0.378,0.514,0.245
+9-(Z)-Octadecenoic acid,5,0.689,0.748,-0.163
+Glutaric acid,7,0.00824,0.0569,-1.14
+Adipic acid,4,0.0306,0.111,-0.492
+Octadecanoic acid,10,0.0453,0.128,-0.514
+Eicosanoic acid,10,0.0202,0.081,-1.05
+Docosanol,11,0.0131,0.0709,-1.64
+Docosanoic acid,11,0.00824,0.0569,-1.51
+Tetracosanoic acid,9,0.0202,0.081,-0.979
+Glutamate,5,0.00507,0.0429,-0.767
+Fructose,7,0.81,0.832,-0.119
+Aspartic acid,6,0.00507,0.0429,-0.672
+"2,4,6-Tri-tert.-butylbenzenethiol",3,0.0656,0.166,0.442
+Galactosylglycerol,3,0.23,0.356,0.485
+Methionine,4,0.0453,0.128,0.418
+Threonic acid,3,0.0453,0.128,1.34
+Dehydroascorbic acid dimer,5,0.471,0.587,-0.0423
+Quinic acid,6,0.575,0.673,0.077
+Gulose,3,0.23,0.356,0.836
+IS,5,1,1,-0.0135
+Gluconic acid,3,0.81,0.832,0.951
+Maltose,1,0.00507,0.0429,1.08
+Ribonic acid ,1,0.298,0.427,-0.225
+Adenosine,6,0.689,0.748,0.756
+Glucose,3,0.23,0.356,0.354
+Galactose,3,0.298,0.427,0.33
+Heptadecanoic acid,7,0.0656,0.166,-0.446
 Nonadecanoic acid,6,0.0927,0.22,-0.495
-Eicosanoic acid,6,0.0202,0.081,-1.05
-Docosanol,6,0.0131,0.0709,-1.64
-Alanine,4,0.378,0.514,-0.474
+Galactinol,2,0.128,0.256,0.35
+Alanine,5,0.378,0.514,-0.474
 Oxalic acid ,1,0.0306,0.111,1.43
-Monomethyl phosphate,1,0.0202,0.081,-0.525
-Valine,7,0.471,0.587,0.434
+Heptanoic acid,1,0.173,0.322,-0.183
+Monomethyl phosphate,6,0.0202,0.081,-0.525
+Valine,10,0.471,0.587,0.434
 Urea,2,0.128,0.256,0.857
-Benzoic acid,5,0.23,0.356,0.238
-Ethanolamine,3,0.00507,0.0429,-0.742
-Glycerol,1,0.689,0.748,0.0255
-Phosphoric acid,5,0.00507,0.0429,-0.976
-Glyceric acid,1,0.0202,0.081,-0.959
-Malic acid,1,0.689,0.748,-0.0202
-Methionine,2,0.0453,0.128,0.418
-Glucose,1,0.23,0.356,0.354
-Heptadecanoic acid,6,0.0656,0.166,-0.446
+Benzoic acid,6,0.23,0.356,0.238
+Glycerol,6,0.689,0.748,0.0255
+Malic acid,3,0.689,0.748,-0.0202
+4-amino Butyric acid,1,0.23,0.356,0.565
+Phenylalanine,1,0.128,0.256,0.439

@@ -1,12 +1,17 @@
-﻿Imports System.IO
+﻿Imports System.ComponentModel
+Imports System.Drawing
+Imports System.IO
 Imports json.csv
 Imports Microsoft.VisualBasic.CommandLine
 Imports Microsoft.VisualBasic.CommandLine.Reflection
+Imports Microsoft.VisualBasic.ComponentModel.Ranges
 Imports Microsoft.VisualBasic.Data.csv
 Imports Microsoft.VisualBasic.Data.visualize.Network.FileStream.Json
+Imports Microsoft.VisualBasic.Imaging.Drawing2D.Colors
 Imports Microsoft.VisualBasic.Language
 Imports Microsoft.VisualBasic.Linq
 Imports Microsoft.VisualBasic.Serialization.JSON
+Imports Microsoft.VisualBasic.Imaging
 
 Module Program
 
@@ -20,13 +25,34 @@ Module Program
 
     <ExportAPI("/Convert")>
     <Usage("/Convert /in <data.csv> [/nodes <nodes.csv> /degree_size /min /style <default> /out <out.json/std_out>]")>
+    <Description("Conversion of the network graph table model as json data model")>
     Public Function Convert(args As CommandLine) As Integer
         Dim data = (args <= "/in").LoadCsv(Of network_Csv)
         Dim nodeDatas = (args <= "/nodes") _
             .LoadCsv(Of nodeData) _
-            .ToDictionary(Function(x) x.name)
+            .ToDictionary(Function(x) x.names)
         Dim degreeSize As Boolean = args.GetBoolean("/degree_size")
         Dim compress As Boolean = args.GetBoolean("/min")
+        Dim colors As (up As Color(), down As Color()) = (
+            Designer.GetColors("RdPu:c9", 150).Skip(50).ToArray,
+            Designer.GetColors("YlGnBu:c9", 150).Skip(50).ToArray)
+
+        Dim up As New Dictionary(Of Double, Integer)
+        Dim down As New Dictionary(Of Double, Integer)
+
+        With nodeDatas.Values.VectorShadows
+
+            !ref = !ref(!ref.log2FC > 0).log2FC
+
+            Dim tmp#() = .ref
+
+            For Each i In .RangeTransform("0,100").SeqIterator
+                If Not up.ContainsKey(tmp(i)) Then
+                    Call up.Add(tmp(i), CInt(i.value))
+                End If
+            Next
+        End With
+
         Dim nodes = LinqAPI.Exec(Of node) <=
  _
             From name As SeqValue(Of String)
@@ -41,6 +67,15 @@ Module Program
                 .Where(Function(x) x.source = label OrElse x.target = label) _
                 .Count,
                 n.degree)
+            Let color As Color = Function() As Color
+                                     If n.log2FC > 0 Then
+                                         Return colors.up(up(n.log2FC))
+                                     ElseIf n.log2FC < 0 Then
+                                         Return colors.down(down(n.log2FC))
+                                     Else
+                                         Return Color.Black
+                                     End If
+                                 End Function()
             Select New node With {
                 .type = 1,
                 .id = name.i,
@@ -49,7 +84,8 @@ Module Program
                 .Data = New Dictionary(Of String, String) From {
                     {NameOf(nodeData.fdr), n.fdr},
                     {NameOf(nodeData.log2FC), n.log2FC},
-                    {NameOf(nodeData.p), n.p}
+                    {NameOf(nodeData.p), n.p},
+                    {NameOf(color), color.ToHtmlColor}
                 }
             }
 

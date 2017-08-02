@@ -5,7 +5,7 @@ Namespace csv
 
     Public Class nodeData
 
-        Public Property name As String
+        Public Property names As String
         Public Property degree As Integer
         Public Property p As Double
         Public Property fdr As Double
