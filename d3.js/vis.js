@@ -6,6 +6,7 @@ var names       = {};
 var nodecolor   = {};
 var loading_gif = new Image();
 var type_groups = {};
+var type_colors = {};
 
 loading_gif.src = "./img/ajax-loader.gif";
 
@@ -104,9 +105,10 @@ function setupGraph(graph) {
 		.links(graph.edges);
 	
 	type_groups = [];
+	type_colors = graph.types;
 	
-	graph.types.forEach(function(t) {
-		type_groups[t] = [];
+	Object.keys(graph.types).forEach(function(t) {
+		type_groups[t.toString()] = [];
 	})
 	
 	nodes = force.nodes()
@@ -163,8 +165,8 @@ function setupGraph(graph) {
 	colorNodes();	
 	force.start();
 		
-	console.log(type_groups);
-		
+	// console.log(type_groups);
+			
 	force.on("tick", function () {
 		svg.selectAll("line.link")
 			.attr("x1", function (d) { return d.source.x; })
@@ -245,6 +247,7 @@ function drawPolygons(polygons) {
 	   .data(polygons)
 	   .enter().append("polygon")
 	   .attr("points",function(d) { 
+			// console.log(d);
 			return d.map(function(d) {
 				return [d.x,d.y].join(",");
 			}).join(" ");
@@ -255,7 +258,7 @@ function drawPolygons(polygons) {
 	   .attr("id", "polygon")
 	   .classed("pl", true)
 	   .style("fill", function(d) {
-			return "blue";
+			return type_colors[d.type];
 	   })
 	   .attr("z-index", -1000);
 }
