@@ -196,6 +196,14 @@ function setupGraph(graph) {
 }
 
 /**
+ * 在svg上面添加legend的rectangle以及相应的标签文本
+ */
+function showLegend() {
+	
+	
+}
+
+/**
  * 实时计算出凸包，并绘制出凸包的多边形
  *
  */
