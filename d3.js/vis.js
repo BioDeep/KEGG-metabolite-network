@@ -197,6 +197,7 @@ function setupGraph(graph) {
 
 /**
  * 在svg上面添加legend的rectangle以及相应的标签文本
+ * 颜色和标签文本都来自于type_colors字典
  */
 function showLegend() {
 	
@@ -224,47 +225,39 @@ function showLegend() {
 		.style("border-radius", "2px")
 		.style("fill", "white");
 		
-	// 两个代谢物的legend和label
-	var d1 = met1; // stripHTML(met1);
-	var d2 = met2; // stripHTML(met2);
-	
-	left += 15;
-	top  += 23;
-	legend.append("rect")
-		.attr("x", left)
-		.attr("y", top - 13)
-		.attr("width", dW)
-		.attr("height", dW)
-		.style("fill", "steelblue");
-
-	legend.append("text")
-		.attr("x", left + dW + 5)
-		.attr("y", top)
-		.text(d1);
-  
-	top += 25
-	legend.append("rect")
-		.attr("x", left)
-		.attr("y", top - 13)
-		.attr("width", dW)
-		.attr("height", dW)
-		.style("fill", "brown");
-
-	legend.append("text")
-		.attr("x", left + dW + 5)
-		.attr("y", top)
-		.text(d2);
+	Object.keys(type_colors).forEach(function(type) {
+						
+		var color = type_colors[type];   // 方块的颜色
+		var label = type;   // 标签文本
 		
-	// 添加图表的标题
-	svg.append("text")		
-		.text(title)
-		.attr("x", function() {
-			var w = this.getBBox().width + 10;
-			return w;
-		})
-		.attr("y", -40)
-		.style("font-weight", "normal")
-		.style("font-size", 20);	
+		left += 15;
+		top  += 23;
+		legend.append("rect")
+			.attr("x", left)
+			.attr("y", top - 13)
+			.attr("width", dW)
+			.attr("height", dW)
+			.style("fill", "steelblue");
+
+		legend.append("text")
+			.attr("x", left + dW + 5)
+			.attr("y", top)
+			.text(d1);
+	  
+		top += 25
+		legend.append("rect")
+			.attr("x", left)
+			.attr("y", top - 13)
+			.attr("width", dW)
+			.attr("height", dW)
+			.style("fill", "brown");
+
+		legend.append("text")
+			.attr("x", left + dW + 5)
+			.attr("y", top)
+			.text(d2);
+				
+	});	
 }
 
 /**
