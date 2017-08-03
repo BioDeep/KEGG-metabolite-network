@@ -81,6 +81,8 @@ $(document).ready(function(){
 $.getJSON(json, setupGraph);
 });
 
+var polygon_layer = null;
+
 function setupGraph(graph) {
 	
 	$(".network").empty();
@@ -103,6 +105,10 @@ function setupGraph(graph) {
 	force
 		.nodes(graph.nodes)
 		.links(graph.edges);
+	
+	polygon_layer = svg
+		.append('g')
+		.attr("id", "polygon_canvas");
 	
 	type_groups = [];
 	type_colors = graph.types;
@@ -251,7 +257,7 @@ function drawPolygons(polygons) {
 	//polygons.forEach(function(poly) {
 		// console.log(poly);
 		
-		svg.selectAll("g").data(polygons)
+	polygon_layer.selectAll("g").data(polygons)
 		   .enter()
 		   .append("polygon")
 		   .attr("points",function(d) { 
@@ -270,6 +276,6 @@ function drawPolygons(polygons) {
 				var color = type_colors[d.group];				
 				return color;
 		   })
-		   .attr("z-index", -1000);		
+		   .attr("z-index", 1000);		
 	//})
 }
