@@ -279,6 +279,7 @@ function drawPolygons(polygons) {
 	   .style("opacity",0.25)
 	   .attr("id", "polygon")
 	   .classed("pl", true)
+	   .classed("polygon", true)
 	   .style("fill", function(d) {
 			var color = type_colors[d.group];				
 			return color;

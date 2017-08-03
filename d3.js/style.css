@@ -1,4 +1,4 @@
-a.glow, a.glow:hover, a.glow:focus {
+polygon.glow, polygon.glow:hover, polygon.glow:focus {
 	text-decoration: none;
 	color: #aaf;
 	text-shadow: none;
@@ -8,6 +8,8 @@ a.glow, a.glow:hover, a.glow:focus {
 	transition: 500ms linear 0s;
 	outline: 0 none;
 }
+
+/*  
 
 a.glow:hover, a.glow:focus
 {
@@ -20,3 +22,6 @@ a.glow:hover, a.glow:focus
 if (document.createElement("detect").style.textShadow === "") {
 	document.getElementsByTagName("html")[0].className += " textshadow";
 }
+
+*/
+
