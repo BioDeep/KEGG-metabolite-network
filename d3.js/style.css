@@ -1,4 +1,4 @@
-polygon.glow, polygon.glow:hover, polygon.glow:focus {
+#polygon.glow, #polygon.glow:hover, #polygon.glow:focus svg {
 	text-decoration: none;
 	color: #aaf;
 	text-shadow: none;
