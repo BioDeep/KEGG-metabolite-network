@@ -225,8 +225,8 @@ function showLegend() {
 		.style("fill", "white");
 		
 	// 两个代谢物的legend和label
-	var d1 = stripHTML(met1);
-	var d2 = stripHTML(met2);
+	var d1 = met1; // stripHTML(met1);
+	var d2 = met2; // stripHTML(met2);
 	
 	left += 15;
 	top  += 23;
