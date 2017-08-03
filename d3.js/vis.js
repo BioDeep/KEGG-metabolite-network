@@ -246,13 +246,12 @@ function drawPolygons(polygons) {
 	
 	// console.log(polygons)
 	
-	d3.select(".pl").remove();	
+	d3.selectAll(".pl").remove();	
 		
 	//polygons.forEach(function(poly) {
 		// console.log(poly);
 		
-		svg.selectAll("polygon")
-		   .data(polygons)
+		svg.selectAll("g").data(polygons)
 		   .enter()
 		   .append("polygon")
 		   .attr("points",function(d) { 
@@ -261,7 +260,7 @@ function drawPolygons(polygons) {
 					return [d.x, d.y].join(",");
 				}).join(" ");
 			})
-			.attr("type", function(d) {return d.group;})
+		   .attr("type", function(d) {return d.group;})
 		   .attr("stroke","black")
 		   .attr("stroke-width",2)
 		   .style("opacity",0.25)
