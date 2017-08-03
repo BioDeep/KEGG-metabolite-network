@@ -81,6 +81,11 @@ $(document).ready(function(){
 $.getJSON(json, setupGraph);
 });
 
+/**
+ * 因为目前d3.js还不能够通过调整z-index来调整图层 
+ * 所以在这里先构建一个最开始图层，来避免polygon将网络的节点遮盖住，从而导致无法操作节点
+ *
+ */
 var polygon_layer = null;
 
 function setupGraph(graph) {
@@ -257,25 +262,27 @@ function drawPolygons(polygons) {
 	//polygons.forEach(function(poly) {
 		// console.log(poly);
 		
-	polygon_layer.selectAll("g").data(polygons)
-		   .enter()
-		   .append("polygon")
-		   .attr("points",function(d) { 
-				// console.log(d);
-				return d.points.map(function(d) {
-					return [d.x, d.y].join(",");
-				}).join(" ");
-			})
-		   .attr("type", function(d) {return d.group;})
-		   .attr("stroke","black")
-		   .attr("stroke-width",2)
-		   .style("opacity",0.25)
-		   .attr("id", "polygon")
-		   .classed("pl", true)
-		   .style("fill", function(d) {
-				var color = type_colors[d.group];				
-				return color;
-		   })
-		   .attr("z-index", 1000);		
+	polygon_layer
+	   .selectAll("g")
+	   .data(polygons)
+	   .enter()
+	   .append("polygon")
+	   .attr("points",function(d) { 
+			// console.log(d);
+			return d.points.map(function(d) {
+				return [d.x, d.y].join(",");
+			}).join(" ");
+		})
+	   .attr("type", function(d) {return d.group;})
+	   .attr("stroke","black")
+	   .attr("stroke-width",2)
+	   .style("opacity",0.25)
+	   .attr("id", "polygon")
+	   .classed("pl", true)
+	   .style("fill", function(d) {
+			var color = type_colors[d.group];				
+			return color;
+	   })
+	   .attr("z-index", 1000);		
 	//})
 }
