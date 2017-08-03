@@ -2729,7 +2729,7 @@
             "degree": 4,
             "id": 0,
             "name": "Glycine",
-            "type": "3"
+            "type": "2"
         },
         {
             "Data": {
@@ -2741,7 +2741,7 @@
             "degree": 5,
             "id": 1,
             "name": "Alanine",
-            "type": "1"
+            "type": "2"
         },
         {
             "Data": {
@@ -2753,7 +2753,7 @@
             "degree": 5,
             "id": 2,
             "name": "Succinic acid",
-            "type": "1"
+            "type": "4"
         },
         {
             "Data": {
@@ -2777,7 +2777,7 @@
             "degree": 5,
             "id": 4,
             "name": "Threonine",
-            "type": "4"
+            "type": "3"
         },
         {
             "Data": {
@@ -2789,7 +2789,7 @@
             "degree": 5,
             "id": 5,
             "name": "myo-inositol",
-            "type": "4"
+            "type": "3"
         },
         {
             "Data": {
@@ -2801,7 +2801,7 @@
             "degree": 1,
             "id": 6,
             "name": "Salicylic acid",
-            "type": "2"
+            "type": "4"
         },
         {
             "Data": {
@@ -2813,7 +2813,7 @@
             "degree": 1,
             "id": 7,
             "name": "Oxalic acid ",
-            "type": "1"
+            "type": "3"
         },
         {
             "Data": {
@@ -2825,7 +2825,7 @@
             "degree": 12,
             "id": 8,
             "name": "Phosphoric acid",
-            "type": "4"
+            "type": "3"
         },
         {
             "Data": {
@@ -2837,7 +2837,7 @@
             "degree": 1,
             "id": 9,
             "name": "Heptanoic acid",
-            "type": "1"
+            "type": "2"
         },
         {
             "Data": {
@@ -2849,7 +2849,7 @@
             "degree": 10,
             "id": 10,
             "name": "Ethanolamine",
-            "type": "1"
+            "type": "2"
         },
         {
             "Data": {
@@ -2861,7 +2861,7 @@
             "degree": 6,
             "id": 11,
             "name": "Monomethyl phosphate",
-            "type": "1"
+            "type": "3"
         },
         {
             "Data": {
@@ -2873,7 +2873,7 @@
             "degree": 7,
             "id": 12,
             "name": "Glyceric acid",
-            "type": "2"
+            "type": "4"
         },
         {
             "Data": {
@@ -2885,7 +2885,7 @@
             "degree": 9,
             "id": 13,
             "name": "Fumaric acid",
-            "type": "3"
+            "type": "2"
         },
         {
             "Data": {
@@ -2897,7 +2897,7 @@
             "degree": 12,
             "id": 14,
             "name": "Tyrosine",
-            "type": "4"
+            "type": "3"
         },
         {
             "Data": {
@@ -2909,7 +2909,7 @@
             "degree": 13,
             "id": 15,
             "name": "Glucaric acid",
-            "type": "1"
+            "type": "4"
         },
         {
             "Data": {
@@ -2921,7 +2921,7 @@
             "degree": 10,
             "id": 16,
             "name": "Leucine",
-            "type": "3"
+            "type": "4"
         },
         {
             "Data": {
@@ -2933,7 +2933,7 @@
             "degree": 10,
             "id": 17,
             "name": "Valine",
-            "type": "3"
+            "type": "2"
         },
         {
             "Data": {
@@ -2945,7 +2945,7 @@
             "degree": 10,
             "id": 18,
             "name": "Isoleucine",
-            "type": "4"
+            "type": "2"
         },
         {
             "Data": {
@@ -2957,7 +2957,7 @@
             "degree": 10,
             "id": 19,
             "name": "Pyroglutamate",
-            "type": "1"
+            "type": "4"
         },
         {
             "Data": {
@@ -2969,7 +2969,7 @@
             "degree": 11,
             "id": 20,
             "name": "Asparagine",
-            "type": "3"
+            "type": "4"
         },
         {
             "Data": {
@@ -2981,7 +2981,7 @@
             "degree": 6,
             "id": 21,
             "name": "Arabinose",
-            "type": "1"
+            "type": "4"
         },
         {
             "Data": {
@@ -3005,7 +3005,7 @@
             "degree": 12,
             "id": 23,
             "name": "Shikimic acid",
-            "type": "4"
+            "type": "1"
         },
         {
             "Data": {
@@ -3017,7 +3017,7 @@
             "degree": 2,
             "id": 24,
             "name": "Citric acid",
-            "type": "4"
+            "type": "3"
         },
         {
             "Data": {
@@ -3029,7 +3029,7 @@
             "degree": 11,
             "id": 25,
             "name": "Lysine",
-            "type": "2"
+            "type": "1"
         },
         {
             "Data": {
@@ -3041,7 +3041,7 @@
             "degree": 2,
             "id": 26,
             "name": "Caffeic acid",
-            "type": "3"
+            "type": "2"
         },
         {
             "Data": {
@@ -3053,7 +3053,7 @@
             "degree": 2,
             "id": 27,
             "name": "Urea",
-            "type": "2"
+            "type": "1"
         },
         {
             "Data": {
@@ -3065,7 +3065,7 @@
             "degree": 2,
             "id": 28,
             "name": "3-trans-Caffeoylquinic acid",
-            "type": "2"
+            "type": "1"
         },
         {
             "Data": {
@@ -3077,7 +3077,7 @@
             "degree": 6,
             "id": 29,
             "name": "Itaconic acid",
-            "type": "2"
+            "type": "1"
         },
         {
             "Data": {
@@ -3089,7 +3089,7 @@
             "degree": 6,
             "id": 30,
             "name": "Benzoic acid",
-            "type": "4"
+            "type": "1"
         },
         {
             "Data": {
@@ -3113,7 +3113,7 @@
             "degree": 9,
             "id": 32,
             "name": "Putrescine",
-            "type": "4"
+            "type": "1"
         },
         {
             "Data": {
@@ -3125,7 +3125,7 @@
             "degree": 7,
             "id": 33,
             "name": "Azelaic acid",
-            "type": "3"
+            "type": "1"
         },
         {
             "Data": {
@@ -3137,7 +3137,7 @@
             "degree": 7,
             "id": 34,
             "name": "Hexadecanoic acid",
-            "type": "1"
+            "type": "4"
         },
         {
             "Data": {
@@ -3149,7 +3149,7 @@
             "degree": 7,
             "id": 35,
             "name": "1-Monohexadecanoylglycerol",
-            "type": "4"
+            "type": "1"
         },
         {
             "Data": {
@@ -3173,7 +3173,7 @@
             "degree": 6,
             "id": 37,
             "name": "Glycerol",
-            "type": "3"
+            "type": "2"
         },
         {
             "Data": {
@@ -3185,7 +3185,7 @@
             "degree": 5,
             "id": 38,
             "name": "9-(Z)-Octadecenoic acid",
-            "type": "3"
+            "type": "2"
         },
         {
             "Data": {
@@ -3197,7 +3197,7 @@
             "degree": 7,
             "id": 39,
             "name": "Glutaric acid",
-            "type": "3"
+            "type": "4"
         },
         {
             "Data": {
@@ -3209,7 +3209,7 @@
             "degree": 4,
             "id": 40,
             "name": "Adipic acid",
-            "type": "2"
+            "type": "1"
         },
         {
             "Data": {
@@ -3221,7 +3221,7 @@
             "degree": 10,
             "id": 41,
             "name": "Octadecanoic acid",
-            "type": "4"
+            "type": "3"
         },
         {
             "Data": {
@@ -3233,7 +3233,7 @@
             "degree": 10,
             "id": 42,
             "name": "Eicosanoic acid",
-            "type": "3"
+            "type": "4"
         },
         {
             "Data": {
@@ -3269,7 +3269,7 @@
             "degree": 9,
             "id": 45,
             "name": "Tetracosanoic acid",
-            "type": "2"
+            "type": "4"
         },
         {
             "Data": {
@@ -3281,7 +3281,7 @@
             "degree": 5,
             "id": 46,
             "name": "Glutamate",
-            "type": "3"
+            "type": "2"
         },
         {
             "Data": {
@@ -3293,7 +3293,7 @@
             "degree": 7,
             "id": 47,
             "name": "Fructose",
-            "type": "1"
+            "type": "4"
         },
         {
             "Data": {
@@ -3317,7 +3317,7 @@
             "degree": 3,
             "id": 49,
             "name": "2,4,6-Tri-tert.-butylbenzenethiol",
-            "type": "4"
+            "type": "2"
         },
         {
             "Data": {
@@ -3329,7 +3329,7 @@
             "degree": 3,
             "id": 50,
             "name": "Galactosylglycerol",
-            "type": "3"
+            "type": "4"
         },
         {
             "Data": {
@@ -3341,7 +3341,7 @@
             "degree": 4,
             "id": 51,
             "name": "Methionine",
-            "type": "2"
+            "type": "3"
         },
         {
             "Data": {
@@ -3353,7 +3353,7 @@
             "degree": 3,
             "id": 52,
             "name": "Threonic acid",
-            "type": "2"
+            "type": "3"
         },
         {
             "Data": {
@@ -3365,7 +3365,7 @@
             "degree": 5,
             "id": 53,
             "name": "Dehydroascorbic acid dimer",
-            "type": "2"
+            "type": "3"
         },
         {
             "Data": {
@@ -3413,7 +3413,7 @@
             "degree": 5,
             "id": 57,
             "name": "IS",
-            "type": "2"
+            "type": "3"
         },
         {
             "Data": {
@@ -3437,7 +3437,7 @@
             "degree": 1,
             "id": 59,
             "name": "4-amino Butyric acid",
-            "type": "3"
+            "type": "2"
         },
         {
             "Data": {
@@ -3461,7 +3461,7 @@
             "degree": 1,
             "id": 61,
             "name": "Ribonic acid ",
-            "type": "4"
+            "type": "3"
         },
         {
             "Data": {
@@ -3485,7 +3485,7 @@
             "degree": 6,
             "id": 63,
             "name": "Adenosine",
-            "type": "2"
+            "type": "3"
         },
         {
             "Data": {
@@ -3497,7 +3497,7 @@
             "degree": 3,
             "id": 64,
             "name": "Glucose",
-            "type": "2"
+            "type": "1"
         },
         {
             "Data": {
@@ -3509,7 +3509,7 @@
             "degree": 3,
             "id": 65,
             "name": "Galactose",
-            "type": "3"
+            "type": "4"
         },
         {
             "Data": {
@@ -3545,15 +3545,15 @@
             "degree": 2,
             "id": 68,
             "name": "Galactinol",
-            "type": "2"
+            "type": "3"
         }
     ],
     "style": "default",
     "types": {
-        "3": "#E41A1C",
-        "1": "#377EB8",
-        "4": "#4DAF4A",
-        "2": "#984EA3"
+        "2": "#E41A1C",
+        "4": "#377EB8",
+        "1": "#4DAF4A",
+        "3": "#984EA3"
     }
 }
 
