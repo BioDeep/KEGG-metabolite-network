@@ -84,7 +84,7 @@ Module Program
                                      End If
                                  End Function()
             Select New node With {
-                .type = rnd.Next(1, 8),
+                .type = rnd.Next(1, 5),
                 .id = name.i,
                 .name = label,
                 .degree = d,
