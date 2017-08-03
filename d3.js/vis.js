@@ -200,7 +200,71 @@ function setupGraph(graph) {
  */
 function showLegend() {
 	
+	var top = 30, left = width - 255;
+	var rW = 240, rH = 60; 
+	var dW = 15;
+	var legend = svg.append("g")
+		.attr("class", "legend")
+		.attr("x", left)
+		.attr("y", top)
+		.attr("height", rH)		
+		.attr("width", rW);
+
+	// 外边框
+	var radius = 6
+	legend.append("rect")
+		.attr("x", left)
+		.attr("y", top)
+		.attr("rx", radius)
+		.attr("ry", radius)
+		.attr("height", rH)
+		.attr("width", rW)
+		.style("stroke", "gray")
+		.style("stroke-width", 2)
+		.style("border-radius", "2px")
+		.style("fill", "white");
+		
+	// 两个代谢物的legend和label
+	var d1 = stripHTML(met1);
+	var d2 = stripHTML(met2);
 	
+	left += 15;
+	top  += 23;
+	legend.append("rect")
+		.attr("x", left)
+		.attr("y", top - 13)
+		.attr("width", dW)
+		.attr("height", dW)
+		.style("fill", "steelblue");
+
+	legend.append("text")
+		.attr("x", left + dW + 5)
+		.attr("y", top)
+		.text(d1);
+  
+	top += 25
+	legend.append("rect")
+		.attr("x", left)
+		.attr("y", top - 13)
+		.attr("width", dW)
+		.attr("height", dW)
+		.style("fill", "brown");
+
+	legend.append("text")
+		.attr("x", left + dW + 5)
+		.attr("y", top)
+		.text(d2);
+		
+	// 添加图表的标题
+	svg.append("text")		
+		.text(title)
+		.attr("x", function() {
+			var w = this.getBBox().width + 10;
+			return w;
+		})
+		.attr("y", -40)
+		.style("font-weight", "normal")
+		.style("font-size", 20);	
 }
 
 /**
