@@ -9,7 +9,11 @@ Module KCF
 
     Public Sub CreateTable(imports$)
         For Each file$ In ls - l - r - "*.XML" <= [imports]
-            compounds.Add(file, file.LoadXml(Of Compound))
+            Try
+                compounds.Add(file, file.LoadXml(Of Compound))
+            Catch ex As Exception
+
+            End Try
         Next
     End Sub
 

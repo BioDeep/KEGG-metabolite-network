@@ -40,8 +40,15 @@ function displayTooltip(node){
 	var pos = d3.mouse(this);
 	var html = "<span id='name'>"+node.name+"</span>" 
 	
-	html += "<br />";
-	html += "<img src='./img/C00004.gif' />";
+	if (node.Data.KCF) {
+		
+		var base64 = node.Data.KCF;
+		
+		html += "<br />";
+		html += "<img src='data:image/png;base64," + base64 + "' />";
+	}
+		
+	console.log(node);
 	
 	tooltip.html(html)
 		.style("top", (pos[1])+"px")

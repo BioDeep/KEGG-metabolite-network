@@ -93,7 +93,7 @@ Module Program
                                      End If
                                  End Function()
             Let keg As NamedValue(Of Compound) = KCF.MatchByName(label)
-            Let KCF = If(keg.Name.FileExists,
+            Let KCF = If(Not keg.Name.StringEmpty AndAlso keg.Name.FileExists,
                 keg.Name.LoadImage.ToBase64String,
                 Nothing)
             Select New node With {
