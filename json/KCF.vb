@@ -35,4 +35,18 @@ Module KCF
 
         Return Nothing
     End Function
+
+    Public Function MatchById(id$) As NamedValue(Of Compound)
+        For Each compound In compounds
+            With compound
+                If .Name.BaseName = id Then
+                    Return New NamedValue(Of Compound)(
+                        .Name.TrimSuffix & ".gif",
+                        .Value)
+                End If
+            End With
+        Next
+
+        Return Nothing
+    End Function
 End Module

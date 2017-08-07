@@ -27,7 +27,7 @@ Module Program
     End Function
 
     <ExportAPI("/Convert")>
-    <Usage("/Convert /in <data.csv> [/keg.KCF <directory> /nodes <nodes.csv> /degree_size /min /style <default> /out <out.json/std_out>]")>
+    <Usage("/Convert /in <data.csv> [/keg.KCF <directory> /node.id /nodes <nodes.csv> /degree_size /min /style <default> /out <out.json/std_out>]")>
     <Description("Conversion of the network graph table model as json data model")>
     Public Function Convert(args As CommandLine) As Integer
         Dim data = (args <= "/in").LoadCsv(Of network_Csv)
@@ -44,8 +44,23 @@ Module Program
         Dim down As New Dictionary(Of Double, Integer)
 
         With args <= "/keg.KCF"
+
             If .DirectoryExists Then
+
                 Call KCF.CreateTable(.ref)
+
+                If args.GetBoolean("/node.id") Then
+                    For Each node In nodeDatas
+                        Dim id = node.Key
+                        Dim cpd = KCF.MatchById(id)
+
+                        If Not cpd.Value Is Nothing Then
+                            If Not cpd.Value.CommonNames.IsNullOrEmpty Then
+                                node.Value.names = cpd.Value.CommonNames.First
+                            End If
+                        End If
+                    Next
+                End If
             End If
         End With
 
