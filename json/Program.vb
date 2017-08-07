@@ -95,7 +95,7 @@ Module Program
             Let KCF = If(Not keg.Name.StringEmpty AndAlso keg.Name.FileExists,
                 keg.Name.LoadImage.ToBase64String,
                 Nothing)
-            Let pathwayGroup = keg.Value.Pathway.SafeQuery.ToArray
+            Let pathwayGroup = keg.Value?.Pathway.SafeQuery.ToArray
             Select New node With {
                 .type = pathwayGroup.JoinBy("|"),
                 .id = name.i,
@@ -127,15 +127,29 @@ Module Program
             }
 
         Dim groupColors As Color() = Designer.GetColors("Set1:c8")
+        Dim pathways = nodes _
+            .Where(Function(x) Not x.type.StringEmpty) _
+            .Select(Function(x) x.type.Split("|"c)) _
+            .IteratesALL _
+            .GroupBy(Function(x) x.Split.First) _
+            .Where(Function(g) g.Count > 3) _
+            .OrderByDescending(
+                Function(g)
+                    Return Aggregate nid As String
+                           In g
+                           Into Average(nodeTable(nid).degree)
+                End Function) _
+            .Take(groupColors.Length) _
+            .ToArray
+
+        Call pathways.Keys.GetJson.__INFO_ECHO
+
         Dim net As New net With {
             .edges = edges,
             .nodes = nodes,
             .style = args.GetValue("/style", "default"),
-            .types = .nodes _
-                .Where(Function(x) Not x.type.StringEmpty) _
-                .Select(Function(x) x.type.Split("|"c)) _
-                .IteratesALL _
-                .Distinct _
+            .types = pathways _
+                .Keys _
                 .SeqIterator _
                 .ToDictionary(Function(t) t.value,
                               Function(c) groupColors(c).ToHtmlColor)
