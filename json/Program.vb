@@ -135,21 +135,38 @@ Module Program
             .Where(Function(g) g.Count > 3) _
             .OrderByDescending(
                 Function(g)
-                    Return Aggregate nid As String
-                           In g
-                           Into Average(nodeTable(nid).degree)
+                    Dim nid = g.First
+
+                    Return Aggregate node As node
+                           In nodeTable _
+                               .Values _
+                               .Where(Function(n) InStr(n.type, nid, CompareMethod.Text) > 0)
+                           Into Average(node.degree)
                 End Function) _
             .Take(groupColors.Length) _
             .ToArray
+        Dim groupNames = pathways _
+            .ToDictionary(Function(x) x.Key,
+                          Function(name) name.First)
 
-        Call pathways.Keys.GetJson.__INFO_ECHO
+        Call groupNames.GetJson.__INFO_ECHO
+
+        For Each node As node In nodes
+            Dim types = node.type _
+                ?.Split("|"c) _
+                 .SafeQuery _
+                 .Where(Function(t)
+                            Return groupNames.ContainsKey(t.Split.First)
+                        End Function) _
+                 .JoinBy("|")
+            node.type = types
+        Next
 
         Dim net As New net With {
             .edges = edges,
             .nodes = nodes,
             .style = args.GetValue("/style", "default"),
-            .types = pathways _
-                .Keys _
+            .types = groupNames.Values _
                 .SeqIterator _
                 .ToDictionary(Function(t) t.value,
                               Function(c) groupColors(c).ToHtmlColor)
