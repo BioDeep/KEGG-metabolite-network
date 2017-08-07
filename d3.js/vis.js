@@ -234,7 +234,7 @@ var toggles = [];
 function showLegend() {
 	
 	var dH = 20;
-	var rW = 300, rH = (dH + 3) * Object.keys(type_colors).length; 
+	var rW = 300, rH = (dH + 5) * (Object.keys(type_colors).length - 1); 
 	var top = 30, left = width - rW;
 	var dW = 15;
 	var legend = svg.append("g")
@@ -263,6 +263,8 @@ function showLegend() {
 	left += 10;
 	top += 3;
 		
+	var legendShapes = [];
+		
 	Object.keys(type_colors).forEach(function(type) {
 						
 		var color = type_colors[type];   // 方块的颜色
@@ -276,7 +278,21 @@ function showLegend() {
 			.attr("y", top - 13)
 			.attr("width", dW)
 			.attr("height", dW)
-			.style("fill", type_colors[type]);
+			.style("fill", function() {				
+				legendShapes[type] = this;
+				return type_colors[type];
+			})
+			.on("click", function() {
+				toggles[type] = !toggles[type];
+				
+				if (toggles[type]) {
+					// 显示，恢复黑色
+					this.style.fill=type_colors[type];
+				} else {
+					// 不显示，变灰色
+					this.style.fill="gray";
+				}
+			});
 
 		legend.append("text")
 			.attr("x", left + dW + 5)
@@ -290,9 +306,11 @@ function showLegend() {
 				if (toggles[type]) {
 					// 显示，恢复黑色
 					this.style.color="black";
+					legendShapes[type].style.fill=type_colors[type];
 				} else {
 					// 不显示，变灰色
 					this.style.color="gray";
+					legendShapes[type].style.fill="gray";
 				}
 			});	  	
 	});	
