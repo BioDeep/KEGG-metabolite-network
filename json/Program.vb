@@ -68,7 +68,6 @@ Module Program
             End With
         End With
 
-        Dim rnd As New Random
         Dim nodes = LinqAPI.Exec(Of node) <=
  _
             From name As SeqValue(Of String)
@@ -96,8 +95,9 @@ Module Program
             Let KCF = If(Not keg.Name.StringEmpty AndAlso keg.Name.FileExists,
                 keg.Name.LoadImage.ToBase64String,
                 Nothing)
+            Let pathwayGroup = keg.Value.Pathway.SafeQuery.ToArray
             Select New node With {
-                .type = rnd.Next(1, 5),
+                .type = pathwayGroup.JoinBy("|"),
                 .id = name.i,
                 .name = label,
                 .degree = d,
@@ -132,7 +132,9 @@ Module Program
             .nodes = nodes,
             .style = args.GetValue("/style", "default"),
             .types = .nodes _
-                .Select(Function(x) x.type) _
+                .Where(Function(x) Not x.type.StringEmpty) _
+                .Select(Function(x) x.type.Split("|"c)) _
+                .IteratesALL _
                 .Distinct _
                 .SeqIterator _
                 .ToDictionary(Function(t) t.value,

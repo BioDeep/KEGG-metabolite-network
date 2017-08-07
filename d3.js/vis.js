@@ -350,6 +350,6 @@ function drawPolygons(polygons) {
 			var color = type_colors[d.group];				
 			return color;
 	   })
-	   .attr("z-index", 1000);		
+	   .attr("z-index", 100);		
 	//})
 }
