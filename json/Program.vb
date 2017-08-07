@@ -26,16 +26,11 @@ Public Module Program
         Return GetType(Program).RunCLI(App.CommandLine)
     End Function
 
-    <ExportAPI("/Convert")>
-    <Usage("/Convert /in <data.csv> [/keg.KCF <directory> /node.id /nodes <nodes.csv> /degree_size /min /style <default> /out <out.json/std_out>]")>
-    <Description("Conversion of the network graph table model as json data model")>
-    Public Function Convert(args As CommandLine) As Integer
-        Dim data = (args <= "/in").LoadCsv(Of network_Csv)
-        Dim nodeDatas = (args <= "/nodes") _
+    Public Function Convert(in$, nodesTable$, kegKCF$, degreeSize As Boolean, compress As Boolean, style$, nodeID As Boolean) As String
+        Dim data = [in].LoadCsv(Of network_Csv)
+        Dim nodeDatas = nodesTable _
             .LoadCsv(Of nodeData) _
             .ToDictionary(Function(x) x.names)
-        Dim degreeSize As Boolean = args.GetBoolean("/degree_size")
-        Dim compress As Boolean = args.GetBoolean("/min")
         Dim colors As (up As Color(), down As Color()) = (
             Designer.GetColors("RdPu:c9", 150).Skip(50).ToArray,
             Designer.GetColors("YlGnBu:c9", 150).Skip(50).ToArray)
@@ -43,13 +38,13 @@ Public Module Program
         Dim up As New Dictionary(Of Double, Integer)
         Dim down As New Dictionary(Of Double, Integer)
 
-        With args <= "/keg.KCF"
+        With kegKCF
 
             If .DirectoryExists Then
 
                 Call KCF.CreateTable(.ref)
 
-                If args.GetBoolean("/node.id") Then
+                If nodeID Then
                     For Each node In nodeDatas
                         Dim id = node.Key
                         Dim cpd = KCF.MatchById(id)
@@ -196,15 +191,31 @@ Public Module Program
         Dim net As New net With {
             .edges = edges,
             .nodes = nodes,
-            .style = args.GetValue("/style", "default"),
+            .style = style,
             .types = groupNames.Values _
                 .SeqIterator _
                 .ToDictionary(Function(t) t.value,
                               Function(c) groupColors(c).ToHtmlColor)
         }
 
+        Return net.GetJson(indent:=Not compress)
+    End Function
+
+    <ExportAPI("/Convert")>
+    <Usage("/Convert /in <data.csv> [/keg.KCF <directory> /node.id /nodes <nodes.csv> /degree_size /min /style <default> /out <out.json/std_out>]")>
+    <Description("Conversion of the network graph table model as json data model")>
+    Public Function Convert(args As CommandLine) As Integer
+        Dim degreeSize As Boolean = args.GetBoolean("/degree_size")
+        Dim compress As Boolean = args.GetBoolean("/min")
+        Dim json$ = Convert(args <= "/in",
+                            args <= "/nodes",
+                            args <= "/keg.KCF",
+                            degreeSize, compress,
+                            args.GetValue("/style", "default"),
+                            args.GetBoolean("/node.id"))
+
         Using out As StreamWriter = args.OpenStreamOutput("/out")
-            Call out.Write(net.GetJson(indent:=Not compress))
+            Call out.Write(json)
         End Using
 
         Return 0
