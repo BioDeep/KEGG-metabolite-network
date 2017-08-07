@@ -24,7 +24,7 @@ Module Program
     End Function
 
     <ExportAPI("/Convert")>
-    <Usage("/Convert /in <data.csv> [/nodes <nodes.csv> /degree_size /min /style <default> /out <out.json/std_out>]")>
+    <Usage("/Convert /in <data.csv> [/keg.KCF <directory> /nodes <nodes.csv> /degree_size /min /style <default> /out <out.json/std_out>]")>
     <Description("Conversion of the network graph table model as json data model")>
     Public Function Convert(args As CommandLine) As Integer
         Dim data = (args <= "/in").LoadCsv(Of network_Csv)
@@ -39,6 +39,12 @@ Module Program
 
         Dim up As New Dictionary(Of Double, Integer)
         Dim down As New Dictionary(Of Double, Integer)
+
+        With args <= "/keg.KCF"
+            If .DirectoryExists Then
+                Call KCF.CreateTable(.ref)
+            End If
+        End With
 
         With nodeDatas.Values.VectorShadows
             With DirectCast(!Me(.log2FC > 0).log2FC.As(Of Double), Double())
