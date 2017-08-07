@@ -225,14 +225,17 @@ function setupGraph(graph) {
 	});
 }
 
+var toggles = [];
+
 /**
  * 在svg上面添加legend的rectangle以及相应的标签文本
  * 颜色和标签文本都来自于type_colors字典
  */
 function showLegend() {
 	
-	var top = 30, left = width - 255;
-	var rW = 240, rH = 26 * Object.keys(type_colors).length; 
+	var dH = 20;
+	var rW = 300, rH = (dH + 3) * Object.keys(type_colors).length; 
+	var top = 30, left = width - rW;
 	var dW = 15;
 	var legend = svg.append("g")
 		.attr("class", "legend")
@@ -257,14 +260,17 @@ function showLegend() {
 		.style("border-radius", "2px")
 		.style("fill", "white");
 		
-	left += 15;
+	left += 10;
+	top += 3;
 		
 	Object.keys(type_colors).forEach(function(type) {
 						
 		var color = type_colors[type];   // 方块的颜色
 		var label = type;   // 标签文本
 				
-		top  += 23;
+		toggles[type] = true;
+				
+		top  += dH;
 		legend.append("rect")
 			.attr("x", left)
 			.attr("y", top - 13)
@@ -275,7 +281,20 @@ function showLegend() {
 		legend.append("text")
 			.attr("x", left + dW + 5)
 			.attr("y", top)
-			.text(type);	  	
+			.style("font-size", "0.85em")
+			// .tooltip(type)
+			.text(type)
+			.on("click", function() {
+				toggles[type] = !toggles[type];
+				
+				if (toggles[type]) {
+					// 显示，恢复黑色
+					this.style.color="black";
+				} else {
+					// 不显示，变灰色
+					this.style.color="gray";
+				}
+			});	  	
 	});	
 }
 
@@ -289,10 +308,13 @@ function convexHull_update() {
 	var polygons = [];
 	
 	types.forEach(function(type) {
+		
 		var group = type_groups[type];
 		var points = [];
 		
-		// console.log(group);
+		if (!toggles[type]) {
+			return;
+		}
 		
 		group.forEach(function(d) {			
 			points.push({x:d.x,y:d.y});
