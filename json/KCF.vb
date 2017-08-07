@@ -18,11 +18,13 @@ Module KCF
     ''' </summary>
     ''' <param name="name$"></param>
     ''' <returns></returns>
-    Public Function MatchByName(name$) As String
+    Public Function MatchByName(name$) As NamedValue(Of Compound)
         For Each compound In compounds
             With compound
                 If .Value.MatchByName(name) Then
-                    Return .Name.TrimSuffix & ".gif"
+                    Return New NamedValue(Of Compound)(
+                        .Name.TrimSuffix & ".gif",
+                        .Value)
                 End If
             End With
         Next

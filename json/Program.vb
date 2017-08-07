@@ -4,6 +4,7 @@ Imports System.IO
 Imports json.csv
 Imports Microsoft.VisualBasic.CommandLine
 Imports Microsoft.VisualBasic.CommandLine.Reflection
+Imports Microsoft.VisualBasic.ComponentModel.DataSourceModel
 Imports Microsoft.VisualBasic.ComponentModel.Ranges
 Imports Microsoft.VisualBasic.Data.csv
 Imports Microsoft.VisualBasic.Data.visualize.Network.FileStream.Json
@@ -11,7 +12,9 @@ Imports Microsoft.VisualBasic.Imaging
 Imports Microsoft.VisualBasic.Imaging.Drawing2D.Colors
 Imports Microsoft.VisualBasic.Language
 Imports Microsoft.VisualBasic.Linq
+Imports Microsoft.VisualBasic.Net.Http
 Imports Microsoft.VisualBasic.Serialization.JSON
+Imports SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject
 
 Module Program
 
@@ -89,6 +92,10 @@ Module Program
                                          Return Color.Black
                                      End If
                                  End Function()
+            Let keg As NamedValue(Of Compound) = KCF.MatchByName(label)
+            Let KCF = If(keg.Name.FileExists,
+                keg.Name.LoadImage.ToBase64String,
+                Nothing)
             Select New node With {
                 .type = rnd.Next(1, 5),
                 .id = name.i,
@@ -98,7 +105,8 @@ Module Program
                     {NameOf(nodeData.fdr), n.fdr},
                     {NameOf(nodeData.log2FC), n.log2FC},
                     {NameOf(nodeData.p), n.p},
-                    {NameOf(color), color.ToHtmlColor}
+                    {NameOf(color), color.ToHtmlColor},
+                    {"KCF", KCF}
                 }
             }
 
