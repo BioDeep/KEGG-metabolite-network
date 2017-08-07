@@ -413,6 +413,7 @@ function drawPolygons(polygons) {
 			var color = type_colors[d.group];				
 			return color;
 	   })
+	   .tooltip(function(d) {return d.group})
 	   .attr("z-index", 100);		
 	//})
 }
