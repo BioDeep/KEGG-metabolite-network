@@ -38,8 +38,12 @@ function colorNodes(){
 
 function displayTooltip(node){
 	var pos = d3.mouse(this);
-
-	tooltip.html("<span id='name'>"+node.name+"</span>")
+	var html = "<span id='name'>"+node.name+"</span>" 
+	
+	html += "<br />";
+	html += "<img src='./img/C00004.gif' />";
+	
+	tooltip.html(html)
 		.style("top", (pos[1])+"px")
 		.style("left",(pos[0])+"px")
 		.style("z-index", 10)
@@ -176,6 +180,7 @@ function setupGraph(graph) {
 		.call(force.drag)
 
 	colorNodes();	
+	showLegend();
 	force.start();
 		
 	// console.log(type_groups);
@@ -202,7 +207,7 @@ function setupGraph(graph) {
 function showLegend() {
 	
 	var top = 30, left = width - 255;
-	var rW = 240, rH = 60; 
+	var rW = 240, rH = 26 * Object.keys(type_colors).length; 
 	var dW = 15;
 	var legend = svg.append("g")
 		.attr("class", "legend")
@@ -211,6 +216,8 @@ function showLegend() {
 		.attr("height", rH)		
 		.attr("width", rW);
 
+	console.log(legend);
+		
 	// 外边框
 	var radius = 6
 	legend.append("rect")
@@ -225,38 +232,25 @@ function showLegend() {
 		.style("border-radius", "2px")
 		.style("fill", "white");
 		
+	left += 15;
+		
 	Object.keys(type_colors).forEach(function(type) {
 						
 		var color = type_colors[type];   // 方块的颜色
 		var label = type;   // 标签文本
-		
-		left += 15;
+				
 		top  += 23;
 		legend.append("rect")
 			.attr("x", left)
 			.attr("y", top - 13)
 			.attr("width", dW)
 			.attr("height", dW)
-			.style("fill", "steelblue");
+			.style("fill", type_colors[type]);
 
 		legend.append("text")
 			.attr("x", left + dW + 5)
 			.attr("y", top)
-			.text(d1);
-	  
-		top += 25
-		legend.append("rect")
-			.attr("x", left)
-			.attr("y", top - 13)
-			.attr("width", dW)
-			.attr("height", dW)
-			.style("fill", "brown");
-
-		legend.append("text")
-			.attr("x", left + dW + 5)
-			.attr("y", top)
-			.text(d2);
-				
+			.text(type);	  	
 	});	
 }
 
