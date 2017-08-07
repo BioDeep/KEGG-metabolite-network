@@ -221,7 +221,7 @@ function setupGraph(graph) {
 			.attr("cx", function (d) { return d.x; })
 			.attr("cy", function (d) { return d.y; });
 			
-		convexHull_update();
+		// convexHull_update();
 	});
 }
 
@@ -315,6 +315,8 @@ function showLegend() {
 			});	  	
 	});	
 }
+
+setInterval("convexHull_update()", 8);
 
 /**
  * 实时计算出凸包，并绘制出凸包的多边形
