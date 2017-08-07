@@ -48,7 +48,7 @@ function displayTooltip(node){
 		html += "<img src='data:image/png;base64," + base64 + "' />";
 	}
 		
-	console.log(node);
+	// console.log(node);
 	
 	tooltip.html(html)
 		.style("top", (pos[1])+"px")
@@ -163,6 +163,22 @@ function setupGraph(graph) {
 		.style("stroke", "gray")
 		.style("opacity", 0.8);
 
+	graph.nodes.forEach(function(node) {
+		var types = node.type.split("|");
+		
+		// 跳过空的字符串
+		if (node.type.length > 0) {
+			// console.log(types);		
+			types.forEach(function(name) {
+				// name = name.split(" ")[0];
+				// console.log(name);
+				type_groups[name].push(node);
+			});
+		}		
+	});
+		
+	console.log(type_groups);
+		
 	var node = svg.selectAll("circle.node")
 		.data(graph.nodes)
 		.enter()
@@ -175,10 +191,12 @@ function setupGraph(graph) {
 			}
 			return nodeMin;
 		})
+		/*
 		.attr("type_group", function(d) {
 			type_groups[d.type.toString()].push(this);
 			return d.type;
 		})
+		*/
 		.style("opacity",0.8)
 		.on("mouseover", displayTooltip)
 		.on("mousemove", moveTooltip)
@@ -223,7 +241,7 @@ function showLegend() {
 		.attr("height", rH)		
 		.attr("width", rW);
 
-	console.log(legend);
+	// console.log(legend);
 		
 	// 外边框
 	var radius = 6
@@ -266,6 +284,7 @@ function showLegend() {
  *
  */
 function convexHull_update() {
+	
 	var types = Object.keys(type_groups);
 	var polygons = [];
 	
@@ -273,8 +292,10 @@ function convexHull_update() {
 		var group = type_groups[type];
 		var points = [];
 		
+		// console.log(group);
+		
 		group.forEach(function(d) {			
-			points.push({x:d.cx.baseVal.value,y:d.cy.baseVal.value});
+			points.push({x:d.x,y:d.y});
 		});
 		
 		// console.log(points);
