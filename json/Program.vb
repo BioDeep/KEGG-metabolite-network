@@ -16,7 +16,7 @@ Imports Microsoft.VisualBasic.Net.Http
 Imports Microsoft.VisualBasic.Serialization.JSON
 Imports SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject
 
-Module Program
+Public Module Program
 
     Sub New()
         VBDebugger.ForceSTDError = True
@@ -60,28 +60,44 @@ Module Program
                             End If
                         End If
                     Next
+
+                    For Each edge As network_Csv In data
+                        Dim a = KCF.MatchById(edge.source)
+                        Dim b = KCF.MatchById(edge.target)
+
+                        If Not a.Value Is Nothing AndAlso Not a.Value.CommonNames.IsNullOrEmpty Then
+                            edge.source = a.Value.CommonNames.First
+                        End If
+                        If Not b.Value Is Nothing AndAlso Not b.Value.CommonNames.IsNullOrEmpty Then
+                            edge.target = b.Value.CommonNames.First
+                        End If
+                    Next
                 End If
             End If
         End With
 
-        With nodeDatas.Values.VectorShadows
-            With DirectCast(!Me(.log2FC > 0).log2FC.As(Of Double), Double())
-                For Each i In .RangeTransform("0,100").SeqIterator
-                    If Not up.ContainsKey(.ref(i)) Then
-                        Call up.Add(.ref(i), CInt(i.value))
-                    End If
-                Next
+        Try
+            With nodeDatas.Values.VectorShadows
+                With DirectCast(!Me(.log2FC > 0).log2FC.As(Of Double), Double())
+                    For Each i In .RangeTransform("0,100").SeqIterator
+                        If Not up.ContainsKey(.ref(i)) Then
+                            Call up.Add(.ref(i), CInt(i.value))
+                        End If
+                    Next
+                End With
             End With
-        End With
-        With nodeDatas.Values.VectorShadows
-            With DirectCast(!Me(.log2FC < 0).log2FC.As(Of Double), Double())
-                For Each i In .RangeTransform("0,100").SeqIterator
-                    If Not down.ContainsKey(.ref(i)) Then
-                        Call down.Add(.ref(i), CInt(i.value))
-                    End If
-                Next
+            With nodeDatas.Values.VectorShadows
+                With DirectCast(!Me(.log2FC < 0).log2FC.As(Of Double), Double())
+                    For Each i In .RangeTransform("0,100").SeqIterator
+                        If Not down.ContainsKey(.ref(i)) Then
+                            Call down.Add(.ref(i), CInt(i.value))
+                        End If
+                    Next
+                End With
             End With
-        End With
+        Catch ex As Exception
+
+        End Try
 
         Dim nodes = LinqAPI.Exec(Of node) <=
  _
