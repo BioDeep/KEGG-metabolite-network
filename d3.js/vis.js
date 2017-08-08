@@ -38,8 +38,19 @@ function colorNodes(){
 
 function displayTooltip(node){
 	var pos = d3.mouse(this);
-
-	tooltip.html("<span id='name'>"+node.name+"</span>")
+	var html = "<span id='name'>"+node.name+"</span>" 
+	
+	if (node.Data.KCF) {
+		
+		var base64 = node.Data.KCF;
+		
+		html += "<br />";
+		html += "<img src='data:image/png;base64," + base64 + "' />";
+	}
+		
+	// console.log(node);
+	
+	tooltip.html(html)
 		.style("top", (pos[1])+"px")
 		.style("left",(pos[0])+"px")
 		.style("z-index", 10)
@@ -152,6 +163,22 @@ function setupGraph(graph) {
 		.style("stroke", "gray")
 		.style("opacity", 0.8);
 
+	graph.nodes.forEach(function(node) {
+		var types = node.type.split("|");
+		
+		// 跳过空的字符串
+		if (node.type.length > 0) {
+			// console.log(types);		
+			types.forEach(function(name) {
+				// name = name.split(" ")[0];
+				// console.log(name);
+				type_groups[name].push(node);
+			});
+		}		
+	});
+		
+	console.log(type_groups);
+		
 	var node = svg.selectAll("circle.node")
 		.data(graph.nodes)
 		.enter()
@@ -164,10 +191,12 @@ function setupGraph(graph) {
 			}
 			return nodeMin;
 		})
+		/*
 		.attr("type_group", function(d) {
 			type_groups[d.type.toString()].push(this);
 			return d.type;
 		})
+		*/
 		.style("opacity",0.8)
 		.on("mouseover", displayTooltip)
 		.on("mousemove", moveTooltip)
@@ -176,6 +205,7 @@ function setupGraph(graph) {
 		.call(force.drag)
 
 	colorNodes();	
+	showLegend();
 	force.start();
 		
 	// console.log(type_groups);
@@ -191,9 +221,11 @@ function setupGraph(graph) {
 			.attr("cx", function (d) { return d.x; })
 			.attr("cy", function (d) { return d.y; });
 			
-		convexHull_update();
+		// convexHull_update();
 	});
 }
+
+var toggles = [];
 
 /**
  * 在svg上面添加legend的rectangle以及相应的标签文本
@@ -201,8 +233,9 @@ function setupGraph(graph) {
  */
 function showLegend() {
 	
-	var top = 30, left = width - 255;
-	var rW = 240, rH = 60; 
+	var dH = 20;
+	var rW = 300, rH = (dH + 5) * (Object.keys(type_colors).length - 1); 
+	var top = 30, left = width - rW;
 	var dW = 15;
 	var legend = svg.append("g")
 		.attr("class", "legend")
@@ -211,6 +244,8 @@ function showLegend() {
 		.attr("height", rH)		
 		.attr("width", rW);
 
+	// console.log(legend);
+		
 	// 外边框
 	var radius = 6
 	legend.append("rect")
@@ -225,55 +260,84 @@ function showLegend() {
 		.style("border-radius", "2px")
 		.style("fill", "white");
 		
+	left += 10;
+	top += 3;
+		
+	var legendShapes = [];
+		
 	Object.keys(type_colors).forEach(function(type) {
 						
 		var color = type_colors[type];   // 方块的颜色
 		var label = type;   // 标签文本
-		
-		left += 15;
-		top  += 23;
-		legend.append("rect")
-			.attr("x", left)
-			.attr("y", top - 13)
-			.attr("width", dW)
-			.attr("height", dW)
-			.style("fill", "steelblue");
-
-		legend.append("text")
-			.attr("x", left + dW + 5)
-			.attr("y", top)
-			.text(d1);
-	  
-		top += 25
-		legend.append("rect")
-			.attr("x", left)
-			.attr("y", top - 13)
-			.attr("width", dW)
-			.attr("height", dW)
-			.style("fill", "brown");
-
-		legend.append("text")
-			.attr("x", left + dW + 5)
-			.attr("y", top)
-			.text(d2);
 				
+		toggles[type] = true;
+				
+		top  += dH;
+		legend.append("rect")
+			.attr("x", left)
+			.attr("y", top - 13)
+			.attr("width", dW)
+			.attr("height", dW)
+			.style("fill", function() {				
+				legendShapes[type] = this;
+				return type_colors[type];
+			})
+			.on("click", function() {
+				toggles[type] = !toggles[type];
+				
+				if (toggles[type]) {
+					// 显示，恢复黑色
+					this.style.fill=type_colors[type];
+				} else {
+					// 不显示，变灰色
+					this.style.fill="gray";
+				}
+			});
+
+		legend.append("text")
+			.attr("x", left + dW + 5)
+			.attr("y", top)
+			.style("font-size", "0.85em")
+			// .tooltip(type)
+			.text(type)
+			.on("click", function() {
+				toggles[type] = !toggles[type];
+				
+				if (toggles[type]) {
+					// 显示，恢复黑色
+					this.style.color="black";
+					legendShapes[type].style.fill=type_colors[type];
+				} else {
+					// 不显示，变灰色
+					this.style.color="gray";
+					legendShapes[type].style.fill="gray";
+				}
+			});	  	
 	});	
 }
+
+setInterval("convexHull_update()", 8);
 
 /**
  * 实时计算出凸包，并绘制出凸包的多边形
  *
  */
 function convexHull_update() {
+	
 	var types = Object.keys(type_groups);
 	var polygons = [];
 	
 	types.forEach(function(type) {
+		
 		var group = type_groups[type];
 		var points = [];
 		
+		if (!toggles[type]) {
+			return;
+		}
+		
 		group.forEach(function(d) {			
-			points.push({x:d.cx.baseVal.value,y:d.cy.baseVal.value});
+			points.push({x:d.x,y:d.y});
 		});
 		
 		// console.log(points);
@@ -349,6 +413,7 @@ function drawPolygons(polygons) {
 			var color = type_colors[d.group];				
 			return color;
 	   })
-	   .attr("z-index", 1000);		
+	   .tooltip(function(d) {return d.group})
+	   .attr("z-index", 100);		
 	//})
 }

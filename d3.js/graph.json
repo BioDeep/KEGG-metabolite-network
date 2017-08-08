@@ -2724,836 +2724,909 @@
                 "fdr": "0.256",
                 "log2FC": "-1.08",
                 "p": "0.128",
-                "color": "#2BA7C5"
+                "color": "#2BA7C5",
+                "KCF": "iVBORw0KGgoAAAANSUhEUgAAAG0AAABQCAMAAAAkwgsXAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMAUExURQAAAK+vr6WlpZ+fn5eXl5OTk4+Pj4eHh319fXt7e3FxcW9vb21tbV9fX11dXVdXV1FRUU1NTf7+\/vz8\/Pr6+vj4+EVFRfb29kNDQ\/Ly8vDw8Ds7O+zs7Orq6ujo6OTk5OLi4t7e3tzc3CkpKdjY2CMjI9TU1CEhIdDQ0M7OzszMzBkZGcrKyhUVFRMTExEREcLCwg8PDw0NDb6+vgsLCwkJCQcHB7a2tgMDA7S0tAEBAbKysq6urqysrKqqqqioqKampqSkpKKiopiYmJaWloqKioiIiIaGhoSEhICAgH5+fnx8fHp6enh4eHZ2dnR0dHBwcG5ubmhoaGZmZmRkZF5eXlxcXFhYWFRUVP\/\/\/\/39\/fv7+\/n5+ff39\/X19UJCQvPz8z4+Pu3t7Tg4OOnp6TY2Nufn5+Pj4zAwMOHh4d\/f3ywsLN3d3SoqKigoKCQkJNXV1SIiItPT0yAgIM\/PzxoaGsvLy8nJyRYWFsfHxxQUFMXFxRISEsPDwxAQEA4ODgwMDL29vbu7u7m5uQYGBre3twQEBLW1tQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADTD4oAAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALaSURBVGhD7ZhpXxMxEIejVDxRbDlEq6h4QcUtYpVaLwpKEYWqiKQqVrBFqbcgVUEFRb82m2y7TdrN7kDy2xeavOiV49n5z8zOThH2cyA\/YVjTVMmtldRKeisAj5Lg8dVX3ue5rwDTrhsohrq3yPGgtG3nd3RlFu\/GBqRwQNr0j5sUM9LTJoMD0i6hOUrpQp99oA32PaaUIyjhA20rmqKUj+isD7QvJUrd5WkfaE2f9hJKJtcoAwNX0zqUPopfP+o54wsNX\/2KLqKXJ6RgYNswDh6LSvmMXCcw3+RMsnfDaWQlfLXz5cH3a5qi+kZ9Btdd+02s+\/+s5FQzrRJmHWxtIp9CVkXkBjzKvJQ0lg6bJ\/eiVhwZIogEqr2tKqRdmFBKC7vmmzEcW1Vo2+ifejcljGTq5FNLyQfL5rgloWQoEGlYnmmZFWeIkXzy9o5FQ9bYtN\/iHQfmzTBLFfuFOCOJe3+forThrDmuEdra\/sYrmcoWUJR0Pnvz19oyX5gMC3gmDU8cWuFicq47sNix5kjj0oTpaGYfRgZC5R3NYwtxZxyhvfi+j6PduI\/x7d2ONDZNKh1N285zI1n2\/OiHce47mcunMSY0HEDV+XawsOJFYzqaSEN7lS3Z8dNR7qd8emlXiZbJVdES74aCHjS2ozGDo2bEF8bobYoOwsqLYmf78\/fsFBMllTTx7GjCk4VOAAv\/ytkOp8tZmp0mgI6mv5gyD3K1yzx99GexWLznrKSdJpCOpr1l5pubho7asrbZt25QRxOs79sj9JfAj440YEcjynNRyPB+q5QlNR1NLdXRNqymo3GlcZMqOho4Tay9zAyoBsgAuL2apkpKraRW0lsBLkpIOSUVlr46vtGC632qaAW7tdTFAN42y2No5Y+ONOapQo1tHrSyghIw9ikIaJuvNBkY1\/+BwkMZzS30y3NyfwdJXeqGE0HTNiyZ97OyqiNdztF+UyXyv6zkOnTZccXsUNsVAAAAAElFTkSuQmCC"
             },
             "degree": 4,
             "id": 0,
             "name": "Glycine",
-            "type": "2"
+            "type": "[map00480] Glutathione metabolism|[map01060] Biosynthesis of plant secondary metabolites|[map01100] Metabolic pathways|[map01230] Biosynthesis of amino acids|[map04974] Protein digestion and absorption"
         },
         {
             "Data": {
                 "fdr": "0.514",
                 "log2FC": "-0.474",
                 "p": "0.378",
-                "color": "#2746A0"
+                "color": "#2746A0",
+                "KCF": null
             },
             "degree": 5,
             "id": 1,
             "name": "Alanine",
-            "type": "2"
+            "type": ""
         },
         {
             "Data": {
                 "fdr": "0.427",
                 "log2FC": "-0.346",
                 "p": "0.298",
-                "color": "#263696"
+                "color": "#263696",
+                "KCF": "iVBORw0KGgoAAAANSUhEUgAAAIkAAABkCAMAAACFIOOnAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGAUExURQAAAK+vr6mpqZ+fn5eXl5GRkYODg4GBgXt7e3l5eXV1dXNzc3FxcWtra2NjY19fX1lZWf7+\/vz8\/Pr6+kVFRfb29kNDQ0FBQfLy8j09Perq6jc3N+jo6OTk5DExMeLi4t7e3isrK9zc3CkpKScnJ9jY2NbW1h8fH9DQ0MzMzBkZGRcXF8jIyMbGxhMTExEREb6+vgsLCwkJCbq6ugcHB7a2tgMDA7S0tAEBAbCwsK6urqKioqCgoJycnJiYmJKSkpCQkH5+fnx8fHR0dHJycm5ubmRkZGJiYmBgYF5eXlxcXFZWVlRUVFJSUv\/\/\/0xMTP39\/fv7+0hISPf390REREJCQvPz8\/Hx8e\/v7+np6TY2NuXl5ePj4zAwMN3d3SoqKtvb2ygoKNnZ2dfX19XV1dPT0yAgIB4eHs\/PzxwcHMvLyxgYGMfHxxQUFBISEhAQEA4ODgwMDL29vQYGBgQEBLW1tQAAAAAAsAAAyAAAAAAAAQAALgAABQAAEAAAAAAAaOiSzbMAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANxSURBVGhD7ZoJdxIxEMe3XqDVIlAVqXihUkFLvVqrtSrWo0pXEEs90FrxqK7i\/f3de2fZbHYSN271Je+19MEk+WXyz+wwqaJulqZsFhBVkgS3QvpE+gRzQKVO\/kQnnVdZjJO5bbC70z84M\/P5wSnueaI7IknOfrn5KT95++ul6BF5LXAkuQ8pc4JdL3jnie6HI3mpfDSHmvu5L3pITgscyQXlqTn+a5uIczJqNxzJW+W4OcoZmyg5kta3EXPya+9FMFhj4nyiLk8YwaR9IpM4yZP1h2\/ykwcOryZOoh69r13W9h4SB4LdHYPguUAMvE4sQSFFxUeMHlySBB0sfSJ9gjl2\/51OnGy43TKW38p7Tvi78cTLhqvXDYar5xMiAdlwsiQwG06WBGbD1Xtb9LaHb3dK0U\/AHvUUwmy4+uOc3i7ykKRTj9Kj9OPeSdVTHYoJzIb5d2fkXbOX0RZylIl0kyPNipXwEhvMhnlJ+uNr3\/XBN1bKs2HT2CbTa4\/7oSggG+YjWV2cutG2hp8tr2yQJvJM2tundhOzXb0fyIapJP6w55YGsvPaWNGdPbdQWyoNs\/hNindqWwNlhdJSTe\/lZcNUEvihFwxPTzyzvok6rduopwu+dwImgTcK6Xqja\/UJzYZBtAckIBiS1pfRtnnSLY4FTbLztbvQj1om4MfAHhNJYDAk7\/n+dVu6uiwWSSaF0UGUtoZYIIkb9hClgV+WdKePhR6Vk+PlqPPmY4EkbtjDlAYM6faalSvh4UOdqyz3MjVqDAK9ibuDKw10GwNqSFXVnTsG6VsU1FCfuCkDtjQQJUNFRTyrHBzy2YmpNMCUcZJJYioNxEASU2mAl2RIWjGUBmIiwWqeYidJgs6RPpE+wRwtqROCl1juydC1AsxuDNmw3ZMJJGG8JxNHwnpPJo4EkQyH5WwcSqB1wSTDsL84n+CSYY9FHAk2GSbksTHvDus9mTifwMoAZpECSRiTYZEktMoAOYXA+E68jWCfMCxAkkidYOQidSJ1wqwTRW96J+v30Iv9XwX2Z5ihGW2gYu0vSsQXA8ygs38YZ8GYAxLnTzKJ4t4zCTpuWBLdzjYVBAIv1Kg+MSRkqQfjaR4brE8cBmEgviXSFeuqVRCMb1ji8XXOrfnqbhKP\/+l9BC2QA1SSyCcgRjZSJ1In\/5ZOfgMZou73ZAOyaAAAAABJRU5ErkJggg=="
             },
             "degree": 5,
             "id": 2,
             "name": "Succinic acid",
-            "type": "4"
+            "type": "[map00360] Phenylalanine metabolism|[map01060] Biosynthesis of plant secondary metabolites|[map01063] Biosynthesis of alkaloids derived from shikimate pathway|[map01100] Metabolic pathways"
         },
         {
             "Data": {
                 "fdr": "0.949",
                 "log2FC": "-0.0804",
                 "p": "0.936",
-                "color": "#102167"
+                "color": "#102167",
+                "KCF": "iVBORw0KGgoAAAANSUhEUgAAAHcAAABnCAMAAAANMS0jAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMAUExURQAAAK+vr6urq6mpqaWlpZ+fn5eXl5WVlZGRkYuLi4ODg4GBgX9\/f3t7e3V1dXNzc3FxcWtra2VlZWNjY19fX1lZWVVVVVNTU\/7+\/vz8\/Pr6+vj4+EVFRfb29kNDQ0FBQfLy8j09PTs7O+zs7Orq6jc3N+jo6DU1NeTk5DExMS8vL+Dg4N7e3isrK9zc3CkpKScnJ9bW1iMjIyEhIdLS0h8fH9DQ0M7OzhsbG8zMzBkZGcrKyhcXF8jIyBUVFcbGxhMTExEREcLCwr6+vgsLCwkJCbq6ugcHBwUFBba2tgMDA7S0tAEBAbKysrCwsKSkpKKioqCgoJycnJiYmJSUlJKSko6OjoyMjISEhICAgH5+fnx8fHZ2dnR0dHBwcG5ubmRkZGBgYF5eXlxcXFZWVlRUVFJSUv\/\/\/0xMTP39\/fv7+0hISPf390RERPX19UJCQvPz8\/Hx8e\/v7+np6TY2NuXl5TIyMuPj4zAwMN\/f393d3SoqKtvb2ygoKNnZ2dfX19XV1dPT0yAgINHR0R4eHs\/PzxwcHMvLyxgYGMfHxxQUFBISEsPDwxAQEA4ODgwMDL29vQYGBre3twQEBLW1tQAARAAAAAAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAA\/QAA7QAAAQAAAAAAAgAAAAAAAAAAAAAA8AAAAAAArwAAwAAAzgAAAAAAGAAAAAAAAAAACgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANAAAAAAA3AAAAAAAAAAAAAAAyAAAsAAAAAAAcAAAbAAA\/wAAAAAAyAAAOAAAYAAAAQAAcgAAYgAALgAAMQAAUwAARgAALwAALwAAAQAAcgAALgAAhAAAAAAKlAAAhADabAAAmAAAnAAAAACwAAAAAAAARAAAAAAAAAAAAAAARAAAgAAAAAAA8AAAQAAA9AAAyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAbAAABgAAAAAAAAAAAAAAugAA7QAAAQAAAAAAAjdhBwcAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOZSURBVGhD7ZnrWxJBFMa36G5oFypAK8pIysqotCIzSTPT0soult20yyhRWmlqZlppkHSz\/IOb3Vlk9n6YHeDxeWY\/gOzunN973jnDzhEJleaQSoNFglsc44XPwudCOJBHXSU\/+vkpAHNn9nV0LDyL8iJDuRd+3v8ebHj86wonMJAb+FamAMsnisv9IKUUYNe\/3XzAwHzbpHcK75PKdw0Hcj9LxxTUeZVfLO7Q71UK6uacayIJAMwXvQjLizdx3Fdk7tvpwdlgw95Db4rMRUeepq+mdxzkhAX7LPPGeEHzmF9SCdBqcBYIjyS4zm5a3yF8tvJG1JWoK7gDYh1Zr6PJkjwXKrzNtzY7TOA4eIKh8xtYl\/bVhqsidoFD3kxZEkgGcjun98wjFOhd6LaMKyuLPK8n+z\/HA8SdH65bIpHmj+6qNo9JlKGWqVczjlDtDiIxJA8YCpJhue4vMtDYE8jGqixPd5rEzSlLbGjeAtj8UfnGbssBr1+SX3PdX8gb7xuhST++bNd8xtc0ytCBJ41r1Y41K16bkhzNnEt1f3jSdPmNbKu\/SJ8yKENnw6MpjXg6JTLUlEt3f\/Kk6Y+lWEVl9lygx6gM+W80IkSJt+f2e\/CxFfvs2P1V75w6TcCddcNmylAI0eLtuYut+LiMuYDub03TJlxruJzMqkxRRIuPLaeUtcnUZ0j3F6kanfRRhW6YDFp8bDklWy6s+1uf8eoLm4bT4oF1Bez+ak1KLneKFg\/lgrq\/QSlmC6ZaVyiXS\/dHibfl6sS77\/5yrWs+XFsP8cVAhyQ5PY+tW1fQ88hJAsP1lce9JuEjxJCq\/rnAGoJp3Ar1eZApWe3zlzUE07gV53NQ2QX68S7QuHkCOMCcb3y\/DO7CuwTjl2BBue0bS8N90Ip\/5ChBvp6HNQnCNWyeCuqz5\/XJXsI1bJ4Ky0Vti191Pt8N1\/QBoG6+N+IehAYmVmvqOXo4mRj+AwKzryPMrW56r+GOzSLUf6fwXNQt6ddvNDZeBC56qeOeOvEXhOX4nxKZd26uBYbly42cSQGxfLmP2jOZzD0QmrmeQdGtbxJclwYChwufgUa5vE347NJA4HCNz3KHJ+8FlFfdG\/5IzpGLbg86iPqLmOmb+kXOhakklROe\/dMS72ZbpPcHzF2eAj4pg7kkWdULt7Obn8+qRi4JQ+tKO+lc87VYQOaryi2Zi2kMIgSXwTSGIcJnBtMYhgifGUxjGPIf\/JXAAcj4F64AAAAASUVORK5CYII="
             },
             "degree": 4,
             "id": 3,
             "name": "Serine",
-            "type": "1"
+            "type": "[map01060] Biosynthesis of plant secondary metabolites|[map01100] Metabolic pathways|[map01230] Biosynthesis of amino acids|[map04974] Protein digestion and absorption"
         },
         {
             "Data": {
                 "fdr": "0.128",
                 "log2FC": "-0.551",
                 "p": "0.0453",
-                "color": "#2552A4"
+                "color": "#2552A4",
+                "KCF": null
             },
             "degree": 5,
             "id": 4,
             "name": "Threonine",
-            "type": "3"
+            "type": ""
         },
         {
             "Data": {
                 "fdr": "0.256",
                 "log2FC": "0.555",
                 "p": "0.128",
-                "color": "#FA86AC"
+                "color": "#FA86AC",
+                "KCF": "iVBORw0KGgoAAAANSUhEUgAAAHkAAACACAMAAAAYuTaqAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMAUExURQAAAK+vr6mpqZubm5mZmZeXl5GRkY2NjYmJiYGBgX9\/f3t7e3V1dXFxcW9vb2tra2lpaWVlZV9fX1tbW1lZWVdXV1VVVU9PT01NTf7+\/vz8\/ElJSfr6+kdHR0VFRfb29kNDQ\/T09EFBQfLy8j8\/P\/Dw8D09PTs7Ozc3N+jo6DU1NeTk5DExMeLi4i8vL+Dg4C0tLd7e3tzc3CkpKScnJ9jY2NbW1h8fH9DQ0M7OzhkZGRcXF8jIyMbGxhMTExEREcLCwr6+vgsLCwkJCbq6ugcHBwUFBba2tgMDA7S0tAEBAbCwsKioqKampqSkpKKiopycnJqampiYmJKSkpCQkI6OjoyMjIqKioiIiH5+fnx8fHJycnBwcG5ubmhoaGRkZGBgYF5eXlxcXFhYWFZWVlJSUv\/\/\/0xMTP39\/UpKSvv7+0hISPn5+ff390RERPX19UJCQvPz80BAQPHx8e\/v7zw8PO3t7evr6+np6TY2Nufn5+Xl5TIyMjAwMOHh4d\/f3ywsLN3d3dvb2ygoKNnZ2dfX1yQkJNXV1dPT0yAgIB4eHs\/PzxwcHM3NzRoaGsvLyxgYGMfHxxQUFMPDwxAQEA4ODgwMDAoKCggICLm5uQYGBre3twQEBLW1tQICArOzswAA7QAAAQAAAAAAAgAAAAAAAAAAAAAA8AAAAAAAfAAAmAAAzgAAAAAAGAAAAAAAAAAACgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANAAAAAAA3AAAAAAAAAAAAAAAyAAAsAAAAAAAcAAAbAAA\/wAAAAAAyAAAOAAAYAAAAQAAcgAAYgAALgAAMQAAUwAARgAALwAALwAAAQAAcgAALgAAhAAAAAAKlAAAhADabAAAmAAAnAAAAACwAAAAAAAARAAAAAAAAAAAAAAARAAAgAAAAAAA8AAAQAAA9AAAyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAbAAABgAAAAAAAAAAAAAAugAA7QAAAQAAAAAAAmMURC4AAAAJcEhZcwAADsMAAA7DAcdvqGQAAAUgSURBVGhD7ZrpVxRHEMBbomjceK0QM4BGJCQxaARNDC5mMRgV0ETBC\/E2YbJZooCCeCRRJEYNHrtqEi\/wX7V7ZnanZre7uudw9vlezwePnar6ddVUd1cfxKzUQyoFNjU5ztDraOtov90IhMqw87cMq3XZDPsz0+CrqSHItz\/t7n7881aKSx1kzP07YyJ\/+\/RYvqH95L974ibX3X\/fcvGDP+ImT5FHFnnvq4\/N1Jkq+iyLKdrfkysW+S\/agtSLLvrsiol8l2y2yNtpC+LNsMx\/8yzygX\/i\/s7m0OesM2e\/SsZOHp\/+5U5D+7oNl2Inm23ncr25mvXxjyTsI1\/3NWp5hUOMns8JeUjI86DwEOSgSEfvnSSPEPaMBHX9nfQ5qLMRfOcVNNgrAvPfdrTFBRMge6upgkpgn5giVjABMpzrXBWE3Eaj3Ya1DC2Y+GSgEsJnvGDikqFKCDJeMEFysZqCKhi5ltRir\/GCCZKL1RRUQUxnB+oTTch7vGDiRhuqiC3nb9ZvTOb66wQSj0y8YOKSocqvm\/iWm0+lquibmdEtPVyBvf+beMHEz21QY5Guwzyv9qWWN9vEni2jM+Xs6jlqGS2Y+GSgQvvs7w9KLbcNt+aLv9X1d5xt8UpkllI1+hNWMAlGEleFzYTdxxuh5exAelEW\/jA22OlJtZFVTMuWEBZM4nHbUbk6x6x8M+uSaGbdKA1CSzK3oPhR1n\/BVL5ceA0dC+QzxuSPKx9TQ7WsyKSPk1llRmfWTjuptvUeIbnj7SiWvpSTqVBm++Krc53vscrezawyy7N2qn339FntrKirASUlMpOnrg\/dHoeZVYZmqXZp\/2ifk\/QSp5XJzPX2nd7MKrM9NngRnbyggh+yyrdRt6cuydorl5ZLFPxWl9RkUeKqx1BdUkdbR9uNgHreqEvqDNMZpjNMVoHZ73WvksRpat2Ap8IvE29KXDBNw97slz3q0W5ZOPRkvP6mu6oprz0X5JJ0VXvoE\/sUS\/Ioki\/3XZz7cJzaqkqdEhW1PdNrWb29OX3LNBLOugChq5Abf\/hoN+k6YFtpXp7ax7NHl7PWCsj4qZq6PWGc+NOHz\/xtqdc1XXRxs+HroqF863BZUd1ytqOwhG80mNuHJix55PwQ+szflmKrs94lvwEPsovS3kxrSnQOjrkCxmfVLOT4dpinPwMy2Jai4I6XJZG7ATOtrj+X9K6fn1A21cDPD\/k+w20pQoY56eJmGm\/P4HINTW\/J+aGHzN2WenGY20mcTBPskximYUrODz1k7rbUNlGO5ltXb0wWE6tUKm9Kzg\/50VbblsoeXZMAiVXKlpwf8slwWwrrlvOxl5LzQ0GvAttSmPFz6GiBnx8KyGBbCjGe6bQuGIge\/PxQNJK421KI6SkyhTqNnh8i47b86G+WgM0qfhvERlRmDKFfR8gRybSAvA5FPk1OV4g8QewZKdATyuc0SQeCWkphyJN0GpsMjA5D3kHJOypC7nv2d29fRchYrSNvUIho67tS8d0P03elWCrHdRtP35WKM9r40Z98CAs1V1XsrpSCX5hIiHFbk31HQEfbd8hCKOhohwieb1VPtJ0bEc69iML1CFvE\/p916dA3hKsAzVim7WWH+xeFFdYi4McI4IBc+GdpA4oizj+i95lPLi69ClGOCAxnSQm50ISKkaMCeyoDfobZIs67cMteT16W9iq3A5X0I28fiza3I7Dmx0Rkn80P1B6afGtEpaDJUUVSxY6OtkqUopKpXLTfADeQWrB8tzyVAAAAAElFTkSuQmCC"
             },
             "degree": 5,
             "id": 5,
             "name": "myo-inositol",
-            "type": "3"
+            "type": "[map01100] Metabolic pathways"
         },
         {
             "Data": {
                 "fdr": "0.128",
                 "log2FC": "1.49",
                 "p": "0.0453",
-                "color": "#E23C99"
+                "color": "#E23C99",
+                "KCF": "iVBORw0KGgoAAAANSUhEUgAAAFsAAAB0CAMAAADdEr5IAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGAUExURQAAAK+vr6mpqZ+fn5eXl5GRkYmJiYODg4GBgXt7e3V1dXNzc3FxcW9vb2tra2NjY19fX1lZWVFRUf7+\/vz8\/Pr6+vj4+EVFRfb29kNDQ\/T09EFBQfLy8vDw8D09Perq6jc3N+jo6OTk5DExMeLi4t7e3isrK9zc3CkpKScnJ9jY2NbW1h8fH9DQ0MzMzBkZGRcXF8jIyMbGxhMTExEREb6+vgsLCwkJCbq6ugcHBwUFBba2tgMDA7S0tAEBAbCwsK6urqKioqCgoJycnJiYmJKSkpCQkIiIiICAgH5+fnx8fHJycnBwcG5ubmRkZGJiYmBgYF5eXlxcXFZWVlRUVFJSUv\/\/\/0xMTP39\/fv7+\/f390REREJCQvPz8\/Hx8e\/v7+np6TY2Nufn5+Xl5ePj4zAwMN3d3SoqKtvb2ygoKNnZ2dfX19XV1dPT0yAgIB4eHs\/PzxwcHMvLyxgYGMfHxxQUFBISEhAQEA4ODgwMDL29vQYGBgQEBLW1tQAAAAAAaGDU2ucAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOoSURBVGhD7ZhpWxMxFIWLorSKUqWA6GgBt6pFqoC4gCiiKNQFhdhWiooLIi7oKLjAfzeZNTOT3CQdhw88yQfKtGfe5Dn3dnKaFEpupJJDI82Omqs92bGe1D60i75MrqRaIcpKB18f6JPVE6OjP59dgOi+ZOAu0d0ekWNf3njwo6P\/4a8bfDklUWLnvqUt6L53XDYtUWK\/T323oOObR3hwWjLwZBceB+U8uZp6ZTE\/OnMwJqAlA3+v4HFNjv05ddbCXXLmYLBpiZInld9NFu7OV4RaF5m20BIlNprvIc1dPZdF6FFpN7PRKYka++XK808d\/cdOkjVf7HltV5YaawhREjU2Ov3UvGke6rVw7ROlx3ma3Ddbwpe+RJGN733j44z96\/eq7qWRGZqu2xeUhFkU703W3pB33T7fVfhjKXOTZrYPBjE+Ze87ntvjxfnjCI0VFrDXyoOzp3lud7bsXVsojClzyQ3c\/dJ12zhcmsw1hIbyie32SMYpoTof3OeJ2zGCAHwrdjsxNkKLCbLjBEbhsoQCfo2FtwoFmq3yDRLaKRRov7fXb36uFZZKIIBybUw2mGvjseFcG48N59p4bDjXCthG5nq6xu87ONeC7FwzjjxzRTvesgacayH22Eo3iTzDyy9WeXAw1\/LZOPJs2cjqnkFmHsd5F8y1PDZOrVTk8RIitf72CRNfQbmWzfZTqxt8Inncf4Oba1lsP7UulafclQbzeL6N88OCLgyD7aXWpfJQmQpsfh7HBZhh\/yAK1DzC9lIrIS8F+8PJ48Nn+I0DrNvIOiVkkMltOCGemiveknuKh9btpFYOGSM7WzahLyrkiTVVPeoGdY\/wCeRpQ0rrcirsM1whrkEsNhzm462bX6n7+KOk2ISr2UHvtSfRXtSe7BxP4j9PknwOJvr8Lm8cCO3C\/2PfGckYBNPbyqPX0sDhbqixQk9jI2vaUY1Db\/oyh8\/dJAc\/nzDoq13L9nmh3IByFaFTPbM4M+ifc8rQ2XmwNGufYva2UnnQbAucz4rp7N2vPj1kFxUddRCsc2URnZu\/s2azf+QoFVsjUwG\/G7pXnKNSydiqwEZoyz7ilY2tSmx8NF2afSsdW9XYOHZOr0vHVlU2QupH6t4c8glM1HHRzzVbeyLTNbpPBH2SwgNL7L\/MF6KQtpEWOula9CJTRktDsd1\/t4\/tWONOqGBJI+tuxG8ZT0I2wtY3UMtG1g02X6gjpXpFehFStKBIs\/W+I9M2uk+iLv0DPDpcntxByi4AAAAASUVORK5CYII="
             },
             "degree": 1,
             "id": 6,
             "name": "Salicylic acid",
-            "type": "4"
+            "type": "[map00360] Phenylalanine metabolism|[map01100] Metabolic pathways"
         },
         {
             "Data": {
                 "fdr": "0.111",
                 "log2FC": "1.43",
                 "p": "0.0306",
-                "color": "#E43F9A"
+                "color": "#E43F9A",
+                "KCF": null
             },
             "degree": 1,
             "id": 7,
             "name": "Oxalic acid ",
-            "type": "3"
+            "type": ""
         },
         {
             "Data": {
                 "fdr": "0.0429",
                 "log2FC": "-0.976",
                 "p": "0.00507",
-                "color": "#2098C2"
+                "color": "#2098C2",
+                "KCF": "iVBORw0KGgoAAAANSUhEUgAAAFcAAABaCAMAAAD6iDqAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMAUExURQAAALfn\/KVmAOXy+y6JyNefXKenp3lPLqWlpaOjo5FcAAAALp2dnZHM9Pvlt\/\/30sjz\/+7cyEGRzdLCvf\/yyC55twAAXPfXn82RQYODg3d3d\/fy7k+RzUFPT2ZwcEEAAGZmcPfXpQAAeYmlvf\/\/8tK3kbfS6lNTU08AAElJSfr6+kdHR\/j4+MLq+0VFRUFBQWar3MXO05+lsUGY0u7u7v\/3zTk5Oerq6vL\/\/\/L7\/7GCT+Tk5LeCQS0tLavg+\/\/\/+4nI6qufmJiRgiMjIyEhIdLS0vvqwk+Y0k+RyBcXFxUVFcLIwvLNmMLCwquCTw8PD0FcggBBmJHN7gBmkbKyssKCQbefgpGRmKSkpKVPAMLCyL29zU9mgnkAANLg8gBmqwAAT5HR9Mjy\/\/f\/\/\/vgty6Ct4SEhPfSn4KCggAuQYCAgM3S3OD\/\/\/Ll0rfl+3Z2dk+YzQAAQWZmTy6CvZ\/X92ZmZmRkZOry7lwAAO77\/9KYT+7Xvf\/\/\/\/39\/fn5+fL38s3y\/zo6Ouvr69LCwv\/\/7rbCzuXl5S4AACwsLPvy4JHN8tfX19XV1QBPn83g7k+Cse7y6r3c8u7u6hYWFvLSmFyRt\/L3+8HBwf\/\/4P\/\/95HI7qvc97W1tbOzswAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAe70roAAAAJcEhZcwAADsMAAA7DAcdvqGQAAALMSURBVFhH7ZhnW9RAFIXHgm1VLNgLFtRYsRCxN+wYe+\/Yey9RBwuWVbGzdvmvZmY3mZs1k5yE7Ad5kg8s5E7eDDfnnhxgvDIHqwyWZ9xiY7M+dPc+DF17YOFxeIpQPbxYxsTxcQlIRrn72Nde\/M12tjld7uD8CAH82fPmKQwM7ncbeyt5BbY7VW6BraoQ947knme\/Ut3vKDZf8qpy11Ll\/jg2cq4DPFM75UqqXD6Z5aZu2M\/YbwyL++Sjvs5Y7PwMYnEu5+MavqHUOL4ulA6qPfbKjFvs7f\/Uh37OftfBQkN\/s7rnlmUdvrwUBaPcmlr5HpIugRwo1zRuP2n4Mi1\/4jRCxZ+wadxwgKsPvQdfnPh+NzncjfautLn2xYmTbjG2BmsDrHTTzk2orz86HcTiXGMRipTrsP7O4qYxrMQdOMe9gZus6oZ\/EKeuHnmgbk24\/jKJY60H1xPuzI5LbeJ6laxq8r3FidE5klkIl5ZpHOtcufg7r7aFHuTRfnfHvXecq2RlGuPF+Ycnnwbul5ZJHHv2em95Z9subOEqWQ0xDXnPKi3XK9M41r\/Vwza1u98+5ipZtZjGnmbLah6g5XplTRyb0UftXCWrFtOW3sF0XFXWxLFz1ynXTVaDTOPs\/cbGTyu0+\/XKBRYYx\/7MU1yVrHoUvSPkuXllTRx7tVVxSbIqaVuvByl9UdbFsY7lCqySFc7VxbHZnURyXrIqaVunM185OI6NHeOTckiy0vtD0EUvF5SPiO5nzHfcq8Ocxn+HONxwp0nODXeaxNwIp0nMjXCaxNwIp+kCN9RpEnMjnCYxN8JpEnOJaQQ5TXIuD3WaLnBj\/A0XZ45RzxHrMm6xW1kfsj7QufHpQYRCoRH5NfQjcvQot\/SfAOAjEkv1696iO3FF06ERJYuQPsCjH\/O5wY5SrrMogWFdyPzMnRhINNHj9c+KjJu9L6go\/gJEgACenyYiFAAAAABJRU5ErkJggg=="
             },
             "degree": 12,
             "id": 8,
             "name": "Phosphoric acid",
-            "type": "3"
+            "type": "[map01100] Metabolic pathways"
         },
         {
             "Data": {
                 "fdr": "0.322",
                 "log2FC": "-0.183",
                 "p": "0.173",
-                "color": "#1A287C"
+                "color": "#1A287C",
+                "KCF": "iVBORw0KGgoAAAANSUhEUgAAALMAAABPCAMAAACXmgSjAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMAUExURQAAANelcK2traVmAOXy+y6JyNefXHlPLqOjo5FcAAAALp2dne7g3PLy95eXl5WVlfvlt\/\/30u7cyAAAcEGRzdLCvf\/yyI2NjS55twAAXIWFhffXn82RQXt7e72RXHd3d\/fy7v\/qt59mLk+RzW1tbZ+CXEEAAGdnZ2VlZU9wmPfXpQAAeYmlvV9fX7d5Ll1dXVtbW\/\/\/8ldXV01NTf7+\/vz8\/InN7k8AAElJSfr6+sLq+0NDQ\/T09PLy8mar3Nfy\/5+lsT09PUGY0u7u7uzs7P\/3zTk5Oerq6vL\/\/8jIwrGCT4IuAOTk5C8vLwAAgi0tLavg+ykpKdra2tjY2MLS6tbW1qufmCMjI\/fq0iEhIdLS0tDQ0J+rt0+Y0vLgzczMzHmlzRkZGU+RyBcXF8LIwhMTE\/LNmP\/\/6hEREcLCwquCT7y8vEFcggkJCZHN7rS0tJjC67KyssKCQdelZrefgqysrJGRmKSkpNfq9729zXkAAJycnNLg8vfy8v\/\/3AAAT5iYmP\/33Gal15SUlMjy\/\/vgty6CtwAAZoyMjIaGhvfSn3my5tfNsX5+fnx8fOD\/\/\/LcsXh4eOD3\/7fl+8Ll8nAuAHZ2dk+Yzf\/lt1wuAHBwcAAAQS6CvWxsbJ\/X9\/\/75WZmZvfcpeDCn3AAAOry7reCLtylT1wAALGln15eXu77\/9KYT3CfwlhYWO73\/+7XvQBmt\/\/\/\/3m35UxMTP39\/UhISPn5+S5mmPX19U8uT0JCQvPz84JPAO\/v7\/\/31zw8PO7czc3y\/zo6Ouvr6\/\/\/7ufn59yfQS4AAC4uLnm96ywsLPvy4JHN8tvb2ygoKNXV1eX\/\/yIiItPT0\/fl0iAgINHR0Xmr1+7Ikc\/Pz5jS8s3c7k+CsbHi+svLy+7y6r3c8hgYGABmmPLSmFyRtxQUFOrCefL3+8HBwf\/\/4Jirvb29vQoKCv\/\/95HI7qvc97W1tdercAICArOzswAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAATE\/kYAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARDSURBVGhD7Zn3W9QwGMfjVtx74t6IG8+98EQUNy7cC8WFeyu4t4gDFffErVFERHEjbhT3Rtx7\/AU25dpLr23awHHXPk\/70z1p8r6ffPsmb\/IegPp7gP6QocHsmI9m6GzoLKeAERtGbNghNgr0nNpytmOUJHtRHc\/X2gP0vGznfGrVzBPB+8zw9igwRD\/M+eKLIdgfmbYsdDq0Wp39wR2WNRmM0w1zMuiiQ+btLPNy8FM3OpcEzVnWrC7rdMP8ZWbxxgzsospuIbphhtWBSw2\/yQD8cjoyxT3leDYmpYx563xkCmYIy3p+0gAxpGFGW7na7Txd50YBYTCn4UsYOqdBPIqhhs4UYqWhq\/Z0vnQguN90COsUfoGm9XDGIdHstMY8ojx7hXsCi8RnQbClXMR3DI0x\/6gJjhyDvc+DV2ZTBcR8OOiy1nUuF78VIW46O95s6s+efbXP7A+eW2Q1m94NCwjwzuEA5sdK+0EisYP1ummOYAMbpJU5QemM1MwVrD5HgvIsA8I8CR2SMZ0X7\/XyerOPYa5TGoBB2CCKNfg3HISNJQF55Ely96s1eFakXKfoZcN3JlYZXiJa1soucBK9u7Bhhdm0kVuDH7esXxOfch1lH9XMceEjwxOI\/gLvNXnGWBzY6sZoSaZGeZPq3mXe3D06dEEjGeovM5egfeIPuGk2FeKYB\/jCuXsaUDMj4jiiv2cxXX9bzGbsdaq7iClyWp\/TaEro6dvwUXaJjxEXDuFTEPTVuxJwC8GYIcwAOt2XZBZmHryiyBHL+\/M5ODTYg7caVfTDtjZC6n+d237GWgKu3JpgMy3khGnavZlZeNVawPwRbGxMYtdgrpUR8yWZ8cyDVxRxYjRQ7K+Z60ibpdem4oelUVYvEoj\/bgkmgTkRXeEK+EJ4\/YQkM555sIqiJSpwVYT+PIKT3H1EsdC93oMpxFCojwWLrSxCa\/sLtpjXobUMM5958IoiG8c2D+4vsGsMF6fCXt86XnzNtMgvObQouzE9yMQQ7mDOIGfWyjDzmUe5osj5Y5ZeoHhOKS2ROQfX9iNuNczmV7WHxIe0tTgnN96C7XVY5lFTUUT+Et3xpSdmb7qKnEIgjA39LvUh5WRg23FmE595koGaimJsKHAlZj3GPjlVI4KrRD6plwJmPvNoqaIophYw85lHSxVFtcxaqigSmQWZRzsVRSKzzUutVBRpmKmXs8MGqD6LOoxI2ZHBrKyRPXoYOttDRWUbhs7KGtmjh6GzPVRUtiHQGdWa+EM1W3liDtiCRuGJW9l8uvTAmbk\/06zgiNmCmdKI5pAuHDRGMQLuJ7BeXjhOhJ7yG3tJ48aufSWYrRcuKzIXExbh7YpAbYyWmYtuakd2HEBiFsjMB4ym4plfbhyeHpjRvsbuDPiWZ4lua6PzNw7nf2n6QDeY6TVLzQhD59SoRj\/G0Jles9SMMHROjWr0Y\/So83\/HaDACqSZroQAAAABJRU5ErkJggg=="
             },
             "degree": 1,
             "id": 9,
             "name": "Heptanoic acid",
-            "type": "2"
+            "type": ""
         },
         {
             "Data": {
                 "fdr": "0.0429",
                 "log2FC": "-0.742",
                 "p": "0.00507",
-                "color": "#1D73B2"
+                "color": "#1D73B2",
+                "KCF": "iVBORw0KGgoAAAANSUhEUgAAAG0AAAA8CAMAAABb9MQ2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMAUExURQAAAK+vr6urq6mpqZ+fn5eXl5GRkYuLi4GBgXt7e3V1dWtra2NjY19fX1lZWf7+\/vz8\/ElJSfr6+kVFRfb29kNDQ0FBQfLy8j09PTs7O+zs7Orq6jc3N+jo6DU1NeTk5DExMS8vL97e3isrK9zc3CkpKScnJ9bW1iMjIyEhIdLS0h8fH9DQ0BsbG8zMzBkZGcrKyhcXF8jIyBUVFcbGxhMTExEREb6+vgsLCwkJCbq6ugcHBwUFBba2tgMDA7S0tAEBAbCwsK6urqSkpKKioqCgoJycnJiYmJKSkpCQkI6OjoyMjISEhICAgH5+fnx8fHZ2dnR0dHJycnBwcG5ubmBgYF5eXlxcXFZWVlRUVFJSUv\/\/\/0xMTP39\/fv7+0hISPf390RERPX19UJCQvPz8\/Hx8e\/v7+np6TY2NuXl5TIyMuPj4zAwMN3d3SoqKtvb2ygoKNnZ2dfX19XV1dPT0yAgINHR0R4eHs\/PzxwcHMvLyxgYGMfHxxQUFBISEhAQEA4ODgwMDL29vQYGBre3twQEBLW1tQBlAAAA9ABi9wAA1AAAOAAAgAAAyAAAAAAAAAAAAAAAAAAAYAAAAAAATwAARAAAAAAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAA\/QAA7QAAAQAAAAAAAgAAAAAAAAAAAAAA8AAAAAAAsAAAWAAAzgAAAAAAGAAAAAAAAAAACgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANAAAAAAA3AAAAAAAAAAAAAAAyAAAsAAAAAAAcAAAbAAA\/wAAAAAAyAAAOAAAYAAAAQAAcgAAYgAALgAAMQAAUwAARgAALwAALwAAAQAAcgAALgAAhAAAAAAKlAAAhADabAAAmAAAnAAAAACwAAAAAAAARAAAAAAAAAAAAAAARAAAgAAAAAAA8AAAQAAA9AAAyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAbAAABgAAAAAAAAAAAAAAugAA7QAAAQAAAAAAAkFxt8kAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKSSURBVFhH7Zb5V9NAEMeD9ahKbam3VOoB1gNFVAoignjhXUVBcWyoFlQsKhaVarSiIH+3u5tts7vdNKfxPV\/2hybdNzOfzMx3J1EgyKUECYOQ5le5w0qGlbSugH8qSeYxLZ4EUMldHt2Jyz9adi+GjJ4H6LmBKVfR3V+kDW0KknZ\/IBNgbpEHHapeyYkIWlu9VTLdXHPZyItjd3TaygBaF7zQCtHpzbub8bIRGFz5LKjkdqojxzjZ1WTLp6lSTBtLmPMQDSbn13GazBwsqMVfho89Wnn7O+xTKXaNmOIwbd\/ZNxxtbhFg4pYz2ux4301VdxnpKlZkvFkATIMrinjeMj0lKY0fAYX3cd0qfk1rba87JMZ6JxvkgkwoDaYF2vGjq\/K+sSOgvGd4+PsTdH7gVOr1Vy6bmVxWkEuDiWF\/eqmfdWb6xtDO\/bj3Ldn9aPkiQO96mqPhlY5pGwy5tLdKTKhx+iT\/pFJa4kuUmG+ZB0AdaVyVnQtULurGvnGpCXF6OFStVu9K+2aMgLeK\/kijv3fIWHhvTZdL\/+HnZTMTyT6bW30EDCqviOkHSpXFw3IpTZ247IAF7Pek0bePSicJcoZS5RFncm3RgiOYnJb\/2UKiXF9qHsxicjY6yzX5NIWFqB6JOXt0S2s57eXCs8Vk964D5mqzDCw1kNPg0GPtkrZtv7uY5l7mU3nObxSKZ+8d4Bc4pIWVtK5AqBLrGtmz+IeVVNDC84X81i503Aib9nIRrdjcCEkfZsYFQQma33QHY+dkDSxCg6TVBjctsrdBzlRSnhul0YRxMz0IyynNt9wEJdSy0Vtb\/+fpjciVhVd5\/Tjwx8KlHImbhya4wIY0F0Wz+p70K2STOGHf\/Cry\/1zJPz\/Fx59nZ+ecAAAAAElFTkSuQmCC"
             },
             "degree": 10,
             "id": 10,
             "name": "Ethanolamine",
-            "type": "2"
+            "type": "[map01100] Metabolic pathways"
         },
         {
             "Data": {
                 "fdr": "0.081",
                 "log2FC": "-0.525",
                 "p": "0.0202",
-                "color": "#264DA3"
+                "color": "#264DA3",
+                "KCF": null
             },
             "degree": 6,
             "id": 11,
             "name": "Monomethyl phosphate",
-            "type": "3"
+            "type": ""
         },
         {
             "Data": {
                 "fdr": "0.081",
                 "log2FC": "-0.959",
                 "p": "0.0202",
-                "color": "#1F95C2"
+                "color": "#1F95C2",
+                "KCF": "iVBORw0KGgoAAAANSUhEUgAAAHgAAABkCAMAAAB6rgQAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGAUExURQAAAK+vr62traurq6mpqaOjo5+fn5ubm5eXl5OTk5GRkY+Pj4ODg4GBgX19fXt7e3d3d3Nzc21tbWVlZWNjY19fX1VVVVFRUf7+\/vz8\/Pr6+kVFRfb29kNDQ\/T09PLy8u7u7uzs7Orq6jc3N+jo6DMzMysrK9zc3CcnJ9bW1iMjIyEhIdLS0s7OzszMzBkZGcrKyhcXF8jIyBUVFRMTE8LCwsDAwA0NDb6+vgsLC7q6ugMDA7S0tAEBAbKysq6urqampqCgoJycnJqampiYmJaWlpCQkIaGhoKCgn5+fnx8fHJycmxsbGhoaGRkZFxcXFhYWFRUVP\/\/\/\/39\/fv7+\/n5+UZGRvf39\/X19UJCQvHx8e\/v7zw8PO3t7evr6zg4ODIyMuPj49\/f3ywsLCoqKtvb29nZ2dfX1yQkJNXV1dPT08\/PzxwcHBoaGsvLy8fHxxQUFMPDwxAQEA4ODgwMDL29vQoKCrW1tQICAgAAAAAAAAAAAAAAAAAAAAAAAAAAANjBpMYAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAM9SURBVGhD7ZnpW9NAEMbHE0URL2orarUeVVGjLSpQLKAoWrDatIpWEUtR8KBeiP755liTDU12p8lu8mX3eWh52tn3t\/sySWYW0BMakBBXV+DYnFdWK6ulOYBOrvrHiXxd4DKw4H2bdy9v\/nogjowEP\/k5ZTB3jw8II+PAua0DFnFgvCmKjAP\/gRULeANuxgt+WMpYwAtQjhc8DWcs4DXoxAsuQMEC3v97Nl5w4+pzE9h4nxLFxRYC0\/A0X187MfopbrBevgWlexfzwrjYHRvAldtvxGH1HsAiqYYW7gZCAtHBiEWitcxAdLAC+ziAdk9ZjcgfZoiyOtAelVwxJtc5\/i3zHX45+KyulA5zghcrpcoiFo0FT42kCkParF1s+g8j5FtqZAeSjANfGW6PGYJfTq9OBumSkLH28BoKjQE354v9DVttcvX1dT9dN6TRX5zHtBsU+NRJUzLzyhJ2m8P0Xq2ac2CZWW2otR3tDclVtZm0V8Qjbc+mwNqc+UEZloxXtznsnF\/2FvHZwdHBrAfdFdJZtua4IrQ0meoPpprDDbJ6CtXyZFnueHdIemZD1ykRLJhuDn3\/Xm6WNR4Vj\/iFNHVahAM+dscYc4bViOaQZNnvSy+DkpgW0RxpxzjaarDHko5pDs0sK9QYly0tojnSvuDHL4yx0wDjmsPs0dIhxo2KFtEcaV+wk9XI5vCzeTwROGgRbHIhm8M9fSwwLYIFG15jmsODCywwLYIG45rDZzUmmBJhg70qiOawvc4GMztMzEMiSP47kEcHj+\/3fQRwC+BDGGTXQ6JXkR8Au3qd48ZH2HEfwP5EwAsA1UTANYC3iYDXAb4mAg4PNWdGSC6nLPOpqPiLCg9mVlQSweyKSh6YU1HJA3MqKnlgTkUlD8ypqOSBORWVPDCnopIH5lRUEsHsikomOOKZffhbJn9TzAgFjmggfrqyGu9VxEhldUQD8dM9VptHJGblab1636zTE\/dDPCAokgaT0\/\/AN1INi0kLSuX\/r14wKb7Jl+L+M4EBE4tp\/4VaHbRjG2j\/xLlj1xNZ4G27YqVadKe9TRviOiIh0cliro0Q61DgEKaFm6KsDudbiFnK6hCmhZvyDzaHkYfiVk9KAAAAAElFTkSuQmCC"
             },
             "degree": 7,
             "id": 12,
             "name": "Glyceric acid",
-            "type": "4"
+            "type": "[map01100] Metabolic pathways"
         },
         {
             "Data": {
                 "fdr": "0.081",
                 "log2FC": "-0.367",
                 "p": "0.0202",
-                "color": "#273A9A"
+                "color": "#273A9A",
+                "KCF": "iVBORw0KGgoAAAANSUhEUgAAAIgAAABkCAMAAABq4oiZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGAUExURQAAAK+vr6mpqZ+fn5eXl5GRkYODg4GBgXt7e3l5eXV1dXNzc3FxcWtra2NjY19fX1lZWf7+\/vz8\/ElJSfr6+vj4+EVFRfb29kNDQ0FBQfLy8j09Perq6jc3N+jo6OTk5DExMeLi4t7e3isrK9zc3CkpKScnJ9jY2NbW1h8fH9DQ0MzMzBkZGRcXF8jIyMbGxhMTExEREb6+vgsLCwkJCbq6ugcHB7a2tgMDA7S0tAEBAbCwsK6urqKioqCgoJycnJiYmJKSkpCQkIiIiH5+fnx8fHh4eHJycnBwcG5ubmRkZGJiYmBgYF5eXlxcXFZWVlRUVFJSUv\/\/\/0xMTP39\/fv7+0hISPf390REREJCQvPz8\/Hx8e\/v7+np6TY2Nufn5+Xl5ePj4zAwMN3d3SoqKtvb2ygoKNnZ2dfX19XV1dPT0yAgIB4eHs\/PzxwcHMvLyxgYGMfHxxQUFBISEhAQEA4ODgwMDL29vQYGBgQEBLW1tQAALgAABQAAEAAAAAAAaIA0qN4AAAAJcEhZcwAADsMAAA7DAcdvqGQAAAOFSURBVGhD7ZmJV9NAEMaDB60XtbWi1iJeVcFWAS8qCigKeENsRUDFKmI90Gq9\/3o3m2uTbrKzoUOqb\/MevTLJ\/jLzzeZboukdsmkdwqErEH8lVEZURkTdqTQSXSMLb9Ki9G5kP7Q09cOjo18fndnIUOHHAkHOf7v1JTt45\/sVNBIYSOZTghLsfBUzyGvtMyUY+30AiwSWkUvacwrw1gJCoIGBvNdO0rHPWUCxgVR+dNGxJz4iIJinhGVEn+8zJpHqqVTcIM\/WHr\/LDh46uhw3iH78YeNqY+8RNA5oaQyAl3gUcI2YYgIKKhIw+NwKxJ9flRGVEVHP\/WcasY1vtWJceCXrXv6mziOu8S3eMBCuX4wHhDG+sYKwxjdWENb4Fu9vIdueaKWpiW96tbDeY41v8dcFsl2OAjKdeJJIhvd4LtlMLASHsMY3emm6PswdmxswnSt\/y2xrpPrDQljjGxWk3rv6kww\/svq0HsRRXju4LghhjG80kOWZoZtVClDdPrSba1vXFwt\/TMSgEHIYY3xDQbyznbP4T483evJOHvJ3S1tb\/ivQ\/6A0mQkNISch+13jGwrC7nTnwLN9L8zlpr21\/JBLDt9eonvNV10POSbQ+DJTPAPCzIGtCUiPl+65KcpMEo3S4Vdmp2xYb0i+h5NFv9a4IOwcyJNEblfTEo1eLiwaGjUwhmftjJCvbggRzQxgOcSCOLOdePF\/urdgtBHRaNnBWPFepBUyciK409gDWBBntoMs\/scG5mspS6NGNnwYxhgkhMw91\/xF4H\/nlga0+N\/fvS9JaxGAQfbs6G4mpmEc7O3DFStw8U81usTPBh1e0wH3JwuU3zUSi\/8pXlGYk0OdFx9EYvHPdEpLEWR8Lh+kTYv\/iCC+C2rD4r89IEC1h4UpEN79I0LXtKEWvlOo0qjSiFTVMRrRJZ56QbtLdPG8\/VJPvRBB5J564YFIPvXCAxEbX0858UAgxpdBwQMBGV+XBA8EaHxtFDwQyadeiCASxpc6frxN6qkXJgi5RLjxRQaBp1uB8EwUPH+Ikao0qjQieSmNhGpEI5tx\/6Gv9pt1O\/L9KMq09H62NNYyxPtGeCiV+SezUpFjYUDsj34eJ8T6gCMrIYjrFFA5WD\/Cz4gDgssBB0Hm8Dg0vljNkM0Uq79vnV42+sbobPdNriFA0TgtABraG6RAlA0QyUZpRGnkn9HIX2b9nvt3KZinAAAAAElFTkSuQmCC"
             },
             "degree": 9,
             "id": 13,
             "name": "Fumaric acid",
-            "type": "2"
+            "type": "[map00360] Phenylalanine metabolism|[map01060] Biosynthesis of plant secondary metabolites|[map01063] Biosynthesis of alkaloids derived from shikimate pathway|[map01100] Metabolic pathways"
         },
         {
             "Data": {
                 "fdr": "0.0429",
                 "log2FC": "2.17",
                 "p": "0.00507",
-                "color": "#B20380"
+                "color": "#B20380",
+                "KCF": "iVBORw0KGgoAAAANSUhEUgAAAK0AAABvCAMAAACpUbDOAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMAUExURQAAAK+vr6VwALfn\/KVmAOXy+y6JyFyfvdefXJjN7nlPLgBBkaOjo5FcAOXIpZ+fnwAALpmZmZeXl5HM9Pvlt\/\/30sjz\/+7cyEGRzZGRkdLCvf\/yyC55twAAXPfXn82RQYODg9ereYGBgXt7e0F5pXl5eU+Y1\/fy7nNzc0+RzXFxcffSmEEAAGlpafLNiWVlZffXpWNjY2FhYQAAeYmlvV9fX9yrcP\/\/8v\/qvf7+\/ktLS\/z8\/E8AAPr6+vj4+MLq+0VFRUNDQ\/fXq\/Ly8mar3Gal3J+lse7u7s3z\/\/\/3zerq6vL\/\/8jIwjc3N+jo6LGCT1yf0ubm5uTk5DExMSsrK5ilgqvg+ykpKScnJ9jY2NbW1qufmNTU1Pfq0iEhIdLS0h8fH9DQ0E+Y0h0dHc7Ozom94MzMzE+RyBcXFxUVFcLIwhMTE\/LNmOq9eREREcLCwquCT8DAwABPmL6+vkFcgpHN7vvu3LS0tLKyssKCQbCwsM2JLq6urtelZrefgqioqJGRmKKioqCgoL29zXkAANLg8gAAT5iYmJHR9HCrzWal15SUlMjy\/5hcAPvgty6Ct5CQkIyMjOXg4Pfcn4aGhuXu9\/fSn59PAHx8fOD\/\/3p6egCCyHh4eLfl+8Ll8k+YzXJycgAAQerNn5\/X95+94GRkZGJiYury7reCLlwAAF5eXpGgse7\/\/1paWu77\/9yrZtKYT+7XvVRUVLeJZlJSUrHl+\/\/\/\/8jX6kxMTP39\/UpKSvv7+\/n5+ff390RERPX19UJCQvPz8\/Hx8T4+Pu\/v783y\/1yl3Onp6Waf0v\/\/7jY2Nufn5zQ0NOXl5TIyMi4AAPvy4JHN8ioqKigoKNnZ2SYmJtfX1yIiIuX7\/9PT0\/fl0iAgINHR0e7IkatmAM\/Pz83Nzc3c7k+CsRoaGsvLy+7y6r3c8hgYGO7u6hYWFgBmmPLSmFyRtxISEvL3+7+\/v\/\/\/4L29vf\/\/95HI7gQEBKvc97W1tQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEy2O7MAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAXYSURBVHhe7Zp5fNREFMcHD8STooJCRZCKZ1FRqy5dFKwiWa0HHvVArPdiVVTUIh5FwAUvrPetxaNaRdSqsVhQrCgugihyeNcDrVprPdC\/nUk2yWQ3mXmTZDfk85n80X42eXnvm9++zMx7O0iN0oGiBKtK2vx9XVJbqa2ugMwEmQkbSSbsdNa0MbdAv42Q8zZ9AiLHD8fCeEOmvQ79vrn6yRXo4ijQ7rhyF4L592Zz7wDhhqvtpehTjbITXRMB2k50WqRon9ZoH0D\/REDbXdFRGmWvoscjQPvnzIFHYMw5pQc9HAFa9QBUdPA5NyH0Lwg29FXNq1vhyeHqn2GwodOq6p7H\/AFk3QhWjGTABw\/6YEPw8wsaSlpBwQTMpbYCYgmaSm0FBRMwl9oKiCVoKrUVFEzAXGrrIlY7X8RzOSZIbS\/MqmbREDRkERumooRn0oWddPEfWrfwsQbr8VXzBc3VPRiRyrfvKPuabcJ3Qvv3TLt21Kq\/sKPJq95e68Zb+9lokioME4ATm3OPtG0NNfWtmqPW\/jX7tDnxti+u+k8\/72YCcJLl2BNtbHrH8ITpKPFssncsm3fcC8lZ5UwTNydG0\/HQAd+T+7+cMd\/y7YX2ospl6zUPSzN+zBOG34qSyx961\/YAOSYuJ6ymY\/HKnsTDoCKqRSZOmxiekbJtaKUBFJuebLTELp\/VUTYuW2y7iemEMsMWqmo1HZX43uTiK6n3vWuLc7BBS9OF9RMbDW3xx4q9ujKJrNZWLXYchy0T00nWI1WoVtOxnxI\/j1zu5YN28in6EBCrWzdivD3WGaOqyCCBX67abF2NzxkTw4mDmdV0nK3Ef7tk0qTjtvVM+1Fz9Q1aiO7ly7tzY02tfr29jH65HE2+M5w4PZPVdJytNGltc+SZNjMvjR+xri5nECCxDx+MSuwvVw4RNmHNf53IaDruoMTvei6R+Ol577Qk+NLGifUL3b5rwEtb73YvOW81HTdV4k\/6e8s0lsqhjpOBzgCg3Z9FSzUdlfjOAdBSA0FuXADtjyxaqukYDK1rMILBp12BVjBxzaZj3yYtE270l7eusWBVQDdyGE1sPhlNR74YlCe2MYy2D+rD1JZ5seC0DaghQrQtqCVCtGvQmujQtm5AG\/RlvJej0Hm7Gs\/8q72AQicfy3cAY8IUTDslMrR3Y9oXo0GbHvAmAb12xnynogvwDAXN2+JS7ffc\/VA\/p6KrsLT8dQJeYF81D+9GmDvWqejKC62PNRgpB27L0OYWXXmh9bG+VeJbbFL0hq5tbtGVF1oftYMS36O4dOt5+2Jah6IrWNqR95l12QTnugw3HZkhyQL7EHT0vURbs+hKv4bQ7p8DULEJfEzoPr0Fl6t6S\/FKx5oX9wtP4tKmH0ydmsK0ZtF1WeqJs2d+ECzt8S+dPxV7NPqFsboJb31hj5DpF7LCasXLYaWI0JpF13bPqOr1jwZJu+D2msfe0Rya\/cKR\/X89kBoerH4hI67O+DJK4UYMXSIeibYMkHb9x++dabozW4ptjywzTtr7ha6R+zadiK+l7xw41lZ0PYU+hMHSeWufDa3dkEuGJW+2eeP3GIHBdbPd0IVQe+oto2dDajfkNslhS7K88fuF0PDY7ht06y\/33A+7gaKlZ0NqN+TJeq\/WfvD7hbDweA\/jt6TZ1RNmbqM1Z0N6N+QCZ0f8fiEMQMjKRmvOhqDdkLilyOwXCnHAjGlaazaE7Ybk9AthAEJWNm3N2dBqTLJ3QwJ+ixSi4RnbaM3ZUHQ3JC9KUNdttOb8IrobMiganh9nWtHdkLwoQV2naG2zodhuyKBoeH7cV4wiuyF5UYK6Dl\/fBhXRjx9J60c99r1SW6mtroDMBJkJkc8EUiGRXNb+Mv\/l78tmeqbfssyPiYB\/IcHSY4IBzqINeRihtGXSGnkR7pgHpc0IHi6scCaEO5tE9i2DDF3anqewRoSQ01D4sUMUSphVautBMvAtMhPAUgkbSm2FJQPfILUFSyVs+D\/wd6Zl\/d6C4QAAAABJRU5ErkJggg=="
             },
             "degree": 12,
             "id": 14,
             "name": "Tyrosine",
-            "type": "3"
+            "type": "[map00360] Phenylalanine metabolism|[map01060] Biosynthesis of plant secondary metabolites|[map01063] Biosynthesis of alkaloids derived from shikimate pathway|[map01100] Metabolic pathways|[map01230] Biosynthesis of amino acids|[map04974] Protein digestion and absorption"
         },
         {
             "Data": {
                 "fdr": "0.0429",
                 "log2FC": "-1.39",
                 "p": "0.00507",
-                "color": "#5FC2BF"
+                "color": "#5FC2BF",
+                "KCF": "iVBORw0KGgoAAAANSUhEUgAAAK0AAABkCAMAAADDlkANAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMAUExURQAAAK+vry55sf\/qwtK3gi6JyNefXKVcAJjN7qve+s2YXKGhoZ+fnwAALtz7\/9z3\/5mZmZeXl9zc3v\/30kGRzZGRkf\/yyI2Njf\/uyAAAXODg5YODg9fc3IGBger7\/3t7e3l5eZjV93NzcwAueXFxccjX7vfSmC55vUEAAOW3efLNiWVlZWNjYwBPiQAAeV9fX\/\/\/8v\/78s29t7eRXP7+\/vz8\/E8AAPj4+EVFRUNDQ\/Ly8mar3PDr5v\/3zerq6vL\/\/zc3N2ay6S5BLubm5uTk5IlPAODg4Nzg3CsrK9zc3CkpKf\/\/+9jY2InC6vvcqx8fH9DQ0E+Y0s7OzszMzBcXFxMTE\/LNmBEREcDAwL6+vtKxiQsLC7S0tLCwsM2YT66urtelZtzc5XlwcGaRvaCgoAAAT5iYmMjy\/\/f\/\/5CQkODl5ZHR982reXx8fE+Yzd7c3HJycgAAQWZmZuXl3KW90vfcpWRkZGJiYlwAAF5eXvvu1+77\/1RUVFJSUtzc4NKfXP\/\/\/0xMTPv7+5ixyPf390REREJCQvPz80BAQPHx8be3ws3y\/+fs8f\/\/7jY2NrFwLv\/77uXl5avS7jIyMuDl4C4AAMKrkZHN8ioqKs29nygoKNnZ2c23nyYmJtfX1+X\/\/9PT0wBPnyAgINHR0S55q8\/Pz5jS8hoaGsvLyxgYGPLSmBISEg4ODr+\/v\/\/74HBwgr29vaW9zQoKCuDc3P\/\/9wQEBKvc97W1tbOzswAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACVzdbcAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAVASURBVHhe7ZoJcxRFFIAbEQUBBQQ5YyQIgqKLkiwQTABBgXAEJRiQKHc4A+E+DNAJyK1yGxJYBYy6hCAKCD\/Pnp3JTs\/R773J9kx2q2arklRlv3397ZvXPdOvmvFCerFCkuWxbXiXK85tnFszA3ElxJUQsBKe3t74zt8HtkF5yyI\/fjLR4I5deNuF4wR8Xah1++hzxj5j7MM31OFs5K3J\/Qzs\/cFbnTROIEVEtJ32Ktv0Pb88nd2dowooIRXJ4Qb1YO9FB4wTWMUTbZez94xIS35m\/6ki2siAiuSXBjXJZYsTmmxPWpZfs19UEW1kZ0Xy93Gp1LhdW5y5xQlNtuv3miV4kM1WRbSReRVHWOblssUJTbbfbTFtJ6lzayMity9dP7F4zMsuW5zQZDuFLctEeoX9oYpoI+MVdYsTmmxHTZ7wugjVN\/nRr6qIEqJYE3BCky1\/jY3+Z+GtJOuvDmgjClspiIpAdIkrGOff3BDTZvRVKFwWefPIboN74KpbKYiSgHXJtvzjJ6kN4I2XExBCEMiXbovVVBTv020NEqHPiWI5B1rjBPhxrbb7hO0+cDiciM52pLAdCQ6HE9HZvhC2L8DhcCI623Zh2w4OhxPR2bY8Y89awOFwIjpbfofdQRYynNCz3hJWMN7MmhFblAC3blpXMF7CShBbjIC3bnpth7AhiC1CIFs3vbar2WrEFiGQrZte2\/lsPmKLEMjWTa8t\/xN9toEJZOum2RZ+SjC+CkwgW7cgth3YMxjn8H3XsIUJZOtGt+0sYkWd8IUuL\/636DSInC5ixeUAgWzdyLZ97jV91VTdBxipbGg68RuMiCArEun6MnUUeHMn2To6g66WYmpm62MxxJrWH1KqkeraZnXAiBWk40xVnVoX3NxJtnJn0NlSPN+4arv5tNIyYtW75\/2GEgrPzf+rEDsIr6s6Y3wxzysTGdq6SbbSrtnRUizdnJ5amY1ceahmUKl7nAVHa6TL64c4g5TV1xxd4A4iEHhaOHZaUodFbimunPvTX44onn+UF9c2nIURz2fONtS6ppsH8VF35DbbGZRbit5Ulm6uOWwnu6w+nfDJk4xUTvW7Hon0UHu6+SIeX9nW7gzKLUW\/Mi0v6bQKWVmDNiIKudG\/1me1WdNNibh8HbnNdgbxluLSmVWPRShoflvImkXqdeS5Od0gxOHrsM12tAktRf5t9fH7CXlyeetMIB1N1euAuWNMtxUwIn\/af00gtBQ5nzF2bbFzcnm0ZozFbm78YQN6i7TD+ttSWorYamO+PxDDGL+PP350B5FsHX0\/QkuRX2PXMBf+AUYYApIEjCvBHLuB3aOiD7x6bLGc0N6\/wq4gYFS2XaIz04W4dKFEVLaU7OKb4HyybWSNeVIJzaIScm7NZNaD3NcEynXGGbztlUe2hJZiRLbDTu34Yv\/NPWB+LwnkU\/gKnBJv38QvkkmQS8YTkHCOIwhCEu6xLeEcRyAkVFvCOY5gSKi2hHMcgRDlkRLHt+hpJRDOcQRClEdKtNgSznEEQpRHSrTYEs5xBELCzS3hHEcgRHmkREtuCec4giGhrgmUcxz4YZCg+7+ergmkcxz4YRDKkRIp6z23JZz00ITYujnYkipNLxTb6s2nHC3ObZzbXPcO4WVQHTmu2\/CyXsC5NU5PG\/vgzG\/XH2t3bL0XXvrAyHJuM6bmpt3zR7hnvoH10\/u23eIK6YKw7S6IfKsEMLdWV6dAKiHvbP2nVzabeVa3iqUru6rJq1vvrwm9ZBBk2AK+lwX5mr3CxrkNL+1xbuPcmhmIKyG8SvgfeQRB6n8HnUUAAAAASUVORK5CYII="
             },
             "degree": 13,
             "id": 15,
             "name": "Glucaric acid",
-            "type": "4"
+            "type": "[map01100] Metabolic pathways"
         },
         {
             "Data": {
                 "fdr": "0.0429",
                 "log2FC": "1.33",
                 "p": "0.00507",
-                "color": "#E9479B"
+                "color": "#E9479B",
+                "KCF": null
             },
             "degree": 10,
             "id": 16,
             "name": "Leucine",
-            "type": "4"
+            "type": ""
         },
         {
             "Data": {
                 "fdr": "0.587",
                 "log2FC": "0.434",
                 "p": "0.471",
-                "color": "#FA8FAF"
+                "color": "#FA8FAF",
+                "KCF": null
             },
             "degree": 10,
             "id": 17,
             "name": "Valine",
-            "type": "2"
+            "type": ""
         },
         {
             "Data": {
                 "fdr": "0.128",
                 "log2FC": "0.767",
                 "p": "0.0453",
-                "color": "#F974A5"
+                "color": "#F974A5",
+                "KCF": null
             },
             "degree": 10,
             "id": 18,
             "name": "Isoleucine",
-            "type": "2"
+            "type": ""
         },
         {
             "Data": {
                 "fdr": "0.673",
                 "log2FC": "0.492",
                 "p": "0.575",
-                "color": "#FA8CAE"
+                "color": "#FA8CAE",
+                "KCF": "iVBORw0KGgoAAAANSUhEUgAAAH8AAABfCAMAAAD2z+gXAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMAUExURQAAAK+vr6mpqaWlpaOjo5+fn5ubm5mZmZeXl5OTk42NjYuLi4mJiX19fXt7e3d3d3V1dXNzc3FxcWVlZWNjY19fX11dXVdXV1FRUf7+\/vz8\/Pr6+kdHR\/j4+Pb29kNDQ\/Ly8j09Pe7u7js7O+rq6ujo6Obm5uLi4i8vLy0tLd7e3tzc3CkpKdjY2CMjI9TU1CEhIdDQ0M7OzszMzBkZGcrKyhcXFxUVFRMTE8TExBEREcLCwg8PDw0NDb6+vgsLCwkJCbq6ugcHB7a2tgMDA7S0tAEBAbKysqysrKqqqqioqKampqSkpKKioqCgoJycnJiYmJaWlpCQkI6OjoqKioiIiIaGhoSEhICAgH5+fnx8fHp6enh4eHJycnBwcGpqamZmZmBgYFxcXFhYWFZWVv\/\/\/\/39\/UpKSvv7+0hISPn5+UZGRvf39\/X19UJCQvPz8\/Hx8e\/v7zw8PO3t7To6Ounp6TY2NuPj4zAwMOHh4d\/f393d3SoqKtvb2ygoKNXV1SIiItPT0yAgINHR0c\/Pz8vLyxgYGMnJycfHxxQUFBISEsPDwxAQEMHBwQ4ODr29vbu7u7m5uQYGBgICAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPdE60oAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARhSURBVGhD7Zn9WxJBEMe3F8qyLFMyfEusTM1eJSwys9RMTSN6o\/fUFpUiK8OXhNTUytSy+ofbe2UP2L052pMfunt85PFY5jPznZ25WUE4vxfKLx47\/PwmwNHf0T+fCojff54TGzPwiITzewOoHbVsgXogmr\/r8t7myNcn7UGgA4L5Ez\/uyuBHrTUwBwTzO9BHmduMlvPCv905KnOPoW5b+NUVktnyGMv4NqS8tYDO28L33ZfMdqMJhvVvKtd1nbUi7YMW82\/Gr\/h8UAJEJg\/Bwrc6f5jxsQs9O45nh1vP2sR\/sUque0z9Mb6xgq6h6ZNAvOX4kXJxsutpvATMveSj1fyHx8nVw+NDI1fWWeWb7H\/VItwqfKXsrun+UyKCW4WvdPiwnWWr\/rEqub0x+7\/d+y\/w\/ShBtKFqtha2xh+4MpRffrh9I6\/x9z849do+\/U1n50B\/9NNjLj+Kkjn3H\/PZOdCP236fZu+\/CGF7PTn2P8DsTPh46MhP1v4fbUoSfmFufMjsLPHja2UMfnEy5PWghT\/P4V2dWgmZnSU+LkAMfsgb8YYwDvt9wXJYs6SVMp2dSdeT+ZFJwnen98CeWezxhpIrSfKy\/3CiC+YAFT89OzcU1mV8fi5B3xpMzNF\/VsWJ9JjQpZfqslhX4s05iAcUn56d10sDY33GJutqGTAYHGhxUX9vV6QnGdhTSw4I5Cfoc08pC\/SqznJ6oPjG2bm6byxQuu7REDG3MV5yfy6h5+CtLv1N+QElXzVFF4qkU2CqqrNML\/ROTZ+d6wobzjwk3URmDWY+82JaDq6q0pekKT7l9mFMVbUJn5qdtewvHfB\/2PkOp2uvceQczHjIviPS79PFSrmxhOmqNuNjfXZOZX+066V\/KEN7jSDl4FWI7LtZ1majq9qXeXpgdAo6+0tNWbTX98VgopuU3PK4stMyvaCr2pd5emB3Ki37tZ38\/2UEO2\/94lQaXdW+zNMDt1Mq2a\/cyjFPtncl9226qk3zn2GJZP9LwTAXULaDJb18n65q63xioCq+FuU4EF2Lc92jT8Q58TF+38EhdHj5ePpEnCN\/d3pfoYkld8z4qarOshLypG70k7GGcUX8jaZ83gIIH9dfZJpYnf4nPGxSChczIU\/Dm8BfnGdC5hc3gY+ZFI5nML9A+cdMlTmZEclfrWdY4+xMkXxWlfEqUyQfM7oMtzOBHIDlHzO6LLczi+Rnf8rwn0wi+Vh9yhpt7uA\/mSEOAPXHvSNZrI3wJxOR\/Bp1dDO+AL\/k4TgCjR+nzhUpa9nuQYKm1oD5Fu1Clzt8qFL2rHP0t0dXqFVHf6hS9qwz6C81d4JRfmv\/xdXvGd4T5Q3NV7850L5AULww3tTeE4Wnzx+aKzqR5quubCLfqH9KCdiRCSoQpX9a\/Co\/FbEih7Y5oACTdXC+vlJoy+DsP0VoPX5aHkHB6zWm2lO1zV5xak0Kjd7KNzXiYqYtCQ7HspMO37JkQj\/g6C9UTsvG\/nf9\/wJ+zv0GTAFIEgAAAABJRU5ErkJggg=="
             },
             "degree": 10,
             "id": 19,
             "name": "Pyroglutamate",
-            "type": "4"
+            "type": "[map00480] Glutathione metabolism"
         },
         {
             "Data": {
                 "fdr": "0.0709",
                 "log2FC": "1.41",
                 "p": "0.0131",
-                "color": "#E6429A"
+                "color": "#E6429A",
+                "KCF": null
             },
             "degree": 11,
             "id": 20,
             "name": "Asparagine",
-            "type": "4"
+            "type": ""
         },
         {
             "Data": {
                 "fdr": "0.356",
                 "log2FC": "0.728",
                 "p": "0.23",
-                "color": "#F977A6"
+                "color": "#F977A6",
+                "KCF": null
             },
             "degree": 6,
             "id": 21,
             "name": "Arabinose",
-            "type": "4"
+            "type": ""
         },
         {
             "Data": {
                 "fdr": "0.22",
                 "log2FC": "1.22",
                 "p": "0.0927",
-                "color": "#EE4F9D"
+                "color": "#EE4F9D",
+                "KCF": "iVBORw0KGgoAAAANSUhEUgAAAJ4AAABpCAMAAAD8zGroAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMAUExURQAAAK+vr62traurq6mpqaOjo52dnZWVlY2NjYuLi4WFhYGBgX19fXd3d3V1dW9vb21tbWtra2dnZ19fX11dXVlZWVdXV01NTf7+\/vz8\/ElJSfr6+vb29vT09EFBQT09Pe7u7js7O+zs7Dk5OTc3N+jo6DU1NeTk5DExMS8vLy0tLd7e3tzc3Nra2icnJ9jY2NbW1iMjIyEhIdLS0tDQ0BsbG8zMzBkZGcrKyhcXF8jIyBUVFcbGxhMTExEREcLCwr6+vgsLCwkJCbq6ugcHBwUFBba2tgMDAwEBAbKysrCwsKSkpKKiopycnJSUlJKSko6OjoyMjIaGhoSEhICAgH5+fnx8fHZ2dnR0dHBwcG5ubmxsbGZmZmBgYF5eXlxcXFhYWFZWVlJSUv\/\/\/0xMTP39\/fv7+0hISPn5+ff39\/X19UJCQvHx8e\/v7zw8PDo6Ounp6eXl5TIyMuPj4zAwMC4uLiwsLN3d3dvb2ygoKNnZ2dfX19XV1SIiItPT0yAgINHR0R4eHs\/PzxwcHMvLyxgYGMfHxxQUFBISEhAQEMHBwQ4ODgwMDL29vQYGBre3twQEBLOzswAAYAAAAAAATwAARAAAAAAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAA\/QAA7QAAAQAAAAAAAgAAAAAAAAAAAAAA8AAAAAAAggAA0AAAzgAAAAAAGAAAAAAAAAAACgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANAAAAAAA3AAAAAAAAAAAAAAAyAAAsAAAAAAAcAAAbAAA\/wAAAAAAyAAAOAAAYAAAAQAAcgAAYgAALgAAMQAAUwAARgAALwAALwAAAQAAcgAALgAAhAAAAAAKlAAAhADabAAAmAAAnAAAAACwAAAAAAAARAAAAAAAAAAAAAAARAAAgAAAAAAA8AAAQAAA9AAAyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAbAAABgAAAAAAAAAAAAAAugAA7QAAAQAAAAAAArSufdgAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAP+SURBVHhe7Zr7VxJBFMc3IytLK3uR9CA16a0ZaVZiZmZJWfaQXqY1gkplUWpWmlkR9ND0P27YXXB2XWbuzgC7P8yeI6jcx4fvnZnl3oOCXH0prqZDEk+kPlI9qZ6IAiK+cu2VRr3xGa9Iooyv\/RDQ4n4+1NOTet4kAsgTAoh36deDn77g4z\/X+Pm4QsDw9n3fonJVTXLj8YWA4X1Qfqhcvcv7efn4QsDwupS3KtYnHZODkS8EDO+LclIluqBjcuDxhYDhRf+uU4luLXCAaS58IWB46EV95tCLnd7JjccXAoj3+uPIrC948OgrfjyuEEA8dGIoeT25+wg\/HeIKAcXDXAkRNs3XdggwXsYQbGz9RjhCgDNyxDZDcoSQeDkRpXoiu1eqJ9UjFZAHizxYtPsteCU4cc9NMPEYH0gUFGCGML0xsCADkfbINuqx4o\/URPw0i6oBVog13kC8eEV7daK6vSKeNz3TIlqe3BWghrCIDcLz9bUNz2DnmeG2Pp8lINticWqihRrCMi6BF4tmLKJ6\/tVxTTQ8XxPUnYM18xtUM8PFtmgcmSszh\/Cpgbw4nzFznmO59XbmhZtXMo\/EuGbleF0H4dHxZvqGiY5pUfsktWls1UkPETqc4evF+cjMxtiEeoQRMa6xoJmu+83gNViM9ae21xqzrkzXIRTq3syHR45rLGrpDTePfqNWm7Qom9vbuGY5eMMYL9KJB3Jw9QY9+NqBxWaOa3wbk3tO0feKbtEyMbVouegxnudhQ0zDy2U2m5LFXerE11VsDhjXxO+mnjJOGmwRGEqWr91JOkPIE2++p+HlMtPwclsDNK7xVy7TT2Hkr0xvPZBHOvzvkAd1LX01Fbe\/vmGAcLHcGsBxDfvMpN7lMB56NrnesHObjo3HXhKrwXrnwiY+bLz80mnqodqL7wx4iVmEBu+sulnjwcY1BcBDYcV87jW1vmfhwcY1hcBDoya8s2f+Wa89UyXY4xpBPMvKn1+4nOemRl0oVi8WAS9wTpuxZy+RFCK+ebR41J1Op++7Fo9yLLuhuBLPdhUoDiLLW8QX+B5EUoj4SjypnogCIr5FXnuQJhWIQDPjVQDSpDqJB2hSncQDNKlO4gGaVEfx2E2qo3jsJtVZPGaT6jAeq0l1GI\/VpDqNx2hSHcSDNKkuwzM3qS7DMzepLsMrAE4hG8ki4Ei8QorK+3G0kAxFasNLgCjVExFZqlcw9RR84WDaI\/VJJKUdX7K4KlruOxe0v+xkELIl8LK\/GrlUHQ3fEynlcgXgaQXXf3DJheSw6QzAc7l6LsHLFhCwQ2yWiN\/csJIAJ4puwp\/QnmdJF7o9NP3MsO9UOg+pnojWUj2pnogCIr5y7Ymo9x8d8HoGeWWXzwAAAABJRU5ErkJggg=="
             },
             "degree": 11,
             "id": 22,
             "name": "Glutamine",
-            "type": "4"
+            "type": ""
         },
         {
             "Data": {
                 "fdr": "0.166",
                 "log2FC": "-0.536",
                 "p": "0.0656",
-                "color": "#2550A3"
+                "color": "#2550A3",
+                "KCF": "iVBORw0KGgoAAAANSUhEUgAAAHgAAACMCAMAAACAuZ3vAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMAUExURQAAAK+vr6mpqaenp5+fn5GRkY2NjYmJiYODg4GBgX9\/f3l5eXV1dXNzc3FxcWNjY19fX11dXVlZWf7+\/ktLS\/z8\/ElJSfr6+vj4+EVFRfb29vT09EFBQfLy8j8\/P\/Dw8D09PTs7O+rq6jc3N+jo6DU1NTExMeLi4t7e3isrK9zc3CkpKScnJ9jY2NbW1tTU1B8fH9DQ0M7OzszMzMrKyhcXF8jIyBUVFcbGxhMTE76+vgsLCwkJCbq6ugcHBwUFBba2tgMDA7S0tAEBAbCwsK6urqysrKioqKCgoJycnJCQkICAgH5+fnJycm5ubmhoaGRkZGJiYlxcXFZWVlRUVFJSUv\/\/\/0xMTP39\/fv7+\/n5+UZGRvf390RERPHx8T4+Pu\/v7zw8PO3t7enp6TY2NjQ0NOXl5ePj4zAwMN3d3SoqKtvb2ygoKNnZ2dfX1yQkJNXV1SIiItPT0yAgIB4eHhwcHM3NzcvLyxgYGMfHxxQUFMXFxRISEhAQEA4ODr+\/vwwMDL29vQoKCggICAYGBgQEBABvUABlAAAA9ABi9wAAzwAAOAAAgAAAyAAAAAAAAAAAAAAAAAAAYAAAAAAATwAARAAAAAAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAA\/QAA7QAAAQAAAAAAAgAAAAAAAAAAAAAA8AAAAAAAgwAAWAAAzgAAAAAAGAAAAAAAAAAACgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANAAAAAAA3AAAAAAAAAAAAAAAyAAAsAAAAAAAcAAAbAAA\/wAAAAAAyAAAOAAAYAAAAQAAcgAAYgAALgAAMQAAUwAARgAALwAALwAAAQAAcgAALgAAhAAAAAAKlAAAhACybAAAcAAAnAAAAACwAAAAAAAARAAAAAAAAAAAAAAARAAAgAAAAAAA8AAAQAAA9AAAyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAbAAABgAAAAAAAAAAAAAAugAA7QAAAQAAAAAAAk0mbu8AAAAJcEhZcwAADsMAAA7DAcdvqGQAAAThSURBVHhe7ZppV9QwFIaLioCoqGVVRxRccWFQEQE33AZHUVGIgMMIKoigKK64Iir\/2yTd0pk0zU3jzOGc9ANz6NzcJ3mTtH2n10JlOqwycZEBl0x5I7WR+r8pAFhcuQU7phtexPgYCbSbROHS4MX9AwNfH54S5Aoi0ptJWGZNB\/j8jztfmrru\/rwSmYyJ0Ahu+FhDiVvnosBshEbwS+szJV5f2x1BZiPSOzfg464OqS9azyjwtduBYjobkf7bj49LOsDvrA7KOud2oBjMRmiUeuxXBWXd+oAW+VozEUgjGI22k008fmIH6t2e56KDCK3gqVeP3jZ17T2cR233uzfxriRBhFYwOvpg+dryroNksGfanztrPDjyQ4iJ0Ck1YcxOXB2hM2wPdg+3MVh7cLmO\/j8bsdc4p6UvmbTteKU7w6lt37PjXjqOAvEdgIFRMMMnW46v0vRtdfw5j2FDwcwMX0+PthINhvirXDs4mOHm6qq+Y5MR+zpObPiIcUZvhvOP0zfiAFHfK4ERcmb4Qk1OlavuJMgMK\/aadla9LZ5h9cZJwAjlywVOIFeyERswaGslWR9GaiO1UAGzuEq2QIzURmqBArkaqxzPXKji\/ciRkbTjXhUO1VW92DJPjETffEmfq1F+qNe1Tr6bgg5aZcS+OXS8U4Rf1m9hfHOYcnOXxC0G5jBfW+UNqtAvy8gOlNo3hxPZnmFvxIybkkE6MTCwZw7tzFJ9Zxji+2VJNgScH3HN4crMzEpxfuqXpQ8I2DWHnfVLGe4PyM3Vv6W5IKlpJ1PDPdmJqPyAYQBCnU5W1Qp+eQBkA4Q6YGYpF48bkA0QKjEtgGyAUAPmLG2AfoBQI7WRGnavM4tLdF+LVyc+ws8PCDX7uFT72C6P1Pa9LJqMMYe5mj8r0j\/Zyywue6HWRh29C\/gpU2QOsX1svX9p3xY5uAR4tdGeziKUfWKLzKFjHxvqLcuSgjPgcC2DW+GQmUIYi4eL7G94NUWZQ98+7jmEyRT+iSy+6DoJBsy+ivQrHLLTVGXy4Rw8c8jax7Y3DnkOF2OI6iT44KDCwVF52n445e+eInMYPtHRQ7iXuxAS1klwwWyFA1X5wEZaUuIeYXNY9G7xbD8G38bzzVRSFL\/YZcF+LUOoBoKonCrwDsHLVN67xatrVGhxnQQL9msZQjUQ9oFKzjXKNYf8d4u3iNBIXCfBlTpcA\/H0JveWhc0h\/tWH\/27xNGkhrpPggtkKh+j7ZHN1o\/BSJq6T4K9qpsJBdIN+IfoSMZUUnHIFPpipcIjO3TpgDQiduLBOIuICwtRAiEcl\/DbIItxOBTlmExCDppFZJG4SUR1YwteJJeXeJQArM2nDdQjO0JtQRnXc63DEqkN125kRQwSEFJ4W5VWXGlZ4qg8MLDzVBoYWnmoDQwtPtYGhhafawNDCU21gaOGpNrD4gUriaqC8j4GFp\/pGDCw81QjGqZI8lilLLTGNwhADTqqgdHsjtbRUSQON1EkVlG4fkpp4EuKn6F\/vw\/VXhSelCRGBLJhCHU7wQTrgnAidTMpl3aLXhwKG5UG9WD3rkcnCBzNjdycg8WBpgnhwMPFubIlGzHTuf4ELFpC3pHxVmDWmQe3C7cTsI3cDudvK2WLBHkvK1jNhCr0wYAXR1JoYqdV0U2hlpFYQTa3JP+bqdnh1NVbyAAAAAElFTkSuQmCC"
             },
             "degree": 12,
             "id": 23,
             "name": "Shikimic acid",
-            "type": "1"
+            "type": "[map01060] Biosynthesis of plant secondary metabolites|[map01063] Biosynthesis of alkaloids derived from shikimate pathway|[map01100] Metabolic pathways|[map01230] Biosynthesis of amino acids"
         },
         {
             "Data": {
                 "fdr": "0.587",
                 "log2FC": "-0.0133",
                 "p": "0.471",
-                "color": "#081D58"
+                "color": "#081D58",
+                "KCF": "iVBORw0KGgoAAAANSUhEUgAAAJsAAABpCAMAAAAa5aGsAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMAUExURQAAAK+vr6enp6WlpaOjo5+fn5mZmZeXl5WVlZOTk5GRkY2NjYmJiX19fXt7e3l5eXd3d3Nzc2tra2NjY2FhYV9fX11dXVtbW1VVVVFRUU1NTf7+\/vz8\/Pr6+kVFRfb29kNDQ\/Ly8j8\/P\/Dw8Ozs7Orq6jc3N+jo6Obm5jMzM+Tk5OLi4t7e3isrK9zc3CkpKdjY2NbW1iEhIR8fH9DQ0M7OzszMzBkZGcrKysjIyBUVFRMTExEREcLCwg8PDw0NDb6+vgkJCbq6ugcHB7a2tgMDA7S0tAEBAbKysq6urqysrKqqqqioqKampqCgoJiYmJaWlpCQkIqKioiIiIaGhoKCgoCAgHx8fHp6enh4eHZ2dnJycnBwcGxsbGpqamZmZmRkZGBgYF5eXlhYWFZWVlRUVP\/\/\/\/39\/UpKSvv7+0ZGRvf39\/X19UJCQvPz80BAQPHx8e3t7Tg4ODY2NuPj4zAwMOHh4d\/f3ywsLN3d3SoqKtvb29fX19PT0yAgIB4eHs\/Pz83NzRoaGsvLy8nJyRYWFsfHxxQUFMPDww4ODr29vbu7u7W1tQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAOJatUcAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAUDSURBVHhe7Zr5XxQ3GMajFVsPrFZR664iUFot6iIVR1DAa6m92CptEe8eZkVAwVtUVBCr1j+6c+3Mm9kcbzI7Ix8\/mR+AZZ8k333mTd7ZvCF0+V5k+aJRy2Z2c6xv1jczB8xa2XjL3bfCgf8eyAeNFK07PWFxSo\/R\/J7+fIycIP0rJMPFCuc3T3aGzGrBGbOtGWo+XH01fqIiHA4o8mWbfXvOhxobbBPAQUW+bKfJQ5\/pMFkUsEGFc\/WNe43mdE9\/LU\/4TN+QMwI2qHBIcOUTb5+QYNI9I0cEbFDh\/HHLvX7Kie11yNT0\/Sy90srDg4p8423n\/FYPqHr3S0q3lXo5cFCRLxttIpe66OO\/Bw+5WCuXRqv1dECRMxv98V9yitzv9pm6brd3sXAv3ZexIm82Wtg3EM276vqllQCuOrrkvYIK4RItfgOdF1TZs7e0raM2zIP22wkbDcgo+ruMOHvWgq31yvxAgPDL0npO+OnjIX2TZc8o2N4vfO4+b3Twp22ApnKf+QA4Nnn2jIKtc8fe7oH5L7jLnT+q+tkFwuHYVNkzCrbPBp334punfnYx8E2ZPcNg6957o1OMpn52YdvifFNnT+oF2xQRP825w6rcT34qHBvMjSJfvGCT96Z0P9E1jg3mRvE9q3wn7w3hvkG8MdlTDDclZ8O4rz9PYW6UraFyNpz7cf+4e+qtmiB7CvEUvcFnF0SaQLMh+lJnQPjsou4QzeYJlWKlAOV+jVrZGxQqxUqB2iygQPfWGN9QvXwg3ywbN3KUEWJ9s77h1hxUpNh4qzNzefv2VQPyKaGIXvTzwlh5oyKcJs+T8Ul59JIL5TFlUOqy\/dCzva\/FqRQlQ7uS0nSPbOO8+KnT8mq7VKL\/3Htw16PjbqsXu+eGRXC+5PK64492PRVJhku7X7jvySTa3xdmLvavDXZ36fDcNG8fkIaSVf\/QibX9F2d4dL3Tc+HXaqEk0QzcfKZ4Em9cFJqca\/EX4mLFabmXHDqSPHnuvtV5zRkpJCX3\/oIBEUtkpRvABjfw4o2Lxa\/vsLv0bRuObmBrCkBydI8HtXinvs3YLQY3lEhLN3w2sHGxwPGAmRSdm4HkRjAVCiMLm4HX7hT4ts7rkQVK5aUbLhvcuODGTjwpJs72bwKS3zeGDDOb4hgNpkDdNUMVpRvIFhVPEBsX4aR4t\/8mMy1PtkcIT2\/uf+e+iKdAPZ2idAPZouIJZuPCmxR915NrVccQWAFX9FzvY6ZAkk5RuoFsUfEEt3HRdqHcXJcGSt6efu2abC6Ps1OApVOUbrjxht244JSn\/lzNDC8vYClKN1w23Y0LgFPZwgt7wf8UpRv+GqK5cQGGPlTSYIPbU5zyiGDt1du4ADjFoajKgIGUlm5EDyxaGxeQov0khinSyMZBP0xpjdgYccPZUp67gJ+q0Wxpz11kyJb63EV2bOnPXWTHlv7cRXZs6c9dZMeW\/txFdmzpz11kx5b+3EV2bIrkrZkuGr32pj13kaFvyNoSzsBG+4YbFaeybDifkirrm\/XNzAGzVjbePnLfvI0k9yMGP2u\/gqqCv8cE\/mnmhF4rGG\/+2MGJgfiXS+WzBd2G7+mNYaoGbLU\/k4jLly20LLyl0Y029UKnndK3Ght7o3WGMNZi2cJg+1DxlpgEEUYUb2CCGHuh05DJC+ziES0avIVFZwxTrc1ZZs5Z36xvZg6YtbLxZn0zc8Cs1f\/J6Gk1M8E4OwAAAABJRU5ErkJggg=="
             },
             "degree": 2,
             "id": 24,
             "name": "Citric acid",
-            "type": "3"
+            "type": "[map01060] Biosynthesis of plant secondary metabolites|[map01063] Biosynthesis of alkaloids derived from shikimate pathway|[map01100] Metabolic pathways|[map01230] Biosynthesis of amino acids"
         },
         {
             "Data": {
                 "fdr": "0.322",
                 "log2FC": "0.935",
                 "p": "0.173",
-                "color": "#F665A0"
+                "color": "#F665A0",
+                "KCF": null
             },
             "degree": 11,
             "id": 25,
             "name": "Lysine",
-            "type": "1"
+            "type": ""
         },
         {
             "Data": {
                 "fdr": "0.0429",
                 "log2FC": "1.62",
                 "p": "0.00507",
-                "color": "#DA3096"
+                "color": "#DA3096",
+                "KCF": "iVBORw0KGgoAAAANSUhEUgAAAKsAAABtCAMAAADph2GCAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMAUExURQAAAK+vr6urq6enp6WlpZ+fn5ubm5OTk5GRkYuLi4eHh319fXt7e3l5eXNzc3FxcW9vb2NjY19fX11dXVVVVVFRUf7+\/ktLS\/z8\/Pr6+kVFRfb29kNDQ\/T09PLy8vDw8O7u7uzs7Orq6jc3N+jo6DU1Nebm5uTk5DExMeLi4t7e3isrK9zc3NjY2NbW1iMjI9TU1CEhIdLS0tDQ0B0dHc7OzhsbG8zMzBkZGcrKyhcXF8jIyBUVFcbGxhMTExEREcLCwg8PDw0NDb6+vgkJCbq6ugcHB7i4uLa2tgMDA7S0tAEBAbKysq6urqysrKqqqqioqKKioqCgoJycnJiYmJaWlpCQkIqKioiIiIaGhoCAgH5+fnx8fHp6enh4eHZ2dnR0dHJycnBwcG5ubmZmZmRkZGJiYmBgYFxcXFhYWFRUVFBQUP\/\/\/\/39\/UpKSvv7+\/n5+UZGRvf39\/X19UJCQvPz8\/Hx8e3t7evr6zg4ODY2Nufn5zQ0NDIyMuPj4zAwMOHh4d\/f3ywsLN3d3SoqKtfX1yIiItPT0yAgIB4eHs\/PzxwcHM3NzRoaGsvLy8nJyRYWFsfHxxQUFMXFxRISEsPDww4ODr+\/v729vbu7u7m5uQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKW8O+gAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAUaSURBVHhe7Zr9W9RGEMdXK0p7ioJ6PTnFFt+qttWztqZ4ValURbG+FF\/aoqj1rTYWOC2g1DdEkRZQtPWFv9bdTbLZhOxmLrd7hOfZ\/HDcy+zMJ9\/MZLOzIHvuHGjuoNqGVc\/FMroaXU0OmBwA50D283cP9cgF9gplPb4XtaHiPLBfHYZA1kXfZ3bdfH6+rVMHA9QnjHXg9RnqsKu1CepYgx2M9RB6RGPvQpMaGKAuYayn2nuow\/WoA+pYgx2MdQG6RWOPom81MEBdwlinXMaaIwNQxxrsYKyrni0nsW\/eXakBAewSxmrXoEub7ce\/t34FdqzBEMhq\/\/gSHUAPvtBAAHcJZbWzW\/bNZq6SMwKzwk9fmyWYlRiCjfXggsMb1rIugNG1LLnAxkZXsFQzDNlSKb+K\/JZznpmcI2W6+ksl62eC14G4CShdrNxSKe2s\/FJJI2s+eYr6I\/mlknX5f3ycVZ8Da5fshMF+Kj0lfqlkIedIlq+DokLsPd1ydROBGIwRN\/dRe7dsIcwvlaxf\/sLHsWSsXe1dkYWY\/eDpx9sJZAlblGS0OzasftVgdeaENvxSqYJ8PVpYMbWiENF3efP3hjc0uNDCRevNvPgJv\/1n9chhESy\/VErM+mXj8H4cYP9w45NgnNE\/tx3Pkq+EFp79dyMrNzrvD4\/c\/jqKtt\/ml0oJWfsvFmud\/kBPbfEidukdm6621NLpRWjhWa75bWI+G5brtBruh2mzNRb+yl8qyVkDs5rfFsROrjQzz81XrJNUSHzkd56j4GILb9j0s2ufkPfejNm0eM\/iYJFNrrtDWzqypRJXLvyZ+HOd54TRTt5xvBJY+iqzoAYDDYUfyN\/cmTE2vd8PFFlz\/QRTICy4\/zmalZvrZjrJnpyo54SOCBO0OGYtW0MCjn\/Wt4UD8Yus53SxjsssIWwkKz\/XRTnpr2MJLAjjW2z8Y2SKXv66lhMhCrfI3m7tC1WsgJZnZbNafFvwSd\/Wt9ijJIxrsbD4ay8JfbCwfOZMQYps942oO2EkLc\/KZjVIW3Be4caUPAy22Hf77igJO3j96XRk+KZulJHOH\/wonpXNaqC2YCnTHhOmlEFn6SR1ouUC\/8wcoAY\/lAaetf37ALAtGN+HoSCPG++Ng4pbbOT8EllbytqCxPutsQ\/FTwBlLEwErMraglQJ4eWnQlWaA\/xcF3dhpL\/HgCRnDURV0xasDmtFcrLBhlWNjmEvRlejq8kBkwMmBzTmgLzTlezZRQMuAcl\/c2lI4jpVrPbQ0v8ktGlhzSOnYyGmLXUheb9OsN7SkAOsYyGgjevXBZHKuASJzoV1LCJoY\/t1oYi6Wbm2YIg2tl83Qxv9rLbfFhxa+q93AxP165TsbyXKAHeQ3xb0UEX9OjX7W5Ww2nZ8WxD362xb0f5WZax8713UFuy3Ve1vVcrKikzSr1O1v1U5Ky0yaVtQ1f6WAlbbbuqW9utU7W8pYcX9eJkfRftbilDlbpTsb1WFFAfh\/hUw4f5WtUhxHOj+VhWRxKGA+1upYJVBVOHZRZkGhlWZlAFHRlejq8kBkwOBHCAb3VgS59Xf0qOfwl\/qkU7qlWd1t\/G83TyXGFO63M55zAKkG5IL7b1lyJ66HCsqZ\/9U9VmJWd0cwAYpzIGQrj4jue6etqnWlc9VvuBUX2CAP0ltMQn52kqJruy+xO5cTtHzNzL67zsACbSYzFrgBGdjWBOIBhhidAWIlMDE6JpANMAQoytApAQmc0nX996c3lDIEc\/WAAAAAElFTkSuQmCC"
             },
             "degree": 2,
             "id": 26,
             "name": "Caffeic acid",
-            "type": "2"
+            "type": ""
         },
         {
             "Data": {
                 "fdr": "0.256",
                 "log2FC": "0.857",
                 "p": "0.128",
-                "color": "#F86BA2"
+                "color": "#F86BA2",
+                "KCF": "iVBORw0KGgoAAAANSUhEUgAAAGIAAABSCAMAAACYAfGRAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGAUExURQAAAK+vr6urq6mpqZ+fn5GRkYuLi4GBgXt7e3V1dXFxcWtra2NjY19fX1lZWf7+\/vz8\/Pr6+kVFRfb29kFBQfLy8j09PTs7O+zs7Orq6jc3N+jo6DU1NeTk5DExMeLi4i8vL97e3tzc3CcnJ9bW1iMjIyEhIdLS0h8fH9DQ0BsbG8zMzBkZGcrKyhcXF8jIyBUVFcbGxhMTExEREb6+vgsLCwkJCbq6ugcHBwUFBba2tgMDAwEBAbCwsKSkpKKioqCgoJycnJKSkpCQkI6OjoyMjISEhICAgH5+fnx8fHh4eHZ2dnR0dHJycnBwcG5ubmRkZGBgYF5eXlxcXFZWVlRUVFJSUv\/\/\/0xMTP39\/fv7+0hISPf390RERPX19UJCQvHx8e\/v7+np6TY2NuXl5TIyMuPj4zAwMN3d3SoqKtvb2ygoKNnZ2dfX19XV1dPT0yAgINHR0R4eHhwcHMvLyxgYGMfHxxQUFBISEhAQEA4ODgwMDL29vQYGBre3twQEBPCmOeAAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKTSURBVGhD7ZjpW9NAEMYDRQqIlioeVDyAKocVlYKIiALigYAciksDKiqCqEUFqvVA\/3U3ezRJE3ZnyhM\/7Xxonmfzzvyy72w2SS0SeViRE4hBAD02RhmjVA6sfEgADZIy5IrKnxwe\/v4sjYLgENd\/PPqW7J79eQvDQCGaduKsdv1GZIj31i6rPfL3OIKBmsWg9YaV\/iRQMA4K8dlqZ1WvClQEiNyvKlZ1bBtWnKtQsyDPU85NYXcciQ7x+uPSVrK7+dxqdAjS9rRwu3D0DIaANMopvYaqj+4F7x2uf1i5QUB7aHoBdMoYZYxSO4Dc0ugetY7d17CIuvhy\/DGwb0KGRFR9WTy\/2MWf4NBAIfLHNn\/Twv2bL\/LQ+rjHy+pM3z2blbYP9TXAH9+eWdg5Jz2XdC8wyUYSbCQxWmhsKZ1qmeutcV5GXEUwW4o9iMy4M3j3hovInnIYI87I5dRb\/rIpgw+4imA2DDFUKxCN\/KK9kRjtpYiSolLE1AD9lHBmMRNm\/QmKKClgiPkYjcNeo2LTrTY3ap\/IlhSZQHaYUXsDNG76EC8vPdAgpCITyFb34n6qdZIqsjEyuPdVPQup8BglspWI9IUV+xW9ySiCLGxUK42SChchs5WItS1C5ic44vS1dxoEV7gIma1btOnMOkeQO5YGwRW+FcWyNYjOi394L2gs6xBM4UXw7BCEZ\/TKdv\/+C1V7piw7dKc92+PfLLRFfYLy7FDEk6FisfgQV9hVl2ejnheVQQ0C6JsxyhgFdAAo860oiwbN47\/hBzoKrBy604rvONUB+1bOLjW4r+tIB5iFpIUihG3CShSlgllgm\/F\/EfKPIF0vDjAL9Wr1r2RMM7CXhKkttAYBNM0YZYwCOgCU\/QMj007WqyXT1wAAAABJRU5ErkJggg=="
             },
             "degree": 2,
             "id": 27,
             "name": "Urea",
-            "type": "1"
+            "type": "[map01100] Metabolic pathways"
         },
         {
             "Data": {
                 "fdr": "0.0709",
                 "log2FC": "3.56",
                 "p": "0.0131",
-                "color": "#49006A"
+                "color": "#49006A",
+                "KCF": null
             },
             "degree": 2,
             "id": 28,
             "name": "3-trans-Caffeoylquinic acid",
-            "type": "1"
+            "type": ""
         },
         {
             "Data": {
                 "fdr": "0.748",
                 "log2FC": "0.142",
                 "p": "0.689",
-                "color": "#FAA7B7"
+                "color": "#FAA7B7",
+                "KCF": "iVBORw0KGgoAAAANSUhEUgAAAIoAAABkCAMAAABuF1ikAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMAUExURQAAALGxsa+vr62trampqaGhoZ+fn52dnZeXl5OTk5GRkY+Pj4eHh4GBgX19fXt7e3d3d3Nzc29vb21tbWVlZWNjY19fX1VVVVFRUU1NTf7+\/vz8\/Pr6+vj4+EVFRfb29kNDQ\/T09PLy8vDw8O7u7uzs7Orq6jc3N+jo6DMzM+Tk5CsrK9zc3CkpKScnJ9jY2NbW1iMjIyEhIdLS0s7OzszMzBkZGcrKyhcXF8jIyBUVFRMTE8TExMLCwsDAwA0NDb6+vgsLCwkJCbq6uri4uAMDA7S0tAEBAbKysrCwsK6urqysrKampqKioqCgoJycnJqampiYmJaWlpKSkpCQkIaGhoKCgn5+fnx8fHh4eHZ2dnJycnBwcGhoaGRkZGJiYl5eXlhYWFZWVlRUVP\/\/\/\/39\/fv7+\/n5+UZGRvf39\/X19UJCQvPz80BAQPHx8e\/v7+3t7Tg4ODY2NjIyMuPj4+Hh4d\/f3ywsLCoqKtvb2ygoKNnZ2dfX1yQkJNXV1dHR0c\/PzxoaGsvLy8nJyRYWFsfHxxQUFBAQEMHBwQ4ODr+\/vwwMDL29vQoKCre3twQEBLW1tQICArOzswAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADimQ1EAAAAJcEhZcwAADsMAAA7DAcdvqGQAAARFSURBVGhD7ZlpWxMxEIAjXohyqRRsFRCxKreAqxQPEEoREQWtIAiihBZEoSgCKmhBLgUE\/cXudne72TPT7cXjk3yg2zLJvJ3MTCZThA\/MQAeGBDMUo71gVmFWgcYo85UE+0qwoe2zk1+z5LywsOutfvnxr21V49D9sZ\/inCd295Z9s98w5vyCtk4U0irN3L5Xs\/3zCZTFtq\/4PcdDeGZ0zW2K0r\/ZxVMcac0GsthFKb\/\/VNBQlvfdDMW9ezLCkN06DWOxi3Ib1coKuLN3+eHXbtA+mo9I3EA3k4vSjS5GUZA4NL7S53VFJK6izuSi\/ELuKMrzID8OCyi\/zxU9kENGhm1Aq8lFqUBbgoJgzVHCV+bX+ta\/tEuKm1BT5Onxn\/Lkojir3wgKHvrqCJTuYYz7T0uKA9dfC0+Bj4UwEvt5ZQu9\/FTyd\/OVJq9cWtiRNXej4arxpaJmPvWAht0IwviRB\/n2BoNqlEPLp4QELI7OW8jru1YF4uCF7KPgQG34gkaN\/32d6pP5OzNQkLhQ9EraP8BPHP3sOKwiTFVPH2zd2Ng4oyjRS1jZKKEoWkUMxcj0zCr\/q1VUNSqgLKV7Al2CtCURzGSNCilL6YroEnQUUFlKV0SXoKLAylK6IrqEGUq0RoWVpXRFdAkzlGiNCitLEb5MOdjpEmYo0RoVVpaiQe+A9RGGBrx58EPOMIIgZakrk3P8KKzPsDhru+oLmxxcr1j404chCqAs7aguDfOrtywUL5koqSteaOH\/FS5d7KBjCBLGeYUoSw2vdo1Ti\/vi+oEsz5CRyPSQJysginQsTjVCYExSnFKWcj1KsSotODdKWt09ohdxHuNGovck7OrlHHPi3GgSN2g\/mHqVXJauzs6qr1Rluc0D71TfUieyekU\/J7eMn6MkcYP2A93BnT0rBcQ35L21QmtutYi7YMXAkg6OvyMpvQVbKBhP5yv7LnqrbigigWeefEP\/CmMyidtEwXhpolK4aSneqoeRRHYqJ8xCCpNJ3KD9QN8gUWtG\/ViTylv1MLzI+phVoiGTOKdvP0BRMMrxvqAIT+Z4cyYtwpZM4pzSfpBnwFFwiH6VDFnmDzKJ2\/YVXkNsp6whEpnE04yCiSSebhSit5B2FIwtegsxuG2C2w46d2IoRhHGrMKsAikmBRmwr0AXtC8HRgG0FuxTRGZCUSCthdSggFoLKUGBtRZSggJrLaQEBdZaSAkKrLWQEhRIayFOEGgwA1oLcZNA80qsv3jZAYOmuBh\/8UomimVVakexfg7UKonRZrkKQ4mrikv+DrENYhsE9TLmK1RfEVp1Qukd+Su\/SKe39kOo2eFy5AZJPS71i4Ak3Qz41wS0wUzZCBT5UYOCovrTjULoTzuK4kDpRiFukKlDkX1C67Zy0Ul4LzwsYpBUpTh1wErvpKAWA1yJ8Bh0AEVZtqVmW6AlkyTGNohtENS1mK8ccF\/5B6r4YYPNoesvAAAAAElFTkSuQmCC"
             },
             "degree": 6,
             "id": 29,
             "name": "Itaconic acid",
-            "type": "1"
+            "type": ""
         },
         {
             "Data": {
                 "fdr": "0.356",
                 "log2FC": "0.238",
                 "p": "0.23",
-                "color": "#FAA0B5"
+                "color": "#FAA0B5",
+                "KCF": "iVBORw0KGgoAAAANSUhEUgAAAEoAAAB0CAMAAAAVflSeAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMAUExURQAAAK+vr6mpqaOjo5+fn5WVlZGRkYmJiYWFhYODg4GBgXt7e3l5eXd3d3V1dXNzc3FxcWtra2dnZ2NjY2FhYV9fX1lZWVdXV\/7+\/ktLS\/z8\/ElJSfr6+vj4+EVFRfb29kFBQfLy8vDw8D09Pe7u7jk5Oerq6jc3N+jo6DExMeLi4i0tLd7e3isrK9zc3CkpKdra2icnJ9jY2NbW1tTU1CEhIR8fH9DQ0MzMzBkZGRcXF8jIyBUVFcbGxhMTE8LCwsDAwL6+vgsLCwkJCbq6ugcHBwUFBba2tgMDA7S0tAEBAbKysrCwsK6urqioqKSkpKKioqCgoJycnJiYmJSUlJKSkpCQkIiIiIaGhoCAgH5+fnp6enZ2dnJycm5ubmZmZmRkZGJiYmBgYFxcXFhYWFZWVlRUVFJSUv\/\/\/0xMTP39\/UpKSvv7+0hISPn5+UZGRvf390RERPX19UJCQvPz8\/Hx8e\/v7zo6Ounp6TY2NjQ0NOXl5ePj4zAwMCwsLN3d3SoqKtvb2ygoKNnZ2dfX19XV1dPT0yAgIB4eHs\/PzxwcHMvLyxgYGBYWFsfHxxQUFBISEhAQEMHBwQ4ODr+\/vwwMDL29vQYGBgQEBLOzswAAAAAABgAAAAAAAAAAAAAA\/QAA7QAAAQAAAAAAAgAAAAAAAAAAAAAA8AAAAAAAUwAAYAAAzgAAAAAAGAAAAAAAAAAACgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANAAAAAAA3AAAAAAAAAAAAAAAyAAAsAAAAAAAcAAAbAAA\/wAAAAAAyAAAOAAAYAAAAQAAcgAAYgAALgAAMQAAUwAARgAALwAALwAAAQAAcgAALgAAhAAAAAAKlAAAhADabAAAmAAAnAAAAACwAAAAAAAARAAAAAAAAAAAAAAARAAAgAAAAAAA8AAAQAAA9AAAyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAbAAABgAAAAAAAAAAAAAAugAA7QAAAQAAAAAAAtKPTr4AAAAJcEhZcwAADsMAAA7DAcdvqGQAAAN4SURBVGhD7Zj5W9MwGMeHB8fwBKdzFHQ4hve8trmpQ8QDFEEEwQNUFEedU2E4D1BgOpnoFLzlvzW90rRN0nTr8\/BL8zywtfvm0zffvE3T18Xb1ly2kXgHxe6l41XJXk3kvCZ9FUU6JQhTnCrX2J7f09m59Og4BaYqYjcE2bUOPOrM99vfuOjdn5eILERBRfk+u0XGpnckFKqgouZcX0RG979dBBaqiD1YA9pW\/ADPu16LiA8y0shDFbG\/50C7gEctuA6LvU\/JSCMKVVAHmPpdIfa+\/onnt2RxY0QV9BkcbxWSKn3Uw\/P34+uE7\/qGKOiol+8ff+Siu\/cJEZ1sfSNNgtrAaURBR\/EHHxYvF7fvFXt7++KjQQTk7SuCI1VhggLaGbW3f\/PyYFo5VKNEFNqocetVUHHqWFPojygP1uO907DwSx+MoTsy3synKxMj2Bk1jwp1qrGmqv3QZB6XGvpzxAVZcSr7PHKVBcTTnoOSUx3uCTYS\/ZEqOMX+HKErgVN2oXg+ax\/KwqbC9KKmAjgppkpTgYNid4Bd6djueMXuALvStrwKDF8cDtixtmeqE3UzdYnqDBOMEj83EB\/LAUhuLD6AbISJWCIq1VtoiMrdog2FteLemtpIqJUDLW1Ix7ZXs1dKQ8Gefth\/Zbblh\/Wo4Hj8tUNqb29v+OkiDWYcIHTZ11\/0qFEBCLe+uOMIGaZH+eHcd4WmDEFkbi7d09BRsB41KWfk4lSoCxdAYCOyU9cK9Cjp2O+J9\/sIQyGmDx41VPvCeiYSoqLMlMWoSKRb4AebUALGQSlG09dfxyva7W28Y528Yssr67czcc0VLmjN9qoNlPdbayj\/6OnBZ6Q1ixklv5Se2Bnu8eJgE27mx0Q2GZEqM2enp38ZWRWFZDN7uO3z0gu8tyf8ZEHbLd80L9UdsA0zclBWkApFXOXXbchkZkcSajUEA8OaCMsf2Ttw0wBqMvVojcbIIswHLH8oUWEqR3oYaWq1haIyajLCBdVCUXk1GTF4uVBUdk1GhIHyx\/6kDTUZgdVYs2xPTUaAvSXnpO4X9vcOU6SDMrUIChyvVt8rF2ggCum\/8iE\/Q3UnTRZkeXuo\/QBEkSv90XaQSDIoX\/VE21DKJkEeuxwgbjJMo5JRdgywJJTOWuhwCV7pswBmBi5DWJ\/O7BmOKp2Vgd03x6tV8eo\/8zgaGfh6+s8AAAAASUVORK5CYII="
             },
             "degree": 6,
             "id": 30,
             "name": "Benzoic acid",
-            "type": "1"
+            "type": "[map00360] Phenylalanine metabolism|[map01063] Biosynthesis of alkaloids derived from shikimate pathway|[map01100] Metabolic pathways"
         },
         {
             "Data": {
                 "fdr": "0.427",
                 "log2FC": "0.22",
                 "p": "0.298",
-                "color": "#FAA0B5"
+                "color": "#FAA0B5",
+                "KCF": "iVBORw0KGgoAAAANSUhEUgAAAH8AAABSCAMAAABKUfvJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMAUExURQAAAK+vr6VwAKVmAOXy+y6JyFyfvdefXJjN7nlPLgBBkZFcAOXIpZ+fnwAALpeXl\/vlt\/\/30sjz\/+7cyEGRzZGRkdLCvf\/yyC55twAAXPfXn82RQYODg9ereYGBgXt7e0F5pU+Y1\/fy7nNzc0+RzXFxcffSmEEAAPLNiffXpWNjYwAAeYmlvV9fX9yrcP\/\/8v\/qvf7+\/vz8\/E8AAPj4+MLq+0VFRUNDQ\/fXq\/Ly8mar3Gal3J+lse7u7s3z\/\/\/3zerq6vL\/\/8jIwjc3N+jo6LGCT1yf0uTk5CsrK5ilgqvg+ykpKdjY2KufmPfq0tLS0h8fH0+Y0s7Ozom94MzMzBkZGU+RyBcXF8LIwhMTE\/LNmOq9eREREcLCwquCTwBPmA0NDb6+vgsLC0FcgpHN7vvu3LS0tMKCQbCwsM2JLq6urtelZrefgpGRmKCgoL29zXkAANLg8gAAT5iYmHCrzWal18jy\/5hcAPvgty6Ct5CQkOXg4Pfcn+Xu9\/fSn59PAHx8fOD\/\/wCCyLfl+8Ll8k+YzXJycgAAQerNn5\/X95+94GRkZGJiYury7reCLlwAAF5eXu7\/\/+77\/9yrZtKYT+7XvVRUVLeJZlJSUrHl+\/\/\/\/8jX6vv7+\/f390REREJCQvPz8\/Hx8c3y\/1yl3Gaf0v\/\/7jY2Ni4AAPvy4JHN8ioqKigoKNfX1+X7\/9PT0\/fl0iAgIO7IkatmAM\/Pz83c7k+CscvLy+7y6r3c8hgYGO7u6gBmmPLSmFyRtxISEvL3+\/\/\/4L29vf\/\/95HI7qvc97W1tQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEM\/LWwAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANdSURBVGhD7ZjnWxQxEMYHG9ZTEEEsYD9FUeEUxXZnRcWC9UTFgr0Bnr13sCOoqBFU1BNFrNhQbKj\/l8keLNl1LyRccL9kP3DPs5u8v8y7k8kOgOy9wF48Unx7X4DyX\/lvpwMC+dd9\/q5Ju2WvlZvvnwnkej9V7gq4+Vvgaxv0dA0st4ffraInAde1LtgvdQG88a+EZxq3Fjbawq+FuTbzL2j84\/DLlvh7wQSNG+44Ywv\/R17sWAw+6Bx+yhY+GgaOEQt3AvyWihf4\/rnZAZefDZ\/k4gX4CA2Y\/F0yHYnwSangLRfc6xQQVHzlv0C68KWggKDKP5V\/Aumi8o\/HAQFDAc1o8vyp5mHSYwT46+Kz45Yx9cviIK5MbAXc\/OSuNYkvSzLCGPJhr0sWs0f8O5mXv\/n5OOLt+sp7VUFWUJVS+ZM9wmoiH7\/6fvqfwOzSHpmDyy2EyvMzD5cyR1gvm+KPin5HxrzKLSY\/VLebds27J1mf7rnk7ZJkEkvKqUnwmEf4o++SW5tyi43KhrkUP6aiLXnU24E7PKrbTY1fffKBYc7S6U8+cNyIcWq9wlCIpJVNK6f4btcg8vCG7yFCVLdbk5hmti4px3uZCjfByhAvchfC2iLcMRZMoZVZ\/EXkYTjm092u5ZZOHfit8XXnWyVEKuHDvnq+rmwOxRD\/lxVZWdM6YT5HtzsvJV1L99lBN4Tb1a6V404gfl2ZxcfrJRfmc3W7WzNuV5dkbLfOa3zX7eof4+xYNATzG5WZ8R+64vF8vKrxebrdMX2yWeXO7YpCI2HiURK\/ruy\/BdDvReMqDP6fa8g\/Kd0u4ftP+Ob4MF9XXuU7uyDvURB+VANfSrdL+Gi0EwhfV+58EaFtp5viS+l2A9Tr4Iuk+PjOeGhvyY8o1FzaQfY\/ktDtRhTOwkL+A7FTDMrn4TGVhMHrf0t0uxjcF5bQe4Dv\/Am6x4QfvIG9n48cs\/RfWKsZE+rekgqjnTOB63\/Hz6g\/zQgn9Ckq\/tA9DEVB+R+Ke6HPVf7ThxGujaQman+ZP6Ebb1F\/6\/\/BxPEjDU\/X\/4ZUUHztWDTaQLKhPjekbhlKjOk\/dVa3FN8UsSl+\/VNBKt74\/cHeeIHvFbl49f0jr5Q0S0ny6xReg+ILWyZ1gvJfqp3CYn8B3XiQXAu4ESUAAAAASUVORK5CYII="
             },
             "degree": 9,
             "id": 31,
             "name": "beta-Alanine",
-            "type": "2"
+            "type": "[map01100] Metabolic pathways|[map04974] Protein digestion and absorption"
         },
         {
             "Data": {
                 "fdr": "0.514",
                 "log2FC": "0.171",
                 "p": "0.378",
-                "color": "#FAA5B7"
+                "color": "#FAA5B7",
+                "KCF": "iVBORw0KGgoAAAANSUhEUgAAAJcAAAA+CAMAAAARUnltAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMAUExURQAAAK+vr6VwAC6JyFyfvdefXJjN7gBBkZFcAOXIpZ+fnwAALpeXl\/\/30sjz\/0GRzZGRkdLCvf\/yyAAAXM2RQYODg9ereYGBgXt7e0F5pU+Y13Nzc0+RzXFxcffSmEEAAPLNiWNjY19fX9yrcP\/\/8v\/qvf7+\/vz8\/E8AAPj4+EVFRUNDQ\/fXq\/Ly8mal3M3z\/\/\/3zerq6sjIwjc3N1yf0uTk5CsrK5ilgikpKdjY2Pfq0h8fH0+Y0s7Ozom94MzMzBcXF8LIwhMTE+q9eREREcLCwgBPmL6+vgsLC\/vu3LS0tLCwsM2JLq6urtelZqCgoL29zXkAAAAAT5iYmHCrzWal18jy\/5hcAC6Ct5CQkOXg4Pfcn+Xu959PAHx8fACCyLfl+8Ll8k+YzXJycgAAQerNn5+94GRkZGJiYury7reCLlwAAF5eXu7\/\/+77\/9yrZtKYT1RUVLeJZlJSUrHl+\/\/\/\/8jX6vv7+\/f390REREJCQvPz8\/Hx8c3y\/1yl3Gaf0v\/\/7jY2Ni4AACoqKigoKNfX1+X7\/9PT0\/fl0iAgINHR0e7IkatmAM\/Pz83Nzc3c7svLy+7y6hgYGO7u6gBmmPLSmBISEr29vf\/\/97W1tQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAALEL9UkAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAM0SURBVGhD7ZiJW9MwGMaDt05Qpsg8J1O3gU46FZ3OY6IIzgMc4n3jPUGnRhA3nSLeeMz7vzVpuzRNsrJ0Plv1aZ8HVsL3Jb++35e3AQCdeQFnYkGXS64wrl6uXnIKyEW7\/eV4vfKNjzDjwb7htY2f8N2bvmEOugZ19Po9lxDHatDgfTEdAy32nHACl5IGB4Yg\/H61XQmvwED3UjmHcIEBnWsnBprpEK7wjGmeh5pe3\/Z2dW2a4xSuZV7\/7KFViCsN1OtvcI02g+ZR6z0f8fVYhSjhBXAN2HgW63XqVjT65Tbiyt8HYOkrY17Z\/Vj3NrMrE6+zAAvNLwReW4Vgrvz51LYU4rpS7Pt9qcs7jj21yzXRNv4T5XaPP54oRZZ8uX7SOgRzwXV+gLnQnbYf516H8PBFe1zZwc7TI2rqyMLOlVkR2eRY7Lc2XiokCzWauyDVQHGhkQ1glpCLd1\/DmVFCsLfQEiWJ0RuJeUGWrONOoj9kGYImgfXpLSgmf3JRe31areNRte+vgWfUfFR\/8e5LnBn58Z7Nzz+bOLiBiG\/\/hSfWIVyOEb4E7KZzKS7efYkz52ALL0+wN3HTEDDUXwh0sAKaQ6KCSYoZ78Hxr2fOCeuohFn3xf4ygJ05BwdF7RRZ\/kNvOJiMjeF25y4jBDWccBI15dcH7GPq21K7THqx7qsUnZl\/f+np29tieIOidk+KqPCYHtK9tfQeFqTSXJz7KmHdmUtyQXgo\/uBdgG53fhEU8jETP1IKXDhu0ot1X+LMFlywtanHZ253bqHWpinfEWyOiYt1X+LMVlxSMpQdbOJi3Zc4s1O40GNh9yXOzJ8ny35wm4GUXrz7EmeuqV70kzHua\/OhK0gTn3NY961gAZupQi7OfW1OXkGa7LmwgqWkUl0uKbnc\/2PKyeXq5eolqYBc+D\/hX\/jsj8\/86vfih7419EHTXwRyEkhF03qpTNrCxgfCUyH1L\/1HqTXsBFNcxVsWj4Rov6hO5afkIoXTSlyDOor1okAwlN6CdkojlVO+XkXAqteRaXij0019X\/3+Yg2CmAZtHsQ9pKoiH1ydqrhc8grIZbh1dPWSU0Au2u2v\/0OvPyP+GfMFAA5VAAAAAElFTkSuQmCC"
             },
             "degree": 9,
             "id": 32,
             "name": "Putrescine",
-            "type": "1"
+            "type": "[map00480] Glutathione metabolism|[map01060] Biosynthesis of plant secondary metabolites|[map01100] Metabolic pathways|[map04974] Protein digestion and absorption"
         },
         {
             "Data": {
                 "fdr": "0.356",
                 "log2FC": "0.304",
                 "p": "0.23",
-                "color": "#FA9AB3"
+                "color": "#FA9AB3",
+                "KCF": null
             },
             "degree": 7,
             "id": 33,
             "name": "Azelaic acid",
-            "type": "1"
+            "type": ""
         },
         {
             "Data": {
                 "fdr": "0.673",
                 "log2FC": "-0.0895",
                 "p": "0.575",
-                "color": "#12226B"
+                "color": "#12226B",
+                "KCF": "iVBORw0KGgoAAAANSUhEUgAAAU4AAABTCAMAAADHsh6qAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMAUExURQAAAK+vr6mpqaOjo5+fn5ubm5mZmZeXl5GRkYuLi4eHh4ODg4GBgXt7e3V1dXNzc3FxcW9vb2tra2lpaWNjY19fX1lZWU1NTf7+\/vz8\/ElJSfr6+vj4+EVFRfb29kNDQ\/T09EFBQfLy8vDw8D09Pe7u7uzs7Dk5Oerq6jc3N+jo6DU1Nebm5uTk5DExMeLi4i8vL+Dg4N7e3isrK9zc3CkpKScnJ9jY2CUlJdbW1iMjIyEhIR8fH9DQ0BsbG8zMzBkZGcrKyhcXF8jIyBUVFcbGxhMTExEREcDAwA0NDb6+vgsLCwkJCbq6ugcHB7a2tgMDA7S0tAEBAbCwsK6urqSkpKKioqCgoJ6enpycnJiYmJaWlpKSkpCQkIqKin5+fnx8fHh4eHJycm5ubmRkZGJiYmBgYF5eXlxcXFZWVlRUVFJSUk5OTv\/\/\/0xMTP39\/fv7+0hISPn5+ff390REREJCQvPz80BAQPHx8T4+Pu\/v7+3t7evr6zg4OOnp6TY2Nufn5+Xl5ePj4zAwMOHh4d3d3SoqKtvb2ygoKNnZ2dfX19XV1dPT0yAgIB4eHs\/PzxwcHMvLyxgYGMfHxxQUFBISEsPDwxAQEMHBwQ4ODr+\/vwwMDL29vQoKCgYGBgQEBLW1tQAAAQAAAAAAAgAAAAAAAAAAAAAA8AAAAAAALAAAGAAAzgAAAAAAGAAAAAAAAAAACgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANAAAAAAA3AAAAAAAAAAAAAAAyAAAsAAAAAAAcAAAbAAA\/wAAAAAAyAAAOAAAYAAAAQAAcgAAYgAALgAAMQAAUwAARgAALwAALwAAAQAAcgAALgAAhAAAAAAKlAAAhADabAAAmAAAnAAAAACwAAAAAAAARAAAAAAAAAAAAAAARAAAgAAAAAAA8AAAQAAA9AAAyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAbAAABgAAAAAAAAAAAAAAugAA7QAAAQAAAAAAAs4Gs0AAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATESURBVHhe7ZoHVxNBEMcPGyqgokQTigUVQY0dKyiCgGADsYENsaDimmgEEQsaBRFLNIhghY\/q3l3KXm5zNzwm8XnMvkcScpP\/7Pwyu3N3GYXRQCSgIGqRFCOcqElAOAknKgFUMcpOwolKAFWMspNwohJAFaPs\/Fc4A2\/dqK6dKAbOzuF1TU1f7+xzIgPEmKA4a8eujhRUXv9+CtG3A6WAOD2fs7XgF712IAPEkIA4B5QvmtOWiZWIzp0nBcR5Qnmhxf4ugtV5IHAiAuL8oOzS\/NVEsOI4d54KEKfvZ4YWe+sn5yHAjAiIk3WVqSed\/t0uTOfO04Li7Bu6\/76gcs2WXuchwIwIipPtuB0+HV6+EdO3A7XAOHnsrxwYP3JIcJyqJdwaeZr\/ixwcEOEEfKeEEwAJbkI44awAloQTAAluQjjhrACWhBMACW5COOGsAJaEEwAJbkI44awAloQTAAluQjjhrACWhBMACW4yFZxB21sgXnvHQVsTFBGWLj\/GcOA4F+eMZl+zZBHIrs8ptqbFTbIDNiIPpi\/Civlk7fwgTNYUCRSnJzPs8t6t0H8xko+Mj3eDrnCbx9pkaxpE0jVZc6RAnM1Dq0L8w42Dj4aT0BouGvzFD4W6y5uT8YyYpFqEpWmysjBBODmjSf3D\/vl1S2Q\/F\/V21F326ybN5d0qedOIm6RURP1C0zFZec4IOP0+1cRXoBvG++W8ndXCCi69UT0nsZPOfT6cVxrT97RVd3oTvRlNUibCUjtZzxs9qQykxFAFnFWX1APnjquP8X654pz69h4DnENl\/XqHTXSY3uhpT9zm7T+DIpLaydbkNzQdyO1jTCRlzBs5TqFfjlcgc6ZV34wnY2meOV2Z1xXOjNckmYn7PLqIpy2Fk2Xs7O+Fewpqnz8JTBWn2C8n3QeLF49Gtkq+D3ZIf3sPrRqK1KRkJsgiSTdtHD+M7b+i5lVJ61Mgzluz+FjKFzugX25PUblayBt3Ji31bFKvSRYmmCJWpxQofkqUkegyrYqRSly44mL\/c4yPkxwnqF+upaKLn0OeSRQU\/ldrUtDaBEsk6BLLpXlOCH5+KLE+g6oYKSucsVIE65crzLK78mA97XYmhVn5NpcvIJHRHGO5NAGd\/mQHlMOx7IwX7QWbBucJzqSlCNovZ39dzEx1zBQoioi9G8BFvPVk3Q2z1bn7l9UIe2dom3\/1kZfxmOSVnfrlJHvYik0P+bsXlG8CTncvK\/mudxJrQ46T+uUkODeHb4fWzz34wHjeebE+y26xM+qXk1XY2ntjpyfy1hpxlhzdOy7NzgQF6pczI\/Vtj1yCRw8945t2u3DbEnQLxOJkaIYfGt\/AfI9\/QLJzhoMChp+7oX+RfO8ECpCZgUDAsPxpsaOmB+EknKgEUMUoOwknKgFUMcpOwolKAFWMspNwohJAFaPsTB1OhQ+urj8mPEVujUaOoc7BQWJidmoodWymJ5Wu\/r5tV6KD6Ew5FAFn9KURp5an2h\/htKcLwZnAl7bb5FgBOKMbaXRfJZzTwRmjJ24G9mk\/My3gpShagig5LTLFAEd2hqSePAnnTfprGkkIEB3U1CCchBOVAKoYZSfhRCWAKkbZSThRCaCKUXYSTlQCqGKUnag4\/wJs7WoVssK7pAAAAABJRU5ErkJggg=="
             },
             "degree": 7,
             "id": 34,
             "name": "Hexadecanoic acid",
-            "type": "4"
+            "type": "[map01040] Biosynthesis of unsaturated fatty acids|[map01060] Biosynthesis of plant secondary metabolites|[map01100] Metabolic pathways"
         },
         {
             "Data": {
                 "fdr": "0.356",
                 "log2FC": "0.315",
                 "p": "0.23",
-                "color": "#FA9AB3"
+                "color": "#FA9AB3",
+                "KCF": null
             },
             "degree": 7,
             "id": 35,
             "name": "1-Monohexadecanoylglycerol",
-            "type": "1"
+            "type": ""
         },
         {
             "Data": {
                 "fdr": "0.514",
                 "log2FC": "0.245",
                 "p": "0.378",
-                "color": "#FAA0B5"
+                "color": "#FAA0B5",
+                "KCF": null
             },
             "degree": 8,
             "id": 36,
             "name": "Nonanoic acid",
-            "type": "4"
+            "type": ""
         },
         {
             "Data": {
                 "fdr": "0.748",
                 "log2FC": "0.0255",
                 "p": "0.689",
-                "color": "#FAAEB9"
+                "color": "#FAAEB9",
+                "KCF": "iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAMAAAAPdrEwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGAUExURQAAAK+vr6mpqYGBgXV1dWtra19fX1lZWf7+\/vz8\/Pr6+vb29kFBQT09PTc3N+jo6DExMd7e3tzc3CcnJ9bW1tDQ0BkZGcjIyMbGxgsLCwkJCbq6ugcHB7a2tgMDAwEBAbCwsKKiopycnJKSkn5+fm5ubmBgYFxcXFZWVlJSUv\/\/\/0xMTP39\/fv7+\/f390BAQPHx8e\/v7+np6eXl5TAwMN3d3dvb2ygoKNnZ2dfX19XV1dPT0x4eHhwcHMvLyxgYGMfHxxQUFBAQEA4ODgwMDAYGBgQEBAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAdAAANAAAAgAAIAAAAAAAAAAAAAAAyAAANAAAAAAAdAAAAAAAAAAARAAAAAAAAAAAAAAAAAAAAAAANAAAJAAAOAAAAAAAsAAAyAAAAAAAAQAALgAABQAAEAAAAAAAaCDV5XIAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHpSURBVGhD7ZfndsIwDIXd3aZ7QDd0jzR070X3+z9SHYckigjUIjflj304JAfEZ3Et+0bKL22o0si+QzNtnSBOkFCB09txI0QjCN8DL1WlYIU8TNdq70dLmlfdDaHbayj0ysfem1fZ\/9yEoydehkySw9dw9I16Neitn0m\/ejCoxwhKkHV1adD3eorq96oeGz2jzxQd\/pNaMOhlPUXRZWT1FHwNGPTOc3Gteakez4RF3VgcxaMv7k4evcrU3Dke7c8fNuvNsVnAlsnbu1fp\/sveyTa6KFoULDNph2br6QTpLEjW3WLPy8SL5CPB9FhMPQ+NJp4HRlPPw6ATd6Oeh0En7kY9D4NOHlKo52XcsHiFUM8DZ+0Tz0Ojieeh0cTzIGh2BOR5Xq\/L2Mk+yecOXcSTROq5hwVejyL5RMF5WqP6xrZEcH0jRwP7RoZG9o0MjewbGRrZN9bL6xtZnSP7Rr6FgH0jRwP7xjYjwvWNeR4H6hst7DMNkR1PDi1SoIhHyyZyy9gnrcPTWE8dvceX2MZbqxJ9ZzNooMGaF7noGQwnvthAoxiCjm\/5DNFfiCKtU7ZBJ7hYJGv6n1kztCDz\/0Gz9WtJDsmaV11SiWFxmKcEUpEWhWK9KBasPu1GeWbdfuEEccvYvaJKrJBfTl0Eyp\/zlZgAAAAASUVORK5CYII="
             },
             "degree": 6,
             "id": 37,
             "name": "Glycerol",
-            "type": "2"
+            "type": "[map01100] Metabolic pathways"
         },
         {
             "Data": {
                 "fdr": "0.748",
                 "log2FC": "-0.163",
                 "p": "0.689",
-                "color": "#192679"
+                "color": "#192679",
+                "KCF": null
             },
             "degree": 5,
             "id": 38,
             "name": "9-(Z)-Octadecenoic acid",
-            "type": "2"
+            "type": ""
         },
         {
             "Data": {
                 "fdr": "0.0569",
                 "log2FC": "-1.14",
                 "p": "0.00824",
-                "color": "#32ACC5"
+                "color": "#32ACC5",
+                "KCF": "iVBORw0KGgoAAAANSUhEUgAAAJcAAABSCAMAAABuZLZMAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGAUExURQAAAK+vr62trampqZ+fn5eXl5GRkY+Pj4mJiYODg4GBgX19fXNzc2lpaWVlZWNjY1VVVVFRUf7+\/vz8\/ElJSfr6+kVFRfb29vT09PDw8O7u7uzs7Orq6jc3N+jo6DMzMy0tLd7e3isrK9zc3CcnJ9bW1iMjIyEhIdLS0szMzBkZGcrKyhcXF8jIyBUVFcbGxhMTE8TExMLCwsDAwA0NDb6+vgsLC7q6ugMDAwEBAbKysq6urqioqKampqCgoJycnJqampaWlpCQkIiIiIaGhoSEhIKCgn5+fnx8fHJycmhoaGRkZFhYWFRUVP\/\/\/\/39\/fv7+0hISPn5+UZGRvf39\/X19fHx8e\/v7+3t7evr6zg4ODIyMi4uLt\/f3ywsLNnZ2dfX19XV1RoaGsvLy8fHxxQUFMXFxRAQEA4ODgwMDL29vQoKCgQEBLW1tQICAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACcQ2qcAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANZSURBVGhD7Zj7U9NAEMcPqwgUpJaKVqu2VK1GqaKCsTx8gFqKXKPUCihY06KCj\/\/\/R\/Nqcpcmze5lYDrM3QwthM13P\/nu5rWEDuYig4lFJReuMNIv6RfOAVy07K9j8qv+7VmxjtP2R2MkoHU8d\/j01uGvl3HAUBJArnc\/Fw2kxMKYOBhOAsaV+33eAhpbaIqCISVgXH\/JnsVzj9wX5UJKwLheqVMWzw1SEeVCSsC4lskVi+cuaYtyISVgXLNk1uJ58e+qKBdSAsal3Xlv8mhfUqJYFCkB46LLpFasty4++i7MhZQActHKA6I+v1kUx6I4CSgXpXuPP8ehMvdFSMC54kLh9gdzmYHg4GAGjAQ4FUY0xBqMhOSy2wDqAzQOJSrriCuC9Ev65fSAPB9xrSD9Oja\/dqJuIjsRjzKERkq4CvA6VtVq32BtVK02+pKRqjoKzQeNWyylOqnSUHjeh\/nMj74B1JCYy+Q7sOdDGNft6f15Q29+f7oVLJut6Ym+AdSRSOi1LIQMwtVcLw9rlpg2XF4PmlAs6RN2trAATyI7oS8BwBiuy5fM+KlP1l7erCp9VtnIuUq5DWUl7dMtfPjqVScogJfo5DMFPgeX2RZnuJQ1c0OFbBuf3qyqfX2Xf\/dv7\/IbtNWDEdtNZ\/kDqF9CGzlY5XKwmR2RYC5mVqX32JNe0Sc9A41+t2c93uIDcpO9EoUMpUwOKBc7qwpqp+Z4t+Gcfvc3jBegvS6PB87M2BwRXBeeGGvNqGP0rKq1NXNkwLj93tPJTsDRzFbIGczmUNzMrg5bR2KvbQqZVQ2VNufYfu8hMwI6m+FXPDaH4mYO5Hr70VhnDC7QrKqR\/POG63c\/WSOpJsNvAGwOxc0cyOWej8BZ1bUej3wbzDM7bLE5oH2PnFVF4QX+n80B5ULOqoS42BxgLtysSoyLydGfi5dHzKoEufrOwyD3beG8MXaUXDjzpF\/SL5wDuGjZX6fQL\/PxzDgs+7P75byb+DfiDh8dzfaXM8fmv0w+E9L+wYy60SzsDgxX91cfAnFhBorLgXGqOjh+Wa8EXgGdFoxVI8jO0XVkmGzBE7nkAfqe7a+TwuIPnr8WOH91O6t78YBUIX7MiRRFAFNy4UyTfkm\/cA7gomV\/nQ6\/\/gMOuUkiN3Iv+gAAAABJRU5ErkJggg=="
             },
             "degree": 7,
             "id": 39,
             "name": "Glutaric acid",
-            "type": "4"
+            "type": ""
         },
         {
             "Data": {
                 "fdr": "0.111",
                 "log2FC": "-0.492",
                 "p": "0.0306",
-                "color": "#2749A1"
+                "color": "#2749A1",
+                "KCF": "iVBORw0KGgoAAAANSUhEUgAAAK0AAABkCAMAAADDlkANAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGAUExURQAAAK+vr6WlpZ+fn5eXl5OTk5GRkX19fXt7e3d3d3Nzc2NjY19fX11dXVVVVVFRUf7+\/vz8\/Pr6+kVFRfb29kNDQ\/Ly8uzs7Orq6jc3N+jo6OTk5OLi4t7e3isrK9zc3CkpKdjY2NbW1iEhIdDQ0M7OzszMzBkZGcrKysjIyBUVFRMTExEREcLCwg8PDw0NDb6+vgkJCQcHB7a2tgMDA7S0tAEBAbKysq6urqysrKqqqqioqKCgoJiYmJaWlpCQkIqKioiIiIaGhoCAgHx8fHh4eHZ2dnJycnBwcGZmZmRkZF5eXlhYWFRUVP\/\/\/\/39\/fv7+0ZGRvf39\/X19UJCQvPz8\/Hx8e3t7evr6zg4ODY2NuPj4zAwMOHh4d\/f3ywsLN3d3SoqKtfX19PT0yAgIM\/PzxoaGsvLy8nJycfHxxQUFMPDww4ODr29vbu7u7W1tQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEiW+iwAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQNSURBVHhe7ZrpV9NAFMUHUYqA2oIsbrggRKoiaBEXcC2gKMMiUBEVQdlU9P\/\/5mSfNOn0Tk7SaY6TD5T23Lz55c6bvMxrCc3SQbIESzVtetOlvdXe2g7oTNCZ0ByZkL\/65ws+F4rz9ukdMkGKLSivWtpT93IjS4ezEzMgrlLayu8XFmZ5rA\/DVUr7gHy1KEfIQQZon5WWLcqLZCoDtCfIB4vyO7mVAdojh7L1YSUDtN0\/zpiUS5\/OYbCKnxNayZvL9Nv7sZuZoKWPf5L75PN1EFaxt5Tmr9wFc1Y\/MaJz6urM6oRXKFwpy4HpNS3mUxyV9jaOa9g5\/4m357tNOwr2Y5HcfgnzMUoV21vjlRluipi1RXK\/pJZWdr+klFZ6v6SC9u0vdrxkmSC9X1JBS+yjQtH90sf6lP11JIT2x3tOMF6vs+MJo8X2S6vlUnlVDNM3V09CyqXT+LMKp\/TvCdB+6dHQ2aOzQ6I2S+Gk0XUolrAgo13GTKH+JFmKSFpgv3SjZ3ucnT6+3bNba6TJa717YokTZK93ZxLDjaSl3H5pOCrOxnyxzW4FLLcV5zeiJMNrO3\/tz2tJ\/CB0cmctcpzqwNG03H7J6NqqPiffaiwMeB8OLBjT+WrJ1jt+eqMkwSCFGW8cr4oGaqs9QK0M9\/ZLfe2324NdqoMLm8FG0MFm1QfsnPJ64AJCklAQdxy\/ivK11QkGrMetwDIY6NwPWZmf3u\/0zTYX16XQfAQkUUEoG4dSrorGo6XUXwbLz4sdUWm60eEmMnUWVyiXfUmtIHSP8lU0Li11l8Hx4EqtW8DuyuAxI\/QXV3jpORJBkEAVNbza6oUCMsHSmstgdFF4e20ZWhwNLK4wL5McCYPwVdTwaqs0LVuPc6Wc+NpWc6XZ4OIK8TJJTlT\/+Crq19Y4tLRSt6IDbRexhK+i8fPWudeheRNVLqDP+Cra\/LR8Fc0ALV9FuZ0XXh04ZeqZwMYSdR3x8eV2p1CWSos0rbRl8AnaW9gqaaH2Vtoy+ATcWzhkikKctlFdR9HFwrQN6zomQdu4rmMCtA3sOiZA28CuYwK0aNcxxfuBGRpcZVjXMWVWmBbqOqYOi3oLdB3TZ4W95fdLjcCqMQaYt1T2VxrpXBJMK\/krDdW06YwvFxX3Vi5uOmpNm46vErUsPQCpyDoTpOySEmtvpeySEmfYW\/NrCfOZ1\/prvtovzhvnwlReHz+20\/N0W58unfXq9UOdS5CawMTEHK37LwdtYQZonbeJjS8XSEDrJQTnLZM3SSZEeOvZ6maC9YWbnB9JqsWZEKL1Fl2SDHis2qvMX1eBVdYsmeDdupzJ9m5nVbe15sgEfEKUKRUaFeOaNW0M08BTtLegUTFk2tsYpoGnaG9Bo2LI\/gEs6hsYjtllxAAAAABJRU5ErkJggg=="
             },
             "degree": 4,
             "id": 40,
             "name": "Adipic acid",
-            "type": "1"
+            "type": "[map01100] Metabolic pathways"
         },
         {
             "Data": {
                 "fdr": "0.128",
                 "log2FC": "-0.514",
                 "p": "0.0453",
-                "color": "#264DA3"
+                "color": "#264DA3",
+                "KCF": "iVBORw0KGgoAAAANSUhEUgAAAXIAAABTCAMAAAC1fXwcAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMAUExURQAAAK+vr6mpqaOjo5+fn5ubm5mZmZeXl5GRkY2NjYuLi4eHh4ODg4GBgXt7e3V1dXNzc3FxcW9vb2lpaWNjY19fX11dXVlZWVFRUU1NTf7+\/vz8\/ElJSfr6+vj4+EVFRfb29kNDQ\/T09EFBQfLy8vDw8D09Pe7u7uzs7Dk5Oerq6jc3N+jo6DU1Nebm5uTk5DExMeLi4i8vL+Dg4N7e3isrK9zc3CkpKScnJ9jY2CUlJdbW1iMjIyEhIR8fH9DQ0BsbG8zMzMrKyhcXF8jIyBUVFcbGxhMTExEREcDAwA0NDb6+vgsLC7q6ugcHB7a2tgMDA7S0tAEBAbCwsK6urqioqKampqSkpKCgoJ6enpycnJiYmJaWlpCQkIqKin5+fnx8fHh4eHZ2dnJycm5ubmRkZGJiYl5eXlxcXFZWVlRUVFJSUk5OTv\/\/\/0xMTP39\/fv7+0hISPn5+ff390REREJCQvPz80BAQPHx8T4+Pu\/v7+3t7evr6zg4OOnp6TY2Nufn5+Xl5ePj4zAwMOHh4d3d3SoqKtvb2ygoKNnZ2dfX19XV1dPT0yAgIB4eHs\/PzxwcHMvLyxgYGMfHxxQUFBISEsPDwxAQEMHBwQ4ODr+\/vwwMDL29vQoKCgYGBgQEBLW1tQAAAQAAAAAAAgAAAAAAAAAAAAAA8AAAAAAAFwAAoAAAzgAAAAAAGAAAAAAAAAAACgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANAAAAAAA3AAAAAAAAAAAAAAAyAAAsAAAAAAAcAAAbAAA\/wAAAAAAyAAAOAAAYAAAAQAAcgAAYgAALgAAMQAAUwAARgAALwAALwAAAQAAcgAALgAAhAAAAAAKlAAAhACybAAAcAAAnAAAAACwAAAAAAAARAAAAAAAAAAAAAAARAAAgAAAAAAA8AAAQAAA9AAAyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAbAAABgAAAAAAAAAAAAAAugAA7QAAAQAAAAAAAi8gZAwAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAUFSURBVHhe7ZvnWxNBEMbPXomNWBJjRUUssWONBUTsYO9iV3QlGkWsKCoilmgUu+Kf6pXkspe73M1l13n0MvshD8\/dm3lnfiyzm8uiMBrIBBRkP7JjhBx9EhByQo5OAN2QZjkhRyeAbkiznJCjE0A3pFn+DyNPvYigZxdIQ+gs753b1PTxyrpAMkAuCoi84fPpD7GN57\/uRU4viHYw5NF3FXrxY54GkQFyTTDkz5X3el77+2cg5xdAOxjy3cojvfaXWfQBBIFXEgz5a2WVnlJ9Fj1efgF0giFv+z5Ar\/3Y2wAiwC4JhpxdXaBtypOrw9j5BdAPiPxez\/VXsY2zl3QEEAF2SUDkbMXlzL7MpIXY6QXRD4qcDWJP2KEgEkCvCYxcE4LF6GX8T4ZgioRc1q+VkMsiCY5DyMGoZAkJuSyS4DiEHIxKlpCQyyIJjkPIwahkCQm5LJLgOIQcjEqWkJDLIgmOQ8jBqGQJCbkskuA4hByMSpbQB\/K495PELu+0pEji\/44PIJWCZMHIz1Q0hsa6V5qqaKxIuUuqQn3iEtUnVIWQCsjnhlcqtkShyAe8ae0KZ45HXSpVJUtbE8b30s4jOiwTjgtLsFKB+XhRsZOAIe+d3v1DfW\/6dm1zMZxZyc7uW73FJM09M9PqPTEJVipwHzcqTig45Mk2TRCJGTLuoG3HuW0nk8bV5trbGjXbyEuSw7eNc\/xSWs3st\/E+AQlWKr58rFSiz4wiLTR5YBzyxAjtxsF+7ZU7aBs5kqmsMd8SPV53ybZiWCU1F+oG285Fxy\/VcV2pRAlWKr598lTqp+5o2jD+HmM8TesMdUbOHbTdvKDTOI+YG+0thYuXTWK7UBVqbGm3RClFgpVKKT5ZKod\/jloTa3h4N+UXOXfQttJpxoYzw\/LraI2DJHKk7iL\/l6GumoW9yLfEyYfF5adSoo+eClt\/Squz+th9IPKJA9VxXm0s3EHbs859eWZPdh1V+\/I5J0nV2D6v\/u9LUsyHpeWmIuDD0pOrlQ+5qZUwaRZONr6x\/Nqljj0qcsBB29\/GOrpzZdENyprptV67HLjExYfJTEXMh31TnpjITZpuyM3lE3LQVlsxuloTBxy2L7lL+xNXu8L8qmnXwiTqdt\/NR1oqwj7PlS0m8vxmZOSi7qFc6Y7LJ+ygbXuL1yfJaaP7QtZV0wYdJvH6xCorFVGfyI5B+gZxQj3Xy9PLkrO2Ps5X7rxjAR609X6+4K1gAAnguYx3FG8FE\/eZsuimyvao8olDHulg1V+Nf4nQhzNyOmjr0i\/dbi3OXE7PG7LphnVffqJxtFdjYXTQtkTkrOHa5339lXOsyKu3r\/3iOMsLXMy1t1T3Mn1f2\/KYtfIHaktrOQNBXqbE5Jf9ZT5ru\/ONkMsnWzzi+PmdY5x7OWYW5eWVsrQa2PPy8iL0l6sl5H8ZsD08ISfk6ATQDWmWE3J0AuiGNMsJOToBdEOa5YQcnQC6oWWWK+pQMzBes8\/StWvcxdw99ESDY8gj18kapA3IJnfzYu5ecADgV8Ihz\/1okueRZ+kTcvFfUXHkXGMx2ow5+8VdyzqCN\/JcU7c0nbJmJli8J3JrP6fGIsg7P4HNHQq3fBrf\/lvXVEIuF3lud2juCh12h7RJFGZOnz6FEfoNQMj9EhPWE3JhhH4DEHK\/xIT1hFwYod8AhNwvMWE9IRdG6DcAIfdLTFhPyIUR+g1AyP0SE9b\/AdUEWVl3s4BHAAAAAElFTkSuQmCC"
             },
             "degree": 10,
             "id": 41,
             "name": "Octadecanoic acid",
-            "type": "3"
+            "type": "[map01040] Biosynthesis of unsaturated fatty acids|[map01060] Biosynthesis of plant secondary metabolites"
         },
         {
             "Data": {
                 "fdr": "0.081",
                 "log2FC": "-1.05",
                 "p": "0.0202",
-                "color": "#27A3C5"
+                "color": "#27A3C5",
+                "KCF": "iVBORw0KGgoAAAANSUhEUgAAAZQAAABSCAMAAABE3dKPAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMAUExURQAAANelcLGxsa+vr6VmAOXy+y6JyNefXHlPLqOjo5FcAJ+fnwAALu7g3PLy95eXl\/vlt\/\/30u7cyAAAcEGRzZGRkdLCvf\/yyC55twAAXPfXn82RQYODg4GBgXt7e72RXHd3d\/fy7v\/qt3Nzc59mLk+RzXFxcZ+CXEEAAGlpaU9wmPfXpWNjYwAAeYmlvV9fX7d5LltbW\/\/\/8v7+\/vz8\/InN7k8AAPr6+vj4+MLq+0VFRUNDQ\/Ly8mar3Nfy\/5+lsUGY0u7u7v\/3zerq6vL\/\/8jIwjc3N+jo6LGCT4IuAOTk5DExMQAAgisrK6vg+ykpKScnJ9jY2MLS6tbW1qufmPfq0tLS0h8fH9DQ0J+rt0+Y0h0dHc7OzvLgzczMzHmlzU+RyBcXF8LIwhMTE\/LNmP\/\/6hEREcLCwquCTw0NDb6+vgsLC0FcgpHN7rS0tJjC68KCQbCwsK6urtelZrefgpGRmNfq96KioqCgoL29zXkAANLg8vfy8v\/\/3AAAT5iYmP\/33Gal15SUlMjy\/\/vgty6Ct5CQkAAAZoaGhvfSn3my5tfNsXx8fOD\/\/\/LcsXh4eOD3\/7fl+8Ll8nAuAE+YzXJycv\/lt1wuAAAAQS6CvZ\/X9\/\/75ffcpeDCn3AAAGRkZGJiYury7reCLtylT1wAALGln15eXlpaWu77\/9KYT3Cfwu73\/+7XvQBmt1RUVFJSUv\/\/\/3m35UxMTP39\/fv7+\/f39y5mmERERPX19U8uT0JCQvPz84JPAPHx8T4+Pu\/v7\/\/31+7czc3y\/\/\/\/7jY2Nufn59yfQTIyMi4AAHm96\/vy4JHN8ioqKigoKCYmJtfX1+X\/\/\/fl0iAgINHR0Xmr1+7Ikc\/Pz5jS8s3Nzc3c7k+CsbHi+svLy+7y6r3c8hgYGABmmPLSmFyRt+rCeRISEvL3+7+\/v\/\/\/4Jirvb29vf\/\/95HI7qvc97W1tdercAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIBBeOwAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAXFSURBVHhe7ZuJnxxDFMeLII4lxH3suI+QGLJrQjKCGRHWsSQkS1xjIyFY4owgG3EFG3eI+1pxR8lBZCVxWySCZQXLWCIhxN+gunu6p3q6p+v1J731eXrefD67M9v9m\/de\/b5d\/bpnahmnBzoHGLqKqCBOUBAeBASFoCB0AGFJNFMICkIHEJZEM4WgIHQAYUk0U\/7XUPqefs1RNyAcQQxLgs6UD49nxuPHY2PoAbohQaFcwX7bmH9+ETsf3QhiWBAQytbtOxmDX7vRrFtiaAK2IQGhjGVfmJV3s8uwjSCG9QChdLNTCIo2\/GAoj5kl3cn+1lZa5SYCQtmFHWl61Lvq\/sr1StvIgVDWTN75CFHTrQcMmKGttMpNBITCD2JVB4+6mrF\/KtcqfSOHQuGvbSruHS\/9RV9lFZwJDIXzPY\/5o4KN0jl0OBRDCVfrHEPscsFtJija4BMUbVbDExEUuFfalARFm9XwRAQF7pU2JUHRZjU8EUGBe6VNSVC0WQ1PRFDgXmlTEhRtVsMTERS4V9qUBKXnrV4ZNkUYKB3qDyQ71fkblJIOpYJ\/rJQAgqiLjSLIoOmseoGyXJcADmVVNUtcHBx8QbUyfzqhkoggibQqzyWKcYKCRFKJKsjqU+eunDO6VygqYCi9vpnTkMw31wZEF5Kzg\/PX9sknO4IlsDwNUQRRFAurJDjI8BfHTBSOTVj29ooQWIBQVgxe9peI2rmovqlc8IIkKH\/T8iHGKSNAEkkeNEHmTWu8d6Hp1\/ztG\/dbDMYCgrJ4ZuPt862QTfWLfE\/FRUnZ\/ILoOitIOUkkefAE6fp0yUgHRPbp3BY15l\/vv9B85rWcD9zhB+Ovr69\/yQNLguJWFRfZ10zK9886b6xtzs2uKw3jlhTzS7q62Tnp3OcniSQPniBL++Wuc\/l07nEfdXF+4T7mSvlv+Y7tmxi7d63yLgSWoMgqaZG9FUt6tLWMK+nEHolnQzoxrqXNp0RpUyR58ATZLNdvacmxWzMpx9cewl55lZ\/xLvspk9rX2P\/ylA+CZoqskhbZ27NOPuqT+T7Fjp\/t75WI\/M\/Isyuf9JldssQvCK8LmQdPkJFLTnQfyZZ7ab5X+6PGi4ffuTyTOst41VsFxVHJi+x9+1PnkOWFji\/6w0w\/SXrvVao+VJSUC8LD5METZOEejdPmeY5\/c8NY9n1hRyb16wXjxw\/bXAXFUQEW2a+zOv6Ek8te7J02uF51xVaQBATh4Dx4gmw45tDh\/kjkf1vItJrNhSmgFFWQRfZGxxe3C1eWSy+2Txz9RmdS7u9erZCIe6ugIEaeUco8gCDqYiMJ0jX3y9XlPemWZsptz2azPz8noAzcnbHzpPdIjT6TclTdDLLIvq1FdTt7+G4s4e7vnnKFRPUpRFuL6gYeFESVJ6og0wcFHKdPsDeNve89eFcm9ZDd6H+f9cA97Zbj5sMFxVHRIvsAX9dr15rJdxhXW\/+yzzKp7Wwo54zgNz11WBkojooW2a+X80Fv\/o5N+XPY\/mzADAkK5xuwk75SQaFF9j0GhT\/5iOjuBw7l27SaJ6arzEa\/5d2tN\/tCcalokX3PYfGslO87gvNPXveFUlIFLbLvOSwlkZ\/fdujUE46GQNFWEiV6XHwe9tZ9BAXZkXDjVnJB0iUxsjoruByCghA+QSEoCB1AWBLNFIKC0AGEJdFMISgIHUBYEs0UgoLQAYQluWaK8ZWxqNH6bTxbBZtPzi57K8LBxKUkGYoJxGJg\/zhspH1xGTrecUhQ7Jcl\/jPnK+MCMLyDiUtlAVAKJyzne3wTln1qi8v4UY4jeKYYc8PmYHWWwg\/KscSmKCUUm0JRKL0lNjbgGojssNRMCu3D2mtPD9dGXMOIVzWuw77QMNxP1sWwfRajnqKBP52LNJgcNgVBCeuYBj1B0WBy2BQEJaxjGvQERYPJYVMQlLCOadATFA0mh01BUMI6pkFPUDSYHDYFQQnrmAb9fwvtXpWPYedDAAAAAElFTkSuQmCC"
             },
             "degree": 10,
             "id": 42,
             "name": "Eicosanoic acid",
-            "type": "4"
+            "type": "[map01040] Biosynthesis of unsaturated fatty acids"
         },
         {
             "Data": {
                 "fdr": "0.0709",
                 "log2FC": "-1.64",
                 "p": "0.0131",
-                "color": "#98D6B9"
+                "color": "#98D6B9",
+                "KCF": null
             },
             "degree": 11,
             "id": 43,
             "name": "Docosanol",
-            "type": "1"
+            "type": ""
         },
         {
             "Data": {
                 "fdr": "0.0569",
                 "log2FC": "-1.51",
                 "p": "0.00824",
-                "color": "#78CBBC"
+                "color": "#78CBBC",
+                "KCF": "iVBORw0KGgoAAAANSUhEUgAAAbcAAABPCAMAAABf\/3sZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMAUExURQAAALGxsa+vr62traurq6enp6WlpaOjo5+fn52dnZubm5eXl5WVlZOTk5GRkY2NjYeHh4WFhYGBgX19fXt7e3l5eXd3d3Nzc3FxcW9vb21tbWlpaWdnZ2NjY2FhYV9fX11dXVtbW1VVVVFRUU9PT01NTf7+\/ktLS\/z8\/ElJSfr6+vj4+EVFRfb29kNDQ\/T09PLy8j8\/P\/Dw8D09Pe7u7uzs7Dk5Oerq6jc3N+jo6DU1Nebm5jMzM+Tk5OLi4i8vL+Dg4C0tLd7e3isrK9zc3CkpKdra2tjY2NbW1iMjI9TU1CEhIdLS0h8fH9DQ0M7OzszMzBkZGcrKysjIyBUVFcbGxhMTE8TExBEREcLCwg8PDw0NDb6+vry8vAkJCbq6ugcHB7a2tgMDA7S0tAEBAbKysrCwsK6urqysrKqqqqioqKampqKioqCgoJ6enpycnJiYmJaWlpSUlJCQkI6OjoqKioiIiIaGhoCAgH5+fnx8fHh4eHZ2dnJycnBwcG5ubmxsbGpqamZmZmRkZGBgYF5eXlxcXFpaWlhYWFRUVFBQUP\/\/\/\/39\/fv7+\/n5+UZGRvf39\/X19UJCQvPz80BAQPHx8e\/v7+3t7To6Ouvr6zg4ODY2Nufn5zQ0NOPj4zAwMOHh4S4uLt\/f3ywsLN3d3SoqKtvb2ygoKCYmJtfX19XV1SIiItPT0yAgIM\/PzxwcHM3NzRoaGsvLy8nJyRYWFsfHxxQUFMXFxRISEsPDw8HBwQ4ODr+\/v729vbu7u7m5ube3twQEBLW1tbOzswAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAJtYtfYAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAbASURBVHhe7ZuNXxRFGMc3qcBeJEXBSAM1CAmBAiKyIlITQ8OFs5BI6lDKCiNKK17UshdsDgQMMCV60bOIl4ICUqGy\/rF29nb3Zvd2Z2bl\/Hx21mc\/H0X2Hvee+X1\/z8zs7oyE4BBRAUnEpCFnBNzENAFwA25iKiBm1lBvwE1MBcTMGuoNuImpgJhZQ735nFv29r++F7OJvsyat97eqpMOSIFlvtRAxEZxcrv3lZS9od87DrSK2EY\/5szHbfjaUbXx7fWFfhRBwDbxcXtd+lFt215pRsA2+jFlPm7vBXvUxpdJh\/wogoBt4uN2p9Svtm1CqhGwjX5MmY\/brMYr6eCwH0UQsE183HInM3HbQhc2CdhEX6bMxw0lScefQZe661\/0pQgCNoqTG3pzTnpN+m6ngC30Z8q83FD2c\/thbPOOB7i5eSdlyERRgJsbDuQOBmlvtgLcKIDbzUbh6vrAzZVcngkGbp5B4SoR4OZKLs8EAzfPoHCVCHBzJZdngoHbUlF8w7wAOwK5fqQB3GiylzCZ9K4KtvdRo\/raWRGoMDXYVcz8KlOAmNzYeiIOC7NMriieyliX0fBT1r6NVbTlUm9UbZylR+TcLWf8tm5uZeQVJ+cRX24cesYhhENPbOE1Z6kajJxkmFxRvDZDbs1xvkrZhsnblE8bLuaNOQRV5l1soEegph35U0rI5W65LZcTmhLmglsJKzjnvmAnw58ckish9E6DrSfCFp7JnF4echRi5Pifa6doJtcUn8oPNzlcJNQW6IjUSM+KQNegTdRgV2BFZIGHUwSqHgj\/q\/3Pqc3jiVrCocrG7fjsFpVkjk0l8nNTOg168O4n8+fp\/kQckishNUvTE+kWnikqf9Vec0xthGbyqOKoKTxQbXeVmqe+rjTOl56SW7ItUdlJ8qlSagQa\/dxUz1fPVajrdxLqpHqp6HmE5A\/xr4ek2B6dlxtT8d6UP95VvoPiT8S2sB7i2Glw6ElaOGFXls0rQ50a1oQweVR2s+I5rXLGqJXc0ANyounczPnz5rVuM09YT1gjCle\/1G7py\/+rOIfQkbqjl9DEw78WL5kbW\/F94U1bI+1w8ieH5ETIjeppsXBvciDdMqKS1HC+usmjFGIUVwRebR4A3pE\/GbKWV8v0eqK81k\/HFqApAvflT8cUcigRPXYtGZ8e6ty9RG5sxQtOTN9upGDrTw4Lm0NuTM9YC5ekB5J7o\/JYqeFPFJNfjUaU2iiORk0DwC+Pfmu3jnQwzRjO3g+k2Q54RoTel9v0wPOSMcuRP72iHMfo\/aRpEIxu4+BQ\/O\/Jz0y3H7H+5LBwTIh7Pe0tvDNrV4Imjx015aNQ4vhmPKdTjh4HxYkBoD81cI\/DhGfszLZF5SKL2844TTC1CGI6EkPuDqlAPydLkYM6vpGDYHQbB1vx4YyqRuuXm\/3JYWHbEHd6Olt4sbwI14cDNZx7bpvcfZmuuD4ANO\/5osymSrRTy6pOz56m3tApEbXm6YjlaguS0d3KH51VjsOYW0tepj7xxPHEvITgRmzjiO2mLZ3GYfl+wx9EBtEJCoeFHUNc6EmzcGj5dGa1Nod00Lx\/5dy6GrrieACYzdqx4ExN+aQvJZjCeICSEuyg3VqOSldUK\/2QSIxv8+PNCwGiU7PlRm7jsOumiU5j61fhWYd2aBMUSqehW5gWwqlnDdXCCBWsCabjmT\/lKF7LUhwVdgZXMW+OWY9hWI9ysn\/egLNsll4guL19BKHy\/dHsSW7GIMixjUODclfgY2LQt4iC\/VnLtjAjBPHomUq3ME6MLWecQuju4Pi04WDHSG7jnLLUmBy6\/nnw8cg9vHqQ3IxBkGcbB4by8sCFCWoeij8ZnQa2MCvEK3pySB6fkKQ56fr1rkfM3BbT9xCbM0huxiDIt41DUfwY5eFdpAnxcXl85BDnKj1jUwo18lh8FqHjafb1ZjxU4d3GwfGMWBytvJ3pByey0UP67YylnzS4wTYOz0EcyQpXfOkwvkUfYsI2Ds+BQ6VbyJzs799gG4f3uJkzcnofANs4vE2O9z2Ot1tx62UH3MRkDtyAm5gKiJk11BtwE1MBMbOGegNuYiogZtZQb8BNTAXEzNpUb\/jFKX5HoP5t\/4O11lxMFcTLmuSmMou8Anf6ocAUr41+zJjAoP\/TzE2tPAImcPOEDZy56f2ktgZF6zyhn\/QENhKDU71FBjvtD3AThVsEJ3DzBi89C7fzEqg3b\/Cz3gfE3ACoiyqNuwL9N28kfwtnAdNDMeEDN+AmpgJiZg31BtzEVEDMrKHegJuYCoiZNdQbcBNTATGzhnoTk9v\/4EVoZmGrhOoAAAAASUVORK5CYII="
             },
             "degree": 11,
             "id": 44,
             "name": "Docosanoic acid",
-            "type": "2"
+            "type": "[map01040] Biosynthesis of unsaturated fatty acids"
         },
         {
             "Data": {
                 "fdr": "0.081",
                 "log2FC": "-0.979",
                 "p": "0.0202",
-                "color": "#2098C2"
+                "color": "#2098C2",
+                "KCF": "iVBORw0KGgoAAAANSUhEUgAAAdgAAABTCAMAAAALB+YEAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMAUExURQAAAK+vr62traenp6WlpaOjo5+fn5eXl5OTk5GRkY2NjX19fXt7e3d3d3Nzc21tbWNjY2FhYV9fX11dXVtbW1VVVVFRUU9PT01NTf7+\/ktLS\/z8\/Pr6+vj4+EVFRfb29kNDQ\/T09PLy8vDw8D09Pe7u7uzs7Dk5Oerq6jc3N+jo6OTk5OLi4i8vL+Dg4C0tLd7e3isrK9zc3CkpKdra2tjY2NbW1tTU1CEhIdLS0h8fH9DQ0M7OzszMzBkZGcrKysjIyBUVFRMTExEREcLCwg8PDw0NDb6+vgkJCbq6ugcHB7a2tgMDA7S0tAEBAbKysrCwsK6urqysrKqqqqioqKampqCgoJ6enpiYmJaWlpCQkI6OjoqKioiIiIaGhoCAgHx8fHh4eHZ2dnJycnBwcG5ubmZmZmRkZF5eXlpaWlhYWFRUVP\/\/\/\/39\/fv7+0ZGRvf39\/X19UJCQvPz8\/Hx8e\/v7+3t7evr6zg4ODY2Nufn5+Pj4zAwMOHh4S4uLt\/f3ywsLN3d3SoqKiYmJtfX1yIiItPT0yAgIM\/PzxwcHBoaGsvLy8nJycfHxxQUFMXFxcPDww4ODr+\/v729vbu7u7e3twQEBLW1tQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAdYM\/8AAAAJcEhZcwAADsMAAA7DAcdvqGQAAAUZSURBVHhe7Zz7WwxRGMdPLpGS5LpKiMhdISGjVanYyrVy3y6ETglJ5FIJ6aZE\/l1ndtqdmZ3LOfOY57Tz9s4Ptmd79z3v9\/vZd86ZMSdC8QDpAAGpCkVRBAv0S4BgESxQB4DKwo5FsEAdACoLOxbBAnUAqCzs2OUONlT6+yNQD0DKEu3YW1WkjoTTQHoAUpQg2LWXMy\/0TLXVtYI0AaIoMbADc\/dj4qM1hRBNgKhJDOxV8jkm\/gKZhGgCRE1iYO9EemPiD5EmiCZA1CQGdhV5GRP\/jVyEaAJETWJgpxeBpjcOQDQBoiYxsPnfN6nie95thegBSE1iYGk66TxCR57XnAdpAkRRgmDpjRlyhXw4DdECmJpEwdLQiWqcXwP0HRAGGyBNWCpzQBisGigcjNYuuQPCrBDskrPyVACC9WRXcIIRbHBYeaoUwXqyKzjBCDY4rDxVimA92RWcYAQbHFaeKkWwnuwKTjCCDQ4rT5UiWE92BScYwQaHladKPYB9y79XvJ87Nj+CvpWThPJL4UekULFJromDjUainODC9ki0z5VKXzSynvMAKwuRkYQCK9ZiuyjY6+VbpreUu+0EyFuj5E65h7AklblKa54LfP44viSBVqzVUTGwZQXDteyztcMFY05QGk7uHncPWUwyvnu0wSkJfxxfklBgxdrZKQK2vyOcoT1X3JsR7ui3S1PxavSv9r5TiJ6ENoy+qrBLwh\/HlyQUWLH2XWIAuytfDcnTniDWN9eF0pWu4sSHi7uU5lByqqGnxvOrXYg5SV6rkjuUnIQ\/ji9JKIhie8rqS1UDTcxMjhrAKg\/V3zQR9dEmfXPd5MFB87aOycGkNwqzLkVfm5JaQixJ2GeyzKso\/ji+JIFR7IoqUkP2naLUyMzcKfZgDZvrJiwNGmqeyNFbWF2GHLZ0nymkOMeahA6ZVlF2IeZxfEkColhKW6ruj9BvO34UeQVr3FxnN6X2Z8cn3fgyxHKe10N674azbedlfRXlFOJzEiDF0r1z61S\/37SfFQT7ZJYdD9ipmL+5buxFyTzLrS9DrDP4Ysh8yQvnlbS2inIJ8TMJmGJ\/koSjSoJZMgDjqZhoxwAV2VyXVt5daVozWdGykOlu92tftoqqdA\/xKwmgYleSPXGzlQQzN7CPXrPjJgMrtLmuLzPSZl4zWdCykEz3W1HqDSBOiF9J4BT7iySWOEqCGW0u2LR4xRnjYLt4EtxcJ7AzwJeQ1ElC+aXwI\/47yRCZVdHlf1ptmGN\/fr32K1yk95YtWNxcZ51XUuid0JfNajXXyBkD2NstlB6t5oDFzXUphNGmlNrGtvf59TNsa6vxOvbPxgPa\/UHnUzHFzXWpTTZ9hiwsdOw0g53fcM7w9wac7hXj5rqURts7Ns6wGo\/5Y5R2Ztt2bEorweI4Dtx7HKLbViBYcF+U99tHjz+zn2PBaV1mgop3GQWL\/H\/sMjMIhlwEC4OjRQWCRbBAHQAqCzsWwQJ1AKgs7FgEC9QBoLKwYxEsUAeAyjJ1rPoADdOp\/ev6AtQNQLKMYGNQtadlOC+ADIAqxQA2\/qMZbKx3NfU6bahuANLlDDZ+KmavCa7xbgZkAFQp4h2rzbt6\/0J1BIguYbBaIIINCndcPAWFlMc6ky93nK5zYlsJ9Gsgj6NguHQH8M6TdMvlDIhg5fgsfRQEK91yOQMiWDk+Sx8FwUq3XM6ACFaOz9JHQbDSLZczIIKV47P0URCsdMvlDIhg5fgsfZR\/PWKbcGJ\/bHUAAAAASUVORK5CYII="
             },
             "degree": 9,
             "id": 45,
             "name": "Tetracosanoic acid",
-            "type": "4"
+            "type": "[map01040] Biosynthesis of unsaturated fatty acids"
         },
         {
             "Data": {
                 "fdr": "0.0429",
                 "log2FC": "-0.767",
                 "p": "0.00507",
-                "color": "#1D75B3"
+                "color": "#1D75B3",
+                "KCF": "iVBORw0KGgoAAAANSUhEUgAAAJoAAABnCAMAAADPLaviAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMAUExURQAAAK+vr6urq6mpqaOjo5+fn5ubm5WVlZGRkY2NjYuLi4WFhYGBgXd3d3V1dXFxcW9vb2tra2dnZ2NjY19fX1lZWVdXV\/7+\/vz8\/ElJSfr6+kVFRfb29vT09EFBQT09Pe7u7js7O+zs7Dk5Oerq6jc3N+jo6DU1Nebm5uTk5DExMeLi4i8vL97e3isrK9zc3Nra2icnJ9bW1iMjIyEhIdLS0h8fH9DQ0BsbG8zMzBkZGcrKyhcXF8jIyBUVFcbGxhMTExEREcLCwr6+vgsLCwkJCbq6ugcHBwUFBba2tgMDAwEBAbKysrCwsK6urqqqqqSkpKKioqCgoJycnJSUlJKSkpCQkI6OjoyMjIaGhoSEhICAgH5+fnx8fHh4eHZ2dnR0dHJycnBwcG5ubmhoaGZmZmBgYF5eXlxcXFhYWFZWVlRUVFJSUlBQUP\/\/\/0xMTP39\/fv7+0hISPn5+ff390RERPX19UJCQvHx8e\/v7zo6Ounp6TY2Nufn5+Xl5TIyMuPj4zAwMCwsLN3d3SoqKtvb2ygoKNnZ2dfX19XV1dPT0yAgINHR0R4eHs\/PzxwcHMvLyxgYGMfHxxQUFBISEhAQEMHBwQ4ODr+\/vwwMDL29vQYGBre3twQEBLOzswAA\/QAA7QAAAQAAAAAAAgAAAAAAAAAAAAAA8AAAAAAApAAA8AAAzgAAAAAAGAAAAAAAAAAACgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANAAAAAAA3AAAAAAAAAAAAAAAyAAAsAAAAAAAcAAAbAAA\/wAAAAAAyAAAOAAAYAAAAQAAcgAAYgAALgAAMQAAUwAARgAALwAALwAAAQAAcgAALgAAhAAAAAAKlAAAhADabAAAmAAAnAAAAACwAAAAAAAARAAAAAAAAAAAAAAARAAAgAAAAAAA8AAAQAAA9AAAyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAbAAABgAAAAAAAAAAAAAAugAA7QAAAQAAAAAAAqszm4AAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAQ9SURBVGhD7Zn5W9MwGMeL83YKCjqdoogwnLeIoBMVBCeiKN4XioDigQaGE\/Eah6Acog6Goqh\/qz3Gmq1p+yYt3eRJfwCeJG+\/n\/dI2r4IKGMvIWPJEEdjyQ2PGo8aSwRYbHit\/QdRCw97wJSOJnRkW3391NNSIBwcjcZhsvjJ6aZJb0Xbj7MwNigancNE7Y1f3fL4mgFb0SgdJmp\/EL7J4w1\/toDYYFGjdZgoHRTeyuOf4ohmfDA0WoeJqmPCfnn8eBzRHjRah4mqXT+z5PErE2ZQyjwsarQOk7WfFUuHWuhgnp1otA6TtV9\/7Bz1Vmzd1WsnGqJ0WEd77+Poueh6H4wMmFBE6bC+eATIBa41hOgc1tOXKhtW3TQLEaJw2Fk0Koc5WjwCPGpYKVDtF\/BiXmu81rQ1AC4fvkP5DiWVT2QeHu+gWvObvPLcc1e3PoC+FlFsg34zh8PuWHOBkXDWeIe\/dTrnPQwOjNa0ImbisCjcv65qVY+e8MjmoV\/inC8bCAdFGyvZutvQ4bjw8JPKq14SXG9L1fWQMpEEN9evCHVJU12YLQztRdPUUkOHMeGKTeOLZRn88lyO5hapAwk4tV8RuCZNXzqtLgKhTQ4930lwOHGXFOFTbwbPJ5MdLX6nNBUSlwSHENavYELLz4leJDisDmmF\/w7u+K7OF+VWLtG21XzZCO9XGKIlZzvRswqW5yVvu5Q6Jgp7Gsu6vyhwoeVVLTpfnni\/ItDuEq+15ITi3GoNtJcHUwsHr2NdYe+y6IYDomXNvpcjmhvEB\/B+RWC2VrzOmKJhNdCWT7rxXOSMhHtuTT30d5Rf0ANDCO9XGCZUnYT0rCS4iKEwQgWrq91hfTKE9yuM0RLZhvWsfNnGwhJTxABMnML6FcZoiWxDe1bxE8VY3mgW61cAEwrsWfUJfexUiqXarwCi2dOzAmLr5hx7GmDc9vSsgGx6y8hooJ7VjCAIMxbljczJaDb1rKxx6z\/eTfa9NVmINejNg3yjTjGhnRANxjUW0BgVwWYLEq1QzKcgFIKDQL1wQUaNOgq0BsxR88qfJh7xC0j7LUQLQV7PjFa9XWJrEN9KtQ\/mdKPVrcxYtOZa8f\/7mRk11\/2SkIKm+RZKd0JdPWW3FTTNt1Da0VBw9nNKQm8Wl9y1h0u8C\/sOdSH0aGBR0g4t3RMOvZK6QbZcltAKT\/QloUVGEWq\/YQuX1aihRiH1XCsN9GcGGupOQTt86LddZOy1RiQ4NlFjG5m9aP4jKV00S5zM24Ck2loXi8XuWOLBjG1FswtKuQ9HY4knjxqPGksEWGx4rS3kqEmdAukYln8Sf8nNBJYQMNjgOjKW8oAw+sWgwmSCoc39SUSLP9SciljKM9QMLZ5rx+jgUVPqz8E3AjCautCpsDFsg3SgQU4N584O\/ipp9Vxjsp9HI6dqmsEFjsYQNL5DWYLGo8YUtX9R8vL\/WBcPTwAAAABJRU5ErkJggg=="
             },
             "degree": 5,
             "id": 46,
             "name": "Glutamate",
-            "type": "2"
+            "type": "[map00480] Glutathione metabolism|[map01060] Biosynthesis of plant secondary metabolites|[map01100] Metabolic pathways|[map01230] Biosynthesis of amino acids|[map04974] Protein digestion and absorption"
         },
         {
             "Data": {
                 "fdr": "0.832",
                 "log2FC": "-0.119",
                 "p": "0.81",
-                "color": "#14236E"
+                "color": "#14236E",
+                "KCF": null
             },
             "degree": 7,
             "id": 47,
             "name": "Fructose",
-            "type": "4"
+            "type": ""
         },
         {
             "Data": {
                 "fdr": "0.0429",
                 "log2FC": "-0.672",
                 "p": "0.00507",
-                "color": "#2065AB"
+                "color": "#2065AB",
+                "KCF": null
             },
             "degree": 6,
             "id": 48,
             "name": "Aspartic acid",
-            "type": "2"
+            "type": ""
         },
         {
             "Data": {
                 "fdr": "0.166",
                 "log2FC": "0.442",
                 "p": "0.0656",
-                "color": "#FA8FAF"
+                "color": "#FA8FAF",
+                "KCF": null
             },
             "degree": 3,
             "id": 49,
             "name": "2,4,6-Tri-tert.-butylbenzenethiol",
-            "type": "2"
+            "type": ""
         },
         {
             "Data": {
                 "fdr": "0.356",
                 "log2FC": "0.485",
                 "p": "0.23",
-                "color": "#FA8CAE"
+                "color": "#FA8CAE",
+                "KCF": null
             },
             "degree": 3,
             "id": 50,
             "name": "Galactosylglycerol",
-            "type": "4"
+            "type": ""
         },
         {
             "Data": {
                 "fdr": "0.128",
                 "log2FC": "0.418",
                 "p": "0.0453",
-                "color": "#FA92B0"
+                "color": "#FA92B0",
+                "KCF": "iVBORw0KGgoAAAANSUhEUgAAAKAAAABnCAMAAACw\/LkTAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMAUExURQAAAK+vr62traurq6mpqaOjo5+fn52dnZubm5mZmZeXl5GRkYuLi4mJiYeHh4ODg4GBgX9\/f3t7e3V1dXNzc3FxcW9vb2tra2lpaWNjY19fX1tbW1lZWU1NTf7+\/vz8\/ElJSfr6+kdHR\/j4+EVFRfb29kNDQ\/T09EFBQfLy8vDw8D09Pe7u7js7O+zs7Dk5Oerq6jc3N+jo6DU1Nebm5jMzM+Tk5DExMeLi4i8vL+Dg4C0tLd7e3isrK9zc3CkpKdra2icnJ9jY2CUlJdbW1iMjIyEhIdLS0h8fH9DQ0BsbG8zMzBkZGcrKyhcXF8jIyBUVFcbGxhMTExEREcDAwA0NDb6+vgsLCwkJCbq6ugcHBwUFBba2tgMDA7S0tAEBAbCwsK6urqioqKSkpKKioqCgoJ6enpycnJiYmJaWlpKSkpCQkI6OjoyMjIqKioiIiIaGhoSEhICAgH5+fnx8fHh4eHZ2dnR0dHJycnBwcG5ubmhoaGRkZGJiYmBgYF5eXlxcXFZWVlRUVFJSUk5OTv\/\/\/0xMTP39\/fv7+0hISPn5+UZGRvf390RERPX19UJCQvPz80BAQPHx8T4+Pu\/v7+3t7evr6zg4OOnp6TY2Nufn5+Xl5TIyMuPj4zAwMOHh4d\/f3ywsLN3d3SoqKtvb2ygoKNnZ2dfX1yQkJNXV1dPT09HR0R4eHs\/PzxwcHMvLyxgYGMnJycfHxxQUFBISEsPDwxAQEMHBwQ4ODr+\/vwwMDL29vQoKCgYGBre3twQEBLW1tQAAAAAAAAAAyAAAsAAAAAAAcAAAbAAA\/wAAAAAAyAAAOAAAYAAAAQAAcgAAYgAALgAAMQAAUwAARgAALwAALwAAAQAAcgAALgAAhAAAAAAKlAAAhADabAAAmAAAnAAAAACwAAAAAAAARAAAAAAAAAAAAAAARAAAgAAAAAAA8AAAQAAA9AAAyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAbAAABgAAAAAAAAAAAAAAugAA7QAAAQAAAAAAAtqBFJUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAUsSURBVHhe7Zr9XxRFHMfHOstM8zETysNLMdE6IZAwKAyRgE4QCEyJuMKHyhQrUrFS1MZb9NRCSU9STFPzgbro8qEy\/dOa2d27m92bvZ2H5bgX7vwAvG6\/D+\/7fOc7OzMvAMzyAbKcD7qAshVyFXQVlFVA1t+dgxlUMPyLVzabgD9zia8t7+j482C1QAo5F1bApttfjvrq9t19Xy4dvzcjYN5vM9XYcy7wp5DzYAS8BH5X8wQf5Mvl4\/ZmBNwIzqqhr+qg3HmEHRgBb4A31RSNOqhwPm5HRsDQ35PU0NtucWeQdGAEhIeL8CKovJUrmY\/bnRXw9JUj1311S18b4M4g6cAKCCv6op3RF16VTMfvzgyIQg\/xh5f3YAfEluzW8mR6BPaULiBddFdB2cnoKugqmFDg0VhmfKvDnDXPaJMUHGwHHcvLuBAzCrj4yB\/5dX31+TyEGQX8dTdCCwdPjxXgsOxmYTs4NvUiDx3X\/mTu7ObuHpvodhuyrpUArLzJhcha4ryp0dyyhT+Ppgt+rrdlpl2TljxZ3lrFQ8gI+MGVJSMorCfw9TKr6Aivd+hQrXa4oo6KnfjjRTXdjgOOnKx8qAVdNj\/wETU8xjuHnrRdPn7NKv+wdqiO7BIEVELYMeTT3JN3WaUHGj7OS8QcLe+vSEkQx0MPlKebn6WdrAb2QniqPni2YtamG5BqQccmShz4FJtsfg\/\/TN5lFcxu6fme9FWmN3crhmAEHv688JuGJ8wXdd4t0RwIT+TGQGflHQiTFnnDaiijOGR0OiBxlxXNLTV\/tYuGZjHhYeN3iiLaVU58JD8o0dTVP2hc2NpRMw+ti6Q4xnRUQPIuC\/dGykg2CwUPWXu3NHxbmPAqzKFJ2gBh17\/PVPmazpwKMwLu96DxHCqx\/V2W3ix0PExWMDe2XZsIaFLupU3KAgjXqm3t3zbICHh\/AxqbECDLXdZo+Yvn9c6laQxh1eLKf9CTtjcs29oPEstqICGOORi1xEx3WcrOmLqwWI9g7eGyQ7UfWhrcA4k3TyAhDhMg411WSveYgy+aEUv3arkE1sU9iCaZVnz5KSIQvYsdu8s6n05hb+tkdZLObyTm4Mgq5aX1RGXogEx3WREABtOW2PbhguKjyGYr+IsA9A5A\/13tOlcdFgt1Zu6ySqJ9Iy9Pqe83roOftMygl9j0he22Trb6MBg0fXe780EO2n+QC7X\/3TXoZUNRkCEgaTIIAHie0yfVPPS6\/u6PP\/oRtV7PV04ASrPRA9xZAUM\/3MtiQDhvRWQO0xy0U6gLlRjYLoV2USjPw4aiM+6oBfI45DKBAR\/DJY44pJN1mAms4Jhrl\/Kq48voU49YXtRx1ucJvoh0a+ESt7yCCYNoe2t9nhhfwPZpWQ64ewP6D4tsVtCzp1jRAC3PE+NbYs+Jms81QMvzxDgDwo33b5pKvKOo2O6GjhdavIs9EB648Lihi6tXhZWT+Kzp4JAC9K\/\/yQA4dB3C\/Z85SIdCSQHCLmBeB6sDaQ9y\/PBygLDfBPj22v\/4GdJ6CANSo6671eYwn3iJaSCl9cZbNydgHVWwtz0Wi33hBFYyhqOAzqJJbrfGAoYW01VQVmlXQVdBWQVk\/d056KiC+DIDb8HUn8Zf+BHxTDYtuz9ZYhVA2yLa\/GKPL21JAMb\/pAKqko7H25EDUDPVyp+5wQ0ocUoQ+lbsgAnLzErI2iS6cPr8FNJCzMkgB219ia82eovoJmLJRLwyWy8BQhdQQDSDi6ugq6CsArL+7hyc8Ar+D+zft6DON5oAAAAAAElFTkSuQmCC"
             },
             "degree": 4,
             "id": 51,
             "name": "Methionine",
-            "type": "3"
+            "type": "[map01060] Biosynthesis of plant secondary metabolites|[map01100] Metabolic pathways|[map01230] Biosynthesis of amino acids|[map04974] Protein digestion and absorption"
         },
         {
             "Data": {
                 "fdr": "0.128",
                 "log2FC": "1.34",
                 "p": "0.0453",
-                "color": "#E9479B"
+                "color": "#E9479B",
+                "KCF": null
             },
             "degree": 3,
             "id": 52,
             "name": "Threonic acid",
-            "type": "3"
+            "type": ""
         },
         {
             "Data": {
                 "fdr": "0.587",
                 "log2FC": "-0.0423",
                 "p": "0.471",
-                "color": "#0C1F60"
+                "color": "#0C1F60",
+                "KCF": null
             },
             "degree": 5,
             "id": 53,
             "name": "Dehydroascorbic acid dimer",
-            "type": "3"
+            "type": ""
         },
         {
             "Data": {
                 "fdr": "0.748",
                 "log2FC": "-0.0202",
                 "p": "0.689",
-                "color": "#081D58"
+                "color": "#081D58",
+                "KCF": "iVBORw0KGgoAAAANSUhEUgAAAIgAAABmCAMAAAAnKimSAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGAUExURQAAAK+vr6mpqZ+fn5mZmZeXl5GRkY2NjYODg4GBgXt7e3l5eXV1dXNzc3FxcWtra2NjY19fX1lZWf7+\/vz8\/ElJSfr6+kVFRfb29kNDQ0FBQfLy8j09Perq6jc3N+jo6Obm5uTk5DExMeLi4t7e3isrK9zc3CkpKScnJ9jY2NbW1h8fH9DQ0MzMzBkZGRcXF8jIyMbGxhMTExEREcDAwL6+vgsLCwkJCbq6ugcHB7a2tgMDA7S0tAEBAbCwsK6urqKioqCgoJycnJiYmJKSkpCQkH5+fnx8fHh4eHJycm5ubmZmZmRkZGJiYmBgYF5eXlxcXFZWVlRUVFJSUv\/\/\/0xMTP39\/fv7+\/f390REREJCQvPz8\/Hx8e\/v7+np6TY2NuXl5ePj4zAwMN3d3SoqKtvb2ygoKNnZ2SYmJtfX19XV1dPT0yAgIB4eHs\/PzxwcHBoaGsvLyxgYGMfHxxQUFBISEhAQEA4ODgwMDL29vQYGBgQEBLW1tbOzswAAAAAAaORVZF8AAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPWSURBVGhD7ZkJV9QwEICDorgoCrIsKi6CFyoIyuEFiggKiCcEdgU8UOTwQFxvkf9uemfbJjPtmlLfS95jd2knk+\/NkUynhKZkkJRwUA3i94S2iLYIlJ06Rv5hjBTfNpraCnPG51wuxPiOCOQXdj+2a9aPDw5+fXqBqegeM9a5fTWwmieiEOTy93tfcl33f9wQg3Ai6kCynzKm8gOvhSC8iDqQN+SzqfzW1hHa\/WgXG4f8ruFF1IFcIy9M5asMqPv3FTau+0F4EXUg78lZU\/klBiQIVl5EHcjczypT+Z2PwhjhRdSB0JlWYxMpnGsQZw0nohDk+crsu1zXsZOLYhBORCEIPf2kdLN0+IRsQ\/NEVIIw3a9g\/QgRW0nsLZ5OkU0yJUcxlGMXwMoFV6whhNSkAWSbgWynAWSVgaymAaSwRbYKaQCha2QNSJtkgpXOktl0gNSROjUg5bUnXG5Wk2o1IPxxjik3+0m\/chBUudlG2lSDIMvNTeisiZk1Xu2JLDeBk8Y6Z7BnCCfn1Z7IcnMEtshSLJAxQ7HxoIQqN4uZ5toWOcpEpi8zAdEGywAvazDlZtWH6aWG0mhWsg4TOTXdaRW34OBd41qEr0jDNaw3L\/9idzbmO4ZES9giA8vP1kGK8lji9hGu3GRFaWAsTvbetc+7oY75jbB1PJHC3t6DYUp8s8ItwlWkPbutZ35vNI6U6vPuv9nRnsftfpRykfwDV4m4gyDOLrvcvNj60nq6dEbgwsJ4ny9qRXNkHQQ4zRtHeh56BsjXB01E2xtKe7IuaZgIU0KptIMAg1DaUvfNDgnm78lQf28cXbGjViTSQuUdBAwIpeebO4wkGTgjzoA\/VtRKROQdBBwI6z90zrA9YViSiEbULslE5B0ELAjdv68pUyvfEBbGmzJFsYi8g4AGIRRxbgTymMeSdxAigOBPUoFVpB2EJEGkHYQkQaQdhERBmMuE7YGkQYRJpUH8ptEW0RaRH1MRdu0oD0vQomH3dbDGDlYKN0zieMSdg3UNpmGSBAiqYZIACLJhUgkJzjXIhol6EGTDRD0IqmFSCQZ2Z8U0TCrjwHaWor2fi8OEC1Ya7f2cQhCuAI+zCmIO0iKGJmEBjlgGFokAAiurREKDxC8DKrE7Yq52jXYNFCY6RqQxwl6ym89R5qfz5R7QZRchS0e+z7vGfpgr\/2I8llKL0f6LvA44gQNxfvp5rOvEhVATViCIXcQxuR22iAPixc\/OWoSLDeUgju19wVqeNdhyGwxOKH25vHVzmc9mJ4ciLwRNUGNnaNWQ+xpElwFQ2OgY0THy38TIX66vTQPJVNcUAAAAAElFTkSuQmCC"
             },
             "degree": 3,
             "id": 54,
             "name": "Malic acid",
-            "type": "3"
+            "type": "[map01060] Biosynthesis of plant secondary metabolites|[map01063] Biosynthesis of alkaloids derived from shikimate pathway|[map01100] Metabolic pathways"
         },
         {
             "Data": {
                 "fdr": "0.673",
                 "log2FC": "0.077",
                 "p": "0.575",
-                "color": "#FAACB8"
+                "color": "#FAACB8",
+                "KCF": "iVBORw0KGgoAAAANSUhEUgAAAHgAAACSCAMAAAC5Zf4EAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMAUExURQAAAK+vr6mpqaOjo6GhoZ+fn5eXl5GRkY+Pj42NjYmJiYeHh4ODg4GBgX9\/f3t7e3V1dXNzc3FxcWNjY2FhYV9fX11dXVlZWVdXV1NTU1FRUf7+\/ktLS\/z8\/ElJSfr6+vj4+EVFRfb29kNDQ\/T09EFBQfLy8j8\/P\/Dw8D09PTk5Oerq6jc3N+jo6DU1NeTk5DExMS8vL+Dg4N7e3isrK9zc3CkpKdra2icnJ9jY2CUlJdbW1h8fH9DQ0M7OzszMzMrKyhcXF8jIyBUVFcbGxhMTExEREQ8PD8DAwL6+vgsLCwkJCbq6ugcHBwUFBba2tgMDA7S0tAEBAbCwsK6urqysrKioqKampqCgoJ6enpycnJqampiYmJCQkIyMjIiIiICAgH5+fnx8fHJycnBwcG5ubmRkZGJiYl5eXlxcXFZWVlRUVFJSUk5OTv\/\/\/0xMTP39\/UpKSvv7+0ZGRvf390RERPX19UJCQvPz80BAQPHx8e\/v7+vr6+np6TY2Nufn5+Xl5ePj4zAwMC4uLt3d3SoqKtvb2ygoKNnZ2dfX1yQkJNXV1dPT0yAgINHR0R4eHs\/PzxwcHM3NzcvLyxgYGMfHxxQUFBISEsPDwxAQEA4ODr+\/vwwMDL29vQoKCggICLm5uQYGBre3twQEBLW1tQICAgAAAAAA8AAAAAAA4gAAsAAAzgAAAAAAGAAAAAAAAAAACgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANAAAAAAA3AAAAAAAAAAAAAAAyAAAsAAAAAAAcAAAbAAA\/wAAAAAAyAAAOAAAYAAAAQAAcgAAYgAALgAAMQAAUwAARgAALwAALwAAAQAAcgAALgAAhAAAAAAKlAAAhACybAAAcAAAnAAAAACwAAAAAAAARAAAAAAAAAAAAAAARAAAgAAAAAAA8AAAQAAA9AAAyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAbAAABgAAAAAAAAAAAAAAugAA7QAAAQAAAAAAAosF1uYAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAXISURBVHhe7Zp7exNFFMYXY0HQWi7GW4wNoKGaYjRKFU2L0RbaQqUVLYjFSysFLVlrbKFGpQUJpaBQMIrWS8XW7+lcdpPZ3dnJzNlLH3Tnj7RPMju\/Oe+cmT1nZjR9jYq2Rlw9AoemfCR1JHVgCnhxrqnLCXi\/4OCFZwYHf\/7sNSgaDO7+9eOfWjtPLh0GkqHg5M1mQtx8MWTwJe1HQjyysgNGhlp8SPuWAK8YHVCmQ8Hfa3sI6w2jA6GBJ39fR1jHbygj6QNQi\/Uz7XgSl16Jhw3+ev7za62dTz9fDhusv\/hp9e3qI7uBXLjUCJjKIrX33s6A2OAxxrRHT6CPLafCBxNr0wW6lCgWTxZTa4+dh7ykvIGJtYn2JkVrPc1jyiLW7isA5pQ3iw1rx7dyTDbDhNIk\/jHRaqvSEGx9zhF0EGszPQt2cj1MyG\/Evw2vqILZ53hBB7F2w7StWSZM8AHMDTqItaUKfWWYhQ0TvINdgg5ibV9+igWzYUL+4XtQOakude05l6CDWjtBIyGjsGFC\/k4\/KgPq4NpzbkFHX6FL18sfslOKDRO8S+0adPRrla80tvzDhgnewW5Bxy+EWbnFas2ECd7BbkHHOAF\/SdYJszBhgg9gftAxdQBzb35jncn1MMEHMD\/oGMbct7rtS5euzzm\/Yr5puGTanna29gUG3yeE8H5UBdM2cptoOI\/K7CDiPqbMhcVcvT29NdJGxH01pNci5ub+MtAvaNrB6+oGQyzG3JrNncjg9wBcAHj3plydq49p2kMQLgCMMMTeXBb9l6xq38HyVIhXn\/0gh+FdCLyqLb0MMhhmsWH0WRTSa+\/CuFBwN3aw9kTb8idALhScniMD\/f6z9uBRuh+QMSaNd2EHe\/yCNMheEQwuoUWz+xCYC5UaA9Mt+5stIZ5SL8AWJ9dX49mJvDWsVUBDwUPzOxcRpq8y7Ugi5Ogw8OK5jlXafmlDz1bAuwm265M9XRhJ1uzKjBeaAAmyusXIp0ZnLHLuaz+vvimgCk6OIJ+yj2LiWOGU6haMInio4xz2KUdJb7l9oiTnVUYtJTDyqSG31vdu7\/hDhawATsdZn3JCjuTPtMmjFcAHW6w+5YCkHvgzELBEHyWqmF3zt6q\/rSn0MQILfM1fcfxtLRrj0AYukjqSmlEgmsehuUMgUk9KtCpRRWFVoFWTGYlWJaqogWev6MPF6Za0OKSaal7+TTp9lOjj5N+pWFEvL83Gq0zm4uzDuh8m2sYHdj0oB28Ebr03pRdj5aWyfjShi+Lqhe0VFFcnn0AbblJwBsw\/2irGdGQv+iTFLZMoj\/XQTOKp5+gZwcAuy469Ux8GzD\/aIiqXY0eNR5MjhdOc3Km6zcydMlcp+SLZlnE\/5+ODmaMtrHIxxuRFM6P7bV5mzRb3vEl2zjsRVnTOxwVbjraw1qa91OxsvLqeyY+32fLj1\/sR+CNUT3jOx4L5R1tIa0ceuLhz3sje0I7AmH1HYGiFCC0+52PB\/KOt1P28TbRVmq\/2vcTbAzlOhBaf83GllrlPg73swkT+He6a0oW\/FZ\/zccFy92lmRp8U7nOJz\/n4Xi15n8Yxryzmi8\/5+GCv92loB4TnfC4LiMx9ml40a+qnMZyxFp7zua\/Vc+JXkcyvonO+Ri8JmfZFdVy7DweXlpHUy2p7TEwX4WCPWtyF4Cby9oNc8yFa3YUW\/\/\/GeA0tbnBxStwzuHM1vDgVELjxxalgwBIXp4IBS1ycCgYscXEqGLDExalgwBIXp4IBiwMqicUFPI8bX5wKyGLmqpPLxamgwKhdL\/EgWGqJYRRWicBeFZR+PpJaWiqvFSOpvSoo\/bxFapyT4OyCfPL\/oG+l25ZeuQiUZjVuf\/xLeZj+m\/9awUaCxXzpu8WuYANKZDCGwTtcwmJahSLNPoQBrnctKLDYq+rW+uPW9unkmEck7ydSm4p7l9lwWH8aUm3FH91UqXSlWJsSgUPTPZL6vy\/1v0L9hFEufvQaAAAAAElFTkSuQmCC"
             },
             "degree": 6,
             "id": 55,
             "name": "Quinic acid",
-            "type": "2"
+            "type": ""
         },
         {
             "Data": {
                 "fdr": "0.356",
                 "log2FC": "0.836",
                 "p": "0.23",
-                "color": "#F86EA3"
+                "color": "#F86EA3",
+                "KCF": null
             },
             "degree": 3,
             "id": 56,
             "name": "Gulose",
-            "type": "2"
+            "type": ""
         },
         {
             "Data": {
                 "fdr": "1",
                 "log2FC": "-0.0135",
                 "p": "1",
-                "color": "#081D58"
+                "color": "#081D58",
+                "KCF": null
             },
             "degree": 5,
             "id": 57,
             "name": "IS",
-            "type": "3"
+            "type": ""
         },
         {
             "Data": {
                 "fdr": "0.832",
                 "log2FC": "0.951",
                 "p": "0.81",
-                "color": "#F665A0"
+                "color": "#F665A0",
+                "KCF": null
             },
             "degree": 3,
             "id": 58,
             "name": "Gluconic acid",
-            "type": "2"
+            "type": ""
         },
         {
             "Data": {
                 "fdr": "0.356",
                 "log2FC": "0.565",
                 "p": "0.23",
-                "color": "#FA86AC"
+                "color": "#FA86AC",
+                "KCF": null
             },
             "degree": 1,
             "id": 59,
             "name": "4-amino Butyric acid",
-            "type": "2"
+            "type": ""
         },
         {
             "Data": {
                 "fdr": "0.0429",
                 "log2FC": "1.08",
                 "p": "0.00507",
-                "color": "#F35A9E"
+                "color": "#F35A9E",
+                "KCF": "iVBORw0KGgoAAAANSUhEUgAAAM4AAACWCAMAAAChHEdsAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMAUExURQAAAK+vr62traurq6mpqaOjo5+fn52dnZubm5mZmZGRkY+Pj42NjYODg4GBgX9\/f3t7e3V1dXNzc3FxcWtra2VlZWNjY2FhYV9fX1lZWVdXV1NTU1FRUU9PT\/7+\/vz8\/Pr6+vj4+EVFRfb29kNDQ\/T09EFBQfLy8j8\/P\/Dw8D09Pe7u7js7Ozk5Oerq6jc3N+jo6DExMeLi4i8vL+Dg4N7e3isrK9zc3CkpKdra2icnJ9jY2CUlJdbW1iMjIx8fH9DQ0MzMzBkZGRcXF8jIyMbGxhMTEw8PDw0NDb6+vgsLC7y8vAkJCbq6ugcHBwUFBba2tgMDAwEBAbKysrCwsK6urqysrKioqKSkpKKioqCgoJ6enpycnJqampaWlpKSkpCQkIyMjISEhICAgH5+fnx8fHJycnBwcG5ubmRkZGJiYmBgYF5eXlxcXFZWVlRUVFJSUlBQUE5OTv\/\/\/0xMTP39\/UpKSvv7+0hISPn5+UZGRvf390RERPX19UJCQvHx8e\/v7zw8POvr6+np6TY2Nufn5+Xl5ePj4zAwMC4uLt\/f3ywsLN3d3SoqKtvb2ygoKNnZ2SYmJtfX1yQkJNXV1SIiItPT0yAgINHR0R4eHs\/PzxwcHM3NzRoaGsvLyxgYGMnJycfHxxQUFBISEsPDwxAQEA4ODr+\/vwwMDL29vQoKCru7uwgICAYGBre3twQEBLW1tbOzswAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANAAAAAAA3AAAAAAAAAAAAAAAyAAAsAAAAAAAcAAAbAAA\/wAAAAAAyAAAOAAAYAAAAQAAcgAAYgAALgAAMQAAUwAARgAALwAALwAAAQAAcgAALgAAhAAAAAAKlAAAhADabAAAmAAAnAAAAACwAAAAAAAARAAAAAAAAAAAAAAARAAAgAAAAAAA8AAAQAAA9AAAyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAbAAABgAAAAAAAAAAAAAAugAA7QAAAQAAAAAAAsndojYAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAf5SURBVHhe7VyLX1RFFB41NC2IXvTSC0JZmmEP07JSwMRMrBAjM7W1xyZlqTvQplCbFtILQ7KiqMAeoEZS\/2Ez9+5j7u69c87cmXt3l9+d3w9Z934z93znzJ2ZPedbCF1QjSwoNjSmU8nxjKMTRycyD8STLTJXB7hRHJ0ATlPpMnjeguA5SHqAIweaCvhKi874uu7u3z94RkaoAOl4neNe7apYOjv+eutSU9vRmZf8+QiQCqDziz1BfFrjZJ195eYvUJAKoDN6+qw\/nW\/Ib\/bFffMt3qBhKkI63ruOtdvKONmmCZnc4ctnD\/nMvjaWpVUMtJ6jIqTjn+dZe6FsdAbr7iWEvHiDH58fyGb70rNZWiW4DipCyjzZFv14fAujQ8g9GW9CA5cX2RcO\/uRD+AEqQspKZ7x59MpFmw0hT09423tiA9900lvu9KHD3hcgZaSTSXYm0nTX91k+Xa+VGsxC9um3\/Reb2tY8wl6WBHAt63GTCxI+HfdGnd\/hrQNTDa02gT\/7djqM7ihavBiEXX78\/am9U3c9zF5tX+o+HTTOvHmKLnVBwqcj3qGwfbdv+NxZgXkbfOXDbs7nyyfFABUg55y3XX3Y\/6e\/Xrn12qxzLQspDbDpQ45AR9i+iz09fONjjM9Mb96e1oZiCKXWge3vOhG12+EGem3rRzOlFMR3wqMj7vAeC1lbcoqQd5zTY3pFZ9Jrrbv\/lj\/Y88YB7KfhMKWn3rgsO1RQ45mcwkYN7vCN\/94999AIM3TXpqFxH6c\/1fzEFUo37pys\/3vTNMfw9UDSjEcnv1FDO7xt3KGVezLHt70sMXDfthO7O2d3v73+aqOciX3VOJ38mR3c4R3rvpqrG5Taubqva2NuwoGEwqMD7vBZ22ALYESepgIUdA0HCCsbtMNXGR1hh9d7ehVcrgBVjY6ww1ctnSLDfbfvAg52KIwI7dlBhdAFgo2FETEddb\/jesC+hxFxdHC+VkfBvocRcXTU\/Y7rAfseRsTRwflaHQX7HkbE0VH3O64H7HsYEUcH52t1FOx7GBFHR93viB4jtbQLyBUM1g3RWp7wwTSFQGKGU8KcnaCZmQzL5DhlA+\/Gqg5rGYpOSKpchZ5lo9M4QvenKD02zPJso755Nl51oHT4GKWp\/XQETk2ViU4mvTjFQ0NbuGdZFvRWryyoU3VgrcXGphanfepC4SwFsCQghzhZw+1bla\/ytPZ55ahzVQdm7cQqzqjmpG14JLoCWBJQQNSkaKqGsomWb8UFg+IKwjB1+lAaja4AlgQICO7pevez7y4YeJQU6u2IUmO6Ak1JgEs0kKpJl2hV8gUD75KClWbxoeIoeuUqPUmASxFAl3gWR52CgW9JYWIJNacr0JMEUJcigPrJiFjB4FH\/kgLrZUhXoCsJsFyKAH9R1Ora05JjgnuU4JNNWxLQ61IEyE4PHjVtAW5CV6AtCWjiswtZUrhdflLS1hVoSwKsS+v47EKWFH6V0xFGkU620CQB9x21ziS4jQXRgMTicwTI0xdGkdIJTRLAyGzuPO8wgEsKsyQrHpBR9rsmHEHNSwL4DLOWWZSRSZyx7HI63JaT5TBIiY5BSYBlzzNG5uDHSCOTJIlEesDE6OS1e8YkAVb7IR4aavXgIsMN7Cf9ZuiEIAn4mXFJJEElsWj\/BXLBDB3zkoDaq4k1lhIZmp4n8\/hQFhP3XAoMSgKsBxVdPca0R2OKfQpw75UNuX\/Dn8wJlUuCSu3uYXR6DNNB7t8YOqqWHZn7bu8R1U55vHd0cPs3QtADEy6x3D8RgCDpfz94\/w6DjiwRoEXHSGfV6EgTAUYskgwCGwsjXMPLEwFVR0f+BYOqoyNPBFQdHfkXDKqOjjwRUHV05F8wqD460kRA9dERjiOliYAqpMNMRhxHfIkp7nPuceDOMALhcgWI1v3gzjBCwVYEVOt+cGfim1tH2BYAAlukd2ZT\/jQagIPQJTgdJgkYAiUBXYlPFHMFZaGDlQQEyORo8QkSHbwkwGq\/3smz\/Rc8OaNET52OmiTAstavsLOgy7BZUCXzi8EyOt4lBQVJAM\/i5HPU9p21EgEIojI63iUFdUkAC5BTQdBMBJijoyUJYPUdPuPkigCErQgILjqakgCn+qadCNCl411SCCIJ4LVR7USALh3vkkIwSUAvoAhA2IqA4Cab+BleJglo9j8mQIoAhK0ICI4OtqQglQRoJwKM0TEjCZAqAhC2IiC46JiRBOgmAszRwZUUIEmATBGAsBUBUTizwZ\/hEZIAeBCE0f4QBTrwfbQkAfDwCIRROlqSAISxMMQoHS1JAGwrAmGUjpYkAGEsDDFJR08SANuKQJikoycJQBgLQ0zS0ZMEwLYiECbp6EkCEMbCEJN0Qs8EREon\/ExAlHR0JQGwrQiEsckWRSYA5mOMThSZgAjpaEsCYFsRCGPR0ZYEIIyFIcboRJEJiJCOtiQAthWBMBYdMZ0QqIaOMBaGmKOjKwmAbUUgDNJhdws5EwDzMUsHvl\/IiJhOyA7WGj6Ojpb7Qu4cRydkB2sNH0dHy30hd17I0eF\/Vpm5z\/lX+itkJwceXoyOTcX5u7TAr8C3C7ujQCf30k3HjlMxx7CtCjw+hk6WnxM2ZyJWakPQcR4kV5AqlY34BSmfyea8XX10MGtAbt5VanhcT4LXCm3\/kf+SZbsq6FSqkXi7KnqdwtPIIWM66j6Lrkccneh8rX6nODrqPouuRxyd6Hytfqf\/AeYA2OXwpvcYAAAAAElFTkSuQmCC"
             },
             "degree": 1,
             "id": 60,
             "name": "Maltose",
-            "type": "2"
+            "type": "[map01100] Metabolic pathways"
         },
         {
             "Data": {
                 "fdr": "0.427",
                 "log2FC": "-0.225",
                 "p": "0.298",
-                "color": "#1F2B86"
+                "color": "#1F2B86",
+                "KCF": null
             },
             "degree": 1,
             "id": 61,
             "name": "Ribonic acid ",
-            "type": "3"
+            "type": ""
         },
         {
             "Data": {
                 "fdr": "0.256",
                 "log2FC": "0.439",
                 "p": "0.128",
-                "color": "#FA8FAF"
+                "color": "#FA8FAF",
+                "KCF": null
             },
             "degree": 1,
             "id": 62,
             "name": "Phenylalanine",
-            "type": "3"
+            "type": ""
         },
         {
             "Data": {
                 "fdr": "0.748",
                 "log2FC": "0.756",
                 "p": "0.689",
-                "color": "#F974A5"
+                "color": "#F974A5",
+                "KCF": "iVBORw0KGgoAAAANSUhEUgAAANAAAABxCAMAAACTOt0NAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMAUExURQAAALGxsa+vr62traurq6mpqaenp6WlpaOjo6GhoZ+fn52dnZubm5eXl5OTk5GRkY+Pj42NjYuLi4mJiYeHh4WFhYODg4GBgX9\/f3t7e3l5eXd3d3V1dXNzc3FxcW9vb21tbWtra2dnZ2VlZWFhYV9fX11dXVtbW1lZWVdXV1VVVVNTU01NTf7+\/vz8\/ElJSfr6+vj4+EVFRfb29kNDQ\/T09EFBQfLy8j8\/P\/Dw8D09Pe7u7js7O+zs7Dk5Oerq6jc3N+jo6DU1Nebm5uTk5DExMeLi4i8vL+Dg4N7e3isrK9zc3CkpKdra2icnJ9jY2CUlJdbW1iMjIyEhIdLS0tDQ0B0dHRsbG8zMzBkZGcrKyhcXF8jIyBUVFcbGxhMTE8TExBEREcLCwg8PDw0NDb6+vgsLC7y8vAkJCbq6ugcHBwUFBba2tgMDA7S0tAEBAbKysrCwsKysrKqqqqioqKampqSkpKKiop6enpycnJqampiYmJaWlpKSkpCQkI6OjoyMjIiIiIaGhoSEhIKCgoCAgH5+fnx8fHp6enh4eHZ2dnR0dHJycnBwcG5ubmpqamhoaGZmZmRkZGJiYmBgYF5eXlxcXFpaWlZWVlRUVFJSUlBQUE5OTv\/\/\/0xMTP39\/UpKSvv7+0hISPn5+UZGRvf390RERPX19UJCQvPz8\/Hx8T4+Pu\/v7zw8PO3t7To6Ouvr6zg4OOnp6efn5zQ0NOXl5TIyMuPj4zAwMOHh4S4uLt\/f393d3SoqKtvb2ygoKNnZ2SYmJtfX1yQkJNXV1SIiItPT0yAgINHR0R4eHs\/PzxwcHM3NzcvLyxgYGMnJyRYWFsfHxxQUFMXFxRISEsPDwxAQEMHBwQ4ODr+\/vwwMDL29vbu7uwgICAYGBre3twQEBLW1tbOzswAARAAAAAAAAAAAAAAARAAAgAAAAAAA8AAAQAAA9AAAyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAbAAABgAAAAAAAAAAAAAAugAA7QAAAQAAAAAAAi+\/DuoAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAjQSURBVHhe7ZuLW1RFFMDXClvJB2YmmZkWqaXLS8ny\/cBURJMQEwlxpcwHWiRgpjyMfGWoIBrajgSI5MqqWSaCoPjeUkoE2zTJ+ku6r907d++8LveCLN\/O98nCztw55zfnzNwzc0YT6GbF1M14gB+oq1vUbyG\/hTp5BPwu18kDrlmc30Kah4zlgfBSvpUlnKUtpU3XsJB1Ek+Uvqr7AK19tpsBfb0yrntZKGD3jLJu5XIBVfH5PgwUscYEFwCsAWB1203fXRQCv\/NazjggcKDmKZ9d5SI3IIAmJ\/\/iq0BnXJUIIJBl8lWg7BHeL1De5QAo91WgH\/\/h1d\/mWRcMiA\/kLh5D6DM3uQyJUNp0yQC0xwA0cC9G76HbuxZQZYOFSaGY5Zhmt69QnpeD8jIhPC9FhOeGWejyhHXrmku4iIxWFjmx3AuXkh+Wg\/LEbL7lRsQqYhTQsnvb74Qn7HGl0XjArhexTYILKECeoLzDgUJ\/GyToMqSGCuS8iW0yP0nwJGyxeoLyDge6YLotqJH+aCyF6G49ocHPf5OBPEF5YnEAV4Z3nMutNp0RVLkkgeH1Gv4lQefcEAqQOyhPbFvJlTUdB3TdNE9Q5QMJDKUXw8HBT6kRRJfzBOWQy+VNm7EDesigRaH0\/hNCp5uchBnAcHAw7jMKkBSUy0BxsyvLfnggP6UBaNl4grDD0yxcbdmC1whADAcHz5TTgMSgXAY6exWA4tx2AdU3B+EdovrikavhCW\/OshOAGA4OtqzaV0fogY9hhaBcscrFJZ5rD1ArF0w6Pw9FiVvPfTn3YNMnTaOmc79VYTSyUg8Oqg\/NnjO4ZeR1ZAecEDkoh4EWvScEu1JhdrnAY0J0HPukStrxohvid2fFjwWcE6CKlXZw0Lr4Zc4Fxg9oOnIXL0RVs9T5EfwdI1DVgdhGKdyf8bGyzxU3io4rvunVEqiSWh1MPTgIDU6SwoyIzdcmeEUcKiEeCdHv31ZIYwO6uqB4iXysMQ4KuSJ2J\/IOpyhxsQeUblcdnMrJIR8czDkVyfurWEJ71tZmyt6NEuJuWrC2paVlmyyfCSgwpRe4W1L70MN0+LLUw68xhyar3auqGHY7HsckAWEPDgKS8yx8R1PdvaWdiO8j7dTRQtB+zZI05txNnBWlF\/7NK3Kk8FjrQs7zA5nfnIXuV3Y7EccNJK5RDd4PRe1feEv4LnCAXLVsTOJWbtHEC0GKpluIczelA51e8cU3YfGrCk6fnBYZjRknILmdhPOo8Qi8RqXkCNbwlFsLQ6L4P7ih81iI\/\/v6wZTB7xCEoIRDQMpNk3u7xrsbqoxN6HEsSKmXollVcePU6uB7iW8V5n16yWvPPc\/hgIxk6Z8snJEA1dABULfX1JcgBKEYBASv7fJ2TXI3FFNkT5x9hO973+uxBBNcWHJkI00\/OmWO6G7IoUt9lyhEVYkGgrZruNck19OmEqIscxihep5jkmiktKTtwnLmmaleD4X9ZwAQ43bttIsYG4\/BLBiigpZ+vJEiCha34txNbDcsqP1Ank0T63bthOoVBAm3uwhxHd+OM9L8mtHVBHfjq7JxZ0QYTtjlPJsm1u1abhFh9Mw22tBacto2C21w7mb5qhSkHaV1o6xHziGW7RrfTV0y4QyA7HGiFi3Csj\/V+8XgUdFZBxriDQBi2a4JYmpWYKVRPY5\/ctYS\/ucA9IuBq3H8CcratOXG0ascw3ZNIBk0FAtE9zju0TBhEipepooOvzUDcEXbuo0GYtiuCYJv4v2BxePA\/t5kf9o1kMtJkFYe9eOYF6u8XSNLvJaAqWfyOLDzeXL3W17RvG7jYzlpu0aW+BK3z0EWJo8D2cPJ3a\/n3s39KG28eqAHp0SRy2sx1UweBzaMJgMtiuFCCW3rtk6g0j\/mIlVi8zjQeooM9PaHAMy\/Rm5jrIXAq\/11eBxooCnrqta6buu0EEhzIIFs3HrLUKKoWVWG41alHL1AFaniobayMHocAPcp8R7QfE9LLxB4HfUqYVvjuEG4QkurWhmOWxWDqRso43uEhRg9TohtyEVOCTF4MN9EN1DFOMW9HfGPh8SNEqTaGxk0IOpxq8GrXAV6EtgrGAaUZcJTj1u95ei1UKbLNlml+2SbK5MBiGXCa76npRcI2M3qU4cqM23xEnBZJrzme1o6gTIxqtvNDCaSJ3zQSZxBeSBN97T0AVkybK6dCF12umwZFqrTyfmVg6kjMVtFIYOi5Z6WPiBOmP0OQvE7bC4n51cm5sRezFWZiTuf1HxPSxdQ5SjsZLGbR3lfilOBKyd864jUkcq30kwH1cjqBrqAysw2lw1KB3q6P8d9b0bfuYJU8J7wE3PqL+bK9xweNOXT3VZFpAeIN5DdjDqvj+YrqCaSJ\/wL7lFpHfGcpKIlvwnKbbObSg+QYKAs1ChaslhMJE\/4PdbD7ryi5Kgnyx0z2SmgljqAeBK7eR9S7D5hclE8BprwUX1i6rdAmc3fnUOoHovm1QG0vJD4\/rQ\/XSgeWzOWv0Zbh7lPrPo2pzM+pW8OoTNIONHuDBP+sp7Xk9E7kiLTubPY4yU16I09C6QmC6EzSGgxcoYJfxVM9WRF1hTn1vONhazBOkJ0e4FoF\/6geg1AnIK3Qso3slgC16adQLQMElyvDQgAPh3d\/qINiDmDBGeY8Jf12q82\/kltQMwZJDjDhL+s9\/iBsnkV+Lu4tAwSXK\/V5fRharOQB4iWQYLrfQII0DJIUL1vANEySFC9bwBBF\/7QPi9nmLowkJfqtAwSrV7f7Mc8rWlR6BANDO7UD2TwgBrend9Chg+pwR36LWTwgBrend9Chg+pwR12bwuJ96uB+NPrQ0peSnUGD6uB3cEWEmDEtKvqg8MTIKV\/BmpgcFcQkPtXJZCEYZLTy13bS1mAxDYwr8GjamR3DEBSE+WHkToY2hcdSGmZru1vXjOcuCiILudTiwJ6vZb+r4zyw1AnMbazLu9CWnH9QFpHrLPb+y3U2SOuVZ7fQlpHrLPb+y3U2SOuVV63s9D\/u3LF3vnqs8AAAAAASUVORK5CYII="
             },
             "degree": 6,
             "id": 63,
             "name": "Adenosine",
-            "type": "3"
+            "type": "[map01100] Metabolic pathways"
         },
         {
             "Data": {
                 "fdr": "0.356",
                 "log2FC": "0.354",
                 "p": "0.23",
-                "color": "#FA98B3"
+                "color": "#FA98B3",
+                "KCF": "iVBORw0KGgoAAAANSUhEUgAAAIcAAABuCAMAAAA6cvByAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMAUExURQAAAK+vr62traurq6mpqaOjo5+fn52dnZubm5mZmZeXl5GRkY+Pj42NjYODg4GBgXt7e3V1dXNzc3FxcWtra2VlZWNjY2FhYV9fX1lZWVdXV1NTU1FRUU9PT\/7+\/vz8\/Pr6+vj4+EVFRfb29kNDQ\/T09EFBQfLy8vDw8D09Pe7u7js7Ozk5Oerq6jc3N+jo6DU1NeTk5DExMS8vL+Dg4N7e3isrK9zc3CkpKdra2icnJ9jY2CUlJdbW1h8fH9DQ0MzMzBkZGRcXF8jIyMbGxhMTExEREcLCwg8PD8DAwA0NDb6+vgsLC7y8vAkJCbq6ugcHBwUFBba2tgMDA7S0tAEBAbKysrCwsK6urqysrKioqKSkpKKioqCgoJ6enpycnJqampiYmJKSkpCQkIyMjH5+fnx8fHJycnBwcG5ubmRkZGJiYmBgYF5eXlxcXFZWVlRUVFJSUlBQUE5OTv\/\/\/0xMTP39\/UpKSvv7+0ZGRvf390RERPX19UJCQvPz8\/Hx8e\/v7zw8PDo6Ouvr6+np6TY2Nufn5+Xl5ePj4zAwMC4uLt\/f393d3SoqKtvb2ygoKNnZ2SYmJtfX1yQkJNXV1SIiItPT09HR0R4eHs\/PzxwcHM3NzRoaGsvLyxgYGBYWFsfHxxQUFBISEsPDwxAQEA4ODr+\/vwwMDL29vQoKCru7uwgICAYGBgQEBLW1tbOzswAACgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANAAAAAAA3AAAAAAAAAAAAAAAyAAAsAAAAAAAcAAAbAAA\/wAAAAAAyAAAOAAAYAAAAQAAcgAAYgAALgAAMQAAUwAARgAALwAALwAAAQAAcgAALgAAhAAAAAAKlAAAhADabAAAmAAAnAAAAACwAAAAAAAARAAAAAAAAAAAAAAARAAAgAAAAAAA8AAAQAAA9AAAyAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAbAAABgAAAAAAAAAAAAAAugAA7QAAAQAAAAAAAnNqFX8AAAAJcEhZcwAADsMAAA7DAcdvqGQAAAU9SURBVGhD7ZqJexNFFMDHIyCHEO+IuqmKFMSiKEpUaGkg1VoEtaWIilqCDaBRIa81trQBwVLkaKkHBjUg2KqU1n\/Rmd1NdjY7V6bpdv3c+SjJ13m789v33sw7tgiCMVAwMCDkcBsi1EeoD9HWDP1j3vxj4KIhOxTLIvl+Itnf4MjXzS4T6zo7f\/9iq4jEEWk9QOQ+2FV\/jh1\/fHKtoeXw5Dt8EEpkLhy\/mLrkjPiVlebMPWeVRObCceHrU3yO8+g3c3LvzJM8IVqk9bM78bhfxy5TCF3ZwQXZjU6bc+M2j0dwBGiR1ls78XhLg6N7ECH09nIeyE9oszm13ebxyO0EWkTbLgdKWzAHQo8U2CT9f95mTnz0M4cUAS2iydF\/KHHTxEBoy2X2Qkc3kMMj\/0qMywGUiB7H8WNr1nb8aIPs+tC7ElbSibG+Hxpa1jyPvxZZKPicokS0OE4\/lyUH340jr1soD1VtCWN\/CU+\/+HlpT+nhZ\/G3ZHaji2Ti+gSYeZ8josOxtdk6GgAG3vuqk4B89zK9zrYN31p7Fs5YH8O9bdFGSmJ5X6q9nH\/aIl6NSc\/1qasR6qqRu1\/AIJP7Kr9qejC5yBNWNsZKS+MVkbEb7al2a50RjvdY+rKHO\/iUQ9LVqaprWzIlhA5ZISq\/LJVh7qDi6rEuMo9\/XksAtKdkz0vN00ZzQhIjcsVnV00\/M4qX6HhpEJuePWYTQ0W4tT56cxU5dDb9vYmrCnOCzSGNWms\/fnR34cvmdwU3j\/cks+jN3m\/e4J709MVMDoWoBXBueuWA+BmHe8ndiW3kg+aoBB+FqOVWJW8dmVc419EcleAjjVrVJq0vRyVJkkYtnzikUcsnDjok8V1MwfgKIvb92fuWCkkLykGFJP85qlbkhqSynILSFUS8dpEfNm4JhUUUREIOpt7VNee5XOFSBZHQLqFdFE4EdU\/6b\/uptEXkz34xnlawCRHRtcvoChiU5aeN0cH0kKGmES2OU5ehMFnA+bpV5LNHfGkp1pK6COmMCkntHPFReD8HkMW1WccFfv3SNba6aGy7CzZjFOMfadJeK0chf3uOKAPMqgTXc\/ex67mhxCwRMIz1ywDSJ43Fx8WOwudgl5nHIgTisUoXpOkIq77NJntwfUsae8Zig6gkfdLE0OmfssvMSA5yEVe97NT79hM3Rtt6h6mnxyohxgHQ659SHFSZibURibpVbOxPftpU+VW8pxRz9z+eOmwaBzT7pw6Hq8zMRfIe\/2+893ra9sQuUl5XDePaOnwJfZda+jBOj9NVZt7BbJC9+kTiL7x6cSjRxfLHBjBAt3\/q9DhdZSbvMNjbfHQ0Zronc+zT7p86uqPLTP6Z9PiKtijtnlVOpN0\/dTjUykyARcIjQrd\/SvmSrDlqr\/+A+KjS7J9SHEplJsCvYg7N\/im9t5zOp2CpM0hSAs6tf2qvLC0zYQpVtxa90Pr9U7Gu6dklaIm6cLVkrfFWsFIGZQLB0Yf6AsFxCV0KAkd+Bs1I0y4uaP38Yxy\/ABjXVkj9OLoxR3cAOA5Of7\/nYAA4BMmnAl3d7CJKPn3kECaf\/nGIk0\/\/OMTJp38c4pf3\/nGIX977xyFOPv3jEL+895FDmHz6yCF8ee8nB15LnsLygep2ris8s0gk5HBrJ9RHqI9wv6gfKoHcL+SPsvAjWP+zP7RfUEhUQ+vDZLBehfA+MJy6rmuRpG5b\/srkMBVE\/i04h62JBeew3139fziEDmo7jf4LvRr2i3DDVrb0\/OyYeTJ3LVvWlA05wvwjzD\/Ut024X4K5X\/4F44lzgo1izugAAAAASUVORK5CYII="
             },
             "degree": 3,
             "id": 64,
             "name": "Glucose",
-            "type": "1"
+            "type": "[map01100] Metabolic pathways"
         },
         {
             "Data": {
                 "fdr": "0.427",
                 "log2FC": "0.33",
                 "p": "0.298",
-                "color": "#FA98B3"
+                "color": "#FA98B3",
+                "KCF": null
             },
             "degree": 3,
             "id": 65,
             "name": "Galactose",
-            "type": "4"
+            "type": ""
         },
         {
             "Data": {
                 "fdr": "0.166",
                 "log2FC": "-0.446",
                 "p": "0.0656",
-                "color": "#27449F"
+                "color": "#27449F",
+                "KCF": null
             },
             "degree": 7,
             "id": 66,
             "name": "Heptadecanoic acid",
-            "type": "2"
+            "type": ""
         },
         {
             "Data": {
                 "fdr": "0.22",
                 "log2FC": "-0.495",
                 "p": "0.0927",
-                "color": "#264BA2"
+                "color": "#264BA2",
+                "KCF": null
             },
             "degree": 6,
             "id": 67,
             "name": "Nonadecanoic acid",
-            "type": "3"
+            "type": ""
         },
         {
             "Data": {
                 "fdr": "0.256",
                 "log2FC": "0.35",
                 "p": "0.128",
-                "color": "#FA98B3"
+                "color": "#FA98B3",
+                "KCF": null
             },
             "degree": 2,
             "id": 68,
             "name": "Galactinol",
-            "type": "3"
+            "type": ""
         }
     ],
     "style": "default",
     "types": {
-        "2": "#E41A1C",
-        "4": "#377EB8",
-        "1": "#4DAF4A",
-        "3": "#984EA3"
+        "[map01040] Biosynthesis of unsaturated fatty acids": "#E41A1C",
+        "[map00480] Glutathione metabolism": "#377EB8",
+        "[map01063] Biosynthesis of alkaloids derived from shikimate pathway": "#4DAF4A",
+        "[map04974] Protein digestion and absorption": "#984EA3",
+        "[map01060] Biosynthesis of plant secondary metabolites": "#FF7F00",
+        "[map00360] Phenylalanine metabolism": "#FFFF33",
+        "[map01100] Metabolic pathways": "#A65628",
+        "[map01230] Biosynthesis of amino acids": "#F781BF"
     }
 }
 
