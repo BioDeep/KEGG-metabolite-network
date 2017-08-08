@@ -91,7 +91,7 @@ Public Module Program
                 End With
             End With
         Catch ex As Exception
-
+            Call ex.PrintException
         End Try
 
         Dim nodes = LinqAPI.Exec(Of node) <=
