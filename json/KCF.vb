@@ -38,7 +38,11 @@ Module KCF
     Public Sub CreateTable(imports$)
         For Each file$ In ls - l - r - "*.XML" <= [imports]
             Try
-                compounds.Add(file, file.LoadXml(Of Compound))
+                If file.BaseName.First = "C"c Then
+                    compounds.Add(file, file.LoadXml(Of Compound))
+                Else
+                    compounds.Add(file, file.LoadXml(Of Glycan))
+                End If
             Catch ex As Exception
 
             End Try
