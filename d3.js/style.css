@@ -25,3 +25,12 @@ if (document.createElement("detect").style.textShadow === "") {
 
 */
 
+
+
+.solid{
+   stroke:solid;
+}
+
+.dash{
+   stroke-dasharray: 5,5; 
+}
