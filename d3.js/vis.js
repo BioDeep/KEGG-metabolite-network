@@ -1,3 +1,18 @@
+/**
+ * 模块进行代谢物网络的可视化操作
+ * 
+ * 网络的节点有两个属性可以用来表示两个维度的数据：半径大小以及颜色值，
+ * 例如半径大小可以用来表示进行代谢物鉴定结果之中的二级质谱碎片的匹配度得分，
+ * 而颜色则可以用来表示SSM碎片响应度的相似程度的计算得分
+ * 
+ * 对于网络之中的节点而言，黑色节点表示没有出现在当前的代谢物鉴定结果之中的，但是却可以通过代谢反应和某一个所鉴定的代谢物相连的
+ * 黑色节点和彩色节点之间的边连接为虚线
+ * 
+ * 彩色节点表示在当前的代谢物鉴定结果之中出现的KEGG化合物，彩色节点之间使用黑色的实现进行相连接
+ * 
+ */
+
+
 var width   = 1000,
     height  = 800,
     nodeMin = 5;
@@ -112,8 +127,6 @@ function setupGraph(graph) {
 	
 	svg = d3.select("#chart")
 		.append("svg:svg")
-		// .attr("viewBox", "0 0 " +height+ " "+width+"")
-		// .attr("preserveAspectRatio", "xMinYMin meet")
 		.attr("width", width)
 		.attr("height", height)
 		.attr("class","network");
@@ -191,12 +204,6 @@ function setupGraph(graph) {
 			}
 			return nodeMin;
 		})
-		/*
-		.attr("type_group", function(d) {
-			type_groups[d.type.toString()].push(this);
-			return d.type;
-		})
-		*/
 		.style("opacity",0.8)
 		.on("mouseover", displayTooltip)
 		.on("mousemove", moveTooltip)
@@ -388,9 +395,6 @@ function drawPolygons(polygons) {
 	
 	d3.selectAll(".pl").remove();	
 		
-	//polygons.forEach(function(poly) {
-		// console.log(poly);
-		
 	polygon_layer
 	   .selectAll("g")
 	   .data(polygons)
@@ -415,5 +419,4 @@ function drawPolygons(polygons) {
 	   })
 	   .tooltip(function(d) {return d.group})
 	   .attr("z-index", 100);		
-	//})
 }

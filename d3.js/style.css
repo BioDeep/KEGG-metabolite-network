@@ -8,20 +8,3 @@
 	transition: 500ms linear 0s;
 	outline: 0 none;
 }
-
-/*  
-
-a.glow:hover, a.glow:focus
-{
-	color: #fff;
-	text-shadow: -1px 1px 8px #ffc, 1px -1px 8px #fff;
-}
-
-<a href="#" class="glow">Glowing Link</a>
-
-if (document.createElement("detect").style.textShadow === "") {
-	document.getElementsByTagName("html")[0].className += " textshadow";
-}
-
-*/
-
