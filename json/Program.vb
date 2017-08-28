@@ -1,4 +1,32 @@
-﻿Imports System.ComponentModel
+﻿#Region "Microsoft.VisualBasic::6189bf440bd5fce4a59c929a119c2931, ..\KEGG_canvas\json\Program.vb"
+
+    ' Author:
+    ' 
+    '       asuka (amethyst.asuka@gcmodeller.org)
+    '       xieguigang (xie.guigang@live.com)
+    '       xie (genetics@smrucc.org)
+    ' 
+    ' Copyright (c) 2016 GPL3 Licensed
+    ' 
+    ' 
+    ' GNU GENERAL PUBLIC LICENSE (GPL3)
+    ' 
+    ' This program is free software: you can redistribute it and/or modify
+    ' it under the terms of the GNU General Public License as published by
+    ' the Free Software Foundation, either version 3 of the License, or
+    ' (at your option) any later version.
+    ' 
+    ' This program is distributed in the hope that it will be useful,
+    ' but WITHOUT ANY WARRANTY; without even the implied warranty of
+    ' MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    ' GNU General Public License for more details.
+    ' 
+    ' You should have received a copy of the GNU General Public License
+    ' along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+#End Region
+
+Imports System.ComponentModel
 Imports System.Drawing
 Imports System.IO
 Imports json.csv
@@ -55,6 +83,14 @@ Public Module Program
                             End If
                         End If
                     Next
+
+                    ' 在这里还需要更新一下字典的键名，否则后面的查找都是以commonName来查找
+                    ' 但是这个字典之中的键名任然是KEGG化合物编号，则数据肯定都无法找到的
+                    nodeDatas = nodeDatas _
+                        .Values _
+                        .GroupBy(Function(d) d.names) _
+                        .ToDictionary(Function(d) d.Key,
+                                      Function(g) g.First)
 
                     For Each edge As network_Csv In data
                         Dim a = KCF.MatchById(edge.source)
@@ -142,7 +178,7 @@ Public Module Program
             From x As network_Csv
             In data
             Select New edges With {
-                .value = x.Data.TryGetValue("correlation", [default]:=0),'x.correlation,
+                .value = x.Data.TryGetValue("correlation", [default]:=x.interaction),'x.correlation,
                 .id = $"{x.source}..{x.target}",
                 .A = x.source,
                 .B = x.target,
