@@ -146,7 +146,9 @@ function setupGraph(graph) {
 		.data(graph.edges)
 		.enter()
 		.insert("svg:line", "circle.node")
-		.attr("class", "link")
+		.attr("class", function(link) {
+			return link.value;
+		})
 		.attr("id", "network")
 		.style("stroke-width", function(d) { 
 		
