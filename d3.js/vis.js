@@ -211,6 +211,11 @@ function setupGraph(graph) {
 		.attr("id", "network")
 		.call(force.drag)
 
+	var label = node.append("text")
+		.attr("dx", 12)
+		.attr("dy", ".35em")
+		.text(function(d) { return d.name });
+
 	colorNodes();	
 	showLegend();
 	force.start();
@@ -228,7 +233,12 @@ function setupGraph(graph) {
 			.attr("cx", function (d) { return d.x; })
 			.attr("cy", function (d) { return d.y; });
 			
-		// convexHull_update();
+		label.attr("x", function (d) {
+				return d.x;
+			})
+			.attr("y", function (d) {
+				return d.y - 10;
+			});
 	});
 }
 
@@ -373,6 +383,10 @@ function convexHull_update() {
 
 function adjustLayouts() {
 	
+	if (!svg) {
+		return;
+	}
+
 	svg.selectAll("use")
 	   .data([" "])
 	   .enter()
@@ -395,6 +409,10 @@ function drawPolygons(polygons) {
 	
 	d3.selectAll(".pl").remove();	
 		
+	if (!polygon_layer) {
+		return;		
+	}
+
 	polygon_layer
 	   .selectAll("g")
 	   .data(polygons)
@@ -417,6 +435,6 @@ function drawPolygons(polygons) {
 			var color = type_colors[d.group];				
 			return color;
 	   })
-	   .tooltip(function(d) {return d.group})
+	   // .tooltip(function(d) {return d.group})
 	   .attr("z-index", 100);		
 }
