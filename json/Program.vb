@@ -84,6 +84,14 @@ Public Module Program
                         End If
                     Next
 
+                    ' 在这里还需要更新一下字典的键名，否则后面的查找都是以commonName来查找
+                    ' 但是这个字典之中的键名任然是KEGG化合物编号，则数据肯定都无法找到的
+                    nodeDatas = nodeDatas _
+                        .Values _
+                        .GroupBy(Function(d) d.names) _
+                        .ToDictionary(Function(d) d.Key,
+                                      Function(g) g.First)
+
                     For Each edge As network_Csv In data
                         Dim a = KCF.MatchById(edge.source)
                         Dim b = KCF.MatchById(edge.target)
@@ -170,7 +178,7 @@ Public Module Program
             From x As network_Csv
             In data
             Select New edges With {
-                .value = x.Data.TryGetValue("correlation", [default]:=0),'x.correlation,
+                .value = x.Data.TryGetValue("correlation", [default]:=x.interaction),'x.correlation,
                 .id = $"{x.source}..{x.target}",
                 .A = x.source,
                 .B = x.target,
