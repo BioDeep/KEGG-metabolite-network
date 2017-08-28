@@ -121,8 +121,8 @@ function setupGraph(graph) {
 	nodecolor = {};
 
 	force = d3.layout.force()
-		.charge(-100)
-		.linkDistance(20)
+		.charge(-300)
+		.linkDistance(100)
 		.size([width, height]);
 	
 	svg = d3.select("#chart")
@@ -155,22 +155,47 @@ function setupGraph(graph) {
 		nodecolor[d.name] = d.name;
 	})
 		
-	var link = svg.selectAll("line.link")
+	// var link = svg.selectAll("line.link")
+	// 	.data(graph.edges)
+	// 	.enter()
+	// 	.insert("svg:line", "circle.node")
+	// 	.attr("class", "link")
+	// 	.attr("id", "network")
+	// 	.style("stroke-width", function(d) { 
+		
+	// 		var w = -Math.log10( d.weight * 2 ) ;
+			
+	// 		if (w < 1) {
+	// 			w = 1;
+	// 		} else if ( w > 6 ) {
+	// 			w = 6;
+	// 		}
+		
+	// 		return w; 
+	// 	})
+	// 	.style("stroke", "gray")
+	// 	.style("opacity", 0.8);
+
+	var link = svg.selectAll("line")
 		.data(graph.edges)
 		.enter()
 		.insert("svg:line", "circle.node")
 		.attr("class", function(link) {
-			return link.value;
+		 	if (link.value == "dash") {
+				 return "dashed";
+			 } else {
+				 return link.value;
+			 }
 		})
 		.attr("id", "network")
 		.style("stroke-width", function(d) { 
 		
 			var w = -Math.log10( d.weight * 2 ) ;
 			
-			if (w < 1) {
-				w = 1;
-			} else if ( w > 6 ) {
-				w = 6;
+			if (w < 0.5) {
+				w = 0.5;
+			} else if ( w > 3 ) {
+				w = 3;
 			}
 		
 			return w; 
@@ -225,7 +250,7 @@ function setupGraph(graph) {
 	// console.log(type_groups);
 			
 	force.on("tick", function () {
-		svg.selectAll("line.link")
+		svg.selectAll("line")
 			.attr("x1", function (d) { return d.source.x; })
 			.attr("y1", function (d) { return d.source.y; })
 			.attr("x2", function (d) { return d.target.x; })
