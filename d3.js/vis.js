@@ -127,6 +127,7 @@ function setupGraph(graph) {
 	
 	svg = d3.select("#chart")
 		.append("svg:svg")
+		.attr("id", "network-canvas")
 		.attr("width", width)
 		.attr("height", height)
 		.attr("class","network");
