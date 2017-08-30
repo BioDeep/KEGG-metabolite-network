@@ -188,9 +188,12 @@ Public Module Program
                 .Data = x.Data
             }
 
-        Dim groupColors As Color() = Designer.GetColors("d3.scale.category10()") _
-            .Take(8) _
-            .ToArray
+        Dim groupColors As Color() = {
+            Color.SteelBlue, Color.SkyBlue, Color.Teal, Color.DarkMagenta, Color.PaleTurquoise, Color.PaleGreen, Color.Crimson, Color.DodgerBlue
+        }
+        ' = Designer.GetColors("d3.scale.category10()") _
+        '    .Take(8) _
+        '    .ToArray
         Dim pathways = nodes _
             .Where(Function(x) Not x.type.StringEmpty) _
             .Select(Function(x) x.type.Split("|"c)) _
