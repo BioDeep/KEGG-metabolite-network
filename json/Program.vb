@@ -252,7 +252,7 @@ Public Module Program
                             args <= "/nodes",
                             args <= "/keg.KCF",
                             degreeSize, compress,
-                            args.GetValue("/style", "default"),
+                            App.Argument("/style") Or "default".AsDefault,
                             args.GetBoolean("/node.id"))
 
         Using out As StreamWriter = args.OpenStreamOutput("/out")
