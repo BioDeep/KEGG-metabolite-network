@@ -48,11 +48,20 @@ Imports SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject
 Public Module Program
 
     Sub New()
-        VBDebugger.ForceSTDError = True
+        If GetType(Program).Module.Assembly.Location.BaseName.TextEquals(App.AssemblyName) Then
+            VBDebugger.ForceSTDError = True
+        End If
     End Sub
 
     Public Function Main() As Integer
         Return GetType(Program).RunCLI(App.CommandLine)
+    End Function
+
+    Private Function getColors() As (up As Color(), down As Color())
+        Dim up = Designer.GetColors("RdPu:c9", 150).Skip(50).ToArray
+        Dim down = Designer.GetColors("YlGnBu:c9", 150).Skip(50).ToArray
+
+        Return (up, down)
     End Function
 
     ''' <summary>
@@ -72,12 +81,11 @@ Public Module Program
         Dim nodeDatas = nodesTable _
             .LoadCsv(Of nodeData) _
             .ToDictionary(Function(x) x.names)
-        Dim colors As (up As Color(), down As Color()) = (
-            Designer.GetColors("RdPu:c9", 150).Skip(50).ToArray,
-            Designer.GetColors("YlGnBu:c9", 150).Skip(50).ToArray)
-
+        Dim colors As (up As Color(), down As Color()) = getColors()
         Dim up As New Dictionary(Of Double, Integer)
         Dim down As New Dictionary(Of Double, Integer)
+
+        Call "Fill data...".__DEBUG_ECHO
 
         With kegKCF
 
@@ -120,6 +128,8 @@ Public Module Program
             End If
         End With
 
+        Call "Calc log2FC effects...".__DEBUG_ECHO
+
         Try
             With nodeDatas.Values.VectorShadows
                 With DirectCast(!Me(.log2FC > 0).log2FC.As(Of Double), Double())
@@ -143,6 +153,8 @@ Public Module Program
             Call ex.PrintException
         End Try
 
+        Call "Create JSON node...".__DEBUG_ECHO
+
         Dim nodes = LinqAPI.Exec(Of node) <=
  _
             From name As SeqValue(Of String)
@@ -154,14 +166,24 @@ Public Module Program
             Let n = nodeDatas.TryGetValue(label, [default]:=New nodeData)
             Let d = If(degreeSize,
                 data _
-                .Where(Function(x) x.source = label OrElse x.target = label) _
+                .Where(Function(x)
+                           Return x.source = label OrElse x.target = label
+                       End Function) _
                 .Count,
                 n.degree)
             Let color As Color = Function() As Color
                                      If n.log2FC > 0 Then
-                                         Return colors.up(up(n.log2FC))
+                                         If up.ContainsKey(n.log2FC) Then
+                                             Return colors.up(up(n.log2FC))
+                                         Else
+                                             Return Color.LightPink
+                                         End If
                                      ElseIf n.log2FC < 0 Then
-                                         Return colors.down(down(n.log2FC))
+                                         If down.ContainsKey(n.log2FC) Then
+                                             Return colors.down(down(n.log2FC))
+                                         Else
+                                             Return Color.LightBlue
+                                         End If
                                      Else
                                          Return Color.Black
                                      End If
@@ -185,6 +207,8 @@ Public Module Program
                 }
             }
 
+        Call "Create JSON edge...".__DEBUG_ECHO
+
         Dim nodeTable = nodes.ToDictionary(Function(x) x.name)
         Dim edges = LinqAPI.Exec(Of edges) <=
  _
@@ -203,6 +227,8 @@ Public Module Program
 
         Dim groupColors As Color()
         Dim groupNames As Dictionary(Of String, String)
+
+        Call "Rendering group colors...".__DEBUG_ECHO
 
         If maps.IsNullOrEmpty Then
             groupColors = {
