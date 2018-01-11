@@ -33,6 +33,9 @@ Imports Microsoft.VisualBasic.Language
 Imports Microsoft.VisualBasic.Language.UnixBash
 Imports SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject
 
+''' <summary>
+''' Module for match for kegg KCF draw image
+''' </summary>
 Module KCF
 
     Dim compounds As New Dictionary(Of NamedValue(Of Compound))
