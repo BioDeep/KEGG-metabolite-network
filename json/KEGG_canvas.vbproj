@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{03CD9C9E-0EA3-47DC-969C-CBBFDD8AD3A4}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <StartupObject>KEGG_canvas.json.Program</StartupObject>
+    <StartupObject>KEGG_canvas.json.test</StartupObject>
     <RootNamespace>KEGG_canvas.json</RootNamespace>
     <AssemblyName>KEGG_canvas</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -154,6 +154,7 @@
   <ItemGroup>
     <Compile Include="csv.vb" />
     <Compile Include="KCF.vb" />
+    <Compile Include="test.vb" />
     <Compile Include="Program.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
