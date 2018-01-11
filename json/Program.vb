@@ -29,7 +29,7 @@
 Imports System.ComponentModel
 Imports System.Drawing
 Imports System.IO
-Imports json.csv
+Imports KEGG_canvas.json.csv
 Imports Microsoft.VisualBasic.CommandLine
 Imports Microsoft.VisualBasic.CommandLine.Reflection
 Imports Microsoft.VisualBasic.ComponentModel.Collection
