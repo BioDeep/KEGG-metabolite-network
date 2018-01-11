@@ -41,7 +41,7 @@ Module KCF
     Dim compounds As New Dictionary(Of NamedValue(Of Compound))
     Dim nameTree As New BinaryTree(Of (name$, Compound))
 
-    Public Sub CreateTable(imports$)
+    Public Function CreateTable(imports$) As BinaryTree(Of (name$, Compound))
         For Each file$ In ls - l - r - "*.XML" <= [imports]
             Dim compound As NamedValue(Of Compound)
 
@@ -57,17 +57,22 @@ Module KCF
                 App.LogException(ex)
             End Try
 
-            If Not compound.IsEmpty Then
+            ' 因为在KEGG分类之中，一种代谢物可能会有多种生物学功能
+            ' 所以可能会出现重复的记录
+            ' 在这里需要判断下是否存在于字典之中
+            If Not compound.IsEmpty And Not compounds.ContainsKey(compound.Name) Then
                 Call compounds.Add(compound)
 
                 With compound.Value
-                    For Each name$ In .CommonNames.Select(AddressOf LCase)
+                    For Each name$ In .CommonNames
                         Call nameTree.insert(name, (file, .ref))
                     Next
                 End With
             End If
         Next
-    End Sub
+
+        Return nameTree
+    End Function
 
     ''' <summary>
     ''' 返回来的是image的路径
