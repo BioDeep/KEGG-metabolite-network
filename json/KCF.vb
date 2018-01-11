@@ -26,26 +26,43 @@
 
 #End Region
 
+Imports Microsoft.VisualBasic.ComponentModel.Collection
 Imports Microsoft.VisualBasic.ComponentModel.DataSourceModel
+Imports Microsoft.VisualBasic.ComponentModel.DataStructures.BinaryTree
 Imports Microsoft.VisualBasic.Language
 Imports Microsoft.VisualBasic.Language.UnixBash
 Imports SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject
 
 Module KCF
 
-    Dim compounds As New List(Of NamedValue(Of Compound))
+    Dim compounds As New Dictionary(Of NamedValue(Of Compound))
+    Dim nameTree As New BinaryTree(Of (name$, Compound))
 
     Public Sub CreateTable(imports$)
         For Each file$ In ls - l - r - "*.XML" <= [imports]
+            Dim compound As NamedValue(Of Compound)
+
             Try
                 If file.BaseName.First = "C"c Then
-                    compounds.Add(file, file.LoadXml(Of Compound))
+                    compound = (file.BaseName, file.LoadXml(Of Compound), file)
                 Else
-                    compounds.Add(file, file.LoadXml(Of Glycan))
+                    compound = (file.BaseName, file.LoadXml(Of Glycan), file)
                 End If
             Catch ex As Exception
-
+                compound = Nothing
+                ex = New Exception(file, ex)
+                App.LogException(ex)
             End Try
+
+            If Not compound.IsEmpty Then
+                Call compounds.Add(compound)
+
+                With compound.Value
+                    For Each name$ In .CommonNames.Select(AddressOf LCase)
+                        Call nameTree.insert(name, (file, .ref))
+                    Next
+                End With
+            End If
         Next
     End Sub
 
@@ -55,31 +72,35 @@ Module KCF
     ''' <param name="name$"></param>
     ''' <returns></returns>
     Public Function MatchByName(name$) As NamedValue(Of Compound)
-        For Each compound In compounds
-            With compound
-                If .Value.MatchByName(name) Then
-                    Return New NamedValue(Of Compound)(
-                        .Name.TrimSuffix & ".gif",
-                        .Value)
-                End If
-            End With
-        Next
+        Dim node = nameTree.FindSymbol(name)
 
-        Return Nothing
+        ' 没有找到
+        If node Is Nothing Then
+            Return Nothing
+        Else
+            Dim path$ = node.Value.name
+            Dim gif$ = path.TrimSuffix & ".gif"
+            Dim compound = node.Value.Item2
+
+            Return New NamedValue(Of Compound) With {
+                .Name = gif,
+                .Value = compound
+            }
+        End If
     End Function
 
     Public Function MatchById(id$) As NamedValue(Of Compound)
-        For Each compound In compounds
-            With compound
-                If .Name.BaseName = id Then
-                    Return New NamedValue(Of Compound)(
-                        .Name.TrimSuffix & ".gif",
-                        .Value)
-                End If
-            End With
-        Next
+        If compounds.ContainsKey(id) Then
+            Dim find = compounds(id)
+            Dim gif = find.Name.TrimSuffix & ".gif"
 
-        Return Nothing
+            Return New NamedValue(Of Compound) With {
+                .Name = gif,
+                .Value = find.Value
+            }
+        Else
+            Return Nothing
+        End If
     End Function
 End Module
 
