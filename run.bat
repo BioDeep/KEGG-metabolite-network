@@ -1,1 +1,1 @@
-httpd /start /wwwroot ./d3.js/
+httpd /start /wwwroot ./d3.js/ /threads 2
