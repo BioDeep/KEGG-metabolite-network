@@ -91,7 +91,7 @@ Public Module Program
 
             If .DirectoryExists Then
 
-                Call KCF.CreateTable(.ref)
+                Call KCF.CreateTable(.ByRef)
 
                 If nodeID Then
                     For Each node In nodeDatas
@@ -134,8 +134,8 @@ Public Module Program
             With nodeDatas.Values.VectorShadows
                 With DirectCast(!Me(.log2FC > 0).log2FC.As(Of Double), Double())
                     For Each i In .RangeTransform("0,100").SeqIterator
-                        If Not up.ContainsKey(.ref(i)) Then
-                            Call up.Add(.ref(i), CInt(i.value))
+                        If Not up.ContainsKey(.ByRef(i)) Then
+                            Call up.Add(.ByRef(i), CInt(i.value))
                         End If
                     Next
                 End With
@@ -143,8 +143,8 @@ Public Module Program
             With nodeDatas.Values.VectorShadows
                 With DirectCast(!Me(.log2FC < 0).log2FC.As(Of Double), Double())
                     For Each i In .RangeTransform("0,100").SeqIterator
-                        If Not down.ContainsKey(.ref(i)) Then
-                            Call down.Add(.ref(i), CInt(i.value))
+                        If Not down.ContainsKey(.ByRef(i)) Then
+                            Call down.Add(.ByRef(i), CInt(i.value))
                         End If
                     Next
                 End With

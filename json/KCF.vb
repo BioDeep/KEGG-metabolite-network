@@ -65,7 +65,7 @@ Module KCF
 
                 With compound.Value
                     For Each name$ In .CommonNames
-                        Call nameTree.insert(name, (file, .ref))
+                        Call nameTree.insert(name, (file, .ByRef))
                     Next
                 End With
             End If
