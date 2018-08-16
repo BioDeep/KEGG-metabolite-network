@@ -72,7 +72,7 @@ class KEGG_canvas {
 
         // console.log(node);
 
-        tooltip.html(html)
+        this.tooltip.html(html)
             .style("top", (pos[1]) + "px")
             .style("left", (pos[0]) + "px")
             .style("z-index", 10)
@@ -82,16 +82,16 @@ class KEGG_canvas {
     private moveTooltip(node) {
         var pos = d3.mouse(this);
 
-        tooltip
+        this.tooltip
             .style("top", (d3.event.pageY + 10) + "px")
             .style("left", (d3.event.pageX + 10) + "px");
     }
 
     private removeTooltip(node) {
-        tooltip
+        this.tooltip
             .style("z-index", -1)
             .style("opacity", 0)    // Make tooltip invisible
-        svg.selectAll("circle")
+        this.svg.selectAll("circle")
             .transition()
             .style("opacity", 0.8);
     }
@@ -99,7 +99,7 @@ class KEGG_canvas {
     private displayPreview(e, preview) {
         var pos = [e.pageX, e.pageY + 20]
 
-        tooltip.html(preview.innerHTML)
+        this.tooltip.html(preview.innerHTML)
             .style("top", (pos[1]) + "px")
             .style("left", (pos[0]) + "px")
             .style("z-index", 10)
@@ -116,43 +116,43 @@ class KEGG_canvas {
     public setupGraph(graph) {
 
         $(".network").empty();
-        names = {};
-        nodecolor = {};
+        this.names = {};
+        this.nodecolor = {};
 
-        force = d3.layout.force()
+        this.force = d3.layout.force()
             .charge(-300)
             .linkDistance(100)
-            .size([width, height]);
+            .size([this.size.width, this.size.height]);
 
-        svg = d3.select("#chart")
+        this.svg = d3.select("#chart")
             .append("svg:svg")
             .attr("id", "network-canvas")
-            .attr("width", width)
-            .attr("height", height)
+            .attr("width", this.size.width)
+            .attr("height", this.size.height)
             .attr("class", "network");
 
-        force
+        this.force
             .nodes(graph.nodes)
             .links(graph.edges);
 
-        polygon_layer = svg
+        this.polygon_layer = svg
             .append('g')
             .attr("id", "polygon_canvas");
 
-        type_groups = [];
-        type_colors = graph.types;
+        this.type_groups = [];
+        this.type_colors = graph.types;
 
-        console.log(type_colors);
+        console.log(this.type_colors);
 
         Object.keys(graph.types).forEach(function (t) {
-            type_groups[t.toString()] = [];
+            this.type_groups[t.toString()] = [];
         })
 
-        nodes = force.nodes()
-        links = force.links();
+        this.nodes = this.force.nodes()
+        this.links = this.force.links();
 
-        nodes.forEach(function (d) {
-            nodecolor[d.name] = d.name;
+        this.nodes.forEach(function (d) {
+            this.nodecolor[d.name] = d.name;
         })
 
         // var link = svg.selectAll("line.link")
@@ -176,7 +176,7 @@ class KEGG_canvas {
         // 	.style("stroke", "gray")
         // 	.style("opacity", 0.8);
 
-        var link = svg.selectAll("line")
+        var link = this.svg.selectAll("line")
             .data(graph.edges)
             .enter()
             .insert("svg:line", "circle.node")
@@ -190,7 +190,7 @@ class KEGG_canvas {
             .attr("id", "network")
             .style("stroke-width", function (d) {
 
-                var w = -Math.log10(d.weight * 2);
+                var w = -Math.log(d.weight * 2);
 
                 if (w < 0.5) {
                     w = 0.5;
@@ -212,51 +212,51 @@ class KEGG_canvas {
                 types.forEach(function (name) {
                     // name = name.split(" ")[0];
                     // console.log(name);
-                    type_groups[name].push(node);
+                    this.type_groups[name].push(node);
                 });
             }
         });
 
-        console.log(type_groups);
+        console.log(this.type_groups);
 
-        var node = svg.selectAll("circle.node")
+        var node = this.svg.selectAll("circle.node")
             .data(graph.nodes)
             .enter()
             .append("svg:circle")
             .attr("class", "node")
-            .call(force.drag)
+            .call(this.force.drag)
             .attr("r", function (d) {
                 if (d.degree > 0) {
-                    return nodeMin + Math.pow(d.degree, 2 / (2.7));
+                    return this.nodeMin + Math.pow(d.degree, 2 / (2.7));
                 }
-                return nodeMin;
+                return this.nodeMin;
             })
-            .style("opacity", 0.8)
-            .on("mouseover", displayTooltip)
-            .on("mousemove", moveTooltip)
-            .on("mouseout", removeTooltip)
+            .style("opacity", this. 0.8)
+            .on("mouseover", this.displayTooltip)
+            .on("mousemove", this.moveTooltip)
+            .on("mouseout", this.removeTooltip)
             .attr("id", "network")
-            .call(force.drag)
+            .call(this.force.drag)
 
         var label = node.append("text")
             .attr("dx", 12)
             .attr("dy", ".35em")
             .text(function (d) { return d.name });
 
-        colorNodes();
-        showLegend();
-        force.start();
+        this.colorNodes();
+        this.showLegend();
+        this.force.start();
 
         // console.log(type_groups);
 
-        force.on("tick", function () {
-            svg.selectAll("line")
+        this.force.on("tick", function () {
+            this.svg.selectAll("line")
                 .attr("x1", function (d) { return d.source.x; })
                 .attr("y1", function (d) { return d.source.y; })
                 .attr("x2", function (d) { return d.target.x; })
                 .attr("y2", function (d) { return d.target.y; });
 
-            svg.selectAll("circle.node")
+            this.svg.selectAll("circle.node")
                 .attr("cx", function (d) { return d.x; })
                 .attr("cy", function (d) { return d.y; });
 
@@ -268,7 +268,7 @@ class KEGG_canvas {
                 });
         });
 
-        setInterval(convexHull_update, 8);
+        setInterval(this.convexHull_update, 8);
     }
 
     public toggles = [];
@@ -280,10 +280,10 @@ class KEGG_canvas {
     private showLegend() {
 
         var dH = 20;
-        var rW = 300, rH = (dH + 5) * (Object.keys(type_colors).length - 1);
-        var top = 30, left = width - rW;
+        var rW = 300, rH = (dH + 5) * (Object.keys(this.type_colors).length - 1);
+        var top = 30, left = this.size.width - rW;
         var dW = 15;
-        var legend = svg.append("g")
+        var legend = this.svg.append("g")
             .attr("class", "legend")
             .attr("x", left)
             .attr("y", top)
@@ -311,12 +311,12 @@ class KEGG_canvas {
 
         var legendShapes = [];
 
-        Object.keys(type_colors).forEach(function (type) {
+        Object.keys(this.type_colors).forEach(function (type) {
 
-            var color = type_colors[type];   // 方块的颜色
+            var color = this.type_colors[type];   // 方块的颜色
             var label = type;   // 标签文本
 
-            toggles[type] = true;
+            this.toggles[type] = true;
 
             top += dH;
             legend.append("rect")
@@ -326,14 +326,14 @@ class KEGG_canvas {
                 .attr("height", dW)
                 .style("fill", function () {
                     legendShapes[type] = this;
-                    return type_colors[type];
+                    return this.type_colors[type];
                 })
                 .on("click", function () {
-                    toggles[type] = !toggles[type];
+                    this.toggles[type] = !this.toggles[type];
 
-                    if (toggles[type]) {
+                    if (this.toggles[type]) {
                         // 显示，恢复黑色
-                        this.style.fill = type_colors[type];
+                        this.style.fill = this.type_colors[type];
                     } else {
                         // 不显示，变灰色
                         this.style.fill = "gray";
@@ -347,12 +347,12 @@ class KEGG_canvas {
                 // .tooltip(type)
                 .text(type)
                 .on("click", function () {
-                    toggles[type] = !toggles[type];
+                    this.toggles[type] = !this.toggles[type];
 
-                    if (toggles[type]) {
+                    if (this.toggles[type]) {
                         // 显示，恢复黑色
                         this.style.color = "black";
-                        legendShapes[type].style.fill = type_colors[type];
+                        legendShapes[type].style.fill = this.type_colors[type];
                     } else {
                         // 不显示，变灰色
                         this.style.color = "gray";
@@ -368,15 +368,15 @@ class KEGG_canvas {
      */
     private convexHull_update() {
 
-        var types = Object.keys(type_groups);
+        var types = Object.keys(this.type_groups);
         var polygons = [];
 
         types.forEach(function (type) {
 
-            var group = type_groups[type];
+            var group = this.type_groups[type];
             var points = [];
 
-            if (!toggles[type]) {
+            if (!this.toggles[type]) {
                 return;
             }
 
@@ -388,7 +388,7 @@ class KEGG_canvas {
 
             // 计算出凸包
             // 获取得到的是多边形的顶点坐标集合
-            var polygon = JarvisMatch(points);
+            var polygon = convexHullImpl.JarvisMatch(points);
             var typedPolygons = [];
 
             polygon.forEach(function (d) {
@@ -404,17 +404,17 @@ class KEGG_canvas {
 
         // console.log(polygons);
 
-        drawPolygons(polygons);
-        adjustLayouts();
+        this.drawPolygons(polygons);
+        this.adjustLayouts();
     }
 
     private adjustLayouts() {
 
-        if (!svg) {
+        if (!this.svg) {
             return;
         }
 
-        svg.selectAll("use")
+        this.svg.selectAll("use")
             .data([" "])
             .enter()
             .append("use")
@@ -436,11 +436,11 @@ class KEGG_canvas {
 
         d3.selectAll(".pl").remove();
 
-        if (!polygon_layer) {
+        if (!this.polygon_layer) {
             return;
         }
 
-        polygon_layer
+        this.polygon_layer
             .selectAll("g")
             .data(polygons)
             .enter()
@@ -459,7 +459,7 @@ class KEGG_canvas {
             .classed("pl", true)
             .classed("polygon", true)
             .style("fill", function (d) {
-                var color = type_colors[d.group];
+                var color = this.type_colors[d.group];
                 return color;
             })
             // .tooltip(function(d) {return d.group})
