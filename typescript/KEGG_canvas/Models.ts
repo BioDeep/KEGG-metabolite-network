@@ -35,4 +35,14 @@
             return `[${this.x}, ${this.y}]`;
         }
     }
+
+    export class Size {
+
+        public width: number;
+        public height: number;
+
+        public toString(): string {
+            return `[${this.width}, ${this.height}]`;
+        }
+    }
 }
