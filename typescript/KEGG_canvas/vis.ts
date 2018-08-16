@@ -11,8 +11,8 @@
  * 彩色节点表示在当前的代谢物鉴定结果之中出现的KEGG化合物，彩色节点之间使用黑色的实现进行相连接
  * 
  */
-
-
+class KEGG_canvas {
+       
 var width = 1000,
     height = 800,
     nodeMin = 5;
@@ -465,4 +465,5 @@ function drawPolygons(polygons) {
         })
         // .tooltip(function(d) {return d.group})
         .attr("z-index", 100);
+}
 }
