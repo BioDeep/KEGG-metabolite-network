@@ -41,6 +41,12 @@ Module KCF
     Dim compounds As New Dictionary(Of NamedValue(Of Compound))
     Dim nameTree As New BinaryTree(Of (name$, Compound))
 
+    Public Iterator Function PopulateAllCompounds() As IEnumerable(Of (data As Compound, gif$))
+        For Each data As NamedValue(Of Compound) In compounds.Values
+            Yield (data.Value, gif:=data.Name.TrimSuffix & ".gif")
+        Next
+    End Function
+
     Public Function CreateTable(imports$) As BinaryTree(Of (name$, Compound))
         For Each file$ In ls - l - r - "*.XML" <= [imports]
             Dim compound As NamedValue(Of Compound)

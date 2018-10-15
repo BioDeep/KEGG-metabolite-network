@@ -11,7 +11,7 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "47_dotnet_ms-vb_data.framew
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "runtime", "runtime", "{0B4A1BCB-6D59-4403-9166-F737067355BA}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Graph", "..\..\GCModeller\src\runtime\sciBASIC#\Data_science\Graph\GraphTheory.vbproj", "{203BC68F-A0CD-443A-AB62-4AF4110F752F}"
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "GraphTheory", "..\..\GCModeller\src\runtime\sciBASIC#\Data_science\Graph\GraphTheory.vbproj", "{203BC68F-A0CD-443A-AB62-4AF4110F752F}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "physics", "..\..\GCModeller\src\runtime\sciBASIC#\gr\physics\physics.vbproj", "{3291389C-EA87-4B33-A9A5-65A2D60BA3E2}"
 EndProject
@@ -25,9 +25,9 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Microsoft.VisualBasic.Imagi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sciBASIC", "sciBASIC", "{4E81A040-71D8-4B59-B1EF-405F9DEFB01D}"
 EndProject
-Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Bio.Assembly", "bio-core\Bio.Assembly\Bio.Assembly.vbproj", "{C699D311-9923-4C19-BF70-5048D0E2CF5D}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "network", "network", "{D2C865C5-6A77-43D0-AC91-B48AF64BF394}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Bio.Assembly", "..\..\GCModeller\src\GCModeller\core\Bio.Assembly\Bio.Assembly.vbproj", "{C699D311-9923-4C19-BF70-5048D0E2CF5D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -803,8 +803,8 @@ Global
 		{2DD4BE80-DDC3-4767-94A7-10F1C3395716} = {4E81A040-71D8-4B59-B1EF-405F9DEFB01D}
 		{85E71B4B-9276-4EC8-AADC-C849205F1EA8} = {4E81A040-71D8-4B59-B1EF-405F9DEFB01D}
 		{4E81A040-71D8-4B59-B1EF-405F9DEFB01D} = {0B4A1BCB-6D59-4403-9166-F737067355BA}
-		{C699D311-9923-4C19-BF70-5048D0E2CF5D} = {0B4A1BCB-6D59-4403-9166-F737067355BA}
 		{D2C865C5-6A77-43D0-AC91-B48AF64BF394} = {4E81A040-71D8-4B59-B1EF-405F9DEFB01D}
+		{C699D311-9923-4C19-BF70-5048D0E2CF5D} = {0B4A1BCB-6D59-4403-9166-F737067355BA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DD524C28-3573-4757-8FD2-E9456ABB7D93}

@@ -29,6 +29,7 @@
 Imports System.ComponentModel
 Imports System.Drawing
 Imports System.IO
+Imports System.Text
 Imports KEGG_canvas.json.csv
 Imports Microsoft.VisualBasic.CommandLine
 Imports Microsoft.VisualBasic.CommandLine.Reflection
@@ -324,6 +325,39 @@ Public Module Program
         Using out As StreamWriter = args.OpenStreamOutput("/out")
             Call out.Write(json)
         End Using
+
+        Return 0
+    End Function
+
+    <ExportAPI("/KCF.ts")>
+    <Usage("/KCF.ts /repo <input_repository> [/out <KCF.ts>]")>
+    <Description("Convert the kcf image repository as an typescript module.")>
+    Public Function KCFJson(args As CommandLine) As Integer
+        With args <= "/repo"
+
+            If Not .DirectoryExists Then
+                Throw New FileNotFoundException($"Missing repository at location: { .ByRef}")
+            End If
+
+            Call KCF.CreateTable(.ByRef)
+
+            Dim missing = My.Resources.unknown_document_318_30514.ToBase64String
+            Dim image$
+
+            Using ts As StreamWriter = (args("/out") Or $"{ .ByRef.TrimDIR}.ts").OpenWriter
+                For Each compound In KCF.PopulateAllCompounds
+                    image = compound.gif
+
+                    If Not image.StringEmpty AndAlso image.FileExists Then
+                        image = image.LoadImage.ToBase64String
+                    Else
+                        image = missing
+                    End If
+
+                    ts.WriteLine($"  {compound.data.Entry}: ""{image}"",")
+                Next
+            End Using
+        End With
 
         Return 0
     End Function
