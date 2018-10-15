@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2047
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "KEGG_canvas", "KEGG_canvas.njsproj", "{BD345363-625A-4F8B-BDCC-3A5D0A447796}"
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "KEGG_canvas", "KEGG_canvas\KEGG_canvas.njsproj", "{BD345363-625A-4F8B-BDCC-3A5D0A447796}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
