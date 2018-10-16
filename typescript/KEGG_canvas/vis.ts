@@ -50,18 +50,16 @@ class KEGG_canvas {
 
     /**
      * 可以在后台按照类型为节点生成颜色
-     */
+    */
     private colorNodes() {
-
         // set colors
-        this.svg.selectAll("circle")
-            .style("fill", function (d) {
-                return d.Data.color;
-            });
+        this.svg
+            .selectAll("circle")
+            .style("fill", d => d.Data.color);
     }
 
     private displayTooltip(node: Graph.node) {
-        var pos = d3.mouse(this);
+        var pos = d3.mouse(window);
         var html = `<span id='name'>${node.name}</span>`;
 
         if (node.Data.KCF) {
@@ -76,7 +74,7 @@ class KEGG_canvas {
     }
 
     private moveTooltip(node: Graph.node) {
-        var pos = d3.mouse(this);
+        var pos = d3.mouse(window);
 
         this.tooltip
             .style("top", `${(<any>d3.event).pageY + 10}px`)

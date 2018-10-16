@@ -83,7 +83,7 @@ namespace ConvexHull {
         public group: string;
 
         public toString(): string {
-            return group;
+            return this.group;
         }
     }
 }
