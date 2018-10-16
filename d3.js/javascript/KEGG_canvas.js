@@ -223,6 +223,7 @@ var KEGG_canvas = /** @class */ (function () {
         this.nodecolor = {};
     };
     KEGG_canvas.prototype.setupGraph = function (graph) {
+        var _this = this;
         var viz = this;
         this.Clear();
         this.force = d3.layout.force()
@@ -293,9 +294,11 @@ var KEGG_canvas = /** @class */ (function () {
             .call(this.force.drag)
             .attr("r", function (d) {
             if (d.degree > 0) {
-                return this.nodeMin + Math.pow(d.degree, 2 / (2.7));
+                return viz.nodeMin + Math.pow(d.degree, 2 / (2.7));
             }
-            return this.nodeMin;
+            else {
+                return viz.nodeMin;
+            }
         })
             .style("opacity", viz.edgeOpacity)
             .on("mouseover", this.displayTooltip)
@@ -326,7 +329,7 @@ var KEGG_canvas = /** @class */ (function () {
                 return d.y - 10;
             });
         });
-        setInterval(this.convexHull_update, 8);
+        setInterval(function () { return _this.convexHull_update(_this.type_groups); }, 8);
     };
     /**
      * 在svg上面添加legend的rectangle以及相应的标签文本
@@ -408,8 +411,8 @@ var KEGG_canvas = /** @class */ (function () {
     /**
      * 实时计算出凸包，并绘制出凸包的多边形
     */
-    KEGG_canvas.prototype.convexHull_update = function () {
-        var types = new IEnumerator(Object.keys(this.type_groups));
+    KEGG_canvas.prototype.convexHull_update = function (type_groups) {
+        var types = new IEnumerator(Object.keys(type_groups));
         var viz = this;
         var polygons = types.Select(function (type) {
             // 计算多边形

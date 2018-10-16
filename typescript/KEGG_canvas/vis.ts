@@ -182,8 +182,8 @@ class KEGG_canvas {
             var types: string[] = node.type.split("|");
 
             // 跳过空的字符串
-            if (node.type.length > 0) {                
-                types.forEach(function (name) {                    
+            if (node.type.length > 0) {
+                types.forEach(function (name) {
                     viz.type_groups[name].push(node);
                 });
             }
@@ -203,7 +203,7 @@ class KEGG_canvas {
                     return viz.nodeMin + Math.pow(d.degree, 2 / (2.7));
                 } else {
                     return viz.nodeMin;
-                }               
+                }
             })
             .style("opacity", viz.edgeOpacity)
             .on("mouseover", this.displayTooltip)
@@ -240,7 +240,7 @@ class KEGG_canvas {
                 });
         });
 
-        setInterval(this.convexHull_update, 8);
+        setInterval(() => this.convexHull_update(this.type_groups), 8);
     }
 
     private toggles: object = {};
@@ -352,8 +352,8 @@ class KEGG_canvas {
     /**
      * 实时计算出凸包，并绘制出凸包的多边形
     */
-    private convexHull_update() {
-        var types = new IEnumerator<string>(Object.keys(this.type_groups));
+    private convexHull_update(type_groups: object) {
+        var types = new IEnumerator<string>(Object.keys(type_groups));
         var viz: KEGG_canvas = this;
         var polygons = types.Select(type => {
             // 计算多边形
