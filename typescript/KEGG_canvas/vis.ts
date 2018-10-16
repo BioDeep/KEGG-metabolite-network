@@ -181,16 +181,17 @@ class KEGG_canvas {
             .style("stroke", "gray")
             .style("opacity", 0.8);
 
-        graph.nodes.forEach(function (node) {
-            var types: string[] = node.type.split("|");
+        graph.nodes
+            .forEach(function (node) {
+                var types: string[] = node.type.split("|");
 
-            // 跳过空的字符串
-            if (node.type.length > 0) {
-                types.forEach(function (name) {
-                    viz.type_groups[name].push(node);
-                });
-            }
-        });
+                // 跳过空的字符串
+                if (node.type.length > 0) {
+                    types.forEach(function (name) {
+                        viz.type_groups[name].push(node);
+                    });
+                }
+            });
 
         console.log(this.type_groups);
 
