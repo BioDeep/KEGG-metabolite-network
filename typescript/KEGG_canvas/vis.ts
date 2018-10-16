@@ -252,31 +252,35 @@ class KEGG_canvas {
     private toggles: object = {};
 
     /**
+     * 在legend之中每一行文本之间的间隔高度值
+    */
+    public dh: number = 20;
+    public dw: number = 15;
+    /**
+     * legend的外边框圆角矩形的radius
+    */
+    public legendBoxRadius: number = 6;
+
+    /**
      * 在svg上面添加legend的rectangle以及相应的标签文本
      * 颜色和标签文本都来自于type_colors字典
      */
     private showLegend() {
-        var viz: KEGG_canvas = this;
-        var dH = 20;
-        var rW = 300, rH = (dH + 5) * (Object.keys(this.type_colors).length - 1);
+        var rW = 300, rH = (this.dh + 5) * (Object.keys(this.type_colors).length - 1);
         var top = 30, left = this.size.width - rW;
-        var dW = 15;
-        var legend = this.svg.append("g")
-            .attr("class", "legend")
-            .attr("x", left)
-            .attr("y", top)
-            .attr("height", rH)
-            .attr("width", rW);
+        var legend: d3.Selection<any> =
+            this.svg.append("g")
+                .attr("class", "legend")
+                .attr("x", left)
+                .attr("y", top)
+                .attr("height", rH)
+                .attr("width", rW);
 
-        // console.log(legend);
-
-        // 外边框
-        var radius = 6
         legend.append("rect")
             .attr("x", left)
             .attr("y", top)
-            .attr("rx", radius)
-            .attr("ry", radius)
+            .attr("rx", this.legendBoxRadius)
+            .attr("ry", this.legendBoxRadius)
             .attr("height", rH)
             .attr("width", rW)
             .style("stroke", "gray")
@@ -284,60 +288,71 @@ class KEGG_canvas {
             .style("border-radius", "2px")
             .style("fill", "white");
 
-        left += 10;
-        top += 3;
-
         var legendShapes = [];
+        var geo = {
+            left: left + 10,
+            top: top + 3
+        }
 
-        Object.keys(this.type_colors).forEach(function (type) {
+        Object.keys(this.type_colors)
+            .forEach(type => legendShapes = this.drawSerialsLegend(type, legend, geo, legendShapes));
+    }
 
-            var color = viz.type_colors[type];   // 方块的颜色
-            var label = type;   // 标签文本
+    private drawSerialsLegend(
+        type: string,
+        legend: d3.Selection<any>,
+        geo: {
+            left: number,
+            top: number
+        },
+        legendShapes: any[]): any[] {
 
-            viz.toggles[type] = true;
+        var viz: KEGG_canvas = this;
 
-            top += dH;
-            legend.append("rect")
-                .attr("x", left)
-                .attr("y", top - 13)
-                .attr("width", dW)
-                .attr("height", dW)
-                .style("fill", function () {
-                    legendShapes[type] = this;
-                    return viz.type_colors[type];
-                })
-                .on("click", function () {
-                    viz.toggles[type] = !viz.toggles[type];
+        this.toggles[type] = true;
 
-                    if (viz.toggles[type]) {
-                        // 显示，恢复黑色
-                        this.style.fill = viz.type_colors[type];
-                    } else {
-                        // 不显示，变灰色
-                        this.style.fill = "gray";
-                    }
-                });
+        geo.top += this.dh;
+        legend.append("rect")
+            .attr("x", geo.left)
+            .attr("y", geo.top - 13)
+            .attr("width", this.dw)
+            .attr("height", this.dw)
+            .style("fill", function (rect) {
+                legendShapes[type] = rect;
+                return viz.type_colors[type];
+            })
+            .on("click", function (rect) {
+                viz.toggles[type] = !viz.toggles[type];
 
-            legend.append("text")
-                .attr("x", left + dW + 5)
-                .attr("y", top)
-                .style("font-size", "0.85em")
-                // .tooltip(type)
-                .text(type)
-                .on("click", function () {
-                    viz.toggles[type] = !viz.toggles[type];
+                if (viz.toggles[type]) {
+                    // 显示，恢复黑色
+                    rect.style.fill = viz.type_colors[type];
+                } else {
+                    // 不显示，变灰色
+                    rect.style.fill = "gray";
+                }
+            });
 
-                    if (viz.toggles[type]) {
-                        // 显示，恢复黑色
-                        this.style.color = "black";
-                        legendShapes[type].style.fill = viz.type_colors[type];
-                    } else {
-                        // 不显示，变灰色
-                        this.style.color = "gray";
-                        legendShapes[type].style.fill = "gray";
-                    }
-                });
-        });
+        legend.append("text")
+            .attr("x", geo.left + this.dw + 5)
+            .attr("y", geo.top)
+            .style("font-size", "0.85em")
+            .text(type)
+            .on("click", function (text) {
+                viz.toggles[type] = !viz.toggles[type];
+
+                if (viz.toggles[type]) {
+                    // 显示，恢复黑色
+                    text.style.color = "black";
+                    legendShapes[type].style.fill = viz.type_colors[type];
+                } else {
+                    // 不显示，变灰色
+                    text.style.color = "gray";
+                    legendShapes[type].style.fill = "gray";
+                }
+            });
+
+        return legendShapes;
     }
 
     /**
