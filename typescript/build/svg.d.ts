@@ -63,6 +63,15 @@ declare namespace Canvas {
         y: number;
         constructor(x: number, y: number);
         toString(): string;
+        /**
+         * Calculate the 2d distance to other point from this point.
+        */
+        dist(p2: Point): number;
+        /**
+         * Is this point equals to a given point by numeric value equals
+         * of the ``x`` and ``y``?
+        */
+        Equals(p2: Point): boolean;
     }
     class Size {
         width: number;

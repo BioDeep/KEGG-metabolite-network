@@ -1,50 +1,7 @@
+/// <reference path="svg.d.ts" />
 /// <reference types="d3" />
 declare module convexHullImpl {
-    function JarvisMatch(points: canvasModels.Point[]): canvasModels.Point[];
-}
-declare namespace canvasModels {
-    /**
-     * 2D point
-    */
-    class Point {
-        x: number;
-        y: number;
-        constructor(x: number, y: number);
-        /**
-         * Calculate the 2d distance to other point from this point.
-        */
-        dist(p2: Point): number;
-        /**
-         * Is this point equals to a given point by numeric value equals
-         * of the ``x`` and ``y``?
-        */
-        Equals(p2: Point): boolean;
-        toString(): string;
-    }
-    class Size {
-        width: number;
-        height: number;
-        toString(): string;
-    }
-}
-/**
- * Utils code that related to the html canvas node.
-*/
-declare class canvasUtils {
-    /**
-     * Serialize the svg node content to base64 string text value.
-     *
-     * @param id The ``svg`` node id attribute value.
-    */
-    static svg2base64(id: string): string;
-    /**
-     * Convert the svg image to png image and then do image file download.
-     *
-     * @param svgID The svg node ``id`` attribute value.
-     * @param canvas_id The ``canvas`` node ``id`` attribute value.
-     * @param fileName The file name for save the generated png image file.
-    */
-    static svg2png(svgID: string, canvas_id: string, fileName?: string): void;
+    function JarvisMatch(points: Canvas.Point[]): Canvas.Point[];
 }
 /**
  * 模块进行代谢物网络的可视化操作
@@ -60,7 +17,7 @@ declare class canvasUtils {
  *
  */
 declare class KEGG_canvas {
-    size: canvasModels.Size;
+    size: Canvas.Size;
     nodeMin: number;
     force: any;
     nodes: any;

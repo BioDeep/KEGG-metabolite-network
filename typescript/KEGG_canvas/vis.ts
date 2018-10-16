@@ -13,7 +13,7 @@
  */
 class KEGG_canvas {
 
-    public size: canvasModels.Size = <canvasModels.Size>{
+    public size: Canvas.Size = <Canvas.Size>{
         width: 1000,
         height: 800
     };
