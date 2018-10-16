@@ -44,6 +44,7 @@ Imports Microsoft.VisualBasic.Language
 Imports Microsoft.VisualBasic.Linq
 Imports Microsoft.VisualBasic.Net.Http
 Imports Microsoft.VisualBasic.Serialization.JSON
+Imports Microsoft.VisualBasic.Text
 Imports SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject
 
 Public Module Program
@@ -342,16 +343,26 @@ Public Module Program
             Call KCF.CreateTable(.ByRef)
 
             Dim missing = My.Resources.unknown_document_318_30514.ToBase64String
-            Dim image$
+            Dim data As New List(Of String)
 
-            Using ts As StreamWriter = (args("/out") Or $"{ .ByRef.TrimDIR}.ts").OpenWriter
-                For Each compound In KCF.PopulateAllCompounds
-                    image = compound.gif
-                    ts.WriteLine($"  {compound.data.Entry}: ""{image}"",")
-                Next
-            End Using
+            For Each compound In KCF.PopulateAllCompounds
+                data += $"  {compound.data.Entry}: <compound> {{
+                    ID: ""{compound.data.Entry}"",
+                    name: {compound.data.CommonNames.GetJson},
+                    mass: {compound.data.ExactMass},
+                    formula: ""{compound.data.Formula}"",
+                    gif: ""{compound.gif}""
+                }}"
+            Next
+
+            Dim ts$ = data.JoinBy(",")
+
+            Return TextEncodings _
+                .UTF8WithoutBOM _
+                .GetString(My.Resources.template) _
+                .Replace("$data", ts) _
+                .SaveTo(args("/out") Or $"{ .ByRef.TrimDIR}.ts") _
+                .CLICode
         End With
-
-        Return 0
     End Function
 End Module
