@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<script type="text/javascript" src="libs/d3.min.js"></script>
-	<script type="text/javascript" src="libs/jquery-1.10.1.min.js"></script>
-	<script type="text/javascript" src="libs/custom.modernizr.js"></script>
-	<script type="text/javascript" src="libs/foundation.min.js"></script>
-	
+	<script type="text/javascript" src="/javascript/vendor/d3.min.js"></script>
+	<script type="text/javascript" src="/javascript/vendor/jquery-1.10.1.min.js"></script>
+	<script type="text/javascript" src="/javascript/vendor/custom.modernizr.js"></script>
+	<script type="text/javascript" src="/javascript/vendor/foundation.min.js"></script>
+
 	<link rel="stylesheet" href="css/foundation.min.css" />
 	<link rel="stylesheet" href="css/style.css" />
 	<link rel="stylesheet" href="css/general_enclosed_foundicons.css">
 </head>
+
 <body>
 	<div class="row">
-		<div id="chart"></div>
+		<div id="chart">
+		</div>
 	</div>
-	
-	<canvas width="1000" height="800" style="display:none;"></canvas>
 
 	<a href="#" onclick="svg2png('network-canvas')">Save as png</a>
 
@@ -26,9 +27,10 @@
 		console.log(document.implementation.hasFeature("http://www.w3.org/TR/SVG2/feature#GraphicsAttribute", 2.0));
 		console.log("/***********/")
 	</script>
-	
-	<script type="text/javascript" src="convexHull.js"></script>
-	<script type="text/javascript" src="vis.js"></script>
-	<script type="text/javascript" src="svg2png.js"></script>
+
+	<script type="text/javascript" src="/javascript/linq.js"></script>
+	<script type="text/javascript" src="/javascript/svg.js"></script>
+	<script type="text/javascript" src="/javascript/KEGG_canvas.js"></script>
 </body>
+
 </html>
