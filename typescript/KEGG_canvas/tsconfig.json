@@ -6,7 +6,7 @@
     "sourceMap": true,
     "allowSyntheticDefaultImports": true,
     "outDir": "../dist",
-    "outFile": "./build/KEGG_canvas.js",
+    "outFile": "../build/KEGG_canvas.js",
     "declaration": true
   },
   "exclude": [

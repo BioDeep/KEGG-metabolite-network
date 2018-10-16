@@ -290,3 +290,9 @@ __pycache__/
 *.xsd.cs
 /App
 *.stackdump
+/typescript/build/KEGG_canvas.js
+/typescript/build/KEGG_canvas.js.map
+/typescript/build/linq.js
+/typescript/build/linq.js.map
+/typescript/build/svg.js
+/typescript/build/svg.js.map
