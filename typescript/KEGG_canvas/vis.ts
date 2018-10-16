@@ -200,9 +200,10 @@ class KEGG_canvas {
             .call(this.force.drag)
             .attr("r", function (d) {
                 if (d.degree > 0) {
-                    return this.nodeMin + Math.pow(d.degree, 2 / (2.7));
-                }
-                return this.nodeMin;
+                    return viz.nodeMin + Math.pow(d.degree, 2 / (2.7));
+                } else {
+                    return viz.nodeMin;
+                }               
             })
             .style("opacity", viz.edgeOpacity)
             .on("mouseover", this.displayTooltip)
