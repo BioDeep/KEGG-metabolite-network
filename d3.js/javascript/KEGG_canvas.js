@@ -304,9 +304,15 @@ var KEGG_canvas = /** @class */ (function () {
             }
         })
             .style("opacity", viz.edgeOpacity)
-            .on("mouseover", function (d) { return viz.displayTooltip(_this, d); })
-            .on("mousemove", function (d) { return viz.moveTooltip(); })
-            .on("mouseout", function (d) { return viz.removeTooltip(); })
+            .on("mouseover", function (d) {
+            viz.displayTooltip(this, d);
+        })
+            .on("mousemove", function (d) {
+            viz.moveTooltip();
+        })
+            .on("mouseout", function (d) {
+            viz.removeTooltip();
+        })
             .attr("id", "network")
             .call(this.force.drag);
         var label = node.append("text")

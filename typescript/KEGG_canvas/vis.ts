@@ -214,9 +214,15 @@ class KEGG_canvas {
                 }
             })
             .style("opacity", viz.edgeOpacity)
-            .on("mouseover", d => viz.displayTooltip(this, d))
-            .on("mousemove", d => viz.moveTooltip())
-            .on("mouseout", d => viz.removeTooltip())
+            .on("mouseover", function (d) {
+                viz.displayTooltip(this, d);
+            })
+            .on("mousemove", function (d) {
+                viz.moveTooltip();
+            })
+            .on("mouseout", function (d) {
+                viz.removeTooltip();
+            })
             .attr("id", "network")
             .call(this.force.drag)
 
