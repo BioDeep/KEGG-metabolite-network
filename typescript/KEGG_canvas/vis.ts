@@ -25,6 +25,9 @@ class KEGG_canvas {
     public svg: d3.Selection<any>;
     public names = {};
     public nodecolor = {};
+    /**
+     * {type, graph.node[]}
+    */
     public type_groups = {};
     public type_colors = {};
     public baseURL: string = location.pathname
@@ -368,16 +371,16 @@ class KEGG_canvas {
     }
 
     private calculatePolygon(type: string): IEnumerator<ConvexHull.TagPoint> {
-        var group = this.type_groups[type];
-        var points = [];
+        var group: Graph.node[] = this.type_groups[type];
+        var points: Canvas.Point[] = [];
 
         if (!this.toggles[type]) {
             return;
+        } else {
+            points = From(group)
+                .Select(d => new Canvas.Point(d.x, d.y))
+                .ToArray();
         }
-
-        group.forEach(function (d) {
-            points.push({ x: d.x, y: d.y });
-        });
 
         // 计算出凸包
         // 获取得到的是多边形的顶点坐标集合

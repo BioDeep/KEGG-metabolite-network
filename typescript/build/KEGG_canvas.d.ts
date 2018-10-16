@@ -78,6 +78,9 @@ declare class KEGG_canvas {
     svg: d3.Selection<any>;
     names: {};
     nodecolor: {};
+    /**
+     * {type, graph.node[]}
+    */
     type_groups: {};
     type_colors: {};
     baseURL: string;
