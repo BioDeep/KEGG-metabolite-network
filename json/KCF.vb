@@ -43,7 +43,7 @@ Module KCF
 
     Public Iterator Function PopulateAllCompounds() As IEnumerable(Of (data As Compound, gif$))
         For Each data As NamedValue(Of Compound) In compounds.Values
-            Yield (data.Value, gif:=data.Name.TrimSuffix & ".gif")
+            Yield (data.Value, gif:=data.Value.Image)
         Next
     End Function
 

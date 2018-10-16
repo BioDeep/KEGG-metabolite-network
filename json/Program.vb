@@ -347,13 +347,6 @@ Public Module Program
             Using ts As StreamWriter = (args("/out") Or $"{ .ByRef.TrimDIR}.ts").OpenWriter
                 For Each compound In KCF.PopulateAllCompounds
                     image = compound.gif
-
-                    If Not image.StringEmpty AndAlso image.FileExists Then
-                        image = image.LoadImage.ToBase64String
-                    Else
-                        image = missing
-                    End If
-
                     ts.WriteLine($"  {compound.data.Entry}: ""{image}"",")
                 Next
             End Using
