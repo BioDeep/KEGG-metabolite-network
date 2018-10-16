@@ -11,6 +11,8 @@ Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "svg", "Linq\svg\SVG\svg.njs
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "runtime", "runtime", "{47DE223B-DE92-4858-AA3E-9631B15716E2}"
 EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "mzCloudPlot", "mzCloudPlot\mzCloudPlot.njsproj", "{A6D99D8E-7588-409A-8B94-DC266297BAB1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +31,10 @@ Global
 		{8C2DAE18-8B11-4B37-A4EC-0234D7FCCF2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C2DAE18-8B11-4B37-A4EC-0234D7FCCF2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C2DAE18-8B11-4B37-A4EC-0234D7FCCF2A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6D99D8E-7588-409A-8B94-DC266297BAB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6D99D8E-7588-409A-8B94-DC266297BAB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6D99D8E-7588-409A-8B94-DC266297BAB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6D99D8E-7588-409A-8B94-DC266297BAB1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

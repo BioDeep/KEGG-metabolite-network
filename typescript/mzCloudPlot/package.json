@@ -1,0 +1,12 @@
+{
+  "name": "mz-cloud-plot",
+  "version": "0.0.0",
+  "description": "mzCloudPlot",
+  "main": "server.js",
+  "author": {
+    "name": ""
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.14"
+  }
+}
