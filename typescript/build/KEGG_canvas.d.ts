@@ -34,7 +34,7 @@ declare namespace Graph {
         degree: number;
         id: number;
         name: string;
-        type: string[];
+        type: string;
         Data: {
             fdr: number;
             log2FC: number;

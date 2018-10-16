@@ -275,13 +275,10 @@ var KEGG_canvas = /** @class */ (function () {
             .style("stroke", "gray")
             .style("opacity", 0.8);
         graph.nodes.forEach(function (node) {
-            var types = node.type;
+            var types = node.type.split("|");
             // 跳过空的字符串
             if (node.type.length > 0) {
-                // console.log(types);		
                 types.forEach(function (name) {
-                    // name = name.split(" ")[0];
-                    // console.log(name);
                     viz.type_groups[name].push(node);
                 });
             }

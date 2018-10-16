@@ -22,7 +22,7 @@
         public degree: number;
         public id: number;
         public name: string;
-        public type: string[];
+        public type: string;
         public Data: {
             fdr: number,
             log2FC: number,

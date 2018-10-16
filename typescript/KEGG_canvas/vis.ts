@@ -179,14 +179,11 @@ class KEGG_canvas {
             .style("opacity", 0.8);
 
         graph.nodes.forEach(function (node) {
-            var types = node.type;
+            var types: string[] = node.type.split("|");
 
             // 跳过空的字符串
-            if (node.type.length > 0) {
-                // console.log(types);		
-                types.forEach(function (name) {
-                    // name = name.split(" ")[0];
-                    // console.log(name);
+            if (node.type.length > 0) {                
+                types.forEach(function (name) {                    
                     viz.type_groups[name].push(node);
                 });
             }
