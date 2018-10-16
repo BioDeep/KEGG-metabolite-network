@@ -334,6 +334,8 @@ Public Module Program
     <Usage("/KCF.ts /repo <input_repository> [/out <KCF.ts>]")>
     <Description("Convert the kcf image repository as an typescript module.")>
     Public Function KCFJson(args As CommandLine) As Integer
+        Dim data As New List(Of String)
+
         With args <= "/repo"
 
             If Not .DirectoryExists Then
@@ -341,9 +343,6 @@ Public Module Program
             End If
 
             Call KCF.CreateTable(.ByRef)
-
-            Dim missing = My.Resources.unknown_document_318_30514.ToBase64String
-            Dim data As New List(Of String)
 
             For Each compound In KCF.PopulateAllCompounds
                 data += $"  {compound.data.Entry}: <compound> {{
@@ -361,7 +360,7 @@ Public Module Program
                 .UTF8WithoutBOM _
                 .GetString(My.Resources.template) _
                 .Replace("$data", ts) _
-                .SaveTo(args("/out") Or $"{ .ByRef.TrimDIR}.ts") _
+                .SaveTo(args("/out") Or $"{ .TrimDIR}.ts") _
                 .CLICode
         End With
     End Function
