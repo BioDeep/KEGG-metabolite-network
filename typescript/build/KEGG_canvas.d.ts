@@ -88,7 +88,7 @@ declare class KEGG_canvas {
      * Create tooltip element
     */
     tooltip: d3.Selection<any>;
-    constructor();
+    constructor(graph: Graph.Model);
     /**
      * 可以在后台按照类型为节点生成颜色
     */
@@ -103,7 +103,7 @@ declare class KEGG_canvas {
     */
     polygon_layer: d3.Selection<any>;
     private Clear;
-    setupGraph(graph: Graph.Model): void;
+    private setupGraph;
     private toggles;
     /**
      * 在legend之中每一行文本之间的间隔高度值

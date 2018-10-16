@@ -43,9 +43,11 @@ class KEGG_canvas {
         .style("z-index", "10")
         .style("opacity", 0);
 
-    public constructor() {
+    public constructor(graph: Graph.Model) {
         this.loading_gif.src = "./img/ajax-loader.gif";
         this.loading_gif_small.src = "./img/small-loader.gif";
+
+        this.setupGraph(graph);
     }
 
     /**
@@ -113,7 +115,7 @@ class KEGG_canvas {
         this.nodecolor = {};
     }
 
-    public setupGraph(graph: Graph.Model) {
+    private setupGraph(graph: Graph.Model) {
         var viz: KEGG_canvas = this;
 
         this.Clear();

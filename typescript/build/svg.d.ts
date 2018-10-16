@@ -5,6 +5,11 @@ declare module SvgUtils {
      * @param c The rgb color component numeric value
     */
     function componentToHex(c: any): string;
+    const HTML5svgFeature: string;
+    /**
+     * ���Ե�ǰ��������Ƿ�֧��HTML5�ĸ߼�����
+    */
+    function hasSVG2Feature(): boolean;
     /**
      * https://stackoverflow.com/questions/20539196/creating-svg-elements-dynamically-with-javascript-inside-html
      *
