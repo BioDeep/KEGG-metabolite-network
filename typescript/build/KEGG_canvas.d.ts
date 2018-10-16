@@ -78,11 +78,9 @@ declare class KEGG_canvas {
     svg: d3.Selection<any>;
     names: {};
     nodecolor: {};
-    loading_gif: HTMLImageElement;
     type_groups: {};
     type_colors: {};
     baseURL: string;
-    loading_gif_small: HTMLImageElement;
     edgeOpacity: number;
     /**
      * Create tooltip element

@@ -25,11 +25,9 @@ class KEGG_canvas {
     public svg: d3.Selection<any>;
     public names = {};
     public nodecolor = {};
-    public loading_gif = new Image();
     public type_groups = {};
     public type_colors = {};
     public baseURL: string = location.pathname
-    public loading_gif_small = new Image();
     public edgeOpacity: number = 0.8;
 
     /**
@@ -44,9 +42,6 @@ class KEGG_canvas {
         .style("opacity", 0);
 
     public constructor(graph: Graph.Model) {
-        this.loading_gif.src = "./img/ajax-loader.gif";
-        this.loading_gif_small.src = "./img/small-loader.gif";
-
         this.setupGraph(graph);
     }
 

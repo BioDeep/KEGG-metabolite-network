@@ -137,11 +137,9 @@ var KEGG_canvas = /** @class */ (function () {
         this.nodeMin = 5;
         this.names = {};
         this.nodecolor = {};
-        this.loading_gif = new Image();
         this.type_groups = {};
         this.type_colors = {};
         this.baseURL = location.pathname;
-        this.loading_gif_small = new Image();
         this.edgeOpacity = 0.8;
         /**
          * Create tooltip element
@@ -168,8 +166,6 @@ var KEGG_canvas = /** @class */ (function () {
          * legend的外边框圆角矩形的radius
         */
         this.legendBoxRadius = 6;
-        this.loading_gif.src = "./img/ajax-loader.gif";
-        this.loading_gif_small.src = "./img/small-loader.gif";
         this.setupGraph(graph);
     }
     KEGG_canvas.prototype.attachSaveAsPng = function (aId, fileName) {
