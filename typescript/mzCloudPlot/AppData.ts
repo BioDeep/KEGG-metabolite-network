@@ -1,6 +1,20 @@
-﻿import http = require('http');
-var port = process.env.port || 1337
-http.createServer(function (req, res) {
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
-    res.end('Hello World\n');
-}).listen(port);
+﻿class CloudCircle {
+
+    public id: string;
+    public size: number;
+    public depth: number;
+
+    /**
+     * Y坐标轴
+    */
+    public mz: number;
+    /**
+     * X坐标轴
+    */
+    public rt: number;
+
+    /**
+     * 当前物质的质谱比对图
+    */
+    public images: { name: string }[];
+}

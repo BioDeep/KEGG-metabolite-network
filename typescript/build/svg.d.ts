@@ -97,6 +97,12 @@ declare namespace Canvas {
         Size(): Size;
         toString(): string;
     }
+    class Margin {
+        top: number;
+        right: number;
+        bottom: number;
+        left: number;
+    }
 }
 declare namespace Canvas {
     /**
