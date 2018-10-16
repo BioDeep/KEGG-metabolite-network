@@ -43,6 +43,9 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="convexHull.ts" />
+    <TypeScriptCompile Include="Graph.ts">
+      <SubType>Code</SubType>
+    </TypeScriptCompile>
     <TypeScriptCompile Include="vis.ts">
       <SubType>Code</SubType>
     </TypeScriptCompile>

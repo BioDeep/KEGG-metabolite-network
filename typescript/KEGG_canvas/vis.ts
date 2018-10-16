@@ -9,8 +9,7 @@
  * 黑色节点和彩色节点之间的边连接为虚线
  * 
  * 彩色节点表示在当前的代谢物鉴定结果之中出现的KEGG化合物，彩色节点之间使用黑色的实现进行相连接
- * 
- */
+*/
 class KEGG_canvas {
 
     public size: Canvas.Size = <Canvas.Size>{
@@ -21,7 +20,7 @@ class KEGG_canvas {
     public force;
     public nodes;
     public links;
-    public svg;
+    public svg: d3.Selection<any>;
     public names = {};
     public nodecolor = {};
     public loading_gif = new Image();
@@ -33,7 +32,7 @@ class KEGG_canvas {
     /**
      * Create tooltip element
     */
-    public tooltip = d3.select("#chart")
+    public tooltip: d3.Selection<any> = d3.select("#chart")
         .append("div")
         .attr("class", "large-3 columns")
         .attr("id", "tooltip")
