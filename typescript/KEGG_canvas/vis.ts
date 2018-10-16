@@ -65,14 +65,8 @@ class KEGG_canvas {
         var html = `<span id='name'>${node.name}</span>`;
 
         if (node.Data.KCF) {
-
-            var base64 = node.Data.KCF;
-
-            html += "<br />";
-            html += "<img src='data:image/png;base64," + base64 + "' />";
+            html += `<br /><img src='data:image/png;base64,${node.Data.KCF}' />`;
         }
-
-        // console.log(node);
 
         this.tooltip.html(html)
             .style("top", (pos[1]) + "px")
@@ -85,8 +79,8 @@ class KEGG_canvas {
         var pos = d3.mouse(this);
 
         this.tooltip
-            .style("top", (d3.event.pageY + 10) + "px")
-            .style("left", (d3.event.pageX + 10) + "px");
+            .style("top", `${(<any>d3.event).pageY + 10}px`)
+            .style("left", `${(<any>d3.event).pageX + 10}px`);
     }
 
     private removeTooltip(node: Graph.node) {
@@ -199,7 +193,8 @@ class KEGG_canvas {
 
         console.log(this.type_groups);
 
-        var node = this.svg.selectAll("circle.node")
+        var node: d3.Selection<Graph.node> = this.svg
+            .selectAll("circle.node")
             .data(graph.nodes)
             .enter()
             .append("svg:circle")
