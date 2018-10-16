@@ -29,7 +29,6 @@
 Imports System.ComponentModel
 Imports System.Drawing
 Imports System.IO
-Imports System.Text
 Imports KEGG_canvas.json.csv
 Imports Microsoft.VisualBasic.CommandLine
 Imports Microsoft.VisualBasic.CommandLine.Reflection
@@ -41,6 +40,7 @@ Imports Microsoft.VisualBasic.Data.visualize.Network.FileStream.Json
 Imports Microsoft.VisualBasic.Imaging
 Imports Microsoft.VisualBasic.Imaging.Drawing2D.Colors
 Imports Microsoft.VisualBasic.Language
+Imports Microsoft.VisualBasic.Language.Default
 Imports Microsoft.VisualBasic.Linq
 Imports Microsoft.VisualBasic.Net.Http
 Imports Microsoft.VisualBasic.Serialization.JSON
@@ -335,6 +335,7 @@ Public Module Program
     <Description("Convert the kcf image repository as an typescript module.")>
     Public Function KCFJson(args As CommandLine) As Integer
         Dim data As New List(Of String)
+        Dim missing As DefaultValue(Of String) = New DataURI(My.Resources.unknown_document_318_30514).ToString
 
         With args <= "/repo"
 
@@ -350,7 +351,7 @@ Public Module Program
                     name: {compound.data.CommonNames.GetJson},
                     mass: {compound.data.ExactMass},
                     formula: ""{compound.data.Formula}"",
-                    gif: ""{compound.gif}""
+                    gif: `{(compound.gif Or missing).Trim(" "c, ASCII.CR, ASCII.LF, ASCII.TAB)}`
                 }}"
             Next
 
