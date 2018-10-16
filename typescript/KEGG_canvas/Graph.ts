@@ -17,7 +17,8 @@
 
     }
 
-    export class node {
+    export class node implements d3.layout.force.Node {
+
         public degree: number;
         public id: number;
         public name: string;
@@ -29,6 +30,14 @@
             color: string,
             KCF: string
         }
+
+        public index?: number;
+        public x?: number;
+        public y?: number;
+        public px?: number;
+        public py?: number;
+        public fixed?: boolean;
+        public weight?: number;
     }
 
     export class Model {

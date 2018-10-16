@@ -17,9 +17,9 @@ class KEGG_canvas {
         height: 800
     };
     public nodeMin: number = 5;
-    public force;
-    public nodes;
-    public links;
+    public force: d3.layout.Force<d3.layout.force.Link<d3.layout.force.Node>, d3.layout.force.Node>;
+    public nodes: Graph.node[];
+    public links: Graph.edge[];
     public svg: d3.Selection<any>;
     public names = {};
     public nodecolor = {};
@@ -108,11 +108,11 @@ class KEGG_canvas {
     /**
      * 因为目前d3.js还不能够通过调整z-index来调整图层 
      * 所以在这里先构建一个最开始图层，来避免polygon将网络的节点遮盖住，从而导致无法操作节点
-     *
     */
-    public polygon_layer = null;
+    public polygon_layer: d3.Selection<any> = null;
 
-    public setupGraph(graph) {
+    public setupGraph(graph: Graph.Model) {
+        var viz = this;
 
         $(".network").empty();
         this.names = {};
@@ -134,7 +134,7 @@ class KEGG_canvas {
             .nodes(graph.nodes)
             .links(graph.edges);
 
-        this.polygon_layer = svg
+        this.polygon_layer = this.svg
             .append('g')
             .attr("id", "polygon_canvas");
 
@@ -144,36 +144,15 @@ class KEGG_canvas {
         console.log(this.type_colors);
 
         Object.keys(graph.types).forEach(function (t) {
-            this.type_groups[t.toString()] = [];
+            this.type_groups[t] = [];
         })
 
-        this.nodes = this.force.nodes()
-        this.links = this.force.links();
+        this.nodes = <any>this.force.nodes()
+        this.links = <any>this.force.links();
 
         this.nodes.forEach(function (d) {
-            this.nodecolor[d.name] = d.name;
+            viz.nodecolor[d.name] = d.name;
         })
-
-        // var link = svg.selectAll("line.link")
-        // 	.data(graph.edges)
-        // 	.enter()
-        // 	.insert("svg:line", "circle.node")
-        // 	.attr("class", "link")
-        // 	.attr("id", "network")
-        // 	.style("stroke-width", function(d) { 
-
-        // 		var w = -Math.log10( d.weight * 2 ) ;
-
-        // 		if (w < 1) {
-        // 			w = 1;
-        // 		} else if ( w > 6 ) {
-        // 			w = 6;
-        // 		}
-
-        // 		return w; 
-        // 	})
-        // 	.style("stroke", "gray")
-        // 	.style("opacity", 0.8);
 
         var link = this.svg.selectAll("line")
             .data(graph.edges)
