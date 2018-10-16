@@ -184,7 +184,7 @@ var KEGG_canvas = /** @class */ (function () {
             .style("fill", function (d) { return d.Data.color; });
     };
     KEGG_canvas.prototype.displayTooltip = function (svg, node) {
-        var pos = d3.mouse(svg); // (window);
+        var pos = d3.mouse(svg);
         var html = "<span id='name'>" + node.name + "</span>";
         if (node.Data.KCF) {
             html += "<br /><img src='data:image/png;base64," + node.Data.KCF + "' />";
@@ -195,16 +195,16 @@ var KEGG_canvas = /** @class */ (function () {
             .style("z-index", 10)
             .style("opacity", .9);
     };
-    KEGG_canvas.prototype.moveTooltip = function (node) {
-        // var pos = d3.mouse(<any>this.svg);//(window);
+    KEGG_canvas.prototype.moveTooltip = function () {
         this.tooltip
             .style("top", d3.event.pageY + 10 + "px")
             .style("left", d3.event.pageX + 10 + "px");
     };
-    KEGG_canvas.prototype.removeTooltip = function (node) {
+    KEGG_canvas.prototype.removeTooltip = function () {
         this.tooltip
             .style("z-index", -1)
-            .style("opacity", 0); // Make tooltip invisible
+            // Make tooltip invisible
+            .style("opacity", 0);
         this.svg.selectAll("circle")
             .transition()
             .style("opacity", 0.8);
@@ -304,8 +304,8 @@ var KEGG_canvas = /** @class */ (function () {
             .on("mouseover", function (d) {
             viz.displayTooltip(this, d);
         })
-            .on("mousemove", this.moveTooltip)
-            .on("mouseout", this.removeTooltip)
+            .on("mousemove", function () { return viz.moveTooltip; })
+            .on("mouseout", function () { return viz.removeTooltip; })
             .attr("id", "network")
             .call(this.force.drag);
         var label = node.append("text")
@@ -375,19 +375,19 @@ var KEGG_canvas = /** @class */ (function () {
             .attr("y", geo.top - 13)
             .attr("width", this.dw)
             .attr("height", this.dw)
-            .style("fill", function (rect) {
-            legendShapes[type] = rect;
+            .style("fill", function () {
+            legendShapes[type] = this;
             return viz.type_colors[type];
         })
-            .on("click", function (rect) {
+            .on("click", function () {
             viz.toggles[type] = !viz.toggles[type];
             if (viz.toggles[type]) {
                 // 显示，恢复黑色
-                rect.style.fill = viz.type_colors[type];
+                this.style.fill = viz.type_colors[type];
             }
             else {
                 // 不显示，变灰色
-                rect.style.fill = "gray";
+                this.style.fill = "gray";
             }
         });
         legend.append("text")
@@ -395,16 +395,16 @@ var KEGG_canvas = /** @class */ (function () {
             .attr("y", geo.top)
             .style("font-size", "0.85em")
             .text(type)
-            .on("click", function (text) {
+            .on("click", function () {
             viz.toggles[type] = !viz.toggles[type];
             if (viz.toggles[type]) {
                 // 显示，恢复黑色
-                text.style.color = "black";
+                this.style.color = "black";
                 legendShapes[type].style.fill = viz.type_colors[type];
             }
             else {
                 // 不显示，变灰色
-                text.style.color = "gray";
+                this.style.color = "gray";
                 legendShapes[type].style.fill = "gray";
             }
         });
@@ -430,7 +430,7 @@ var KEGG_canvas = /** @class */ (function () {
         var group = this.type_groups[type];
         var points = [];
         if (!this.toggles[type]) {
-            return;
+            return new IEnumerator([]);
         }
         else {
             points = From(group)

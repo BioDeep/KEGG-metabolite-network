@@ -1130,7 +1130,7 @@ declare namespace CanvasHelper {
 declare namespace CanvasHelper.saveSvgAsPng {
     const xlink: string;
     function isElement(obj: any): boolean;
-    function requireDomNode(el: any): void;
+    function requireDomNode(el: any): any;
     /**
      * 判断所给定的url指向的资源是否是来自于外部域的资源？
     */
@@ -1570,6 +1570,7 @@ declare namespace Linq.TsQuery {
      * 字符串格式的值意味着对html文档节点的查询
     */
     class stringEval implements IEval<string> {
+        private static ensureArguments;
         doEval(expr: string, type: TypeInfo, args: object): any;
         /**
          * 在原生节点模式之下对输入的给定的节点对象添加拓展方法

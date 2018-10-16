@@ -66,7 +66,7 @@ class KEGG_canvas {
     }
 
     private displayTooltip(svg, node: Graph.node) {
-        var pos = d3.mouse(svg);// (window);
+        var pos = d3.mouse(svg);
         var html = `<span id='name'>${node.name}</span>`;
 
         if (node.Data.KCF) {
@@ -80,18 +80,17 @@ class KEGG_canvas {
             .style("opacity", .9);
     }
 
-    private moveTooltip(node: Graph.node) {
-        // var pos = d3.mouse(<any>this.svg);//(window);
-
+    private moveTooltip() {
         this.tooltip
             .style("top", `${(<any>d3.event).pageY + 10}px`)
             .style("left", `${(<any>d3.event).pageX + 10}px`);
     }
 
-    private removeTooltip(node: Graph.node) {
+    private removeTooltip() {
         this.tooltip
             .style("z-index", -1)
-            .style("opacity", 0)    // Make tooltip invisible
+            // Make tooltip invisible
+            .style("opacity", 0)
         this.svg.selectAll("circle")
             .transition()
             .style("opacity", 0.8);
@@ -213,8 +212,8 @@ class KEGG_canvas {
             .on("mouseover", function (d) {
                 viz.displayTooltip(this, d);
             })
-            .on("mousemove", this.moveTooltip)
-            .on("mouseout", this.removeTooltip)
+            .on("mousemove", () => viz.moveTooltip)
+            .on("mouseout", () => viz.removeTooltip)
             .attr("id", "network")
             .call(this.force.drag)
 
@@ -317,19 +316,19 @@ class KEGG_canvas {
             .attr("y", geo.top - 13)
             .attr("width", this.dw)
             .attr("height", this.dw)
-            .style("fill", function (rect) {
-                legendShapes[type] = rect;
+            .style("fill", function () {
+                legendShapes[type] = this;
                 return viz.type_colors[type];
             })
-            .on("click", function (rect) {
+            .on("click", function () {
                 viz.toggles[type] = !viz.toggles[type];
 
                 if (viz.toggles[type]) {
                     // 显示，恢复黑色
-                    rect.style.fill = viz.type_colors[type];
+                    this.style.fill = viz.type_colors[type];
                 } else {
                     // 不显示，变灰色
-                    rect.style.fill = "gray";
+                    this.style.fill = "gray";
                 }
             });
 
@@ -338,16 +337,16 @@ class KEGG_canvas {
             .attr("y", geo.top)
             .style("font-size", "0.85em")
             .text(type)
-            .on("click", function (text) {
+            .on("click", function () {
                 viz.toggles[type] = !viz.toggles[type];
 
                 if (viz.toggles[type]) {
                     // 显示，恢复黑色
-                    text.style.color = "black";
+                    this.style.color = "black";
                     legendShapes[type].style.fill = viz.type_colors[type];
                 } else {
                     // 不显示，变灰色
-                    text.style.color = "gray";
+                    this.style.color = "gray";
                     legendShapes[type].style.fill = "gray";
                 }
             });
@@ -378,7 +377,7 @@ class KEGG_canvas {
         var points: Canvas.Point[] = [];
 
         if (!this.toggles[type]) {
-            return;
+            return new IEnumerator<ConvexHull.TagPoint>([]);
         } else {
             points = From(group)
                 .Select(d => new Canvas.Point(d.x, d.y))

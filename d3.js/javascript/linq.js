@@ -2987,6 +2987,9 @@ var CanvasHelper;
             if (!isElement(el)) {
                 throw new Error('an HTMLElement or SVGElement is required; got ' + el);
             }
+            else {
+                return el;
+            }
         }
         saveSvgAsPng.requireDomNode = requireDomNode;
         /**
@@ -3253,7 +3256,8 @@ var CanvasHelper;
             Encoder.saveSvgAsPng = function (svg, name, options) {
                 if (options === void 0) { options = saveSvgAsPng.Options.Default(); }
                 if (typeof svg == "string") {
-                    saveSvgAsPng.requireDomNode($ts(svg));
+                    svg = $ts(svg);
+                    saveSvgAsPng.requireDomNode(svg);
                 }
                 else {
                     saveSvgAsPng.requireDomNode(svg);
@@ -4586,9 +4590,24 @@ var Linq;
         var stringEval = /** @class */ (function () {
             function stringEval() {
             }
+            stringEval.ensureArguments = function (args) {
+                if (isNullOrUndefined(args)) {
+                    return TsQuery.Arguments.Default();
+                }
+                else {
+                    var opts = args;
+                    // 2018-10-16
+                    // 如果不在这里进行判断赋值，则nativeModel属性的值为undefined
+                    // 会导致总会判断为true的bug出现
+                    if (isNullOrUndefined(opts.nativeModel)) {
+                        opts.nativeModel = false;
+                    }
+                    return opts;
+                }
+            };
             stringEval.prototype.doEval = function (expr, type, args) {
                 var query = Linq.DOM.Query.parseQuery(expr);
-                var argument = args ? args : TsQuery.Arguments.Default();
+                var argument = stringEval.ensureArguments(args);
                 if (query.type == Linq.DOM.QueryTypes.id) {
                     // 按照id查询
                     var node = document.getElementById(query.expression);
