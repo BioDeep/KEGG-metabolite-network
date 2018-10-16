@@ -342,8 +342,7 @@ class KEGG_canvas {
 
     /**
      * 实时计算出凸包，并绘制出凸包的多边形
-     *
-     */
+    */
     private convexHull_update() {
         var types = new IEnumerator<string>(Object.keys(this.type_groups));
         var viz: KEGG_canvas = this;
@@ -351,7 +350,7 @@ class KEGG_canvas {
             // 计算多边形
             return <ConvexHull.Polygon>{
                 group: type,
-                points: viz.calculatePolygon(type)
+                points: viz.calculatePolygon(type).ToArray()
             }
         });
 
@@ -359,7 +358,7 @@ class KEGG_canvas {
         this.adjustLayouts();
     }
 
-    private calculatePolygon(type: string) {
+    private calculatePolygon(type: string): IEnumerator<ConvexHull.TagPoint> {
         var group = this.type_groups[type];
         var points = [];
 
@@ -371,16 +370,15 @@ class KEGG_canvas {
             points.push({ x: d.x, y: d.y });
         });
 
-        // console.log(points);
-
         // 计算出凸包
         // 获取得到的是多边形的顶点坐标集合
-        var polygon = convexHullImpl.JarvisMatch(points);
-        var typedPolygons: { x: number, y: number, group: string }[] = [];
-
-        polygon.forEach(function (d) {
-            typedPolygons.push({ x: d.x, y: d.y, group: type });
-        })
+        var polygon: Canvas.Point[] = ConvexHull.impl.JarvisMatch(points);
+        var typedPolygons: IEnumerator<ConvexHull.TagPoint> =
+            From(polygon).Select(d => <ConvexHull.TagPoint>{
+                x: d.x,
+                y: d.y,
+                group: type
+            });
 
         return typedPolygons;
     }
@@ -406,7 +404,7 @@ class KEGG_canvas {
      * 1. 现在需要通过位置判断来进行模拟点击？？？？
      * 2. 将polygon多边形放在最下层
     */
-    private drawPolygons(polygons: ConvexHull.Polygon[]) {
+    private drawPolygons(polygons: IEnumerator<ConvexHull.Polygon>) {
         var viz: KEGG_canvas = this;
 
         if (!this.polygon_layer) {
@@ -417,7 +415,7 @@ class KEGG_canvas {
 
         this.polygon_layer
             .selectAll("g")
-            .data(polygons)
+            .data(polygons.ToArray())
             .enter()
             .append("polygon")
             .attr("points", d => d.points.map(p => [p.x, p.y].join(",")).join(" "))

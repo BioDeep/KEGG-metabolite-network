@@ -72,10 +72,18 @@ namespace ConvexHull {
 
     export class Polygon {
         public group: string;
-        public points: {
-            x: number;
-            y: number;
-            group: string;
-        }[];
+        public points: TagPoint[];
+
+        public toString(): string {
+            return this.group;
+        }
+    }
+
+    export class TagPoint extends Canvas.Point {
+        public group: string;
+
+        public toString(): string {
+            return group;
+        }
     }
 }
