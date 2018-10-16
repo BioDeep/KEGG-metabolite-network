@@ -145,16 +145,6 @@ var KEGG_canvas = /** @class */ (function () {
         this.baseURL = location.pathname;
         this.edgeOpacity = 0.8;
         /**
-         * Create tooltip element
-        */
-        this.tooltip = d3.select("#chart")
-            .append("div")
-            .attr("class", "large-3 columns")
-            .attr("id", "tooltip")
-            .style("position", "absolute")
-            .style("z-index", "10")
-            .style("opacity", 0);
-        /**
          * 因为目前d3.js还不能够通过调整z-index来调整图层
          * 所以在这里先构建一个最开始图层，来避免polygon将网络的节点遮盖住，从而导致无法操作节点
         */
@@ -170,6 +160,13 @@ var KEGG_canvas = /** @class */ (function () {
         */
         this.legendBoxRadius = 6;
         this.setupGraph(graph);
+        this.tooltip = d3.select("#chart")
+            .append("div")
+            .attr("class", "large-3 columns")
+            .attr("id", "tooltip")
+            .style("position", "absolute")
+            .style("z-index", "10")
+            .style("opacity", 0);
     }
     KEGG_canvas.prototype.attachSaveAsPng = function (aId, fileName) {
         if (fileName === void 0) { fileName = "network.png"; }

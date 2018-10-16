@@ -36,16 +36,17 @@ class KEGG_canvas {
     /**
      * Create tooltip element
     */
-    public tooltip: d3.Selection<any> = d3.select("#chart")
-        .append("div")
-        .attr("class", "large-3 columns")
-        .attr("id", "tooltip")
-        .style("position", "absolute")
-        .style("z-index", "10")
-        .style("opacity", 0);
+    public tooltip: d3.Selection<any>;
 
     public constructor(graph: Graph.Model) {
         this.setupGraph(graph);
+        this.tooltip = d3.select("#chart")
+            .append("div")
+            .attr("class", "large-3 columns")
+            .attr("id", "tooltip")
+            .style("position", "absolute")
+            .style("z-index", "10")
+            .style("opacity", 0);
     }
 
     public attachSaveAsPng(aId: string, fileName: string = "network.png") {
