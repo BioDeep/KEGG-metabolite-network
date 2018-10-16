@@ -81,12 +81,16 @@ class KEGG_canvas {
     }
 
     private moveTooltip() {
+        console.log("move");
+
         this.tooltip
             .style("top", `${(<any>d3.event).pageY + 10}px`)
             .style("left", `${(<any>d3.event).pageX + 10}px`);
     }
 
     private removeTooltip() {
+        console.log("remove");
+
         this.tooltip
             .style("z-index", -1)
             // Make tooltip invisible
@@ -213,8 +217,12 @@ class KEGG_canvas {
             .on("mouseover", function (d) {
                 viz.displayTooltip(this, d);
             })
-            .on("mousemove", () => viz.moveTooltip)
-            .on("mouseout", () => viz.removeTooltip)
+            .on("mousemove", function (d) {
+                viz.moveTooltip();
+            })
+            .on("mouseout", function (d) {
+                viz.removeTooltip();
+            })
             .attr("id", "network")
             .call(this.force.drag)
 

@@ -196,11 +196,13 @@ var KEGG_canvas = /** @class */ (function () {
             .style("opacity", .9);
     };
     KEGG_canvas.prototype.moveTooltip = function () {
+        console.log("move");
         this.tooltip
             .style("top", d3.event.pageY + 10 + "px")
             .style("left", d3.event.pageX + 10 + "px");
     };
     KEGG_canvas.prototype.removeTooltip = function () {
+        console.log("remove");
         this.tooltip
             .style("z-index", -1)
             // Make tooltip invisible
@@ -275,7 +277,8 @@ var KEGG_canvas = /** @class */ (function () {
         })
             .style("stroke", "gray")
             .style("opacity", 0.8);
-        graph.nodes.forEach(function (node) {
+        graph.nodes
+            .forEach(function (node) {
             var types = node.type.split("|");
             // 跳过空的字符串
             if (node.type.length > 0) {
@@ -304,8 +307,12 @@ var KEGG_canvas = /** @class */ (function () {
             .on("mouseover", function (d) {
             viz.displayTooltip(this, d);
         })
-            .on("mousemove", function () { return viz.moveTooltip; })
-            .on("mouseout", function () { return viz.removeTooltip; })
+            .on("mousemove", function (d) {
+            viz.moveTooltip();
+        })
+            .on("mouseout", function (d) {
+            viz.removeTooltip();
+        })
             .attr("id", "network")
             .call(this.force.drag);
         var label = node.append("text")
