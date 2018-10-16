@@ -1,5 +1,7 @@
 # KEGG-metabolite-network
 
+[![DOI](https://zenodo.org/badge/98704436.svg)](https://zenodo.org/badge/latestdoi/98704436)
+
 D3.js network style comes from https://github.com/whichlight/reddit-network-vis
 
 ![](./etc/canvas.png)
