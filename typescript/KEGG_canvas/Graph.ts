@@ -12,7 +12,7 @@
         public id: string;
         public source: number;
         public target: number;
-        public value: number;
+        public value: string;
         public weight: number;
 
     }

@@ -1,4 +1,6 @@
-﻿/**
+﻿/// <reference path="../build/linq.d.ts"/>
+
+/**
  * 模块进行代谢物网络的可视化操作
  * 
  * 网络的节点有两个属性可以用来表示两个维度的数据：半径大小以及颜色值，
@@ -28,6 +30,7 @@ class KEGG_canvas {
     public type_colors = {};
     public baseURL: string = location.pathname
     public loading_gif_small = new Image();
+    public edgeOpacity: number = 0.8;
 
     /**
      * Create tooltip element
@@ -57,9 +60,9 @@ class KEGG_canvas {
             });
     }
 
-    private displayTooltip(node) {
+    private displayTooltip(node: Graph.node) {
         var pos = d3.mouse(this);
-        var html = "<span id='name'>" + node.name + "</span>"
+        var html = `<span id='name'>${node.name}</span>`;
 
         if (node.Data.KCF) {
 
@@ -78,7 +81,7 @@ class KEGG_canvas {
             .style("opacity", .9);
     }
 
-    private moveTooltip(node) {
+    private moveTooltip(node: Graph.node) {
         var pos = d3.mouse(this);
 
         this.tooltip
@@ -86,7 +89,7 @@ class KEGG_canvas {
             .style("left", (d3.event.pageX + 10) + "px");
     }
 
-    private removeTooltip(node) {
+    private removeTooltip(node: Graph.node) {
         this.tooltip
             .style("z-index", -1)
             .style("opacity", 0)    // Make tooltip invisible
@@ -111,13 +114,17 @@ class KEGG_canvas {
     */
     public polygon_layer: d3.Selection<any> = null;
 
-    public setupGraph(graph: Graph.Model) {
-        var viz = this;
-
+    private Clear() {
         $(".network").empty();
+
         this.names = {};
         this.nodecolor = {};
+    }
 
+    public setupGraph(graph: Graph.Model) {
+        var viz: KEGG_canvas = this;
+
+        this.Clear();
         this.force = d3.layout.force()
             .charge(-300)
             .linkDistance(100)
@@ -141,11 +148,7 @@ class KEGG_canvas {
         this.type_groups = [];
         this.type_colors = graph.types;
 
-        console.log(this.type_colors);
-
-        Object.keys(graph.types).forEach(function (t) {
-            this.type_groups[t] = [];
-        })
+        Object.keys(graph.types).forEach(t => viz.type_groups[t] = []);
 
         this.nodes = <any>this.force.nodes()
         this.links = <any>this.force.links();
@@ -167,7 +170,6 @@ class KEGG_canvas {
             })
             .attr("id", "network")
             .style("stroke-width", function (d) {
-
                 var w = -Math.log(d.weight * 2);
 
                 if (w < 0.5) {
@@ -182,7 +184,7 @@ class KEGG_canvas {
             .style("opacity", 0.8);
 
         graph.nodes.forEach(function (node) {
-            var types = node.type.split("|");
+            var types = node.type;
 
             // 跳过空的字符串
             if (node.type.length > 0) {
@@ -190,7 +192,7 @@ class KEGG_canvas {
                 types.forEach(function (name) {
                     // name = name.split(" ")[0];
                     // console.log(name);
-                    this.type_groups[name].push(node);
+                    viz.type_groups[name].push(node);
                 });
             }
         });
@@ -209,7 +211,7 @@ class KEGG_canvas {
                 }
                 return this.nodeMin;
             })
-            .style("opacity", this. 0.8)
+            .style("opacity", viz.edgeOpacity)
             .on("mouseover", this.displayTooltip)
             .on("mousemove", this.moveTooltip)
             .on("mouseout", this.removeTooltip)
@@ -219,22 +221,20 @@ class KEGG_canvas {
         var label = node.append("text")
             .attr("dx", 12)
             .attr("dy", ".35em")
-            .text(function (d) { return d.name });
+            .text(d => d.name);
 
         this.colorNodes();
         this.showLegend();
         this.force.start();
 
-        // console.log(type_groups);
-
         this.force.on("tick", function () {
-            this.svg.selectAll("line")
+            viz.svg.selectAll("line")
                 .attr("x1", function (d) { return d.source.x; })
                 .attr("y1", function (d) { return d.source.y; })
                 .attr("x2", function (d) { return d.target.x; })
                 .attr("y2", function (d) { return d.target.y; });
 
-            this.svg.selectAll("circle.node")
+            viz.svg.selectAll("circle.node")
                 .attr("cx", function (d) { return d.x; })
                 .attr("cy", function (d) { return d.y; });
 
@@ -249,14 +249,14 @@ class KEGG_canvas {
         setInterval(this.convexHull_update, 8);
     }
 
-    public toggles = [];
+    private toggles: object = {};
 
     /**
      * 在svg上面添加legend的rectangle以及相应的标签文本
      * 颜色和标签文本都来自于type_colors字典
      */
     private showLegend() {
-
+        var viz: KEGG_canvas = this;
         var dH = 20;
         var rW = 300, rH = (dH + 5) * (Object.keys(this.type_colors).length - 1);
         var top = 30, left = this.size.width - rW;
@@ -291,10 +291,10 @@ class KEGG_canvas {
 
         Object.keys(this.type_colors).forEach(function (type) {
 
-            var color = this.type_colors[type];   // 方块的颜色
+            var color = viz.type_colors[type];   // 方块的颜色
             var label = type;   // 标签文本
 
-            this.toggles[type] = true;
+            viz.toggles[type] = true;
 
             top += dH;
             legend.append("rect")
@@ -304,14 +304,14 @@ class KEGG_canvas {
                 .attr("height", dW)
                 .style("fill", function () {
                     legendShapes[type] = this;
-                    return this.type_colors[type];
+                    return viz.type_colors[type];
                 })
                 .on("click", function () {
-                    this.toggles[type] = !this.toggles[type];
+                    viz.toggles[type] = !viz.toggles[type];
 
-                    if (this.toggles[type]) {
+                    if (viz.toggles[type]) {
                         // 显示，恢复黑色
-                        this.style.fill = this.type_colors[type];
+                        this.style.fill = viz.type_colors[type];
                     } else {
                         // 不显示，变灰色
                         this.style.fill = "gray";
@@ -325,12 +325,12 @@ class KEGG_canvas {
                 // .tooltip(type)
                 .text(type)
                 .on("click", function () {
-                    this.toggles[type] = !this.toggles[type];
+                    viz.toggles[type] = !viz.toggles[type];
 
-                    if (this.toggles[type]) {
+                    if (viz.toggles[type]) {
                         // 显示，恢复黑色
                         this.style.color = "black";
-                        legendShapes[type].style.fill = this.type_colors[type];
+                        legendShapes[type].style.fill = viz.type_colors[type];
                     } else {
                         // 不显示，变灰色
                         this.style.color = "gray";
@@ -345,49 +345,47 @@ class KEGG_canvas {
      *
      */
     private convexHull_update() {
-
-        var types = Object.keys(this.type_groups);
-        var polygons = [];
-
-        types.forEach(function (type) {
-
-            var group = this.type_groups[type];
-            var points = [];
-
-            if (!this.toggles[type]) {
-                return;
+        var types = new IEnumerator<string>(Object.keys(this.type_groups));
+        var viz: KEGG_canvas = this;
+        var polygons = types.Select(type => {
+            // 计算多边形
+            return <ConvexHull.Polygon>{
+                group: type,
+                points: viz.calculatePolygon(type)
             }
-
-            group.forEach(function (d) {
-                points.push({ x: d.x, y: d.y });
-            });
-
-            // console.log(points);
-
-            // 计算出凸包
-            // 获取得到的是多边形的顶点坐标集合
-            var polygon = convexHullImpl.JarvisMatch(points);
-            var typedPolygons = [];
-
-            polygon.forEach(function (d) {
-                d = { x: d.x, y: d.y, group: type };
-                typedPolygons.push(d);
-            })
-            polygon = typedPolygons;
-
-            // 绘制多边形
-            // console.log(polygon);
-            polygons.push({ group: type, points: polygon });
-        })
-
-        // console.log(polygons);
+        });
 
         this.drawPolygons(polygons);
         this.adjustLayouts();
     }
 
-    private adjustLayouts() {
+    private calculatePolygon(type: string) {
+        var group = this.type_groups[type];
+        var points = [];
 
+        if (!this.toggles[type]) {
+            return;
+        }
+
+        group.forEach(function (d) {
+            points.push({ x: d.x, y: d.y });
+        });
+
+        // console.log(points);
+
+        // 计算出凸包
+        // 获取得到的是多边形的顶点坐标集合
+        var polygon = convexHullImpl.JarvisMatch(points);
+        var typedPolygons: { x: number, y: number, group: string }[] = [];
+
+        polygon.forEach(function (d) {
+            typedPolygons.push({ x: d.x, y: d.y, group: type });
+        })
+
+        return typedPolygons;
+    }
+
+    private adjustLayouts() {
         if (!this.svg) {
             return;
         }
@@ -407,15 +405,14 @@ class KEGG_canvas {
      *
      * 1. 现在需要通过位置判断来进行模拟点击？？？？
      * 2. 将polygon多边形放在最下层
-     */
-    private drawPolygons(polygons) {
-
-        // console.log(polygons)
-
-        d3.selectAll(".pl").remove();
+    */
+    private drawPolygons(polygons: ConvexHull.Polygon[]) {
+        var viz: KEGG_canvas = this;
 
         if (!this.polygon_layer) {
             return;
+        } else {
+            d3.selectAll(".pl").remove();
         }
 
         this.polygon_layer
@@ -423,24 +420,15 @@ class KEGG_canvas {
             .data(polygons)
             .enter()
             .append("polygon")
-            .attr("points", function (d) {
-                // console.log(d);
-                return d.points.map(function (d) {
-                    return [d.x, d.y].join(",");
-                }).join(" ");
-            })
-            .attr("type", function (d) { return d.group; })
+            .attr("points", d => d.points.map(p => [p.x, p.y].join(",")).join(" "))
+            .attr("type", d => d.group)
             .attr("stroke", "black")
             .attr("stroke-width", 2)
             .style("opacity", 0.25)
             .attr("id", "polygon")
             .classed("pl", true)
             .classed("polygon", true)
-            .style("fill", function (d) {
-                var color = this.type_colors[d.group];
-                return color;
-            })
-            // .tooltip(function(d) {return d.group})
+            .style("fill", d => <string>viz.type_colors[d.group])
             .attr("z-index", 100);
     }
 }
