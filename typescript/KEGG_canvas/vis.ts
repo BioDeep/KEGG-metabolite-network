@@ -64,8 +64,8 @@ class KEGG_canvas {
             .style("fill", d => d.Data.color);
     }
 
-    private displayTooltip(node: Graph.node) {
-        var pos = d3.mouse(window);
+    private displayTooltip(svg, node: Graph.node) {
+        var pos = d3.mouse(svg);// (window);
         var html = `<span id='name'>${node.name}</span>`;
 
         if (node.Data.KCF) {
@@ -80,7 +80,7 @@ class KEGG_canvas {
     }
 
     private moveTooltip(node: Graph.node) {
-        var pos = d3.mouse(window);
+        // var pos = d3.mouse(<any>this.svg);//(window);
 
         this.tooltip
             .style("top", `${(<any>d3.event).pageY + 10}px`)
@@ -96,7 +96,7 @@ class KEGG_canvas {
             .style("opacity", 0.8);
     }
 
-    private displayPreview(e, preview) {
+    private displayPreview(e, preview: HTMLElement) {
         var pos = [e.pageX, e.pageY + 20]
 
         this.tooltip.html(preview.innerHTML)
@@ -209,7 +209,9 @@ class KEGG_canvas {
                 }
             })
             .style("opacity", viz.edgeOpacity)
-            .on("mouseover", this.displayTooltip)
+            .on("mouseover", function (d) {
+                viz.displayTooltip(this, d);
+            })
             .on("mousemove", this.moveTooltip)
             .on("mouseout", this.removeTooltip)
             .attr("id", "network")

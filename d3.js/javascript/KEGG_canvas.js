@@ -137,6 +137,9 @@ var KEGG_canvas = /** @class */ (function () {
         this.nodeMin = 5;
         this.names = {};
         this.nodecolor = {};
+        /**
+         * {type, graph.node[]}
+        */
         this.type_groups = {};
         this.type_colors = {};
         this.baseURL = location.pathname;
@@ -183,8 +186,8 @@ var KEGG_canvas = /** @class */ (function () {
             .selectAll("circle")
             .style("fill", function (d) { return d.Data.color; });
     };
-    KEGG_canvas.prototype.displayTooltip = function (node) {
-        var pos = d3.mouse(window);
+    KEGG_canvas.prototype.displayTooltip = function (svg, node) {
+        var pos = d3.mouse(svg); // (window);
         var html = "<span id='name'>" + node.name + "</span>";
         if (node.Data.KCF) {
             html += "<br /><img src='data:image/png;base64," + node.Data.KCF + "' />";
@@ -196,7 +199,7 @@ var KEGG_canvas = /** @class */ (function () {
             .style("opacity", .9);
     };
     KEGG_canvas.prototype.moveTooltip = function (node) {
-        var pos = d3.mouse(window);
+        // var pos = d3.mouse(<any>this.svg);//(window);
         this.tooltip
             .style("top", d3.event.pageY + 10 + "px")
             .style("left", d3.event.pageX + 10 + "px");
@@ -301,7 +304,9 @@ var KEGG_canvas = /** @class */ (function () {
             }
         })
             .style("opacity", viz.edgeOpacity)
-            .on("mouseover", this.displayTooltip)
+            .on("mouseover", function (d) {
+            viz.displayTooltip(this, d);
+        })
             .on("mousemove", this.moveTooltip)
             .on("mouseout", this.removeTooltip)
             .attr("id", "network")
@@ -430,9 +435,11 @@ var KEGG_canvas = /** @class */ (function () {
         if (!this.toggles[type]) {
             return;
         }
-        group.forEach(function (d) {
-            points.push({ x: d.x, y: d.y });
-        });
+        else {
+            points = From(group)
+                .Select(function (d) { return new Canvas.Point(d.x, d.y); })
+                .ToArray();
+        }
         // 计算出凸包
         // 获取得到的是多边形的顶点坐标集合
         var polygon = ConvexHull.impl.JarvisMatch(points);
