@@ -129,7 +129,7 @@ var Graph;
  * 彩色节点表示在当前的代谢物鉴定结果之中出现的KEGG化合物，彩色节点之间使用黑色的实现进行相连接
 */
 var KEGG_canvas = /** @class */ (function () {
-    function KEGG_canvas() {
+    function KEGG_canvas(graph) {
         this.size = {
             width: 1000,
             height: 800
@@ -170,7 +170,14 @@ var KEGG_canvas = /** @class */ (function () {
         this.legendBoxRadius = 6;
         this.loading_gif.src = "./img/ajax-loader.gif";
         this.loading_gif_small.src = "./img/small-loader.gif";
+        this.setupGraph(graph);
     }
+    KEGG_canvas.prototype.attachSaveAsPng = function (aId, fileName) {
+        if (fileName === void 0) { fileName = "network.png"; }
+        $ts(aId).onclick = function () {
+            CanvasHelper.saveSvgAsPng.Encoder.saveSvgAsPng("#network-canvas", fileName);
+        };
+    };
     /**
      * 可以在后台按照类型为节点生成颜色
     */

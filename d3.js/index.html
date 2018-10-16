@@ -18,19 +18,23 @@
 		</div>
 	</div>
 
-	<a href="#" onclick="svg2png('network-canvas')">Save as png</a>
-
-	<script type="text/javascript">
-		// 测试当前的浏览器是否支持HTML5的高级特性
-
-		console.log("SVG 2.0???")
-		console.log(document.implementation.hasFeature("http://www.w3.org/TR/SVG2/feature#GraphicsAttribute", 2.0));
-		console.log("/***********/")
-	</script>
+	<a id="download-invoker" href="#">Save as png</a>
 
 	<script type="text/javascript" src="/javascript/linq.js"></script>
 	<script type="text/javascript" src="/javascript/svg.js"></script>
 	<script type="text/javascript" src="/javascript/KEGG_canvas.js"></script>
+
+	<script type="text/javascript">
+		// 测试当前的浏览器是否支持HTML5的高级特性
+		if (SvgUtils.hasSVG2Feature()) {
+			$.get("./graph.json", g => {
+				var viz = new KEGG_canvas(g);
+				viz.attachSaveAsPng("#download-invoker");
+			})
+		} else {
+			alert("请使用最新版本的Google Chrome浏览器！");
+		}
+	</script>
 </body>
 
 </html>

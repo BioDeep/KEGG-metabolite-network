@@ -3243,10 +3243,22 @@ var CanvasHelper;
                     Linq.DOM.download(name, uri);
                 });
             };
-            Encoder.saveSvgAsPng = function (el, name, options) {
-                saveSvgAsPng.requireDomNode(el);
-                options = options || {};
-                this.svgAsPngUri(el, options, function (uri) {
+            /**
+             * 将指定的SVG节点保存为png图片
+             *
+             * @param svg 需要进行保存为图片的svg节点的对象实例或者对象的节点id值
+             * @param name 所保存的文件名
+             * @param options 配置参数，直接留空使用默认值就好了
+            */
+            Encoder.saveSvgAsPng = function (svg, name, options) {
+                if (options === void 0) { options = saveSvgAsPng.Options.Default(); }
+                if (typeof svg == "string") {
+                    saveSvgAsPng.requireDomNode($ts(svg));
+                }
+                else {
+                    saveSvgAsPng.requireDomNode(svg);
+                }
+                this.svgAsPngUri(svg, options, function (uri) {
                     Linq.DOM.download(name, uri);
                 });
             };

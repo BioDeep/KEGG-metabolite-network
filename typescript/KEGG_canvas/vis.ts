@@ -50,6 +50,12 @@ class KEGG_canvas {
         this.setupGraph(graph);
     }
 
+    public attachSaveAsPng(aId: string, fileName: string = "network.png") {
+        $ts(aId).onclick = function () {
+            CanvasHelper.saveSvgAsPng.Encoder.saveSvgAsPng("#network-canvas", fileName);
+        }
+    }
+
     /**
      * 可以在后台按照类型为节点生成颜色
     */

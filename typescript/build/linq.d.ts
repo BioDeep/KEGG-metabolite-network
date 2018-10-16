@@ -1158,7 +1158,14 @@ declare namespace CanvasHelper.saveSvgAsPng {
         static svgAsDataUri(el: any, options: any, cb?: (uri: string) => void): void;
         static svgAsPngUri(el: any, options: Options, cb: (uri: string) => void): void;
         static saveSvg(el: any, name: any, options: any): void;
-        static saveSvgAsPng(el: any, name: any, options: any): void;
+        /**
+         * 将指定的SVG节点保存为png图片
+         *
+         * @param svg 需要进行保存为图片的svg节点的对象实例或者对象的节点id值
+         * @param name 所保存的文件名
+         * @param options 配置参数，直接留空使用默认值就好了
+        */
+        static saveSvgAsPng(svg: string | SVGElement, name: string, options?: Options): void;
     }
 }
 declare namespace CanvasHelper.saveSvgAsPng {

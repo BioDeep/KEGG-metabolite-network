@@ -10,6 +10,14 @@ var SvgUtils;
         return hex.length == 1 ? "0" + hex : hex;
     }
     SvgUtils.componentToHex = componentToHex;
+    SvgUtils.HTML5svgFeature = "http://www.w3.org/TR/SVG2/feature#GraphicsAttribute";
+    /**
+     * ���Ե�ǰ��������Ƿ�֧��HTML5�ĸ߼�����
+    */
+    function hasSVG2Feature() {
+        return document.implementation.hasFeature(SvgUtils.HTML5svgFeature, "2.0");
+    }
+    SvgUtils.hasSVG2Feature = hasSVG2Feature;
     /**
      * https://stackoverflow.com/questions/20539196/creating-svg-elements-dynamically-with-javascript-inside-html
      *

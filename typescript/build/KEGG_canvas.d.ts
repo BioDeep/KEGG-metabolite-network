@@ -89,6 +89,7 @@ declare class KEGG_canvas {
     */
     tooltip: d3.Selection<any>;
     constructor(graph: Graph.Model);
+    attachSaveAsPng(aId: string, fileName?: string): void;
     /**
      * 可以在后台按照类型为节点生成颜色
     */
