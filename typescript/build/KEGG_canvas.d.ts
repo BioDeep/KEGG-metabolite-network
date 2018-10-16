@@ -89,7 +89,10 @@ declare class KEGG_canvas {
      * Create tooltip element
     */
     tooltip: d3.Selection<any>;
-    constructor(graph: Graph.Model);
+    constructor(graph: Graph.Model, opts?: {
+        charge: number;
+        linkDistance: number;
+    });
     attachSaveAsPng(aId: string, fileName?: string): void;
     /**
      * 可以在后台按照类型为节点生成颜色
@@ -98,7 +101,6 @@ declare class KEGG_canvas {
     private displayTooltip;
     private moveTooltip;
     private removeTooltip;
-    private displayPreview;
     /**
      * 因为目前d3.js还不能够通过调整z-index来调整图层
      * 所以在这里先构建一个最开始图层，来避免polygon将网络的节点遮盖住，从而导致无法操作节点
@@ -116,6 +118,7 @@ declare class KEGG_canvas {
      * legend的外边框圆角矩形的radius
     */
     legendBoxRadius: number;
+    legendBoxWidth: number;
     /**
      * 在svg上面添加legend的rectangle以及相应的标签文本
      * 颜色和标签文本都来自于type_colors字典

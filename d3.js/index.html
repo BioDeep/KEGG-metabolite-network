@@ -28,7 +28,10 @@
 		// 测试当前的浏览器是否支持HTML5的高级特性
 		if (SvgUtils.hasSVG2Feature()) {
 			$.get("./graph.json", g => {
-				var viz = new KEGG_canvas(g);
+				var viz = new KEGG_canvas(g, {
+					charge: -200,
+					linkDistance: 30
+				});
 				viz.attachSaveAsPng("#download-invoker");
 			})
 		} else {

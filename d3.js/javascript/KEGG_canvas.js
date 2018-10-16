@@ -129,9 +129,13 @@ var Graph;
  * 彩色节点表示在当前的代谢物鉴定结果之中出现的KEGG化合物，彩色节点之间使用黑色的实现进行相连接
 */
 var KEGG_canvas = /** @class */ (function () {
-    function KEGG_canvas(graph) {
+    function KEGG_canvas(graph, opts) {
+        if (opts === void 0) { opts = {
+            charge: -200,
+            linkDistance: 50 // 影响聚类程度，值越小，聚类越明显
+        }; }
         this.size = {
-            width: 1000,
+            width: 1024,
             height: 800
         };
         this.nodeMin = 5;
@@ -159,7 +163,8 @@ var KEGG_canvas = /** @class */ (function () {
          * legend的外边框圆角矩形的radius
         */
         this.legendBoxRadius = 6;
-        this.setupGraph(graph);
+        this.legendBoxWidth = 400;
+        this.setupGraph(graph, opts);
         this.tooltip = d3.select("#chart")
             .append("div")
             .attr("class", "large-3 columns")
@@ -196,13 +201,11 @@ var KEGG_canvas = /** @class */ (function () {
             .style("opacity", .9);
     };
     KEGG_canvas.prototype.moveTooltip = function () {
-        console.log("move");
         this.tooltip
             .style("top", d3.event.pageY + 10 + "px")
             .style("left", d3.event.pageX + 10 + "px");
     };
     KEGG_canvas.prototype.removeTooltip = function () {
-        console.log("remove");
         this.tooltip
             .style("z-index", -1)
             // Make tooltip invisible
@@ -211,26 +214,18 @@ var KEGG_canvas = /** @class */ (function () {
             .transition()
             .style("opacity", 0.8);
     };
-    KEGG_canvas.prototype.displayPreview = function (e, preview) {
-        var pos = [e.pageX, e.pageY + 20];
-        this.tooltip.html(preview.innerHTML)
-            .style("top", (pos[1]) + "px")
-            .style("left", (pos[0]) + "px")
-            .style("z-index", 10)
-            .style("opacity", .9);
-    };
     KEGG_canvas.prototype.Clear = function () {
         $(".network").empty();
         this.names = {};
         this.nodecolor = {};
     };
-    KEGG_canvas.prototype.setupGraph = function (graph) {
+    KEGG_canvas.prototype.setupGraph = function (graph, opts) {
         var _this = this;
         var viz = this;
         this.Clear();
         this.force = d3.layout.force()
-            .charge(-300)
-            .linkDistance(100)
+            .charge(opts.charge)
+            .linkDistance(opts.linkDistance)
             .size([this.size.width, this.size.height]);
         this.svg = d3.select("#chart")
             .append("svg:svg")
@@ -266,12 +261,12 @@ var KEGG_canvas = /** @class */ (function () {
         })
             .attr("id", "network")
             .style("stroke-width", function (d) {
-            var w = -Math.log(d.weight * 2);
-            if (w < 0.5) {
-                w = 0.5;
+            var w = -Math.log(d.weight * 2) / 2;
+            if (w < 0.3) {
+                w = 0.3;
             }
-            else if (w > 3) {
-                w = 3;
+            else if (w > 2) {
+                w = 2;
             }
             return w;
         })
@@ -297,7 +292,7 @@ var KEGG_canvas = /** @class */ (function () {
             .call(this.force.drag)
             .attr("r", function (d) {
             if (d.degree > 0) {
-                return viz.nodeMin + Math.pow(d.degree, 2 / (2.7));
+                return viz.nodeMin + d.degree; // Math.pow(d.degree, 2 / (2.7));
             }
             else {
                 return viz.nodeMin;
@@ -346,21 +341,22 @@ var KEGG_canvas = /** @class */ (function () {
      */
     KEGG_canvas.prototype.showLegend = function () {
         var _this = this;
-        var rW = 300, rH = (this.dh + 5) * (Object.keys(this.type_colors).length - 1);
-        var top = 30, left = this.size.width - rW;
+        var rw = this.legendBoxWidth;
+        var rh = (this.dh + 5) * (Object.keys(this.type_colors).length - 1);
+        var top = 30, left = this.size.width - rw;
         var legend = this.svg.append("g")
             .attr("class", "legend")
             .attr("x", left)
             .attr("y", top)
-            .attr("height", rH)
-            .attr("width", rW);
+            .attr("height", rh)
+            .attr("width", rw);
         legend.append("rect")
             .attr("x", left)
             .attr("y", top)
             .attr("rx", this.legendBoxRadius)
             .attr("ry", this.legendBoxRadius)
-            .attr("height", rH)
-            .attr("width", rW)
+            .attr("height", rh)
+            .attr("width", rw)
             .style("stroke", "gray")
             .style("stroke-width", 2)
             .style("border-radius", "2px")
@@ -489,8 +485,8 @@ var KEGG_canvas = /** @class */ (function () {
             .attr("points", function (d) { return d.points.map(function (p) { return [p.x, p.y].join(","); }).join(" "); })
             .attr("type", function (d) { return d.group; })
             .attr("stroke", "black")
-            .attr("stroke-width", 2)
-            .style("opacity", 0.25)
+            .attr("stroke-width", 1)
+            .style("opacity", 0.1)
             .attr("id", "polygon")
             .classed("pl", true)
             .classed("polygon", true)

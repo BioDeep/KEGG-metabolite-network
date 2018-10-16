@@ -15,7 +15,7 @@
 class KEGG_canvas {
 
     public size: Canvas.Size = <Canvas.Size>{
-        width: 1000,
+        width: 1024,
         height: 800
     };
     public nodeMin: number = 5;
@@ -38,8 +38,17 @@ class KEGG_canvas {
     */
     public tooltip: d3.Selection<any>;
 
-    public constructor(graph: Graph.Model) {
-        this.setupGraph(graph);
+    public constructor(
+        graph: Graph.Model,
+        opts: {
+            charge: number,
+            linkDistance: number
+        } = {
+                charge: -200,    // 影响节点移动的时候的活泼程度，值越小越活泼
+                linkDistance: 50 // 影响聚类程度，值越小，聚类越明显
+            }) {
+
+        this.setupGraph(graph, opts);
         this.tooltip = d3.select("#chart")
             .append("div")
             .attr("class", "large-3 columns")
@@ -81,16 +90,12 @@ class KEGG_canvas {
     }
 
     private moveTooltip() {
-        console.log("move");
-
         this.tooltip
             .style("top", `${(<any>d3.event).pageY + 10}px`)
             .style("left", `${(<any>d3.event).pageX + 10}px`);
     }
 
     private removeTooltip() {
-        console.log("remove");
-
         this.tooltip
             .style("z-index", -1)
             // Make tooltip invisible
@@ -98,16 +103,6 @@ class KEGG_canvas {
         this.svg.selectAll("circle")
             .transition()
             .style("opacity", 0.8);
-    }
-
-    private displayPreview(e, preview: HTMLElement) {
-        var pos = [e.pageX, e.pageY + 20]
-
-        this.tooltip.html(preview.innerHTML)
-            .style("top", (pos[1]) + "px")
-            .style("left", (pos[0]) + "px")
-            .style("z-index", 10)
-            .style("opacity", .9);
     }
 
     /**
@@ -123,13 +118,16 @@ class KEGG_canvas {
         this.nodecolor = {};
     }
 
-    private setupGraph(graph: Graph.Model) {
+    private setupGraph(graph: Graph.Model, opts: {
+        charge: number,
+        linkDistance: number
+    }) {
         var viz: KEGG_canvas = this;
 
         this.Clear();
         this.force = d3.layout.force()
-            .charge(-300)
-            .linkDistance(100)
+            .charge(opts.charge)
+            .linkDistance(opts.linkDistance)
             .size([this.size.width, this.size.height]);
 
         this.svg = d3.select("#chart")
@@ -172,12 +170,12 @@ class KEGG_canvas {
             })
             .attr("id", "network")
             .style("stroke-width", function (d) {
-                var w = -Math.log(d.weight * 2);
+                var w = -Math.log(d.weight * 2) / 2;
 
-                if (w < 0.5) {
-                    w = 0.5;
-                } else if (w > 3) {
-                    w = 3;
+                if (w < 0.3) {
+                    w = 0.3;
+                } else if (w > 2) {
+                    w = 2;
                 }
 
                 return w;
@@ -208,7 +206,7 @@ class KEGG_canvas {
             .call(this.force.drag)
             .attr("r", function (d) {
                 if (d.degree > 0) {
-                    return viz.nodeMin + Math.pow(d.degree, 2 / (2.7));
+                    return viz.nodeMin + d.degree // Math.pow(d.degree, 2 / (2.7));
                 } else {
                     return viz.nodeMin;
                 }
@@ -268,29 +266,31 @@ class KEGG_canvas {
      * legend的外边框圆角矩形的radius
     */
     public legendBoxRadius: number = 6;
+    public legendBoxWidth: number = 400;
 
     /**
      * 在svg上面添加legend的rectangle以及相应的标签文本
      * 颜色和标签文本都来自于type_colors字典
      */
     private showLegend() {
-        var rW = 300, rH = (this.dh + 5) * (Object.keys(this.type_colors).length - 1);
-        var top = 30, left = this.size.width - rW;
+        var rw = this.legendBoxWidth;
+        var rh = (this.dh + 5) * (Object.keys(this.type_colors).length - 1);
+        var top = 30, left = this.size.width - rw;
         var legend: d3.Selection<any> =
             this.svg.append("g")
                 .attr("class", "legend")
                 .attr("x", left)
                 .attr("y", top)
-                .attr("height", rH)
-                .attr("width", rW);
+                .attr("height", rh)
+                .attr("width", rw);
 
         legend.append("rect")
             .attr("x", left)
             .attr("y", top)
             .attr("rx", this.legendBoxRadius)
             .attr("ry", this.legendBoxRadius)
-            .attr("height", rH)
-            .attr("width", rW)
+            .attr("height", rh)
+            .attr("width", rw)
             .style("stroke", "gray")
             .style("stroke-width", 2)
             .style("border-radius", "2px")
@@ -444,8 +444,8 @@ class KEGG_canvas {
             .attr("points", d => d.points.map(p => [p.x, p.y].join(",")).join(" "))
             .attr("type", d => d.group)
             .attr("stroke", "black")
-            .attr("stroke-width", 2)
-            .style("opacity", 0.25)
+            .attr("stroke-width", 1)
+            .style("opacity", 0.1)
             .attr("id", "polygon")
             .classed("pl", true)
             .classed("polygon", true)
