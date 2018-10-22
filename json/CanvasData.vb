@@ -1,0 +1,262 @@
+﻿Imports System.Drawing
+Imports System.Runtime.CompilerServices
+Imports KEGG_canvas.json.csv
+Imports Microsoft.VisualBasic.ComponentModel.Collection
+Imports Microsoft.VisualBasic.ComponentModel.DataSourceModel
+Imports Microsoft.VisualBasic.ComponentModel.Ranges
+Imports Microsoft.VisualBasic.Data.visualize.Network.FileStream.Json
+Imports Microsoft.VisualBasic.Imaging
+Imports Microsoft.VisualBasic.Imaging.Drawing2D.Colors
+Imports Microsoft.VisualBasic.Language
+Imports Microsoft.VisualBasic.Linq
+Imports Microsoft.VisualBasic.Net.Http
+Imports Microsoft.VisualBasic.Serialization.JSON
+Imports SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject
+
+Module CanvasData
+
+    Public Function NetworkFromCsv(data As network_Csv(), nodeDatas As Dictionary(Of String, nodeData), opts As Arguments) As (nodes As node(), edges As edges())
+        Dim colors As (up As Color(), down As Color()) = Program.getColors()
+        Dim up As New Dictionary(Of Double, Integer)
+        Dim down As New Dictionary(Of Double, Integer)
+
+        Call "Fill data...".__DEBUG_ECHO
+
+        With opts.kegKCF
+
+            If .DirectoryExists Then
+
+                Call KCF.CreateTable(.ByRef)
+
+                If opts.nodeID Then
+                    For Each node In nodeDatas
+                        Dim id = node.Key
+                        Dim cpd = KCF.MatchById(id)
+
+                        If Not cpd.Value Is Nothing Then
+                            If Not cpd.Value.CommonNames.IsNullOrEmpty Then
+                                node.Value.names = cpd.Value.CommonNames.First
+                            End If
+                        End If
+                    Next
+
+                    ' 在这里还需要更新一下字典的键名，否则后面的查找都是以commonName来查找
+                    ' 但是这个字典之中的键名任然是KEGG化合物编号，则数据肯定都无法找到的
+                    nodeDatas = nodeDatas _
+                        .Values _
+                        .GroupBy(Function(d) d.names) _
+                        .ToDictionary(Function(d) d.Key,
+                                      Function(g) g.First)
+
+                    For Each edge As network_Csv In data
+                        Dim a = KCF.MatchById(edge.source)
+                        Dim b = KCF.MatchById(edge.target)
+
+                        If Not a.Value Is Nothing AndAlso Not a.Value.CommonNames.IsNullOrEmpty Then
+                            edge.source = a.Value.CommonNames.First
+                        End If
+                        If Not b.Value Is Nothing AndAlso Not b.Value.CommonNames.IsNullOrEmpty Then
+                            edge.target = b.Value.CommonNames.First
+                        End If
+                    Next
+                End If
+            End If
+        End With
+
+        Call "Calc log2FC effects...".__DEBUG_ECHO
+
+        Try
+            With nodeDatas.Values.VectorShadows
+                With DirectCast(!Me(.log2FC > 0).log2FC.As(Of Double), Double())
+                    For Each i In .RangeTransform("0,100").SeqIterator
+                        If Not up.ContainsKey(.ByRef(i)) Then
+                            Call up.Add(.ByRef(i), CInt(i.value))
+                        End If
+                    Next
+                End With
+            End With
+            With nodeDatas.Values.VectorShadows
+                With DirectCast(!Me(.log2FC < 0).log2FC.As(Of Double), Double())
+                    For Each i In .RangeTransform("0,100").SeqIterator
+                        If Not down.ContainsKey(.ByRef(i)) Then
+                            Call down.Add(.ByRef(i), CInt(i.value))
+                        End If
+                    Next
+                End With
+            End With
+        Catch ex As Exception
+            Call ex.PrintException
+        End Try
+
+        Call "Create JSON node...".__DEBUG_ECHO
+
+        Dim nodes = LinqAPI.Exec(Of node) <=
+ _
+            From name As SeqValue(Of String)
+            In data.Select(Function(x) {x.source, x.target}) _
+                .IteratesALL _
+                .Distinct _
+                .SeqIterator
+            Let label As String = name.value
+            Let n = nodeDatas.TryGetValue(label, [default]:=New nodeData)
+            Let d = If(opts.degreeSize,
+                data _
+                .Where(Function(x)
+                           Return x.source = label OrElse x.target = label
+                       End Function) _
+                .Count,
+                n.degree)
+            Let color As Color = Function() As Color
+                                     If n.log2FC > 0 Then
+                                         If up.ContainsKey(n.log2FC) Then
+                                             Return colors.up(up(n.log2FC))
+                                         Else
+                                             Return Color.LightPink
+                                         End If
+                                     ElseIf n.log2FC < 0 Then
+                                         If down.ContainsKey(n.log2FC) Then
+                                             Return colors.down(down(n.log2FC))
+                                         Else
+                                             Return Color.LightBlue
+                                         End If
+                                     Else
+                                         Return Color.Black
+                                     End If
+                                 End Function()
+            Let keg As NamedValue(Of Compound) = KCF.MatchByName(label)
+            Let KCF = If(Not keg.Name.StringEmpty AndAlso keg.Name.FileExists,
+                keg.Name.LoadImage.ToBase64String,
+                Nothing)
+            Let pathwayGroup = keg.Value?.Pathway.SafeQuery.ToArray
+            Select New node With {
+                .type = pathwayGroup.JoinBy("|"),
+                .id = name.i,
+                .name = label,
+                .degree = d,
+                .Data = New Dictionary(Of String, String) From {
+                    {NameOf(nodeData.fdr), n.fdr},
+                    {NameOf(nodeData.log2FC), n.log2FC},
+                    {NameOf(nodeData.p), n.p},
+                    {NameOf(color), color.ToHtmlColor},
+                    {"KCF", KCF}
+                }
+            }
+
+        Call "Create JSON edge...".__DEBUG_ECHO
+
+        Dim nodeTable = nodes.ToDictionary(Function(x) x.name)
+        Dim edges = LinqAPI.Exec(Of edges) <=
+ _
+            From x As network_Csv
+            In data
+            Select New edges With {
+                .value = x.Data.TryGetValue("correlation", [default]:=x.interaction),'x.correlation,
+                .id = $"{x.source}..{x.target}",
+                .A = x.source,
+                .B = x.target,
+                .weight = x.Data.TryGetValue("fdr", [default]:=0),' x.fdr,
+                .source = nodeTable(x.source).id,
+                .target = nodeTable(x.target).id,
+                .Data = x.Data
+            }
+
+        Return (nodes, edges)
+    End Function
+
+    <MethodImpl(MethodImplOptions.AggressiveInlining)>
+    <Extension>
+    Public Function RenderPathwayModule(network As (nodes As node(), edges As edges()), maps$(), style$) As net
+        Return RenderPathwayModule(network.nodes, network.edges, maps, style)
+    End Function
+
+    ''' <summary>
+    ''' 
+    ''' </summary>
+    ''' <param name="nodes"></param>
+    ''' <param name="edges"></param>
+    ''' <param name="maps$"></param>
+    ''' <param name="style$"></param>
+    ''' <returns></returns>
+    Public Function RenderPathwayModule(nodes As node(), edges As edges(), maps$(), style$) As net
+        Dim groupColors As Color()
+        Dim groupNames As Dictionary(Of String, String)
+        Dim nodeTable = nodes.ToDictionary(Function(x) x.name)
+
+        Call "Rendering group colors...".__DEBUG_ECHO
+
+        If maps.IsNullOrEmpty Then
+            groupColors = {
+            Color.SteelBlue, Color.SkyBlue, Color.Teal, Color.DarkMagenta, Color.PaleTurquoise, Color.PaleGreen, Color.Crimson, Color.DodgerBlue
+        }
+            ' = Designer.GetColors("d3.scale.category10()") _
+            '    .Take(8) _
+            '    .ToArray
+
+            Dim pathways = nodes _
+                .Where(Function(x) Not x.type.StringEmpty) _
+                .Select(Function(x) x.type.Split("|"c)) _
+                .IteratesALL _
+                .GroupBy(Function(x) x.Split.First) _
+                .Where(Function(g) g.Count > 3) _
+                .OrderByDescending(
+                    Function(g)
+                        Dim nid = g.First
+
+                        Return Aggregate node As node
+                                   In nodeTable _
+                                   .Values _
+                                   .Where(Function(n) InStr(n.type, nid, CompareMethod.Text) > 0)
+                               Into Average(node.degree)
+                    End Function) _
+                .Take(groupColors.Length) _
+                .ToArray
+
+            groupNames = pathways _
+                .ToDictionary(Function(x) x.Key,
+                              Function(name) name.First)
+        Else
+            Dim mapIndex As Index(Of String) = maps.Indexing
+            Dim pathways = nodes _
+              .Where(Function(x) Not x.type.StringEmpty) _
+              .Select(Function(x) x.type.Split("|"c)) _
+              .IteratesALL _
+              .GroupBy(Function(x) x.Split.First) _
+              .Where(Function(g) mapIndex(g.Key.Trim("["c, "]"c).Trim) > -1) _
+              .ToArray
+
+            groupNames = pathways _
+                .ToDictionary(Function(x) x.Key,
+                              Function(name) name.First)
+
+            If groupNames.Count > 30 Then
+                groupColors = Designer.GetColors("scibasic.category31()", groupNames.Count + 1)
+            Else
+                groupColors = Designer.GetColors("scibasic.category31()")
+            End If
+
+        End If
+
+        Call groupNames.GetJson.__INFO_ECHO
+
+        For Each node As node In nodes
+            Dim types = node.type _
+                ?.Split("|"c) _
+                 .SafeQuery _
+                 .Where(Function(t)
+                            Return groupNames.ContainsKey(t.Split.First)
+                        End Function) _
+                 .JoinBy("|")
+            node.type = types
+        Next
+
+        Return New net With {
+            .edges = edges,
+            .nodes = nodes,
+            .style = style,
+            .types = groupNames.Values _
+                .SeqIterator _
+                .ToDictionary(Function(t) t.value,
+                              Function(c) groupColors(c).ToHtmlColor)
+        }
+    End Function
+End Module

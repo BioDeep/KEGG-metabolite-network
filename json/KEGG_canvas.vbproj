@@ -152,8 +152,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Arguments.vb" />
     <Compile Include="csv.vb" />
     <Compile Include="KCF.vb" />
+    <Compile Include="CanvasData.vb" />
     <Compile Include="test.vb" />
     <Compile Include="Program.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
