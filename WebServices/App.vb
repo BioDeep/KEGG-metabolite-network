@@ -1,4 +1,5 @@
 ﻿Imports Microsoft.VisualBasic.CommandLine.Reflection
+Imports Microsoft.VisualBasic.Serialization.JSON
 Imports SMRUCC.WebCloud.HTTPInternal.AppEngine
 Imports SMRUCC.WebCloud.HTTPInternal.AppEngine.APIMethods
 Imports SMRUCC.WebCloud.HTTPInternal.AppEngine.APIMethods.Arguments
@@ -20,6 +21,7 @@ Imports SMRUCC.WebCloud.HTTPInternal.Platform
     <ExportAPI("/app/render.vbs")>
     <POST(GetType(String()))>
     Public Function Render(request As HttpPOSTRequest, response As HttpResponse) As Boolean
+        Dim kegg$() = request.POSTData("kegg").LoadJSON(Of String())
 
     End Function
 End Class
