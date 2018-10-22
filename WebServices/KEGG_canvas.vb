@@ -24,8 +24,9 @@ Imports Microsoft.VisualBasic.ApplicationServices
 ' 
 ' All of the command that available in this program has been list below:
 ' 
-'  /Convert:     Conversion of the network graph table model as json data model
-'  /KCF.ts:      Convert the kcf image repository as an typescript module.
+'  /Convert:                      Conversion of the network graph table model as json data model
+'  /KCF.ts:                       Convert the kcf image repository as an typescript module.
+'  /Reconstruct.KEGG.Network:     
 ' 
 ' 
 ' ----------------------------------------------------------------------------------------------------
@@ -98,6 +99,28 @@ Public Function KCFJson(repo As String, Optional out As String = "") As Integer
     Call CLI.Append("/repo " & """" & repo & """ ")
     If Not out.StringEmpty Then
             Call CLI.Append("/out " & """" & out & """ ")
+    End If
+
+
+    Dim proc As IIORedirectAbstract = RunDotNetApp(CLI.ToString())
+    Return proc.Run()
+End Function
+
+''' <summary>
+''' ```
+''' /Reconstruct.KEGG.Network /list &lt;kegg.compound.list.txt> [/min /out &lt;*.json/std_out>]
+''' ```
+''' </summary>
+'''
+Public Function ReconstructKEGGNetwork(list As String, Optional out As String = "", Optional min As Boolean = False) As Integer
+    Dim CLI As New StringBuilder("/Reconstruct.KEGG.Network")
+    Call CLI.Append(" ")
+    Call CLI.Append("/list " & """" & list & """ ")
+    If Not out.StringEmpty Then
+            Call CLI.Append("/out " & """" & out & """ ")
+    End If
+    If min Then
+        Call CLI.Append("/min ")
     End If
 
 

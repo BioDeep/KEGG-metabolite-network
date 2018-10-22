@@ -69,7 +69,6 @@ Public Module Program
     ''' <summary>
     ''' 
     ''' </summary>
-    ''' <param name="in$"></param>
     ''' <param name="nodesTable$"></param>
     ''' <param name="kegKCF$"></param>
     ''' <param name="degreeSize"></param>
@@ -78,8 +77,7 @@ Public Module Program
     ''' <param name="nodeID"></param>
     ''' <param name="maps$">如果指定了这个参数，则只会输出这个数组之中指定的途径的分组信息</param>
     ''' <returns></returns>
-    Public Function Convert(in$, nodesTable$, kegKCF$, degreeSize As Boolean, compress As Boolean, style$, nodeID As Boolean, Optional maps$() = Nothing) As String
-        Dim data = [in].LoadCsv(Of network_Csv)
+    Public Function Convert(data As network_Csv(), nodesTable$, kegKCF$, degreeSize As Boolean, compress As Boolean, style$, nodeID As Boolean, Optional maps$() = Nothing) As String
         Dim nodeDatas = nodesTable _
             .LoadCsv(Of nodeData) _
             .ToDictionary(Function(x) x.names)
@@ -313,15 +311,41 @@ Public Module Program
     <ExportAPI("/Convert")>
     <Usage("/Convert /in <data.csv> [/keg.KCF <directory> /node.id /nodes <nodes.csv> /degree_size /min /style <default> /out <out.json/std_out>]")>
     <Description("Conversion of the network graph table model as json data model")>
+    <Argument("/min", True, CLITypes.Boolean, PipelineTypes.undefined,
+              AcceptTypes:={GetType(Boolean)},
+              Description:="Output a compressed json string?")>
     Public Function Convert(args As CommandLine) As Integer
         Dim degreeSize As Boolean = args.GetBoolean("/degree_size")
         Dim compress As Boolean = args.GetBoolean("/min")
-        Dim json$ = Convert(args <= "/in",
-                            args <= "/nodes",
-                            args <= "/keg.KCF",
-                            degreeSize, compress,
-                            App.Argument("/style") Or "default".AsDefault,
-                            args.GetBoolean("/node.id"))
+        Dim json$ = Convert((args <= "/in").LoadCsv(Of network_Csv),
+                             args <= "/nodes",
+                             args <= "/keg.KCF",
+                             degreeSize, compress,
+                             args("/style") Or "default".AsDefault,
+                             args.GetBoolean("/node.id")
+        )
+
+        Using out As StreamWriter = args.OpenStreamOutput("/out")
+            Call out.Write(json)
+        End Using
+
+        Return 0
+    End Function
+
+    ''' <summary>
+    ''' Reconstruct kegg network through a given kegg compounds id list.
+    ''' </summary>
+    ''' <param name="args"></param>
+    ''' <returns></returns>
+    ''' 
+    <ExportAPI("/Reconstruct.KEGG.Network")>
+    <Usage("/Reconstruct.KEGG.Network /list <kegg.compound.list.txt> [/min /out <*.json/std_out>]")>
+    <Argument("/min", True, CLITypes.Boolean, PipelineTypes.undefined,
+              AcceptTypes:={GetType(Boolean)},
+              Description:="Output a compressed json string?")>
+    Public Function ReconstructKEGGNetwork(args As CommandLine) As Integer
+        Dim list$() = (args <= "/list").ReadAllLines
+        Dim json$
 
         Using out As StreamWriter = args.OpenStreamOutput("/out")
             Call out.Write(json)
