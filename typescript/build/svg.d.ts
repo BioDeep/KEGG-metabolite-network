@@ -78,8 +78,17 @@ declare namespace Canvas {
         */
         Equals(p2: Point): boolean;
     }
+    /**
+     * 表示一个矩形区域的大小
+    */
     class Size {
+        /**
+         * 宽度
+        */
         width: number;
+        /**
+         * 高度
+        */
         height: number;
         constructor(width: number, height: number);
         toString(): string;
@@ -87,11 +96,9 @@ declare namespace Canvas {
     /**
      * 表示一个二维平面上的矩形区域
     */
-    class Rectangle {
+    class Rectangle extends Size {
         left: number;
         top: number;
-        width: number;
-        height: number;
         constructor(x: number, y: number, width: number, height: number);
         Location(): Point;
         Size(): Size;
@@ -102,6 +109,16 @@ declare namespace Canvas {
         right: number;
         bottom: number;
         left: number;
+        readonly horizontal: number;
+        readonly vertical: number;
+        constructor(top: number, right: number, bottom: number, left: number);
+        static Object(obj: {
+            top: number;
+            right: number;
+            bottom: number;
+            left: number;
+        } | number[]): Margin;
+        toString(): string;
     }
 }
 declare namespace Canvas {
@@ -216,7 +233,12 @@ declare namespace Canvas {
     */
     class Path {
         private pathStack;
+        /**
+         * 获取SVG的path字符串结果
+        */
+        readonly d: string;
         constructor();
+        toString(): string;
         /**
          * 从给定的（x,y）坐标开启一个新的子路径或路径。M表示后面跟随的是绝对坐标值。
          * m表示后面跟随的是一个相对坐标值。如果"moveto"指令后面跟随着多个坐标值，那么
@@ -283,7 +305,6 @@ declare namespace Canvas {
          * 可能路径相交。句法是``Z``或``z``，两种写法作用都一样。
         */
         ClosePath(): Path;
-        d(): string;
     }
 }
 declare namespace Canvas {
