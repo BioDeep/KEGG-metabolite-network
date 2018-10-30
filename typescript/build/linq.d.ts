@@ -458,8 +458,10 @@ declare class TypeInfo {
 }
 /**
  * 对于这个函数的返回值还需要做类型转换
+ *
+ * 如果是节点查询或者创建的话，可以使用``asExtends``属性来获取``HTMLTsElememnt``拓展对象
 */
-declare function $ts<T>(any: (() => void) | T | T[], args?: object): IEnumerator<T> & any;
+declare function $ts<T>(any: (() => void) | T | T[], args?: object): IEnumerator<T> | void | any;
 /**
  * ### Javascript sprintf
  *
@@ -487,7 +489,7 @@ declare function CharEnumerator(str: string): IEnumerator<string>;
 /**
  * Query meta tag content value by name
 */
-declare function metaValue(name: string, Default?: string): string;
+declare function metaValue(name: string, Default?: string, allowQueryParent?: boolean): string;
 /**
  * 判断目标对象集合是否是空的？
  *
@@ -519,6 +521,10 @@ declare function Goto(url: string): void;
  * 这个函数会自动处理多行的情况
 */
 declare function base64_decode(stream: string): string;
+/**
+ * 这个函数什么也不做，主要是用于默认的参数值
+*/
+declare function DoNothing(): any;
 declare module TypeExtensions {
     function ensureNumeric(x: number | string): number;
 }
@@ -767,6 +773,10 @@ declare namespace data {
          * 这个数值范围的最小值
         */
         min: number;
+        /**
+         * ``[min, max]``
+        */
+        readonly range: number[];
         constructor(min: number, max: number);
         readonly Length: number;
         /**
@@ -1119,6 +1129,15 @@ declare namespace CanvasHelper {
      *
      */
     function getTextWidth(text: string, font: string): number;
+    /**
+     * found this trick at http://talideon.com/weblog/2005/02/detecting-broken-images-js.cfm
+    */
+    function imageOk(img: HTMLImageElement): boolean;
+    /**
+     * @param size [width, height]
+    */
+    function createCanvas(size: [number, number], id: string, title: string, display?: string): HTMLCanvasElement;
+    function supportsText(ctx: CanvasRenderingContext2D): boolean;
     class fontSize {
         point: number;
         pixel: number;
@@ -1483,11 +1502,11 @@ declare namespace Linq.DOM {
         */
         expression: string;
         /**
-         * # by id
-         * . by claSS
-         * & SINGLE NODE
-         * @ read meta tag
-         * <> create new tag
+         * + ``#`` by id
+         * + ``.`` by claSS
+         * + ``&`` SINGLE NODE
+         * + ``@`` read meta tag
+         * + ``&lt;>`` create new tag
         */
         static parseQuery(expr: string): Query;
         /**
@@ -1549,6 +1568,7 @@ declare class HTMLTsElement {
     display(html: string | HTMLElement | HTMLTsElement): HTMLTsElement;
     addClass(className: string): HTMLTsElement;
     removeClass(className: string): HTMLTsElement;
+    append(node: HTMLElement | HTMLTsElement): HTMLTsElement;
     /**
      * 将css的display属性值设置为block用来显示当前的节点
     */
@@ -1566,6 +1586,10 @@ declare namespace Linq.TsQuery {
      */
 }
 declare namespace Linq.TsQuery {
+    /**
+     * 这个函数确保给定的id字符串总是以符号``#``开始的
+    */
+    function EnsureNodeId(str: string): string;
     /**
      * 字符串格式的值意味着对html文档节点的查询
     */
