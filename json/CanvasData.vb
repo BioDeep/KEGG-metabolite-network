@@ -12,11 +12,12 @@ Imports Microsoft.VisualBasic.Linq
 Imports Microsoft.VisualBasic.Net.Http
 Imports Microsoft.VisualBasic.Serialization.JSON
 Imports SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject
+Imports SMRUCC.genomics.Model.Network.KEGG
 
 Module CanvasData
 
     <Extension>
-    Public Function NetworkFromKEGGList(idlist As IEnumerable(Of String), reactions$) As (nodes As node(), edges As edges())
+    Public Function NetworkFromKEGGList(idlist As IEnumerable(Of String), reactions$, pathways$) As (nodes As node(), edges As edges())
         Dim compounds = idlist _
             .Distinct _
             .Select(AddressOf KCF.MatchById) _
@@ -29,7 +30,10 @@ Module CanvasData
                         }
                     End Function) _
             .ToArray
+        Dim links As KOLinks() = KOLinks.Build(pathways).ToArray
+        Dim network = ReactionTable.Load(reactions).BuildModel(compounds, extended:=True)
 
+        Call network.AssignNodeClass(ko0001:=links)
     End Function
 
     Public Function NetworkFromCsv(data As network_Csv(), nodeDatas As Dictionary(Of String, nodeData), opts As Arguments) As (nodes As node(), edges As edges())

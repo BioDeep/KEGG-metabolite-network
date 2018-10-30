@@ -106,7 +106,7 @@ Public Module Program
     ''' <returns></returns>
     ''' 
     <ExportAPI("/Reconstruct.KEGG.Network")>
-    <Usage("/Reconstruct.KEGG.Network /list <kegg.compound.list.txt> [/min /reactions <repository> /compounds <repository> /out <*.json/std_out>]")>
+    <Usage("/Reconstruct.KEGG.Network /list <kegg.compound.list.txt> /reactions <repository> /compounds <repository> /pathways <repository> [/min /out <*.json/std_out>]")>
     <Argument("/min", True, CLITypes.Boolean, PipelineTypes.undefined,
               AcceptTypes:={GetType(Boolean)},
               Description:="Output a compressed json string?")>
@@ -117,7 +117,7 @@ Public Module Program
         Call KCF.CreateTable([imports]:=args <= "/compounds")
 
         Dim json$ = list _
-            .NetworkFromKEGGList(reactions:=args <= "/reactions") _
+            .NetworkFromKEGGList(reactions:=args <= "/reactions", pathways:=args <= "/pathways") _
             .RenderPathwayModule() _
             .GetJson(indent:=Not compress)
 
