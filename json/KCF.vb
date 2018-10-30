@@ -103,6 +103,11 @@ Module KCF
         End If
     End Function
 
+    ''' <summary>
+    ''' ``{gif_file => model}``
+    ''' </summary>
+    ''' <param name="id$"></param>
+    ''' <returns></returns>
     Public Function MatchById(id$) As NamedValue(Of Compound)
         If compounds.ContainsKey(id) Then
             Dim find = compounds(id)

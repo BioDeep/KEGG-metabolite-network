@@ -17,6 +17,18 @@ Module CanvasData
 
     <Extension>
     Public Function NetworkFromKEGGList(idlist As IEnumerable(Of String), reactions$) As (nodes As node(), edges As edges())
+        Dim compounds = idlist _
+            .Distinct _
+            .Select(AddressOf KCF.MatchById) _
+            .Select(Function(t)
+                        Return New NamedValue(Of String) With {
+                            .Name = t.Value.Entry,
+                            .Value = t.Value _
+                                .CommonNames _
+                                .ElementAtOrDefault(0, t.Value.Formula)
+                        }
+                    End Function) _
+            .ToArray
 
     End Function
 
