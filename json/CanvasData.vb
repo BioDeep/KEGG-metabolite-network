@@ -15,6 +15,11 @@ Imports SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject
 
 Module CanvasData
 
+    <Extension>
+    Public Function NetworkFromKEGGList(idlist As IEnumerable(Of String), reactions$) As (nodes As node(), edges As edges())
+
+    End Function
+
     Public Function NetworkFromCsv(data As network_Csv(), nodeDatas As Dictionary(Of String, nodeData), opts As Arguments) As (nodes As node(), edges As edges())
         Dim colors As (up As Color(), down As Color()) = Program.getColors()
         Dim up As New Dictionary(Of Double, Integer)
@@ -165,7 +170,10 @@ Module CanvasData
 
     <MethodImpl(MethodImplOptions.AggressiveInlining)>
     <Extension>
-    Public Function RenderPathwayModule(network As (nodes As node(), edges As edges()), maps$(), style$) As net
+    Public Function RenderPathwayModule(network As (nodes As node(), edges As edges()),
+                                        Optional maps$() = Nothing,
+                                        Optional style$ = "default") As net
+        ' shortcuts
         Return RenderPathwayModule(network.nodes, network.edges, maps, style)
     End Function
 

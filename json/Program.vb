@@ -106,13 +106,17 @@ Public Module Program
     ''' <returns></returns>
     ''' 
     <ExportAPI("/Reconstruct.KEGG.Network")>
-    <Usage("/Reconstruct.KEGG.Network /list <kegg.compound.list.txt> [/min /out <*.json/std_out>]")>
+    <Usage("/Reconstruct.KEGG.Network /list <kegg.compound.list.txt> [/min /reactions <repository> /out <*.json/std_out>]")>
     <Argument("/min", True, CLITypes.Boolean, PipelineTypes.undefined,
               AcceptTypes:={GetType(Boolean)},
               Description:="Output a compressed json string?")>
     Public Function ReconstructKEGGNetwork(args As CommandLine) As Integer
         Dim list$() = (args <= "/list").ReadAllLines
-        Dim json$
+        Dim compress As Boolean = args("/min")
+        Dim json$ = list _
+            .NetworkFromKEGGList(reactions:=args <= "/reactions") _
+            .RenderPathwayModule() _
+            .GetJson(indent:=Not compress)
 
         Using out As StreamWriter = args.OpenStreamOutput("/out")
             Call out.Write(json)
