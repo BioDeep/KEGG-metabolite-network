@@ -12,7 +12,13 @@ class CloudVizPlot {
         "+": { value: "red", type: "up-regulated" }
     };
 
-    public constructor(margin: Canvas.Margin = <Canvas.Margin>{ top: 0, right: 50, bottom: 0, left: 0 }) {
+    public constructor(margin: Canvas.Margin = <Canvas.Margin>{
+        top: 0,
+        right: 50,
+        bottom: 0,
+        left: 0
+    }) {
+
         this.svg = d3.select("svg");
         this.size = <Canvas.Size>{
             width: parseFloat(this.svg.attr("width")) - margin.left - margin.right,

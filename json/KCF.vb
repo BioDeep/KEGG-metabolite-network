@@ -80,6 +80,10 @@ Module KCF
         Return nameTree
     End Function
 
+#Region "Match kegg compound by identifier"
+
+    ' 下面的两个函数的返回值类型都是一样的
+
     ''' <summary>
     ''' 返回来的是image的路径
     ''' </summary>
@@ -121,5 +125,6 @@ Module KCF
             Return Nothing
         End If
     End Function
+#End Region
 End Module
 

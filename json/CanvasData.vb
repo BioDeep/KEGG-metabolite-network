@@ -4,6 +4,7 @@ Imports KEGG_canvas.json.csv
 Imports Microsoft.VisualBasic.ComponentModel.Collection
 Imports Microsoft.VisualBasic.ComponentModel.DataSourceModel
 Imports Microsoft.VisualBasic.ComponentModel.Ranges
+Imports Microsoft.VisualBasic.Data.visualize.Network.Analysis
 Imports Microsoft.VisualBasic.Data.visualize.Network.FileStream.Json
 Imports Microsoft.VisualBasic.Imaging
 Imports Microsoft.VisualBasic.Imaging.Drawing2D.Colors
@@ -30,10 +31,64 @@ Module CanvasData
                         }
                     End Function) _
             .ToArray
+        Dim inputsIndex As Index(Of String) = compounds.Keys.Indexing
         Dim links As KOLinks() = KOLinks.Build(pathways).ToArray
-        Dim network = ReactionTable.Load(reactions).BuildModel(compounds, extended:=True)
+        Dim network = ReactionTable.Load(reactions).BuildModel(compounds, delimiter:="|", extended:=True)
 
-        Call network.AssignNodeClass(ko0001:=links)
+        Call network.AssignNodeClass(ko0001:=links, delimiter:="|")
+        Call network.ComputeNodeDegrees
+
+        Dim nodes As Dictionary(Of String, node) = network.Nodes _
+            .Select(Function(node, i)
+                        Dim degree = If(node.ID.IsOneOfA(inputsIndex), node!degree, 1)
+                        Dim log2FC = If(node.ID.IsOneOfA(inputsIndex), 3, 1)
+                        Dim color As Color = If(node.ID.IsOneOfA(inputsIndex), Color.AliceBlue, Color.Black)
+                        Dim KCF As String = KEGG_canvas.json.KCF.MatchById(node.ID).LoadKCFBase64()
+
+                        Return New node With {
+                            .name = node.ID,
+                            .id = i + 1,
+                            .degree = degree,
+                            .type = Strings.Split(node.NodeType, FunctionalNetwork.Delimiter).JoinBy("|"),
+                            .Data = New Dictionary(Of String, String) From {
+                                {NameOf(nodeData.fdr), 0.05},
+                                {NameOf(nodeData.log2FC), log2FC},
+                                {NameOf(nodeData.p), 0.05},
+                                {NameOf(color), color.ToHtmlColor},
+                                {"KCF", KCF}
+                            }
+                        }
+                    End Function) _
+            .ToDictionary(Function(node) node.name)
+        Dim edges = LinqAPI.Exec(Of edges) <=
+ _
+           From x
+           In network.Edges
+           Select New edges With {
+               .value = "",
+               .id = $"{x.FromNode}..{x.ToNode}",
+               .A = x.FromNode,
+               .B = x.ToNode,
+               .weight = 1,
+               .source = nodes(x.FromNode).id,
+               .target = nodes(x.ToNode).id,
+               .Data = New Dictionary(Of String, String) From {
+                   {"fdr", 0.05}
+               }
+           }
+
+        Return (nodes.Values.ToArray, edges)
+    End Function
+
+    <Extension>
+    Private Function LoadKCFBase64(compound As NamedValue(Of Compound)) As String
+        With compound
+            If Not .Name.StringEmpty AndAlso .Name.FileExists Then
+                Return .Name.LoadImage.ToBase64String
+            Else
+                Return Nothing
+            End If
+        End With
     End Function
 
     Public Function NetworkFromCsv(data As network_Csv(), nodeDatas As Dictionary(Of String, nodeData), opts As Arguments) As (nodes As node(), edges As edges())
@@ -145,9 +200,7 @@ Module CanvasData
                                      End If
                                  End Function()
             Let keg As NamedValue(Of Compound) = KCF.MatchByName(label)
-            Let KCF = If(Not keg.Name.StringEmpty AndAlso keg.Name.FileExists,
-                keg.Name.LoadImage.ToBase64String,
-                Nothing)
+            Let KCF = keg.LoadKCFBase64
             Let pathwayGroup = keg.Value?.Pathway.SafeQuery.ToArray
             Select New node With {
                 .type = pathwayGroup.JoinBy("|"),
