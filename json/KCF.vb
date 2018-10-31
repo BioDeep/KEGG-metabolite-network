@@ -31,6 +31,7 @@ Imports Microsoft.VisualBasic.ComponentModel.DataSourceModel
 Imports Microsoft.VisualBasic.ComponentModel.DataStructures.BinaryTree
 Imports Microsoft.VisualBasic.Language
 Imports Microsoft.VisualBasic.Language.UnixBash
+Imports Microsoft.VisualBasic.Terminal.ProgressBar
 Imports SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject
 
 ''' <summary>
@@ -48,6 +49,8 @@ Module KCF
     End Function
 
     Public Function CreateTable(imports$) As BinaryTree(Of (name$, Compound))
+        Dim proc As New SwayBar
+
         For Each file$ In ls - l - r - "*.XML" <= [imports]
             Dim compound As NamedValue(Of Compound)
 
@@ -68,6 +71,7 @@ Module KCF
             ' 在这里需要判断下是否存在于字典之中
             If Not compound.IsEmpty And Not compounds.ContainsKey(compound.Name) Then
                 Call compounds.Add(compound)
+                Call proc.Step()
 
                 With compound.Value
                     For Each name$ In .CommonNames
