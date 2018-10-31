@@ -14,6 +14,7 @@ Imports Microsoft.VisualBasic.Net.Http
 Imports Microsoft.VisualBasic.Serialization.JSON
 Imports SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject
 Imports SMRUCC.genomics.Model.Network.KEGG
+Imports EdgeData = Microsoft.VisualBasic.Data.visualize.Network.FileStream.NetworkEdge
 
 Module CanvasData
 
@@ -60,12 +61,20 @@ Module CanvasData
                         }
                     End Function) _
             .ToDictionary(Function(node) node.name)
+        Dim getEdgeType = Function(edge As EdgeData)
+                              If Not edge.FromNode.IsOneOfA(inputsIndex) OrElse Not edge.ToNode.IsOneOfA(inputsIndex) Then
+                                  Return "dashed"
+                              Else
+                                  Return "solid"
+                              End If
+                          End Function
         Dim edges = LinqAPI.Exec(Of edges) <=
  _
            From x
            In network.Edges
+           Let vizType As String = getEdgeType(x)
            Select New edges With {
-               .value = "",
+               .value = vizType,
                .id = $"{x.FromNode}..{x.ToNode}",
                .A = x.FromNode,
                .B = x.ToNode,
