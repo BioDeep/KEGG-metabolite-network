@@ -9,10 +9,12 @@ Imports Microsoft.VisualBasic.Data.visualize.Network.FileStream.Json
 Imports Microsoft.VisualBasic.Imaging
 Imports Microsoft.VisualBasic.Imaging.Drawing2D.Colors
 Imports Microsoft.VisualBasic.Language
+Imports Microsoft.VisualBasic.Language.UnixBash
 Imports Microsoft.VisualBasic.Linq
 Imports Microsoft.VisualBasic.Net.Http
 Imports Microsoft.VisualBasic.Serialization.JSON
 Imports SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject
+Imports SMRUCC.genomics.Assembly.KEGG.WebServices
 Imports SMRUCC.genomics.Model.Network.KEGG
 Imports EdgeData = Microsoft.VisualBasic.Data.visualize.Network.FileStream.NetworkEdge
 
@@ -33,10 +35,12 @@ Module CanvasData
                     End Function) _
             .ToArray
         Dim inputsIndex As Index(Of String) = compounds.Keys.Indexing
-        Dim links As KOLinks() = KOLinks.Build(pathways).ToArray
         Dim network = ReactionTable.Load(reactions).BuildModel(compounds, delimiter:="|", extended:=True)
+        Dim maps As Map() = (ls - l - r - "*.Xml" <= pathways) _
+            .Select(AddressOf LoadXml(Of Map)) _
+            .ToArray
 
-        Call network.AssignNodeClass(ko0001:=links, delimiter:="|")
+        Call network.AssignNodeClassFromPathwayMaps(maps, delimiter:="|")
         Call network.ComputeNodeDegrees
 
         Dim nodes As Dictionary(Of String, node) = network.Nodes _
@@ -153,7 +157,7 @@ Module CanvasData
         Try
             With nodeDatas.Values.VectorShadows
                 With DirectCast(!Me(.log2FC > 0).log2FC.As(Of Double), Double())
-                    For Each i In .RangeTransform("0,100").SeqIterator
+                    For Each i As SeqValue(Of Double) In .RangeTransform("0,100").SeqIterator
                         If Not up.ContainsKey(.ByRef(i)) Then
                             Call up.Add(.ByRef(i), CInt(i.value))
                         End If
@@ -162,7 +166,7 @@ Module CanvasData
             End With
             With nodeDatas.Values.VectorShadows
                 With DirectCast(!Me(.log2FC < 0).log2FC.As(Of Double), Double())
-                    For Each i In .RangeTransform("0,100").SeqIterator
+                    For Each i As SeqValue(Of Double) In .RangeTransform("0,100").SeqIterator
                         If Not down.ContainsKey(.ByRef(i)) Then
                             Call down.Add(.ByRef(i), CInt(i.value))
                         End If
