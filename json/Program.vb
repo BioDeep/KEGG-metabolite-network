@@ -33,7 +33,6 @@ Imports KEGG_canvas.json.csv
 Imports Microsoft.VisualBasic.CommandLine
 Imports Microsoft.VisualBasic.CommandLine.Reflection
 Imports Microsoft.VisualBasic.Data.csv
-Imports Microsoft.VisualBasic.Data.visualize.Network.FileStream.Json
 Imports Microsoft.VisualBasic.Imaging.Drawing2D.Colors
 Imports Microsoft.VisualBasic.Language
 Imports Microsoft.VisualBasic.Language.Default
@@ -46,7 +45,12 @@ Imports SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject
 Public Module Program
 
     Sub New()
-        If GetType(Program).Module.Assembly.Location.BaseName.TextEquals(App.AssemblyName) Then
+        If GetType(Program).Module _
+                           .Assembly _
+                           .Location _
+                           .BaseName _
+                           .TextEquals(App.AssemblyName) Then
+
             VBDebugger.ForceSTDError = True
         End If
     End Sub
