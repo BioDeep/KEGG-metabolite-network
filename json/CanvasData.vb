@@ -18,7 +18,7 @@ Imports SMRUCC.genomics.Assembly.KEGG.WebServices
 Imports SMRUCC.genomics.Model.Network.KEGG
 Imports EdgeData = Microsoft.VisualBasic.Data.visualize.Network.FileStream.NetworkEdge
 
-Module CanvasData
+Public Module CanvasData
 
     <Extension>
     Public Function NetworkFromKEGGList(idlist As IEnumerable(Of String), reactions$, pathways$) As (nodes As node(), edges As edges())

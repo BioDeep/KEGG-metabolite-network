@@ -28,7 +28,7 @@
 
 Imports Microsoft.VisualBasic.ComponentModel.Collection
 Imports Microsoft.VisualBasic.ComponentModel.DataSourceModel
-Imports Microsoft.VisualBasic.ComponentModel.DataStructures.BinaryTree
+Imports Microsoft.VisualBasic.ComponentModel.Algorithm.BinaryTree
 Imports Microsoft.VisualBasic.Language
 Imports Microsoft.VisualBasic.Language.UnixBash
 Imports Microsoft.VisualBasic.Terminal.ProgressBar
@@ -40,7 +40,7 @@ Imports SMRUCC.genomics.Assembly.KEGG.DBGET.bGetObject
 Module KCF
 
     Dim compounds As New Dictionary(Of NamedValue(Of Compound))
-    Dim nameTree As New BinaryTree(Of (name$, Compound))
+    Dim nameTree As New NaiveBinaryTree(Of String, (name$, Compound))(AddressOf String.CompareOrdinal, Function(name) name)
 
     Public Iterator Function PopulateAllCompounds() As IEnumerable(Of (data As Compound, gif$))
         For Each data As NamedValue(Of Compound) In compounds.Values
@@ -48,7 +48,7 @@ Module KCF
         Next
     End Function
 
-    Public Function CreateTable(imports$) As BinaryTree(Of (name$, Compound))
+    Public Function CreateTable(imports$) As NaiveBinaryTree(Of String, (name$, Compound))
         Dim proc As New SwayBar
 
         For Each file$ In ls - l - r - "*.XML" <= [imports]
