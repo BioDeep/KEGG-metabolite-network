@@ -2,9 +2,34 @@
 
 namespace KEGGBrite {
 
-    export function parse(briteText: string) {
+    export function parse(briteText: string): IEnumerator<IBriteEntry> {
         var tree: IKEGGBrite = JSON.parse(briteText);
+        var list = new List<IBriteEntry>();
 
+        for (var i: number = 0; i < tree.children.length; i++) {
+            list.AddRange(treeTravel(tree.children[i]));
+        }
+
+        return list;
+    }
+
+    /**
+     * 进行递归构建
+    */
+    function treeTravel(Class: IKEGGBrite, class_path: string[] = [], list: IBriteEntry[] = []): IBriteEntry[] {
+        if (isLeaf(Class)) {
+            list.push({
+                entry: parseIDEntry(Class.name),
+                class_path: [...class_path]
+            });
+        } else {
+            class_path = [...class_path];
+            class_path.push(Class.name);
+
+            Class.children.forEach(node => treeTravel(node, class_path, list));
+        }
+
+        return list;
     }
 
     function parseIDEntry(text: string): IDEntry {
@@ -34,4 +59,7 @@ interface IDEntry {
     names: string[];
 }
 
-interface 
+interface IBriteEntry {
+    entry: IDEntry;
+    class_path: string[];
+}
