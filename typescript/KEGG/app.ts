@@ -1,4 +1,6 @@
-﻿namespace KEGGBrite {
+﻿/// <reference path="../build/linq.d.ts"/>
+
+namespace KEGGBrite {
 
     export function parse(briteText: string) {
         var tree: IKEGGBrite = JSON.parse(briteText);
@@ -8,13 +10,17 @@
     function parseIDEntry(text: string): IDEntry {
         var list = text.split(/\s{2,}/g);
         var id: string = list[0];
-        var names: string[] = $ts(list).Skip(1).Select(s => s.split(/;\s*/g)).Unlist(x => x).ToArray();
+        var names: string[] = $ts(list)
+            .Skip(1)
+            .Select(s => s.split(/;\s*/g))
+            .Unlist(x => x)
+            .ToArray();
 
         return { id: id, names: names };
     }
 
     function isLeaf(node: IKEGGBrite): boolean {
-        return IsNullOrEmpty(node);
+        return $ts.isNullOrEmpty(node.children);
     }
 }
 
