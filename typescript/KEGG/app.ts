@@ -1,6 +1,7 @@
 ﻿namespace KEGGBrite {
 
     export function parse(briteText: string) {
+        var tree: IKEGGBrite = JSON.parse(briteText);
 
     }
 
@@ -10,6 +11,10 @@
         var names: string[] = $ts(list).Skip(1).Select(s => s.split(/;\s*/g)).Unlist(x => x).ToArray();
 
         return { id: id, names: names };
+    }
+
+    function isLeaf(node: IKEGGBrite): boolean {
+        return IsNullOrEmpty(node);
     }
 }
 
@@ -22,3 +27,5 @@ interface IDEntry {
     id: string;
     names: string[];
 }
+
+interface 
