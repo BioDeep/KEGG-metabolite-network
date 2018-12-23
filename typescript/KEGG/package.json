@@ -1,0 +1,12 @@
+{
+  "name": "kegg",
+  "version": "0.0.0",
+  "description": "KEGG",
+  "main": "app.js",
+  "author": {
+    "name": ""
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.14"
+  }
+}
