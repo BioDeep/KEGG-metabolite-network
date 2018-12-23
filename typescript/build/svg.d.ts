@@ -1,4 +1,10 @@
+/// <reference path="linq.d.ts" />
 declare module SvgUtils {
+    /**
+     * 这个函数会直接从目标的width和height属性来获取值
+    */
+    function getSize(container: HTMLElement, defaultSize?: number[] | Canvas.Size): Canvas.Size;
+    function size(width: number, height: number): Canvas.Size;
     /**
      * https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb
      *
@@ -7,7 +13,7 @@ declare module SvgUtils {
     function componentToHex(c: any): string;
     const HTML5svgFeature: string;
     /**
-     * ���Ե�ǰ��������Ƿ�֧��HTML5�ĸ߼�����
+     * 测试当前的浏览器是否支持HTML5的高级特性
     */
     function hasSVG2Feature(): boolean;
     /**

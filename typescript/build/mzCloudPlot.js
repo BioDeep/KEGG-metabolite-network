@@ -7,7 +7,12 @@ var CloudCircle = /** @class */ (function () {
 /// <reference path="../build/svg.d.ts"/>
 var CloudVizPlot = /** @class */ (function () {
     function CloudVizPlot(margin) {
-        if (margin === void 0) { margin = { top: 0, right: 50, bottom: 0, left: 0 }; }
+        if (margin === void 0) { margin = {
+            top: 0,
+            right: 50,
+            bottom: 0,
+            left: 0
+        }; }
         this.svg = d3.select("svg");
         this.size = {
             width: parseFloat(this.svg.attr("width")) - margin.left - margin.right,
