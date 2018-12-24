@@ -658,14 +658,26 @@ declare module MD5 {
     function calculate(string: string, key?: string, raw?: string): string;
 }
 declare namespace Internal {
+    /**
+     * The internal typescript symbol
+    */
     interface TypeScript {
         <T extends HTMLElement>(nodes: NodeListOf<T>): DOMEnumerator<T>;
         /**
-         * 创建或者查询节点
+         * Create a new node or query a node by its id.
+         * (创建或者查询节点)
         */
         <T extends HTMLElement>(query: string, args?: TypeScriptArgument): IHTMLElement;
+        /**
+         * Query by class name or tag name
+        */
         <T extends HTMLElement>(collectionQuery: string): DOMEnumerator<T>;
         <T>(array: T[]): IEnumerator<T>;
+        /**
+         * query meta tag by name attribute value for its content.
+         *
+         * @param meta The meta tag name, it should be start with a ``@`` symbol.
+        */
         (meta: string): string;
         /**
          * Handles event on document load ready.
@@ -675,9 +687,13 @@ declare namespace Internal {
         (ready: () => void): void;
         imports(jsURL: string | string[], callback?: () => void, onErrorResumeNext?: boolean, echo?: boolean): void;
         /**
-         *
+         * @param id HTML元素的id，可以同时兼容编号和带``#``的编号
         */
         loadJSON(id: string): any;
+        /**
+         * @param id HTML元素的id，可以同时兼容编号和带``#``的编号
+        */
+        loadText(id: string): string;
         /**
          * isNullOrUndefined
         */
@@ -1049,7 +1065,8 @@ declare namespace TsLinq {
 }
 declare namespace data {
     /**
-     * 一个数值范围
+     * A numeric range model.
+     * (一个数值范围)
     */
     class NumericRange implements DoubleRange {
         /**
@@ -1064,16 +1081,28 @@ declare namespace data {
          * ``[min, max]``
         */
         readonly range: number[];
-        constructor(min: number, max: number);
+        /**
+         * Create a new numeric range object
+        */
+        constructor(min: number | DoubleRange, max?: number);
+        /**
+         * The delta length between the max and the min value.
+        */
         readonly Length: number;
         /**
          * 从一个数值序列之中创建改数值序列的值范围
+         *
+         * @param numbers A given numeric data sequence.
         */
         static Create(numbers: number[] | IEnumerator<number>): NumericRange;
         /**
          * 判断目标数值是否在当前的这个数值范围之内
         */
         IsInside(x: number): boolean;
+        /**
+         * 将一个位于此区间内的实数映射到另外一个区间之中
+        */
+        ScaleMapping(x: number, range: DoubleRange): number;
         /**
          * Get a numeric sequence within current range with a given step
          *
