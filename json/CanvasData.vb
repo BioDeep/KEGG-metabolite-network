@@ -89,9 +89,9 @@ Public Module CanvasData
 
         Dim nodes As Dictionary(Of String, node) = network.Nodes _
             .Select(Function(node, i)
-                        Dim degree = If(node.ID.IsOneOfA(inputsIndex), node!degree, 1)
-                        Dim log2FC = If(node.ID.IsOneOfA(inputsIndex), 3, 1)
-                        Dim color As Color = If(node.ID.IsOneOfA(inputsIndex), Color.AliceBlue, Color.Black)
+                        Dim degree = If(node.ID Like inputsIndex, node!degree, 1)
+                        Dim log2FC = If(node.ID Like inputsIndex, 3, 1)
+                        Dim color As Color = If(node.ID Like inputsIndex, Color.AliceBlue, Color.Black)
                         Dim KCF As String = KEGG_canvas.json.KCF.MatchById(node.ID).LoadKCFBase64()
 
                         Return New node With {
@@ -110,7 +110,7 @@ Public Module CanvasData
                     End Function) _
             .ToDictionary(Function(node) node.name)
         Dim getEdgeType = Function(edge As EdgeData)
-                              If Not edge.FromNode.IsOneOfA(inputsIndex) OrElse Not edge.ToNode.IsOneOfA(inputsIndex) Then
+                              If Not edge.FromNode Like inputsIndex OrElse Not edge.ToNode Like inputsIndex Then
                                   Return "dashed"
                               Else
                                   Return "solid"
