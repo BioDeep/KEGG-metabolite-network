@@ -1,4 +1,4 @@
-﻿#Region "Microsoft.VisualBasic::2ee1d5db7d3e7f44024d80f258eb4f8d, KEGG_canvas\json\Arguments.vb"
+﻿#Region "Microsoft.VisualBasic::678f6eb5e75d1eb2483371d62c91be67, KEGG_canvas\json\Arguments.vb"
 
     ' Author:
     ' 
@@ -49,4 +49,3 @@ Public Class Arguments
     Public style$
     Public nodeID As Boolean
 End Class
-

@@ -1,4 +1,4 @@
-﻿#Region "Microsoft.VisualBasic::d7210f154a7b310ef1c103d491818288, KEGG_canvas\json\test.vb"
+﻿#Region "Microsoft.VisualBasic::84bb6f22fd1ebd793070946cbb33775f, KEGG_canvas\json\test.vb"
 
     ' Author:
     ' 
@@ -129,4 +129,3 @@ Module test
         Return Nothing
     End Function
 End Module
-

@@ -1,4 +1,4 @@
-﻿#Region "Microsoft.VisualBasic::5d1bb0372cad725a7e299e491d7137c5, KEGG_canvas\WebServices\KEGG_canvas.vb"
+﻿#Region "Microsoft.VisualBasic::e2cb264dc4fe1162912f78cffb2dc695, KEGG_canvas\WebServices\KEGG_canvas.vb"
 
     ' Author:
     ' 
@@ -174,7 +174,3 @@ Public Function ReconstructKEGGNetwork(list As String, Optional out As String = 
 End Function
 End Class
 End Namespace
-
-
-
-

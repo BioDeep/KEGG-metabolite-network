@@ -1,4 +1,4 @@
-﻿#Region "Microsoft.VisualBasic::19e72d8d171117d8f407d9c98a4dfa01, KEGG_canvas\WebServices\App.vb"
+﻿#Region "Microsoft.VisualBasic::4cf5997ca25103495d4fe36624c72878, KEGG_canvas\WebServices\App.vb"
 
     ' Author:
     ' 
@@ -100,4 +100,3 @@ Imports SMRUCC.WebCloud.HTTPInternal.Platform
         Return True
     End Function
 End Class
-

@@ -1,4 +1,4 @@
-﻿#Region "Microsoft.VisualBasic::a3bae6b4c44ede500c4e33ac7e168a28, KEGG_canvas\json\CanvasData.vb"
+﻿#Region "Microsoft.VisualBasic::b422511d2d63a3f291e25da72f2d8a01, KEGG_canvas\json\CanvasData.vb"
 
     ' Author:
     ' 
@@ -394,4 +394,3 @@ Public Module CanvasData
         }
     End Function
 End Module
-
