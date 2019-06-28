@@ -154,7 +154,7 @@ Public Module Program
     <Description("Convert the kcf image repository as an typescript module.")>
     Public Function KCFJson(args As CommandLine) As Integer
         Dim data As New List(Of String)
-        Dim missing As DefaultValue(Of String) = New DataURI(My.Resources.unknown_document_318_30514).ToString
+        Dim missing As [Default](Of String) = New DataURI(My.Resources.unknown_document_318_30514).ToString
 
         With args <= "/repo"
 
