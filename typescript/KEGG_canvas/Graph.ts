@@ -40,10 +40,10 @@
         public weight?: number;
     }
 
-    export class Model {
-        public edges: edge[];
-        public nodes: node[];
-        public style: string;
-        public types: object;
+    export interface Model {
+        edges: edge[];
+        nodes: node[];
+        style: string;
+        types: object;
     }
 }

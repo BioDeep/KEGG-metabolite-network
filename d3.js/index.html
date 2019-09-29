@@ -7,9 +7,11 @@
 	<script type="text/javascript" src="/javascript/vendor/custom.modernizr.js"></script>
 	<script type="text/javascript" src="/javascript/vendor/foundation.min.js"></script>
 
-	<link rel="stylesheet" href="css/foundation.min.css" />
-	<link rel="stylesheet" href="css/style.css" />
-	<link rel="stylesheet" href="css/general_enclosed_foundicons.css">
+	<title>KEGG network viewer</title>
+	
+	<link rel="stylesheet" href="/css/foundation.min.css" />
+	<link rel="stylesheet" href="/css/style.css" />
+	<link rel="stylesheet" href="/css/general_enclosed_foundicons.css">
 </head>
 
 <body>
@@ -23,21 +25,8 @@
 	<script type="text/javascript" src="/javascript/linq.js"></script>
 	<script type="text/javascript" src="/javascript/svg.js"></script>
 	<script type="text/javascript" src="/javascript/KEGG_canvas.js"></script>
-
-	<script type="text/javascript">
-		// 测试当前的浏览器是否支持HTML5的高级特性
-		if (SvgUtils.hasSVG2Feature()) {
-			$.get("./graph.json", g => {
-				var viz = new KEGG_canvas(g, {
-					charge: -200,
-					linkDistance: 30
-				});
-				viz.attachSaveAsPng("#download-invoker");
-			})
-		} else {
-			alert("请使用最新版本的Google Chrome浏览器！");
-		}
-	</script>
+	<script type="text/javascript" src="/javascript/KEGG.js"></script>
+	<script type="text/javascript" src="/javascript/app.js"></script>
 </body>
 
 </html>

@@ -1,5 +1,72 @@
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+var SvgChart = /** @class */ (function () {
+    function SvgChart(size, margin) {
+        if (size === void 0) { size = [960, 600]; }
+        if (margin === void 0) { margin = {
+            top: 20, right: 20, bottom: 30, left: 40
+        }; }
+        if (!Array.isArray(size)) {
+            this.size = [size.width, size.height];
+        }
+        else {
+            this.size = [size[0], size[1]];
+        }
+        this.margin = margin;
+    }
+    Object.defineProperty(SvgChart.prototype, "width", {
+        get: function () {
+            return this.size["0"];
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Object.defineProperty(SvgChart.prototype, "height", {
+        get: function () {
+            return this.size["1"];
+        },
+        enumerable: true,
+        configurable: true
+    });
+    return SvgChart;
+}());
+/// <reference path="../../../build/linq.d.ts"/>
 var SvgUtils;
 (function (SvgUtils) {
+    /**
+     * 这个函数会直接从目标的width和height属性来获取值
+    */
+    function getSize(container, defaultSize) {
+        if (defaultSize === void 0) { defaultSize = size(960, 600); }
+        var w = container.getAttribute("width");
+        var h = container.getAttribute("height");
+        if (Array.isArray(defaultSize)) {
+            defaultSize = size(defaultSize[0], defaultSize[1]);
+        }
+        if (isNullOrUndefined(w) || Strings.Empty(w, true)) {
+            w = defaultSize.width.toString();
+        }
+        if (isNullOrUndefined(h) || Strings.Empty(h, true)) {
+            h = defaultSize.height.toString();
+        }
+        return size(Strings.parseInt(w), Strings.parseInt(h));
+    }
+    SvgUtils.getSize = getSize;
+    function size(width, height) {
+        return new Canvas.Size(width, height);
+    }
+    SvgUtils.size = size;
     /**
      * https://stackoverflow.com/questions/5623838/rgb-to-hex-and-hex-to-rgb
      *
@@ -12,7 +79,7 @@ var SvgUtils;
     SvgUtils.componentToHex = componentToHex;
     SvgUtils.HTML5svgFeature = "http://www.w3.org/TR/SVG2/feature#GraphicsAttribute";
     /**
-     * ���Ե�ǰ��������Ƿ�֧��HTML5�ĸ߼�����
+     * 测试当前的浏览器是否支持HTML5的高级特性
     */
     function hasSVG2Feature() {
         return document.implementation.hasFeature(SvgUtils.HTML5svgFeature, "2.0");
@@ -97,6 +164,9 @@ var Canvas;
         return Point;
     }());
     Canvas.Point = Point;
+    /**
+     * 表示一个矩形区域的大小
+    */
     var Size = /** @class */ (function () {
         function Size(width, height) {
             this.width = width;
@@ -111,12 +181,13 @@ var Canvas;
     /**
      * 表示一个二维平面上的矩形区域
     */
-    var Rectangle = /** @class */ (function () {
+    var Rectangle = /** @class */ (function (_super) {
+        __extends(Rectangle, _super);
         function Rectangle(x, y, width, height) {
-            this.left = x;
-            this.top = y;
-            this.width = width;
-            this.height = height;
+            var _this = _super.call(this, width, height) || this;
+            _this.left = x;
+            _this.top = y;
+            return _this;
         }
         Rectangle.prototype.Location = function () {
             return new Point(this.left, this.top);
@@ -128,8 +199,43 @@ var Canvas;
             return "Size: " + this.Size().toString() + " @ " + this.Location().toString();
         };
         return Rectangle;
-    }());
+    }(Size));
     Canvas.Rectangle = Rectangle;
+    var Margin = /** @class */ (function () {
+        function Margin(top, right, bottom, left) {
+            this.top = top;
+            this.right = right;
+            this.bottom = bottom;
+            this.left = left;
+        }
+        Object.defineProperty(Margin.prototype, "horizontal", {
+            get: function () {
+                return this.left + this.right;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Object.defineProperty(Margin.prototype, "vertical", {
+            get: function () {
+                return this.top + this.bottom;
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Margin.Object = function (obj) {
+            if (Array.isArray(obj)) {
+                return new Margin(obj[0], obj[1], obj[2], obj[3]);
+            }
+            else {
+                return new Margin(obj.top, obj.right, obj.bottom, obj.left);
+            }
+        };
+        Margin.prototype.toString = function () {
+            return "[" + this.top + ", " + this.right + ", " + this.bottom + ", " + this.left + "]";
+        };
+        return Margin;
+    }());
+    Canvas.Margin = Margin;
 })(Canvas || (Canvas = {}));
 var Canvas;
 (function (Canvas) {
@@ -311,7 +417,7 @@ var Graphics = /** @class */ (function () {
         if (id === void 0) { id = null; }
         if (className === void 0) { className = null; }
         var attrs = {
-            "d": path.d(),
+            "d": path.d,
             "z-index": ++this.z
         };
         if (id)
@@ -408,6 +514,19 @@ var Canvas;
         function Path() {
             this.pathStack = [];
         }
+        Object.defineProperty(Path.prototype, "d", {
+            /**
+             * 获取SVG的path字符串结果
+            */
+            get: function () {
+                return this.pathStack.join(" ");
+            },
+            enumerable: true,
+            configurable: true
+        });
+        Path.prototype.toString = function () {
+            return this.d;
+        };
         /**
          * 从给定的（x,y）坐标开启一个新的子路径或路径。M表示后面跟随的是绝对坐标值。
          * m表示后面跟随的是一个相对坐标值。如果"moveto"指令后面跟随着多个坐标值，那么
@@ -548,9 +667,6 @@ var Canvas;
         Path.prototype.ClosePath = function () {
             this.pathStack.push("Z");
             return this;
-        };
-        Path.prototype.d = function () {
-            return this.pathStack.join(" ");
         };
         return Path;
     }());

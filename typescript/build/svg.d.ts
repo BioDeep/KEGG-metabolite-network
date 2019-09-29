@@ -1,4 +1,11 @@
 /// <reference path="linq.d.ts" />
+declare abstract class SvgChart {
+    size: [number, number];
+    margin: Canvas.Margin;
+    readonly width: number;
+    readonly height: number;
+    constructor(size?: Canvas.Size | number[], margin?: Canvas.Margin);
+}
 declare module SvgUtils {
     /**
      * 这个函数会直接从目标的width和height属性来获取值

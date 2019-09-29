@@ -388,7 +388,7 @@ class KEGG_canvas {
         if (!this.toggles[type]) {
             return new IEnumerator<ConvexHull.TagPoint>([]);
         } else {
-            points = From(group)
+            points = $from(group)
                 .Select(d => new Canvas.Point(d.x, d.y))
                 .ToArray();
         }
@@ -397,7 +397,7 @@ class KEGG_canvas {
         // 获取得到的是多边形的顶点坐标集合
         var polygon: Canvas.Point[] = ConvexHull.impl.JarvisMatch(points);
         var typedPolygons: IEnumerator<ConvexHull.TagPoint> =
-            From(polygon).Select(d => <ConvexHull.TagPoint>{
+            $from(polygon).Select(d => <ConvexHull.TagPoint>{
                 x: d.x,
                 y: d.y,
                 group: type

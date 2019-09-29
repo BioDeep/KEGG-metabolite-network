@@ -1,13 +1,31 @@
 var __extends = (this && this.__extends) || (function () {
-    var extendStatics = Object.setPrototypeOf ||
-        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    };
     return function (d, b) {
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
+var Graph;
+(function (Graph) {
+    var edge = /** @class */ (function () {
+        function edge() {
+        }
+        return edge;
+    }());
+    Graph.edge = edge;
+    var node = /** @class */ (function () {
+        function node() {
+        }
+        return node;
+    }());
+    Graph.node = node;
+})(Graph || (Graph = {}));
 /// <reference path="../build/svg.d.ts"/>
 var ConvexHull;
 (function (ConvexHull) {
@@ -94,27 +112,6 @@ var ConvexHull;
     }(Canvas.Point));
     ConvexHull.TagPoint = TagPoint;
 })(ConvexHull || (ConvexHull = {}));
-var Graph;
-(function (Graph) {
-    var edge = /** @class */ (function () {
-        function edge() {
-        }
-        return edge;
-    }());
-    Graph.edge = edge;
-    var node = /** @class */ (function () {
-        function node() {
-        }
-        return node;
-    }());
-    Graph.node = node;
-    var Model = /** @class */ (function () {
-        function Model() {
-        }
-        return Model;
-    }());
-    Graph.Model = Model;
-})(Graph || (Graph = {}));
 /// <reference path="../build/linq.d.ts"/>
 /**
  * 模块进行代谢物网络的可视化操作
@@ -436,14 +433,14 @@ var KEGG_canvas = /** @class */ (function () {
             return new IEnumerator([]);
         }
         else {
-            points = From(group)
+            points = $from(group)
                 .Select(function (d) { return new Canvas.Point(d.x, d.y); })
                 .ToArray();
         }
         // 计算出凸包
         // 获取得到的是多边形的顶点坐标集合
         var polygon = ConvexHull.impl.JarvisMatch(points);
-        var typedPolygons = From(polygon).Select(function (d) { return ({
+        var typedPolygons = $from(polygon).Select(function (d) { return ({
             x: d.x,
             y: d.y,
             group: type
