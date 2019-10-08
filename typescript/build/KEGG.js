@@ -1,3 +1,52 @@
+var KEGG;
+(function (KEGG) {
+    var metabolism;
+    (function (metabolism) {
+        var repository;
+        (function (repository) {
+            repository.reactions_table = "br08201";
+            repository.compounds_table = "KEGG_compounds";
+            /**
+             * 从服务器拉取数据到本地通过indexdb缓存起来
+            */
+            function writeLocalCache() {
+                var localDbRequest = window.indexedDB.open(repository.compounds_table);
+                localDbRequest.onupgradeneeded = function (event) {
+                    TypeScript.logging.log("LocalDb cache '" + repository.compounds_table + "' is not exists, fetch data from server and write cache...", TypeScript.ConsoleColors.Blue);
+                    // close current connection
+                    event.target.transaction.abort();
+                    // fetch data from server and 
+                    // then write cache into local database
+                    $ts.getText("kegg/" + repository.compounds_table + ".csv", writeCompoundsCache);
+                };
+            }
+            repository.writeLocalCache = writeLocalCache;
+            function writeCompoundsCache(raw) {
+                var $compounds = $ts.csv.toObjects(raw);
+                var localDbRequest = window.indexedDB.open(repository.compounds_table);
+                localDbRequest.onsuccess = function () {
+                    var localDb = localDbRequest.result;
+                    var store = localDb.createObjectStore("compounds", { autoIncrement: false });
+                    var record;
+                    var reactionId;
+                    store.createIndex("ID", "ID", { unique: true });
+                    for (var _i = 0, _a = $compounds.ToArray(false); _i < _a.length; _i++) {
+                        var compound = _a[_i];
+                        reactionId = Strings.Empty(compound.reaction, true) ? [] : compound.reaction.split("|");
+                        record = {
+                            ID: compound.ID, name: compound.name, image: compound.image,
+                            reaction: reactionId
+                        };
+                        TypeScript.logging.log(record);
+                        localDb.transaction(["compounds"], "readwrite")
+                            .objectStore("compounds")
+                            .add(record);
+                    }
+                };
+            }
+        })(repository = metabolism.repository || (metabolism.repository = {}));
+    })(metabolism = KEGG.metabolism || (KEGG.metabolism = {}));
+})(KEGG || (KEGG = {}));
 /// <reference path="../build/linq.d.ts"/>
 var KEGGBrite;
 (function (KEGGBrite) {
@@ -49,6 +98,7 @@ var KEGG;
     var metabolism;
     (function (metabolism) {
         function AssemblyGraph(compounds) {
+            KEGG.metabolism.repository.writeLocalCache();
             if (!Array.isArray(compounds)) {
                 compounds = compounds.ToArray(false);
             }

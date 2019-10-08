@@ -3,6 +3,8 @@
 namespace KEGG.metabolism {
 
     export function AssemblyGraph(compounds: compound[] | IEnumerator<compound>): Graph.Model {
+        KEGG.metabolism.repository.writeLocalCache();
+
         if (!Array.isArray(compounds)) {
             compounds = (<IEnumerator<compound>>compounds).ToArray(false);
         }

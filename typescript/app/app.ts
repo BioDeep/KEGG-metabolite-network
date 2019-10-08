@@ -3,6 +3,8 @@
 /// <reference path="../build/KEGG_canvas.d.ts" />
 /// <reference path="../build/KEGG.d.ts" />
 
+$ts.mode = Modes.debug;
+
 // 测试当前的浏览器是否支持HTML5的高级特性
 if (SvgUtils.hasSVG2Feature()) {
     let dataURL: string = `./graph.json`;
