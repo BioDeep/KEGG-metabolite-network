@@ -14,8 +14,8 @@ namespace KEGGBrite {
         var tree: IKEGGBrite = typeof briteText == "string" ? JSON.parse(briteText) : briteText;
         var list = new List<IBriteEntry>();
 
-        for (var i: number = 0; i < tree.children.length; i++) {
-            list.AddRange(treeTravel(tree.children[i]));
+        for (let node of tree.children) {
+            list.AddRange(treeTravel(node));
         }
 
         return list;
@@ -47,13 +47,13 @@ namespace KEGGBrite {
     function parseIDEntry(text: string): IDEntry {
         var list = text.split(/\s{2,}/g);
         var id: string = list[0];
-        var names: string[] = $ts(list)
+        var names: string[] = $from(list)
             .Skip(1)
             .Select(s => s.split(/;\s*/g))
             .Unlist(x => x)
             .ToArray();
 
-        return { id: id, names: names };
+        return new IDEntry(id, names);
     }
 
     function isLeaf(node: IKEGGBrite): boolean {

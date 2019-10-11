@@ -12,8 +12,9 @@ var KEGGBrite;
     function parse(briteText) {
         var tree = typeof briteText == "string" ? JSON.parse(briteText) : briteText;
         var list = new List();
-        for (var i = 0; i < tree.children.length; i++) {
-            list.AddRange(treeTravel(tree.children[i]));
+        for (var _i = 0, _a = tree.children; _i < _a.length; _i++) {
+            var node = _a[_i];
+            list.AddRange(treeTravel(node));
         }
         return list;
     }
@@ -44,15 +45,34 @@ var KEGGBrite;
     function parseIDEntry(text) {
         var list = text.split(/\s{2,}/g);
         var id = list[0];
-        var names = $ts(list)
+        var names = $from(list)
             .Skip(1)
             .Select(function (s) { return s.split(/;\s*/g); })
             .Unlist(function (x) { return x; })
             .ToArray();
-        return { id: id, names: names };
+        return new KEGGBrite.IDEntry(id, names);
     }
     function isLeaf(node) {
         return $ts.isNullOrEmpty(node.children);
     }
+})(KEGGBrite || (KEGGBrite = {}));
+var KEGGBrite;
+(function (KEGGBrite) {
+    var IDEntry = /** @class */ (function () {
+        function IDEntry(id, names) {
+            this.id = id;
+            this.names = names;
+        }
+        Object.defineProperty(IDEntry.prototype, "commonName", {
+            get: function () {
+                return this.names[0];
+            },
+            enumerable: true,
+            configurable: true
+        });
+        ;
+        return IDEntry;
+    }());
+    KEGGBrite.IDEntry = IDEntry;
 })(KEGGBrite || (KEGGBrite = {}));
 //# sourceMappingURL=KEGG.js.map

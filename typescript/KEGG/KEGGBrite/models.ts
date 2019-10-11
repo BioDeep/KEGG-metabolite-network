@@ -5,9 +5,16 @@
         children: IKEGGBrite[];
     }
 
-    export interface IDEntry {
-        id: string;
-        names: string[];
+    export class IDEntry {
+
+        public get commonName(): string {
+            return this.names[0];
+        }
+
+        public constructor(
+            public id: string,
+            public names: string[]) {
+        };
     }
 
     export interface IBriteEntry {

@@ -15,9 +15,11 @@ declare namespace KEGGBrite {
         name: string;
         children: IKEGGBrite[];
     }
-    interface IDEntry {
+    class IDEntry {
         id: string;
         names: string[];
+        readonly commonName: string;
+        constructor(id: string, names: string[]);
     }
     interface IBriteEntry {
         entry: IDEntry;
