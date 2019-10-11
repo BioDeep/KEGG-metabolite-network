@@ -514,6 +514,7 @@ declare namespace Internal.Handlers {
  * 通用数据拓展函数集合
 */
 declare module DataExtensions {
+    function merge(obj: {}, ...args: {}[]): {};
     function arrayBufferToBase64(buffer: Array<number> | ArrayBuffer): string;
     function toUri(data: DataURI): string;
     /**
@@ -521,26 +522,6 @@ declare module DataExtensions {
     */
     function uriToBlob(uri: string | DataURI): Blob;
     function base64ToBlob(base64: string): ArrayBuffer;
-    /**
-     * 将URL查询字符串解析为字典对象，所传递的查询字符串应该是查询参数部分，即问号之后的部分，而非完整的url
-     *
-     * @param queryString URL查询参数
-     * @param lowerName 是否将所有的参数名称转换为小写形式？
-     *
-     * @returns 键值对形式的字典对象
-    */
-    function parseQueryString(queryString: string, lowerName?: boolean): object;
-    /**
-     * 尝试将任意类型的目标对象转换为数值类型
-     *
-     * @returns 一个数值
-    */
-    function as_numeric(obj: any): number;
-    /**
-     * 因为在js之中没有类型信息，所以如果要取得类型信息必须要有一个目标对象实例
-     * 所以在这里，函数会需要一个实例对象来取得类型值
-    */
-    function AsNumeric<T>(obj: T): (x: T) => number;
     /**
      * @param fill 进行向量填充的初始值，可能不适用于引用类型，推荐应用于初始的基元类型
     */
@@ -611,6 +592,17 @@ declare module Strings {
      * 判断所给定的字符串文本是否是任意实数的正则表达式模式
     */
     function isNumericPattern(text: string): boolean;
+    /**
+     * 尝试将任意类型的目标对象转换为数值类型
+     *
+     * @returns 一个数值
+    */
+    function as_numeric(obj: any): number;
+    /**
+     * 因为在js之中没有类型信息，所以如果要取得类型信息必须要有一个目标对象实例
+     * 所以在这里，函数会需要一个实例对象来取得类型值
+    */
+    function AsNumeric<T>(obj: T): (x: T) => number;
     /**
      * 对bytes数值进行格式自动优化显示
      *
@@ -971,6 +963,7 @@ declare namespace Internal {
         */
         value(id: string, set_value?: string, strict?: boolean): any;
         typeof<T extends object>(any: T): TypeScript.Reflection.TypeInfo;
+        clone<T>(obj: T): T;
         /**
          * isNullOrUndefined
         */
@@ -985,6 +978,8 @@ declare namespace Internal {
         from<T>(seq: T[]): IEnumerator<T>;
         /**
          * 请注意：这个函数只会接受来自后端的json返回，如果不是json格式，则可能会解析出错
+         *
+         * 请尽量使用upload方法进行文件的上传
          *
          * @param url 目标数据源，这个参数也支持meta标签的查询语法
         */
@@ -1159,6 +1154,19 @@ declare namespace TypeScript {
         */
         const urlPattern: RegExp;
         function isFromSameOrigin(url: string): boolean;
+        /**
+         * 判断目标文本是否可能是一个url字符串
+        */
+        function isAPossibleUrlPattern(text: string, pattern?: RegExp): boolean;
+        /**
+         * 将URL查询字符串解析为字典对象，所传递的查询字符串应该是查询参数部分，即问号之后的部分，而非完整的url
+         *
+         * @param queryString URL查询参数
+         * @param lowerName 是否将所有的参数名称转换为小写形式？
+         *
+         * @returns 键值对形式的字典对象
+        */
+        function parseQueryString(queryString: string, lowerName?: boolean): object;
     }
     /**
      * URL组成字符串解析模块
@@ -1168,6 +1176,7 @@ declare namespace TypeScript {
          * 域名
         */
         origin: string;
+        port: number;
         /**
          * 页面的路径
          *
@@ -1228,6 +1237,9 @@ declare namespace TypeScript {
          * 将目标文本之中的所有的url字符串匹配出来
         */
         static ParseAllUrlStrings(text: string): string[];
+        /**
+         * 判断所给定的目标字符串是否是一个base64编码的data uri字符串
+        */
         static IsWellFormedUriString(uri: string): boolean;
     }
 }
@@ -1603,6 +1615,9 @@ declare class Matrix<T> extends IEnumerator<T[]> {
     */
     constructor(m: number, n: number, fill?: T);
     private static emptyMatrix;
+    /**
+     * Get or set matrix element value
+    */
     M(i: number, j: number, val?: T): T;
     column(i: number, set?: T[] | IEnumerator<T>): T[];
     row(i: number, set?: T[] | IEnumerator<T>): T[];
@@ -1978,11 +1993,13 @@ declare namespace DOM {
 declare namespace DOM {
     module InputValueSetter {
         /**
+         * 设置控件的输入值
+         *
          * @param resource name or id
          *
          * @param strict 这个参数主要是针对非输入类型的控件的值获取而言的。
-         * 如果目标id标记的控件不是输入类型的，则如果处于非严格模式下，
-         * 即这个参数为``false``的时候会直接强制读取value属性值
+         *   如果目标id标记的控件不是输入类型的，则如果处于非严格模式下，
+         *   即这个参数为``false``的时候会直接强制读取value属性值
         */
         function setValue(resource: string, value: string, strict?: boolean): void;
     }
@@ -2015,7 +2032,17 @@ declare namespace Internal {
     class BackgroundWorker {
         static $workers: {};
         static readonly hasWorkerFeature: boolean;
-        static RunWorker(script: string, onMessage: Delegate.Sub): void;
+        /**
+         * 加载所给定的脚本，并创建一个后台线程
+         *
+         * 可以在脚本中使用格式为``{$name}``的占位符进行标注
+         * 然后通过args参数来对这些占位符进行替换，从而达到参数传递的目的
+         *
+         * @param script 脚本的url或者文本内容，这个主要是为了解决跨域创建后台线程的问题
+         * @param args 向脚本模板之中进行赋值操作的变量列表，这个参数应该是一个键值对对象
+        */
+        static RunWorker(script: string, onMessage: Delegate.Sub, args?: {}): void;
+        private static buildWorker;
         /**
          * How to create a Web Worker from a string
          *
@@ -2030,6 +2057,9 @@ declare namespace Internal {
  *
  * + ``protected abstract init(): void;``
  * + ``public abstract get appName(): string``
+ *
+ * > ``appName``默认规则是php.net的路由规则，也可以将appName写在
+ * > 页面的meta标签的content中，meta标签的name名称应该为``app``
  *
  * 可以选择性的重写下面的事件处理器
  *
@@ -2271,7 +2301,9 @@ declare namespace TypeScript {
     }
 }
 /**
- * 路由器模块
+ * Web应用程序路由器模块
+ *
+ * 通过这个路由器模块管理制定的Web应用程序模块的运行或者休眠
 */
 declare module Router {
     function isCaseSensitive(): boolean;
@@ -2294,6 +2326,9 @@ declare module Router {
         hookUnload: string;
     }
     function getAppSummary(app: Bootstrap, module?: string): IAppInfo;
+    /**
+     * 从这个函数开始执行整个Web应用程序
+    */
     function RunApp(module?: string): void;
     function queryKey(argName: string): (link: string) => string;
     function moduleName(): (link: string) => string;
@@ -2353,6 +2388,19 @@ declare module Cookies {
      * 将cookie设置为过期，进行cookie的删除操作
     */
     function delCookie(name: string): void;
+}
+declare namespace TypeScript.LocalDb {
+    interface IUseDBDatabase {
+        (db: IDBDatabase): void;
+    }
+    class Open {
+        dbName: string;
+        private using;
+        version: number;
+        private db;
+        constructor(dbName: string, using: IUseDBDatabase, version?: number);
+        private processDbRequest;
+    }
 }
 /**
  * Binary tree implements
@@ -2548,6 +2596,10 @@ interface HTMLExtensions {
      * 将当前的这个节点元素转换为拓展封装对象类型
     */
     asExtends: HTMLTsElement;
+    /**
+     * 任然是当前的这个文档节点对象，只不过是更加方便转换为any类型
+    */
+    any: any;
     /**
      * 将当前的html文档节点元素之中的显示内容替换为参数所给定的html内容
     */
