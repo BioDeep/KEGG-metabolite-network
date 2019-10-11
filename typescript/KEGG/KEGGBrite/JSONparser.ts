@@ -1,5 +1,10 @@
-﻿/// <reference path="../build/linq.d.ts"/>
+﻿/// <reference path="../../build/linq.d.ts"/>
 
+/**
+ * The kegg brite index file parser
+ * 
+ * https://www.kegg.jp/kegg/brite.html
+*/
 namespace KEGGBrite {
 
     export function parse(briteText: string): IEnumerator<IBriteEntry> {
@@ -47,19 +52,4 @@ namespace KEGGBrite {
     function isLeaf(node: IKEGGBrite): boolean {
         return $ts.isNullOrEmpty(node.children);
     }
-}
-
-interface IKEGGBrite {
-    name: string;
-    children: IKEGGBrite[];
-}
-
-interface IDEntry {
-    id: string;
-    names: string[];
-}
-
-interface IBriteEntry {
-    entry: IDEntry;
-    class_path: string[];
 }

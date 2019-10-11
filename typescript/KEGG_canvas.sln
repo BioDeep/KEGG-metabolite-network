@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29306.81
+# Visual Studio 15
+VisualStudioVersion = 15.0.27906.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "KEGG_canvas", "KEGG_canvas\KEGG_canvas.njsproj", "{BD345363-625A-4F8B-BDCC-3A5D0A447796}"
 EndProject
@@ -12,8 +12,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "runtime", "runtime", "{47DE223B-DE92-4858-AA3E-9631B15716E2}"
 EndProject
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "KEGG", "KEGG\KEGG.njsproj", "{21D1AAC6-125A-4A87-9423-DAC4CDBFE9C8}"
-EndProject
-Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "app", "app\app.njsproj", "{2B64AC29-D287-4CB6-A7D7-4C8A8B61C715}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,10 +35,6 @@ Global
 		{21D1AAC6-125A-4A87-9423-DAC4CDBFE9C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{21D1AAC6-125A-4A87-9423-DAC4CDBFE9C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{21D1AAC6-125A-4A87-9423-DAC4CDBFE9C8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2B64AC29-D287-4CB6-A7D7-4C8A8B61C715}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2B64AC29-D287-4CB6-A7D7-4C8A8B61C715}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2B64AC29-D287-4CB6-A7D7-4C8A8B61C715}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2B64AC29-D287-4CB6-A7D7-4C8A8B61C715}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

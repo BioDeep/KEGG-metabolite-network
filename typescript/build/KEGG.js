@@ -1,3 +1,10 @@
+var __spreadArrays = (this && this.__spreadArrays) || function () {
+    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+            r[k] = a[j];
+    return r;
+};
 var KEGG;
 (function (KEGG) {
     var metabolism;
@@ -10,37 +17,49 @@ var KEGG;
              * 从服务器拉取数据到本地通过indexdb缓存起来
             */
             function writeLocalCache() {
-                var localDbRequest = window.indexedDB.open(repository.compounds_table);
-                localDbRequest.onupgradeneeded = function (event) {
+                if (!checkDbExists(repository.compounds_table)) {
                     TypeScript.logging.log("LocalDb cache '" + repository.compounds_table + "' is not exists, fetch data from server and write cache...", TypeScript.ConsoleColors.Blue);
-                    // close current connection
-                    event.target.transaction.abort();
                     // fetch data from server and 
                     // then write cache into local database
                     $ts.getText("kegg/" + repository.compounds_table + ".csv", writeCompoundsCache);
-                };
+                }
             }
             repository.writeLocalCache = writeLocalCache;
+            /**
+             * 数据库的信息是保存在localstorage之中的
+             * 使用服务器端的文件修改时间的unixtimestamp作为版本号
+            */
+            function checkDbExists(dbName) {
+                var version = localStorage.getItem("versionOf-" + dbName);
+                var check = Strings.Empty(version, true);
+                return !check;
+            }
             function writeCompoundsCache(raw) {
                 var $compounds = $ts.csv.toObjects(raw);
                 var localDbRequest = window.indexedDB.open(repository.compounds_table);
-                localDbRequest.onsuccess = function () {
-                    var localDb = localDbRequest.result;
-                    var store = localDb.createObjectStore("compounds", { autoIncrement: false });
-                    var record;
-                    var reactionId;
-                    store.createIndex("ID", "ID", { unique: true });
-                    for (var _i = 0, _a = $compounds.ToArray(false); _i < _a.length; _i++) {
-                        var compound = _a[_i];
-                        reactionId = Strings.Empty(compound.reaction, true) ? [] : compound.reaction.split("|");
-                        record = {
-                            ID: compound.ID, name: compound.name, image: compound.image,
-                            reaction: reactionId
-                        };
-                        TypeScript.logging.log(record);
-                        localDb.transaction(["compounds"], "readwrite")
-                            .objectStore("compounds")
-                            .add(record);
+                var storeName = "compounds";
+                localDbRequest.onsuccess = function (evt) {
+                    this.db = evt.target.result;
+                };
+                localDbRequest.onupgradeneeded = function (evt) {
+                    var localDb = evt.target.result;
+                    if (!localDb.objectStoreNames.contains(storeName)) {
+                        var store = localDb.createObjectStore("compounds", { autoIncrement: false });
+                        var record = void 0;
+                        var reactionId = void 0;
+                        store.createIndex("ID", "ID", { unique: true });
+                        for (var _i = 0, _a = $compounds.ToArray(false); _i < _a.length; _i++) {
+                            var compound = _a[_i];
+                            reactionId = Strings.Empty(compound.reaction, true) ? [] : compound.reaction.split("|");
+                            record = {
+                                ID: compound.ID, name: compound.name, image: compound.image,
+                                reaction: reactionId
+                            };
+                            TypeScript.logging.log(record);
+                            localDb.transaction(["compounds"], "readwrite")
+                                .objectStore("compounds")
+                                .add(record);
+                        }
                     }
                 };
             }
@@ -68,11 +87,11 @@ var KEGGBrite;
         if (isLeaf(Class)) {
             list.push({
                 entry: parseIDEntry(Class.name),
-                class_path: class_path.slice()
+                class_path: __spreadArrays(class_path)
             });
         }
         else {
-            class_path = class_path.slice();
+            class_path = __spreadArrays(class_path);
             class_path.push(Class.name);
             Class.children.forEach(function (node) { return treeTravel(node, class_path, list); });
         }
@@ -99,6 +118,7 @@ var KEGG;
     (function (metabolism) {
         function AssemblyGraph(compounds) {
             KEGG.metabolism.repository.writeLocalCache();
+            return;
             if (!Array.isArray(compounds)) {
                 compounds = compounds.ToArray(false);
             }

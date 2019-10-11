@@ -24,42 +24,57 @@
      * 从服务器拉取数据到本地通过indexdb缓存起来
     */
     export function writeLocalCache() {
-        let localDbRequest = window.indexedDB.open(compounds_table);
-
-        localDbRequest.onupgradeneeded = function (event: any) {
+        if (!checkDbExists(compounds_table)) {
             TypeScript.logging.log(`LocalDb cache '${compounds_table}' is not exists, fetch data from server and write cache...`, TypeScript.ConsoleColors.Blue);
-            // close current connection
-            event.target.transaction.abort();
             // fetch data from server and 
             // then write cache into local database
             $ts.getText(`kegg/${compounds_table}.csv`, writeCompoundsCache);
         }
     }
 
+    /**
+     * 数据库的信息是保存在localstorage之中的 
+     * 使用服务器端的文件修改时间的unixtimestamp作为版本号
+    */
+    function checkDbExists(dbName: string): boolean {
+        let version = localStorage.getItem(`versionOf-${dbName}`);
+        let check: boolean = Strings.Empty(version, true);
+
+        return !check;
+    }
+
     function writeCompoundsCache(raw: string) {
         let $compounds = $ts.csv.toObjects<KEGG_compound>(raw);
         let localDbRequest = window.indexedDB.open(compounds_table);
+        let storeName = "compounds";
 
-        localDbRequest.onsuccess = function () {
-            let localDb = localDbRequest.result;
-            let store = localDb.createObjectStore("compounds", { autoIncrement: false });
-            let record: { ID: string, name: string, reaction: string[], image: string };
-            let reactionId: string[];
+        localDbRequest.onsuccess = function (evt) {
+            (<any>this).db = (<any>evt.target).result;
+        }
 
-            store.createIndex("ID", "ID", { unique: true });
+        localDbRequest.onupgradeneeded = function (evt) {
+            let localDb: IDBDatabase = (<any>evt.target).result;
 
-            for (let compound of $compounds.ToArray(false)) {
-                reactionId = Strings.Empty(compound.reaction, true) ? [] : compound.reaction.split("|");
-                record = {
-                    ID: compound.ID, name: compound.name, image: compound.image,
-                    reaction: reactionId
-                };
+            if (!localDb.objectStoreNames.contains(storeName)) {
+                let store = localDb.createObjectStore("compounds", { autoIncrement: false });
+                let record: { ID: string, name: string, reaction: string[], image: string };
+                let reactionId: string[];
 
-                TypeScript.logging.log(record);
+                store.createIndex("ID", "ID", { unique: true });
 
-                localDb.transaction(["compounds"], "readwrite")
-                    .objectStore("compounds")
-                    .add(record);
+                for (let compound of $compounds.ToArray(false)) {
+                    reactionId = Strings.Empty(compound.reaction, true) ? [] : compound.reaction.split("|");
+                    record = {
+                        ID: compound.ID, name: compound.name, image: compound.image,
+                        reaction: reactionId
+                    };
+
+                    TypeScript.logging.log(record);
+
+                    localDb.transaction(["compounds"], "readwrite")
+                        .objectStore("compounds")
+                        .add(record);
+                }
             }
         }
     }
