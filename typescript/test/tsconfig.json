@@ -3,9 +3,13 @@
     "module": "commonjs",
     "target": "es6",
     "lib": ["es6"],
-    "sourceMap": true
+    "sourceMap": true,
+	"outDir": "./runapp",
+    "outFile": "./runapp/index.js",
+    "declaration": true
   },
   "exclude": [
-    "node_modules"
+    "node_modules",
+	"runapp"
   ]
 }
