@@ -1,10 +1,31 @@
-var __spreadArrays = (this && this.__spreadArrays) || function () {
-    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
-    for (var r = Array(s), k = 0, i = 0; i < il; i++)
-        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
-            r[k] = a[j];
-    return r;
-};
+/// <reference path="../build/KEGG_canvas.d.ts" />
+var KEGG;
+(function (KEGG) {
+    var metabolism;
+    (function (metabolism) {
+        function AssemblyGraph(compounds) {
+            KEGG.metabolism.repository.writeLocalCache();
+            return;
+            if (!Array.isArray(compounds)) {
+                compounds = compounds.ToArray(false);
+            }
+            var nodes = getNodeTable(compounds);
+            return {
+                nodes: nodes.Values.ToArray(false),
+                edges: getLinks(nodes),
+                style: "",
+                types: null
+            };
+        }
+        metabolism.AssemblyGraph = AssemblyGraph;
+        function getLinks(nodes) {
+            throw "";
+        }
+        function getNodeTable(compounds) {
+            throw "";
+        }
+    })(metabolism = KEGG.metabolism || (KEGG.metabolism = {}));
+})(KEGG || (KEGG = {}));
 var KEGG;
 (function (KEGG) {
     var metabolism;
@@ -66,7 +87,12 @@ var KEGG;
         })(repository = metabolism.repository || (metabolism.repository = {}));
     })(metabolism = KEGG.metabolism || (KEGG.metabolism = {}));
 })(KEGG || (KEGG = {}));
-/// <reference path="../build/linq.d.ts"/>
+/// <reference path="../../build/linq.d.ts"/>
+/**
+ * The kegg brite index file parser
+ *
+ * https://www.kegg.jp/kegg/brite.html
+*/
 var KEGGBrite;
 (function (KEGGBrite) {
     function parse(briteText) {
@@ -87,11 +113,11 @@ var KEGGBrite;
         if (isLeaf(Class)) {
             list.push({
                 entry: parseIDEntry(Class.name),
-                class_path: __spreadArrays(class_path)
+                class_path: class_path.slice()
             });
         }
         else {
-            class_path = __spreadArrays(class_path);
+            class_path = class_path.slice();
             class_path.push(Class.name);
             Class.children.forEach(function (node) { return treeTravel(node, class_path, list); });
         }
@@ -111,32 +137,4 @@ var KEGGBrite;
         return $ts.isNullOrEmpty(node.children);
     }
 })(KEGGBrite || (KEGGBrite = {}));
-/// <reference path="../build/KEGG_canvas.d.ts" />
-var KEGG;
-(function (KEGG) {
-    var metabolism;
-    (function (metabolism) {
-        function AssemblyGraph(compounds) {
-            KEGG.metabolism.repository.writeLocalCache();
-            return;
-            if (!Array.isArray(compounds)) {
-                compounds = compounds.ToArray(false);
-            }
-            var nodes = getNodeTable(compounds);
-            return {
-                nodes: nodes.Values.ToArray(false),
-                edges: getLinks(nodes),
-                style: "",
-                types: null
-            };
-        }
-        metabolism.AssemblyGraph = AssemblyGraph;
-        function getLinks(nodes) {
-            throw "";
-        }
-        function getNodeTable(compounds) {
-            throw "";
-        }
-    })(metabolism = KEGG.metabolism || (KEGG.metabolism = {}));
-})(KEGG || (KEGG = {}));
 //# sourceMappingURL=KEGG.js.map

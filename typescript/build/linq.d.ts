@@ -493,7 +493,7 @@ declare namespace Internal.Handlers {
         /**
          * Create a linq object
         */
-        array: () => arrayEval<unknown>;
+        array: () => arrayEval<{}>;
         NodeListOf: () => DOMCollection<HTMLElement>;
         HTMLCollection: () => DOMCollection<HTMLElement>;
     };
@@ -1691,6 +1691,208 @@ declare namespace Which {
     */
     function Min<T>(x: IEnumerator<T>, compare?: (a: T, b: T) => number): number;
 }
+/**
+ * http://www.rfc-editor.org/rfc/rfc4180.txt
+*/
+declare namespace csv {
+    /**
+     * Common Format and MIME Type for Comma-Separated Values (CSV) Files
+    */
+    const contentType: string;
+    /**
+     * ``csv``文件模型
+    */
+    class dataframe extends IEnumerator<csv.row> {
+        /**
+         * Csv文件的第一行作为header
+        */
+        readonly headers: IEnumerator<string>;
+        /**
+         * 获取除了第一行作为``header``数据的剩余的所有的行数据
+        */
+        readonly contents: IEnumerator<row>;
+        /**
+         * 从行序列之中构建出一个csv对象模型
+        */
+        constructor(rows: row[] | IEnumerator<row>);
+        /**
+         * 获取指定列名称的所有的行的列数据
+         *
+         * @param name csv文件的列名称，第一行之中的文本数据的内容
+         *
+         * @returns 该使用名称所指定的列的所有的内容字符串的枚举序列对象
+        */
+        Column(name: string): IEnumerator<string>;
+        /**
+         * 向当前的数据框对象之中添加一行数据
+        */
+        AppendLine(line: row): dataframe;
+        /**
+         * 向当前的数据框对象之中添加多行数据
+        */
+        AppendRows(data: IEnumerator<row> | row[]): dataframe;
+        /**
+         * 将当前的这个数据框对象转换为csv文本内容
+        */
+        buildDoc(tsvFormat?: boolean): string;
+        /**
+         * 使用反射操作将csv文档转换为特定类型的对象数据序列
+         *
+         * @param fieldMaps 这个参数是一个对象，其描述了如何将csv文档之中在js之中
+         *     的非法标识符转换为合法的标识符的映射
+         * @param activator 这个函数指针描述了如何创建一个新的指定类型的对象的过程，
+         *     这个函数指针不可以有参数的传递。
+         *
+         * @returns 这个函数返回类型约束的对象Linq序列集合
+        */
+        Objects<T>(fieldMaps?: object, activator?: () => T): IEnumerator<T>;
+        private static ensureMapsAll;
+        /**
+         * 使用ajax将csv文件保存到服务器
+         *
+         * @param url csv文件数据将会被通过post方法保存到这个url所指定的网络资源上面
+         * @param callback ajax异步回调，默认是打印返回结果到终端之上
+         *
+        */
+        save(url: string, fileName?: string, callback?: (response: string) => void): void;
+        /**
+         * 使用ajax GET加载csv文件数据，不推荐使用这个方法处理大型的csv文件数据
+         *
+         * @param callback 当这个异步回调为空值的时候，函数使用同步的方式工作，返回csv对象
+         *                 如果这个参数不是空值，则以异步的方式工作，此时函数会返回空值
+         * @param parseText 如果url返回来的数据之中还包含有其他的信息，则会需要这个参数来进行csv文本数据的解析
+        */
+        static Load(url: string, callback?: (csv: dataframe) => void, parseText?: (response: string, contentType?: string) => content): dataframe;
+        private static isTsv;
+        /**
+         * 默认是直接加个csv标签将格式设为默认的csv文件
+        */
+        private static defaultContent;
+        /**
+         * 将所给定的文本文档内容解析为数据框对象
+         *
+         * @param tsv 所需要进行解析的文本内容是否为使用``<TAB>``作为分割符的tsv文本文件？
+         *   默认不是，即默认使用逗号``,``作为分隔符的csv文本文件。
+        */
+        static Parse(text: string, tsv?: boolean): dataframe;
+    }
+    interface content {
+        /**
+         * 文档的类型为``csv``还是``tsv``
+        */
+        type: string;
+        content: string;
+    }
+}
+declare namespace csv {
+    /**
+     * 将对象序列转换为``dataframe``对象
+     *
+     * 这个函数只能够转换object类型的数据，对于基础类型将不保证能够正常工作
+     *
+     * @param data 因为这个对象序列对象是具有类型约束的，所以可以直接从第一个
+     *    元素对象之中得到所有的属性名称作为csv文件头的数据
+    */
+    function toDataFrame<T extends object>(data: IEnumerator<T> | T[]): dataframe;
+    function isTsvFile(content: string): boolean;
+}
+declare namespace csv.HTML {
+    /**
+     * 将数据框对象转换为HTMl格式的表格对象的html代码
+     *
+     * @param tblClass 所返回来的html表格代码之中的table对象的类型默认是bootstrap类型的，
+     * 所以默认可以直接应用bootstrap的样式在这个表格之上
+     *
+     * @returns 表格的HTML代码
+    */
+    function toHTMLTable(data: dataframe, tblClass?: string[]): string;
+    function createHTMLTable<T extends object>(data: IEnumerator<T>, tblClass?: string[]): string;
+}
+declare namespace csv {
+    /**
+     * csv文件之中的一行数据，相当于当前行的列数据的集合
+    */
+    class row extends IEnumerator<string> {
+        /**
+         * 当前的这一个行对象的列数据集合
+         *
+         * 注意，你无法通过直接修改这个数组之中的元素来达到修改这个行之中的值的目的
+         * 因为这个属性会返回这个行的数组值的复制对象
+        */
+        readonly columns: string[];
+        /**
+         * 这个只读属性仅用于生成csv文件
+        */
+        readonly rowLine: string;
+        constructor(cells: string[] | IEnumerator<string>);
+        /**
+         * Returns the index of the first occurrence of a value in an array.
+         *
+         * 函数得到指定的值在本行对象之中的列的编号
+         *
+         * @param value The value to locate in the array.
+         * @param fromIndex The array index at which to begin the search. If ``fromIndex`` is omitted,
+         *      the search starts at index 0.
+         *
+         * @returns 如果这个函数返回-1则表示找不到
+        */
+        indexOf(value: string, fromIndex?: number): number;
+        ProjectObject(headers: string[] | IEnumerator<string>): object;
+        private static autoEscape;
+        static Parse(line: string): row;
+        static ParseTsv(line: string): row;
+    }
+}
+declare namespace csv {
+    /**
+     * 通过Chars枚举来解析域，分隔符默认为逗号
+     * > https://github.com/xieguigang/sciBASIC/blame/701f9d0e6307a779bb4149c57a22a71572f1e40b/Data/DataFrame/IO/csv/Tokenizer.vb#L97
+     *
+    */
+    function CharsParser(s: string, delimiter?: string, quot?: string): string[];
+}
+declare namespace TypeScript.Data {
+    /**
+     * 这个对象可以自动的将调用者的函数名称作为键名进行对应的键值的读取操作
+    */
+    class MetaReader {
+        /**
+         * 字典对象
+         *
+         * > 在这里不使用Dictionary对象是因为该对象为一个强类型约束对象
+        */
+        private readonly meta;
+        constructor(meta: object);
+        /**
+         * Read meta object value by call name
+         *
+         * > https://stackoverflow.com/questions/280389/how-do-you-find-out-the-caller-function-in-javascript
+        */
+        GetValue(key?: string): any;
+    }
+}
+declare namespace TsLinq {
+    class PriorityQueue<T> extends IEnumerator<QueueItem<T>> {
+        /**
+         * 队列元素
+        */
+        readonly Q: QueueItem<T>[];
+        constructor();
+        /**
+         *
+        */
+        enqueue(obj: T): void;
+        extract(i: number): QueueItem<T>;
+        dequeue(): QueueItem<T>;
+    }
+    class QueueItem<T> {
+        value: T;
+        below: QueueItem<T>;
+        above: QueueItem<T>;
+        constructor(x: T);
+        toString(): string;
+    }
+}
 declare namespace DOM {
     class Query {
         type: QueryTypes;
@@ -1809,193 +2011,348 @@ declare namespace DOM {
         attrs: NamedValue<string>[];
     };
 }
-declare namespace DOM.Events {
-    /**
-     * Execute a given function when the document is ready.
-     * It is called when the DOM is ready which can be prior to images and other external content is loaded.
-     *
-     * 可以处理多个函数作为事件，也可以通过loadComplete函数参数来指定准备完毕的状态
-     * 默认的状态是interactive即只需要加载完DOM既可以开始立即执行函数
-     *
-     * @param fn A function that without any parameters
-     * @param loadComplete + ``interactive``: The document has finished loading. We can now access the DOM elements.
-     *                     + ``complete``: The page is fully loaded.
-     * @param iframe Event execute on document from target iframe.
-     *
-    */
-    function ready(fn: () => void, loadComplete?: string[], iframe?: HTMLIFrameElement): void;
-    /**
-     * 向一个给定的HTML元素或者HTML元素的集合之中的对象添加给定的事件
-     *
-     * @param el HTML节点元素或者节点元素的集合
-     * @param type 事件的名称字符串
-     * @param fn 对事件名称所指定的事件进行处理的工作函数，这个工作函数应该具备有一个事件对象作为函数参数
-    */
-    function addEvent(el: any, type: string, fn: (event: Event) => void): void;
-}
-declare namespace DOM.Events {
-    class StatusChanged {
-        private predicate;
-        private triggerNo;
-        private agree;
-        readonly changed: boolean;
-        constructor(predicate: Delegate.Func<boolean>, triggerNo?: boolean);
+declare namespace Internal {
+    class BackgroundWorker {
+        static $workers: {};
+        static readonly hasWorkerFeature: boolean;
+        static RunWorker(script: string, onMessage: Delegate.Sub): void;
+        /**
+         * How to create a Web Worker from a string
+         *
+         * > https://stackoverflow.com/questions/10343913/how-to-create-a-web-worker-from-a-string/10372280#10372280
+        */
+        private static fetchWorker;
+        static Stop(script: string): void;
     }
 }
 /**
- * 拓展的html文档节点元素对象
+ * 实现这个类需要重写下面的方法实现：
+ *
+ * + ``protected abstract init(): void;``
+ * + ``public abstract get appName(): string``
+ *
+ * 可以选择性的重写下面的事件处理器
+ *
+ * + ``protected OnDocumentReady(): void``
+ * + ``protected OnWindowLoad(): void``
+ * + ``protected OnWindowUnload(): string``
+ * + ``protected OnHashChanged(hash: string): void``
+ *
+ * 也可以重写下面的事件来获取当前的app的名称
+ *
+ * + ``protected getCurrentAppPage(): string``
 */
-interface IHTMLElement extends HTMLElement, HTMLExtensions {
-}
-interface HTMLExtensions {
+declare abstract class Bootstrap {
+    protected status: string;
     /**
-     * 将当前的这个节点元素转换为拓展封装对象类型
+     * 是否阻止用户关闭当前页面
     */
-    asExtends: HTMLTsElement;
+    protected hookUnload: string;
+    abstract readonly appName: string;
     /**
-     * 将当前的html文档节点元素之中的显示内容替换为参数所给定的html内容
-    */
-    display(html: string | HTMLElement | HTMLTsElement | (() => HTMLElement)): IHTMLElement;
-    append(html: string | HTMLElement | HTMLTsElement | (() => HTMLElement)): IHTMLElement;
-    /**
-     * 显示当前的节点元素
-    */
-    show(): IHTMLElement;
-    /**
-     * 将当前的节点元素从当前的文档之中隐藏掉
-    */
-    hide(): IHTMLElement;
-    addClass(name: string): IHTMLElement;
-    removeClass(name: string): IHTMLElement;
-    /**
-     * 当class列表中指定的class名称出现或者消失的时候将会触发给定的action调用
-    */
-    onClassChanged(className: string, action: Delegate.Sub, includesRemoves?: boolean): void;
-    /**
-     * Set attribute value of current html element node.
-    */
-    attr(name: string, value: string): IHTMLElement;
-    /**
-     * 清除当前的这个html文档节点元素之中的所有内容
-    */
-    clear(): IHTMLElement;
-    /**
-     * type casting from this base type
-    */
-    CType<T extends HTMLElement>(): T;
-    asImage: IHTMLImageElement;
-    asInput: IHTMLInputElement;
-    selects<T extends HTMLElement>(cssSelector: string): DOMEnumerator<T>;
-}
-/**
- * 带有拓展元素的图像标签对象
-*/
-interface IHTMLImageElement extends HTMLImageElement, HTMLExtensions {
-}
-/**
- * 带有拓展元素的输入框标签对象
-*/
-interface IHTMLInputElement extends HTMLInputElement, HTMLExtensions {
-}
-/**
- * 带有拓展元素的链接标签对象
-*/
-interface IHTMLLinkElement extends HTMLAnchorElement, HTMLExtensions {
-}
-/**
- * TypeScript脚本之中的HTML节点元素的类型代理接口
-*/
-declare class HTMLTsElement {
-    private node;
-    /**
-     * 可以从这里获取得到原生的``HTMLElement``对象用于操作
-    */
-    readonly HTMLElement: HTMLElement;
-    constructor(node: HTMLElement | HTMLTsElement);
-    /**
-     * 这个拓展函数总是会将节点中的原来的内容清空，然后显示html函数参数
-     * 所给定的内容
+     * 这个函数默认是取出url query之中的app参数字符串作为应用名称
      *
-     * @param html 当这个参数为一个无参数的函数的时候，主要是用于生成一个比较复杂的文档节点而使用的;
-     *    如果为字符串文本类型，则是直接将文本当作为HTML代码赋值给当前的这个节点对象的innerHTML属性;
+     * @returns 如果没有定义app参数，则默认是返回``/``作为名称
     */
-    display(html: string | number | boolean | HTMLElement | HTMLTsElement | (() => HTMLElement)): HTMLTsElement;
+    protected readonly currentAppPage: string;
+    readonly appStatus: string;
+    readonly appHookMsg: string;
+    constructor();
+    private isCurrentAppPath;
+    private isCurrentApp;
+    Init(): void;
     /**
-     * Clear all of the contents in current html element node.
+     * 初始化代码
     */
-    clear(): HTMLTsElement;
-    text(innerText: string): HTMLTsElement;
-    addClass(className: string): HTMLTsElement;
-    removeClass(className: string): HTMLTsElement;
+    protected abstract init(): void;
     /**
-     * 在当前的HTML文档节点之中添加一个新的文档节点
+     * Event handler on document is ready
     */
-    append(node: HTMLElement | HTMLTsElement | (() => HTMLElement)): HTMLTsElement;
+    protected OnDocumentReady(): void;
     /**
-     * 将css的display属性值设置为block用来显示当前的节点
+     * Event handler on Window loaded
     */
-    show(): HTMLTsElement;
+    protected OnWindowLoad(): void;
+    protected OnWindowUnload(): string;
+    unhook(): void;
     /**
-     * 将css的display属性值设置为none来隐藏当前的节点
+     * Event handler on url hash link changed
     */
-    hide(): HTMLTsElement;
+    protected OnHashChanged(hash: string): void;
+    toString(): string;
 }
 /**
- * 在这里对原生的html节点进行拓展
+ * 通用的JavaScript闭包函数指针抽象接口集合
+ * 这些接口之间可以相互重载
 */
-declare namespace TypeExtensions {
+declare namespace Delegate {
     /**
-     * 在原生节点模式之下对输入的给定的节点对象添加拓展方法
-     *
-     * 向HTML节点对象的原型定义之中拓展新的方法和成员属性
-     * 这个函数的输出在ts之中可能用不到，主要是应用于js脚本
-     * 编程之中
-     *
-     * @param node 当查询失败的时候是空值
+     * 带有一个参数的子程序
     */
-    function Extends(node: HTMLElement): HTMLElement;
-}
-declare namespace TypeScript.Data {
+    interface Sub {
+        (arg: any): void;
+    }
     /**
-     * 这个对象可以自动的将调用者的函数名称作为键名进行对应的键值的读取操作
+     * 带有两个参数的子程序
     */
-    class MetaReader {
-        /**
-         * 字典对象
-         *
-         * > 在这里不使用Dictionary对象是因为该对象为一个强类型约束对象
-        */
-        private readonly meta;
-        constructor(meta: object);
-        /**
-         * Read meta object value by call name
-         *
-         * > https://stackoverflow.com/questions/280389/how-do-you-find-out-the-caller-function-in-javascript
-        */
-        GetValue(key?: string): any;
+    interface Sub {
+        (arg1: any, arg2: any): void;
+    }
+    interface Sub {
+        (arg1: any, arg2: any, arg3: any): void;
+    }
+    interface Sub {
+        (arg1: any, arg2: any, arg3: any, arg4: any): void;
+    }
+    interface Sub {
+        (arg1: any, arg2: any, arg3: any, arg4: any, arg5: any): void;
+    }
+    /**
+     * 不带任何参数的子程序
+    */
+    interface Action {
+        (): void;
+    }
+    /**
+     * 不带参数的函数指针
+    */
+    interface Func<V> {
+        <V>(): V;
+    }
+    /**
+     * 带有一个函数参数的函数指针
+    */
+    interface Func<V> {
+        <T, V>(arg: T): V;
+    }
+    interface Func<V> {
+        <T1, T2, V>(arg1: T1, arg2: T2): V;
+    }
+    interface Func<V> {
+        <T1, T2, T3, V>(arg1: T1, arg2: T2, arg3: T3): V;
+    }
+    interface Func<V> {
+        <T1, T2, T3, T4, V>(arg1: T1, arg2: T2, arg3: T3, arg4: T4): V;
+    }
+    interface Func<V> {
+        <T1, T2, T3, T4, T5, V>(arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5): V;
     }
 }
-declare namespace TsLinq {
-    class PriorityQueue<T> extends IEnumerator<QueueItem<T>> {
+declare namespace Framework.Extensions {
+    /**
+     * 确保所传递进来的参数输出的是一个序列集合对象
+    */
+    function EnsureCollection<T>(data: T | T[] | IEnumerator<T>, n?: number): IEnumerator<T>;
+    /**
+     * 确保随传递进来的参数所输出的是一个数组对象
+     *
+     * @param data 如果这个参数是一个数组，则在这个函数之中会执行复制操作
+     * @param n 如果data数据序列长度不足，则会使用null进行补充，n为任何小于data长度的正实数都不会进行补充操作，
+     *     相反只会返回前n个元素，如果n是负数，则不进行任何操作
+    */
+    function EnsureArray<T>(data: T | T[] | IEnumerator<T>, n?: number): T[];
+    /**
+     * Extends `from` object with members from `to`.
+     *
+     * > https://stackoverflow.com/questions/122102/what-is-the-most-efficient-way-to-deep-clone-an-object-in-javascript
+     *
+     * @param to If `to` is null, a deep clone of `from` is returned
+    */
+    function extend<V>(from: V, to?: V): V;
+}
+declare namespace TypeScript {
+    function gc(): {};
+}
+declare namespace TypeScript {
+    /**
+     * https://github.com/natewatson999/js-gc
+    */
+    module garbageCollect {
         /**
-         * 队列元素
+         * try to do garbageCollect by invoke this function
         */
-        readonly Q: QueueItem<T>[];
+        const handler: Delegate.Func<any>;
+    }
+}
+declare namespace TypeScript {
+    /**
+     * Console logging helper
+    */
+    abstract class logging {
+        private constructor();
+        /**
+         * 应用程序的开发模式：只会输出框架的警告信息
+        */
+        static readonly outputWarning: boolean;
+        /**
+         * 框架开发调试模式：会输出所有的调试信息到终端之上
+        */
+        static readonly outputEverything: boolean;
+        /**
+         * 生产模式：只会输出错误信息
+        */
+        static readonly outputError: boolean;
+        /**
+         * 使用这个函数显示object的时候，将不会发生样式的变化
+        */
+        static log(obj: any, color?: string | ConsoleColors): void;
+        static table<T extends {}>(objects: T[] | string | IEnumerator<T>): void;
+        static runGroup(title: string, program: Delegate.Action): void;
+    }
+    enum ConsoleColors {
+        /**
+         * do not set the colors
+        */
+        NA = -1,
+        /**
+         * The color black.
+        */
+        Black = 0,
+        /**
+         * The color blue.
+        */
+        Blue = 9,
+        /**
+         * The color cyan (blue - green).
+        */
+        Cyan = 11,
+        /**
+         * The color dark blue.
+        */
+        DarkBlue = 1,
+        /**
+         * The color dark cyan(dark blue - green).
+        */
+        DarkCyan = 3,
+        /**
+         * The color dark gray.
+        */
+        DarkGray = 8,
+        /**
+         * The color dark green.
+        */
+        DarkGreen = 2,
+        /**
+         * The color dark magenta(dark purplish - red).
+        */
+        DarkMagenta = 5,
+        /**
+         * The color dark red.
+        */
+        DarkRed = 4,
+        /**
+         * The color dark yellow(ochre).
+        */
+        DarkYellow = 6,
+        /**
+         * The color gray.
+        */
+        Gray = 7,
+        /**
+         * The color green.
+        */
+        Green = 10,
+        /**
+         * The color magenta(purplish - red).
+        */
+        Magenta = 13,
+        /**
+         * The color red.
+        */
+        Red = 12,
+        /**
+         * The color white.
+        */
+        White = 15,
+        /**
+         * The color yellow.
+        */
+        Yellow = 14
+    }
+}
+/**
+ * 路由器模块
+*/
+declare module Router {
+    function isCaseSensitive(): boolean;
+    /**
+     * 设置路由器对URL的解析是否是大小写不敏感模式，也可以在这里函数中设置参数为false，来切换为大小写敏感模式
+     *
+     * @param option 通过这个参数来设置是否为大小写不敏感模式？
+     *
+    */
+    function CaseInsensitive(option?: boolean): void;
+    /**
+     * @param module 默认的模块是``/``，即如果服务器为php服务器的话，则默认为index.php
+    */
+    function AddAppHandler(app: Bootstrap, module?: string): void;
+    interface IAppInfo {
+        module: string;
+        appName: string;
+        className: string;
+        status: string;
+        hookUnload: string;
+    }
+    function getAppSummary(app: Bootstrap, module?: string): IAppInfo;
+    function RunApp(module?: string): void;
+    function queryKey(argName: string): (link: string) => string;
+    function moduleName(): (link: string) => string;
+    /**
+     * 父容器页面注册视图容器对象
+    */
+    function register(appId?: string, hashKey?: string | ((link: string) => string), frameRegister?: boolean): void;
+    /**
+     * 当前的堆栈环境是否是最顶层的堆栈？
+    */
+    function IsTopWindowStack(): boolean;
+    /**
+     * 因为link之中可能存在查询参数，所以必须要在web服务器上面测试
+    */
+    function goto(link: string, appId: string, hashKey: (link: string) => string, stack?: Window): void;
+}
+declare namespace TypeScript {
+    /**
+     * 性能计数器
+    */
+    class Benchmark {
+        readonly start: number;
+        private lastCheck;
         constructor();
+        Tick(): CheckPoint;
+    }
+    /**
+     * 单位都是毫秒
+    */
+    class CheckPoint {
         /**
-         *
+         * 性能计数器起始的时间，这个时间点在所有的由同一个性能计数器对象所产生的checkpoint之间都是一样的
         */
-        enqueue(obj: T): void;
-        extract(i: number): QueueItem<T>;
-        dequeue(): QueueItem<T>;
+        start: number;
+        /**
+         * 创建当前的这个checkpoint的时候的时间戳
+        */
+        time: number;
+        /**
+         * 创建这个checkpoint时间点的时候与上一次创建checkpoint的时间点之间的长度
+         * 性能计数主要是查看这个属性值
+        */
+        sinceLastCheck: number;
+        sinceFromStart: number;
+        /**
+         * 获取从``time``到当前时间所流逝的毫秒计数
+        */
+        readonly elapsedMilisecond: number;
     }
-    class QueueItem<T> {
-        value: T;
-        below: QueueItem<T>;
-        above: QueueItem<T>;
-        constructor(x: T);
-        toString(): string;
-    }
+}
+declare module Cookies {
+    /**
+     * Cookie 不存在，函数会返回空字符串
+    */
+    function getCookie(cookiename: string): string;
+    /**
+     * 将cookie设置为过期，进行cookie的删除操作
+    */
+    function delCookie(name: string): void;
 }
 /**
  * Binary tree implements
@@ -2148,304 +2505,151 @@ declare class StringBuilder {
     AppendLine(text?: string): StringBuilder;
     toString(): string;
 }
-declare namespace Internal {
-    class BackgroundWorker {
-        static $workers: {};
-        static readonly hasWorkerFeature: boolean;
-        static RunWorker(script: string, onMessage: Delegate.Sub): void;
-        /**
-         * How to create a Web Worker from a string
-         *
-         * > https://stackoverflow.com/questions/10343913/how-to-create-a-web-worker-from-a-string/10372280#10372280
-        */
-        private static fetchWorker;
-        static Stop(script: string): void;
+declare namespace DOM.Events {
+    /**
+     * Execute a given function when the document is ready.
+     * It is called when the DOM is ready which can be prior to images and other external content is loaded.
+     *
+     * 可以处理多个函数作为事件，也可以通过loadComplete函数参数来指定准备完毕的状态
+     * 默认的状态是interactive即只需要加载完DOM既可以开始立即执行函数
+     *
+     * @param fn A function that without any parameters
+     * @param loadComplete + ``interactive``: The document has finished loading. We can now access the DOM elements.
+     *                     + ``complete``: The page is fully loaded.
+     * @param iframe Event execute on document from target iframe.
+     *
+    */
+    function ready(fn: () => void, loadComplete?: string[], iframe?: HTMLIFrameElement): void;
+    /**
+     * 向一个给定的HTML元素或者HTML元素的集合之中的对象添加给定的事件
+     *
+     * @param el HTML节点元素或者节点元素的集合
+     * @param type 事件的名称字符串
+     * @param fn 对事件名称所指定的事件进行处理的工作函数，这个工作函数应该具备有一个事件对象作为函数参数
+    */
+    function addEvent(el: any, type: string, fn: (event: Event) => void): void;
+}
+declare namespace DOM.Events {
+    class StatusChanged {
+        private predicate;
+        private triggerNo;
+        private agree;
+        readonly changed: boolean;
+        constructor(predicate: Delegate.Func<boolean>, triggerNo?: boolean);
     }
 }
 /**
- * 实现这个类需要重写下面的方法实现：
- *
- * + ``protected abstract init(): void;``
- * + ``public abstract get appName(): string``
- *
- * 可以选择性的重写下面的事件处理器
- *
- * + ``protected OnDocumentReady(): void``
- * + ``protected OnWindowLoad(): void``
- * + ``protected OnWindowUnload(): string``
- * + ``protected OnHashChanged(hash: string): void``
- *
- * 也可以重写下面的事件来获取当前的app的名称
- *
- * + ``protected getCurrentAppPage(): string``
+ * 拓展的html文档节点元素对象
 */
-declare abstract class Bootstrap {
-    protected status: string;
+interface IHTMLElement extends HTMLElement, HTMLExtensions {
+}
+interface HTMLExtensions {
     /**
-     * 是否阻止用户关闭当前页面
+     * 将当前的这个节点元素转换为拓展封装对象类型
     */
-    protected hookUnload: string;
-    abstract readonly appName: string;
+    asExtends: HTMLTsElement;
     /**
-     * 这个函数默认是取出url query之中的app参数字符串作为应用名称
-     *
-     * @returns 如果没有定义app参数，则默认是返回``/``作为名称
+     * 将当前的html文档节点元素之中的显示内容替换为参数所给定的html内容
     */
-    protected readonly currentAppPage: string;
-    readonly appStatus: string;
-    readonly appHookMsg: string;
-    constructor();
-    private isCurrentAppPath;
-    private isCurrentApp;
-    Init(): void;
+    display(html: string | HTMLElement | HTMLTsElement | (() => HTMLElement)): IHTMLElement;
+    append(html: string | HTMLElement | HTMLTsElement | (() => HTMLElement)): IHTMLElement;
     /**
-     * 初始化代码
+     * 显示当前的节点元素
     */
-    protected abstract init(): void;
+    show(): IHTMLElement;
     /**
-     * Event handler on document is ready
+     * 将当前的节点元素从当前的文档之中隐藏掉
     */
-    protected OnDocumentReady(): void;
+    hide(): IHTMLElement;
+    addClass(name: string): IHTMLElement;
+    removeClass(name: string): IHTMLElement;
     /**
-     * Event handler on Window loaded
+     * 当class列表中指定的class名称出现或者消失的时候将会触发给定的action调用
     */
-    protected OnWindowLoad(): void;
-    protected OnWindowUnload(): string;
-    unhook(): void;
+    onClassChanged(className: string, action: Delegate.Sub, includesRemoves?: boolean): void;
     /**
-     * Event handler on url hash link changed
+     * Set attribute value of current html element node.
     */
-    protected OnHashChanged(hash: string): void;
-    toString(): string;
+    attr(name: string, value: string): IHTMLElement;
+    /**
+     * 清除当前的这个html文档节点元素之中的所有内容
+    */
+    clear(): IHTMLElement;
+    /**
+     * type casting from this base type
+    */
+    CType<T extends HTMLElement>(): T;
+    asImage: IHTMLImageElement;
+    asInput: IHTMLInputElement;
+    selects<T extends HTMLElement>(cssSelector: string): DOMEnumerator<T>;
 }
 /**
- * 通用的JavaScript闭包函数指针抽象接口集合
- * 这些接口之间可以相互重载
+ * 带有拓展元素的图像标签对象
 */
-declare namespace Delegate {
-    /**
-     * 带有一个参数的子程序
-    */
-    interface Sub {
-        (arg: any): void;
-    }
-    /**
-     * 带有两个参数的子程序
-    */
-    interface Sub {
-        (arg1: any, arg2: any): void;
-    }
-    interface Sub {
-        (arg1: any, arg2: any, arg3: any): void;
-    }
-    interface Sub {
-        (arg1: any, arg2: any, arg3: any, arg4: any): void;
-    }
-    interface Sub {
-        (arg1: any, arg2: any, arg3: any, arg4: any, arg5: any): void;
-    }
-    /**
-     * 不带任何参数的子程序
-    */
-    interface Action {
-        (): void;
-    }
-    /**
-     * 不带参数的函数指针
-    */
-    interface Func<V> {
-        <V>(): V;
-    }
-    /**
-     * 带有一个函数参数的函数指针
-    */
-    interface Func<V> {
-        <T, V>(arg: T): V;
-    }
-    interface Func<V> {
-        <T1, T2, V>(arg1: T1, arg2: T2): V;
-    }
-    interface Func<V> {
-        <T1, T2, T3, V>(arg1: T1, arg2: T2, arg3: T3): V;
-    }
-    interface Func<V> {
-        <T1, T2, T3, T4, V>(arg1: T1, arg2: T2, arg3: T3, arg4: T4): V;
-    }
-    interface Func<V> {
-        <T1, T2, T3, T4, T5, V>(arg1: T1, arg2: T2, arg3: T3, arg4: T4, arg5: T5): V;
-    }
-}
-declare namespace Framework.Extensions {
-    /**
-     * 确保所传递进来的参数输出的是一个序列集合对象
-    */
-    function EnsureCollection<T>(data: T | T[] | IEnumerator<T>, n?: number): IEnumerator<T>;
-    /**
-     * 确保随传递进来的参数所输出的是一个数组对象
-     *
-     * @param data 如果这个参数是一个数组，则在这个函数之中会执行复制操作
-     * @param n 如果data数据序列长度不足，则会使用null进行补充，n为任何小于data长度的正实数都不会进行补充操作，
-     *     相反只会返回前n个元素，如果n是负数，则不进行任何操作
-    */
-    function EnsureArray<T>(data: T | T[] | IEnumerator<T>, n?: number): T[];
-    /**
-     * Extends `from` object with members from `to`.
-     *
-     * > https://stackoverflow.com/questions/122102/what-is-the-most-efficient-way-to-deep-clone-an-object-in-javascript
-     *
-     * @param to If `to` is null, a deep clone of `from` is returned
-    */
-    function extend<V>(from: V, to?: V): V;
-}
-declare namespace TypeScript {
-    function gc(): unknown;
-}
-declare namespace TypeScript {
-    /**
-     * Console logging helper
-    */
-    abstract class logging {
-        private constructor();
-        /**
-         * 应用程序的开发模式：只会输出框架的警告信息
-        */
-        static readonly outputWarning: boolean;
-        /**
-         * 框架开发调试模式：会输出所有的调试信息到终端之上
-        */
-        static readonly outputEverything: boolean;
-        /**
-         * 生产模式：只会输出错误信息
-        */
-        static readonly outputError: boolean;
-        /**
-         * 使用这个函数显示object的时候，将不会发生样式的变化
-        */
-        static log(obj: any, color?: string | ConsoleColors): void;
-        static table<T extends {}>(objects: T[] | string | IEnumerator<T>): void;
-        static runGroup(title: string, program: Delegate.Action): void;
-    }
-    enum ConsoleColors {
-        /**
-         * do not set the colors
-        */
-        NA = -1,
-        /**
-         * The color black.
-        */
-        Black = 0,
-        /**
-         * The color blue.
-        */
-        Blue = 9,
-        /**
-         * The color cyan (blue - green).
-        */
-        Cyan = 11,
-        /**
-         * The color dark blue.
-        */
-        DarkBlue = 1,
-        /**
-         * The color dark cyan(dark blue - green).
-        */
-        DarkCyan = 3,
-        /**
-         * The color dark gray.
-        */
-        DarkGray = 8,
-        /**
-         * The color dark green.
-        */
-        DarkGreen = 2,
-        /**
-         * The color dark magenta(dark purplish - red).
-        */
-        DarkMagenta = 5,
-        /**
-         * The color dark red.
-        */
-        DarkRed = 4,
-        /**
-         * The color dark yellow(ochre).
-        */
-        DarkYellow = 6,
-        /**
-         * The color gray.
-        */
-        Gray = 7,
-        /**
-         * The color green.
-        */
-        Green = 10,
-        /**
-         * The color magenta(purplish - red).
-        */
-        Magenta = 13,
-        /**
-         * The color red.
-        */
-        Red = 12,
-        /**
-         * The color white.
-        */
-        White = 15,
-        /**
-         * The color yellow.
-        */
-        Yellow = 14
-    }
+interface IHTMLImageElement extends HTMLImageElement, HTMLExtensions {
 }
 /**
- * 路由器模块
+ * 带有拓展元素的输入框标签对象
 */
-declare module Router {
-    function isCaseSensitive(): boolean;
-    /**
-     * 设置路由器对URL的解析是否是大小写不敏感模式，也可以在这里函数中设置参数为false，来切换为大小写敏感模式
-     *
-     * @param option 通过这个参数来设置是否为大小写不敏感模式？
-     *
-    */
-    function CaseInsensitive(option?: boolean): void;
-    /**
-     * @param module 默认的模块是``/``，即如果服务器为php服务器的话，则默认为index.php
-    */
-    function AddAppHandler(app: Bootstrap, module?: string): void;
-    interface IAppInfo {
-        module: string;
-        appName: string;
-        className: string;
-        status: string;
-        hookUnload: string;
-    }
-    function getAppSummary(app: Bootstrap, module?: string): IAppInfo;
-    function RunApp(module?: string): void;
-    function queryKey(argName: string): (link: string) => string;
-    function moduleName(): (link: string) => string;
-    /**
-     * 父容器页面注册视图容器对象
-    */
-    function register(appId?: string, hashKey?: string | ((link: string) => string), frameRegister?: boolean): void;
-    /**
-     * 当前的堆栈环境是否是最顶层的堆栈？
-    */
-    function IsTopWindowStack(): boolean;
-    /**
-     * 因为link之中可能存在查询参数，所以必须要在web服务器上面测试
-    */
-    function goto(link: string, appId: string, hashKey: (link: string) => string, stack?: Window): void;
+interface IHTMLInputElement extends HTMLInputElement, HTMLExtensions {
 }
-declare namespace TypeScript {
+/**
+ * 带有拓展元素的链接标签对象
+*/
+interface IHTMLLinkElement extends HTMLAnchorElement, HTMLExtensions {
+}
+/**
+ * TypeScript脚本之中的HTML节点元素的类型代理接口
+*/
+declare class HTMLTsElement {
+    private node;
     /**
-     * https://github.com/natewatson999/js-gc
+     * 可以从这里获取得到原生的``HTMLElement``对象用于操作
     */
-    module garbageCollect {
-        /**
-         * try to do garbageCollect by invoke this function
-        */
-        const handler: Delegate.Func<any>;
-    }
+    readonly HTMLElement: HTMLElement;
+    constructor(node: HTMLElement | HTMLTsElement);
+    /**
+     * 这个拓展函数总是会将节点中的原来的内容清空，然后显示html函数参数
+     * 所给定的内容
+     *
+     * @param html 当这个参数为一个无参数的函数的时候，主要是用于生成一个比较复杂的文档节点而使用的;
+     *    如果为字符串文本类型，则是直接将文本当作为HTML代码赋值给当前的这个节点对象的innerHTML属性;
+    */
+    display(html: string | number | boolean | HTMLElement | HTMLTsElement | (() => HTMLElement)): HTMLTsElement;
+    /**
+     * Clear all of the contents in current html element node.
+    */
+    clear(): HTMLTsElement;
+    text(innerText: string): HTMLTsElement;
+    addClass(className: string): HTMLTsElement;
+    removeClass(className: string): HTMLTsElement;
+    /**
+     * 在当前的HTML文档节点之中添加一个新的文档节点
+    */
+    append(node: HTMLElement | HTMLTsElement | (() => HTMLElement)): HTMLTsElement;
+    /**
+     * 将css的display属性值设置为block用来显示当前的节点
+    */
+    show(): HTMLTsElement;
+    /**
+     * 将css的display属性值设置为none来隐藏当前的节点
+    */
+    hide(): HTMLTsElement;
+}
+/**
+ * 在这里对原生的html节点进行拓展
+*/
+declare namespace TypeExtensions {
+    /**
+     * 在原生节点模式之下对输入的给定的节点对象添加拓展方法
+     *
+     * 向HTML节点对象的原型定义之中拓展新的方法和成员属性
+     * 这个函数的输出在ts之中可能用不到，主要是应用于js脚本
+     * 编程之中
+     *
+     * @param node 当查询失败的时候是空值
+    */
+    function Extends(node: HTMLElement): HTMLElement;
 }
 declare namespace Internal {
     class Arguments {
@@ -2481,6 +2685,255 @@ declare namespace Linq.TsQuery {
      
      
      */
+}
+declare namespace Internal {
+    /**
+     * 调用堆栈之中的某一个栈片段信息
+    */
+    class StackFrame {
+        caller: string;
+        file: string;
+        memberName: string;
+        line: number;
+        column: number;
+        toString(): string;
+        static Parse(line: string): StackFrame;
+        private static getFileName;
+    }
+}
+declare namespace CanvasHelper {
+    /**
+     * Uses canvas.measureText to compute and return the width of the given text of given font in pixels.
+     *
+     * @param {String} text The text to be rendered.
+     * @param {String} font The css font descriptor that text is to be rendered with (e.g. "bold 14px verdana").
+     *
+     * @see https://stackoverflow.com/questions/118241/calculate-text-width-with-javascript/21015393#21015393
+     *
+     */
+    function getTextWidth(text: string, font: string): number;
+    /**
+     * found this trick at http://talideon.com/weblog/2005/02/detecting-broken-images-js.cfm
+    */
+    function imageOk(img: HTMLImageElement): boolean;
+    /**
+     * @param size [width, height]
+    */
+    function createCanvas(size: [number, number], id: string, title: string, display?: string): HTMLCanvasElement;
+    function supportsText(ctx: CanvasRenderingContext2D): boolean;
+    class fontSize {
+        point?: number;
+        pixel?: number;
+        em?: number;
+        percent?: number;
+        readonly sizes: fontSize[];
+        toString(): string;
+        static css(size: fontSize): string;
+    }
+    class CSSFont {
+        fontName: string;
+        size: fontSize;
+        apply(node: HTMLElement): void;
+        static applyCSS(node: HTMLElement, font: CSSFont): void;
+    }
+}
+declare namespace CanvasHelper.saveSvgAsPng {
+    const xlink: string;
+    function isElement(obj: any): boolean;
+    function requireDomNode(el: any): any;
+    /**
+     * 判断所给定的url指向的资源是否是来自于外部域的资源？
+    */
+    function isExternal(url: string): boolean;
+    function inlineImages(el: SVGSVGElement, callback: Delegate.Action): void;
+    /**
+     * 获取得到width或者height的值
+    */
+    function getDimension(el: SVGSVGElement, clone: SVGSVGElement, dim: string): number;
+    function reEncode(data: string): string;
+}
+declare namespace CanvasHelper.saveSvgAsPng {
+    const xmlns: string;
+    /**
+     * ##### 2018-10-12 XMl标签必须要一开始就出现，否则会出现错误
+     *
+     * error on line 2 at column 14: XML declaration allowed only at the start of the document
+    */
+    const doctype: string;
+    /**
+     * https://github.com/exupero/saveSvgAsPng
+    */
+    class Encoder {
+        static prepareSvg(el: SVGSVGElement, options?: Options, cb?: (html: string | HTMLImageElement, width: number, height: number) => void): void;
+        private static doInlineImages;
+        static svgAsDataUri(el: any, options: any, cb?: (uri: string) => void): void;
+        /**
+         * 将svg转换为base64 data uri
+        */
+        private static convertToPng;
+        static svgAsPngUri(el: any, options: Options, cb: (uri: string) => void): void;
+        static saveSvg(el: any, name: any, options: any): void;
+        /**
+         * 将指定的SVG节点保存为png图片
+         *
+         * @param svg 需要进行保存为图片的svg节点的对象实例或者对象的节点id值
+         * @param name 所保存的文件名
+         * @param options 配置参数，直接留空使用默认值就好了
+        */
+        static saveSvgAsPng(svg: string | SVGElement, name: string, options?: Options): void;
+    }
+}
+declare namespace CanvasHelper.saveSvgAsPng {
+    class Options {
+        selectorRemap: (selectorText: string) => string;
+        modifyStyle: (cssText: string) => string;
+        encoderType: string;
+        encoderOptions: number;
+        backgroundColor: string;
+        canvg: (canvas: HTMLCanvasElement, src: HTMLImageElement) => void;
+        scale: number;
+        responsive: boolean;
+        width: number;
+        height: number;
+        left: number;
+        top: number;
+        static Default(): Options;
+    }
+    class styles {
+        static doStyles(el: SVGSVGElement, options: Options, cssLoadedCallback: (css: string) => void): void;
+        private static processCssRules;
+        private static processFontQueue;
+        private static getFontMimeTypeFromUrl;
+        private static warnFontNotSupport;
+    }
+}
+interface DataURI {
+    mime_type: string;
+    /**
+     * base64 string or array buffer blob
+    */
+    data: string | ArrayBuffer;
+}
+declare namespace HttpHelpers {
+    /**
+     * Javascript动态加载帮助函数
+    */
+    class Imports {
+        /**
+         * 发生加载错误的脚本，例如404，脚本文件不存在等错误
+        */
+        private errors;
+        private jsURL;
+        private i;
+        /**
+         * 当脚本执行的时候抛出异常的时候是否继续执行下去？
+        */
+        private onErrorResumeNext;
+        private echo;
+        /**
+         * @param modules javascript脚本文件的路径集合
+         * @param onErrorResumeNext On Error Resume Next Or Just Break
+        */
+        constructor(modules: string | string[], onErrorResumeNext?: boolean, echo?: boolean);
+        private nextScript;
+        /**
+         * 开始进行异步的脚本文件加载操作
+         *
+         * @param callback 在所有指定的脚本文件都完成了加载操作之后所调用的异步回调函数
+        */
+        doLoad(callback?: () => void): void;
+        /**
+         * 完成向服务器的数据请求操作之后
+         * 加载代码文本
+        */
+        private doExec;
+        /**
+         * @param script 这个函数可以支持base64字符串格式的脚本的动态加载
+         * @param context 默认是添加在当前文档窗口环境之中
+        */
+        static doEval(script: string, callback?: () => void, context?: Window): void;
+        /**
+         * 得到相对于当前路径而言的目标脚本全路径
+        */
+        static getFullPath(url: string): string;
+    }
+}
+/**
+ * 前端与后台之间的get/post的消息通信格式的简单接口抽象
+*/
+interface IMsg<T> {
+    /**
+     * 错误代码，一般使用零表示没有错误
+    */
+    code: number;
+    /**
+     * 消息的内容
+     * 当code不等于零的时候，表示发生错误，则这个时候的错误消息将会以字符串的形式返回
+    */
+    info: string | T;
+    url: string;
+}
+declare namespace HttpHelpers {
+    const contentTypes: {
+        form: string;
+        /**
+         * 请注意：如果是php服务器，则$_POST很有可能不会自动解析json数据，导致$_POST变量为空数组
+         * 则这个时候会需要你在php文件之中手动处理一下$_POST变量：
+         *
+         * ```php
+         * $json  = file_get_contents("php://input");
+         * $_POST = json_decode($json, true);
+         * ```
+        */
+        json: string;
+        text: string;
+        /**
+         * 传统的表单post格式
+        */
+        www: string;
+    };
+    interface httpCallback {
+        (response: string, code: number, contentType: string): void;
+    }
+    function measureContentType(obj: any): string;
+    /**
+     * 这个函数只会返回200成功代码的响应内容，对于其他的状态代码都会返回null
+     * (这个函数是同步方式的)
+    */
+    function GET(url: string): string;
+    /**
+     * 使用异步调用的方式进行数据的下载操作
+     *
+     * @param callback ``callback(http.responseText, http.status)``
+    */
+    function GetAsyn(url: string, callback: httpCallback): void;
+    function POST(url: string, postData: PostData, callback: (response: string, code: number) => void): void;
+    /**
+     * 使用multipart form类型的数据进行文件数据的上传操作
+     *
+     * @param url 函数会通过POST方式将文件数据上传到这个url所指定的服务器资源位置
+     *
+    */
+    function UploadFile(url: string, postData: File | Blob | string, fileName: string, callback: (response: string, code: number) => void): void;
+    function serialize<T extends {}>(a: T, nullAsStringFactor?: boolean): string;
+    /**
+     * 在这个数据包对象之中应该包含有
+     *
+     * + ``type``属性，用来设置``Content-type``
+     * + ``data``属性，可以是``formData``或者一个``object``
+    */
+    class PostData {
+        /**
+         * content type
+        */
+        type: string;
+        /**
+         * 将要进行POST上传的数据包
+        */
+        data: FormData | object | string | Blob | File;
+        sendContentType: boolean;
+        toString(): string;
+    }
 }
 declare namespace Internal {
 }
@@ -2605,457 +3058,4 @@ declare namespace Internal {
         "data-target"?: string;
         "aria-hidden"?: boolean;
     }
-}
-declare namespace Internal {
-    /**
-     * 调用堆栈之中的某一个栈片段信息
-    */
-    class StackFrame {
-        caller: string;
-        file: string;
-        memberName: string;
-        line: number;
-        column: number;
-        toString(): string;
-        static Parse(line: string): StackFrame;
-        private static getFileName;
-    }
-}
-declare namespace TypeScript {
-    /**
-     * 性能计数器
-    */
-    class Benchmark {
-        readonly start: number;
-        private lastCheck;
-        constructor();
-        Tick(): CheckPoint;
-    }
-    /**
-     * 单位都是毫秒
-    */
-    class CheckPoint {
-        /**
-         * 性能计数器起始的时间，这个时间点在所有的由同一个性能计数器对象所产生的checkpoint之间都是一样的
-        */
-        start: number;
-        /**
-         * 创建当前的这个checkpoint的时候的时间戳
-        */
-        time: number;
-        /**
-         * 创建这个checkpoint时间点的时候与上一次创建checkpoint的时间点之间的长度
-         * 性能计数主要是查看这个属性值
-        */
-        sinceLastCheck: number;
-        sinceFromStart: number;
-        /**
-         * 获取从``time``到当前时间所流逝的毫秒计数
-        */
-        readonly elapsedMilisecond: number;
-    }
-}
-declare module Cookies {
-    /**
-     * Cookie 不存在，函数会返回空字符串
-    */
-    function getCookie(cookiename: string): string;
-    /**
-     * 将cookie设置为过期，进行cookie的删除操作
-    */
-    function delCookie(name: string): void;
-}
-declare namespace CanvasHelper {
-    /**
-     * Uses canvas.measureText to compute and return the width of the given text of given font in pixels.
-     *
-     * @param {String} text The text to be rendered.
-     * @param {String} font The css font descriptor that text is to be rendered with (e.g. "bold 14px verdana").
-     *
-     * @see https://stackoverflow.com/questions/118241/calculate-text-width-with-javascript/21015393#21015393
-     *
-     */
-    function getTextWidth(text: string, font: string): number;
-    /**
-     * found this trick at http://talideon.com/weblog/2005/02/detecting-broken-images-js.cfm
-    */
-    function imageOk(img: HTMLImageElement): boolean;
-    /**
-     * @param size [width, height]
-    */
-    function createCanvas(size: [number, number], id: string, title: string, display?: string): HTMLCanvasElement;
-    function supportsText(ctx: CanvasRenderingContext2D): boolean;
-    class fontSize {
-        point?: number;
-        pixel?: number;
-        em?: number;
-        percent?: number;
-        readonly sizes: fontSize[];
-        toString(): string;
-        static css(size: fontSize): string;
-    }
-    class CSSFont {
-        fontName: string;
-        size: fontSize;
-        apply(node: HTMLElement): void;
-        static applyCSS(node: HTMLElement, font: CSSFont): void;
-    }
-}
-declare namespace CanvasHelper.saveSvgAsPng {
-    const xlink: string;
-    function isElement(obj: any): boolean;
-    function requireDomNode(el: any): any;
-    /**
-     * 判断所给定的url指向的资源是否是来自于外部域的资源？
-    */
-    function isExternal(url: string): boolean;
-    function inlineImages(el: SVGSVGElement, callback: Delegate.Action): void;
-    /**
-     * 获取得到width或者height的值
-    */
-    function getDimension(el: SVGSVGElement, clone: SVGSVGElement, dim: string): number;
-    function reEncode(data: string): string;
-}
-declare namespace CanvasHelper.saveSvgAsPng {
-    const xmlns: string;
-    /**
-     * ##### 2018-10-12 XMl标签必须要一开始就出现，否则会出现错误
-     *
-     * error on line 2 at column 14: XML declaration allowed only at the start of the document
-    */
-    const doctype: string;
-    /**
-     * https://github.com/exupero/saveSvgAsPng
-    */
-    class Encoder {
-        static prepareSvg(el: SVGSVGElement, options?: Options, cb?: (html: string | HTMLImageElement, width: number, height: number) => void): void;
-        private static doInlineImages;
-        static svgAsDataUri(el: any, options: any, cb?: (uri: string) => void): void;
-        /**
-         * 将svg转换为base64 data uri
-        */
-        private static convertToPng;
-        static svgAsPngUri(el: any, options: Options, cb: (uri: string) => void): void;
-        static saveSvg(el: any, name: any, options: any): void;
-        /**
-         * 将指定的SVG节点保存为png图片
-         *
-         * @param svg 需要进行保存为图片的svg节点的对象实例或者对象的节点id值
-         * @param name 所保存的文件名
-         * @param options 配置参数，直接留空使用默认值就好了
-        */
-        static saveSvgAsPng(svg: string | SVGElement, name: string, options?: Options): void;
-    }
-}
-declare namespace CanvasHelper.saveSvgAsPng {
-    class Options {
-        selectorRemap: (selectorText: string) => string;
-        modifyStyle: (cssText: string) => string;
-        encoderType: string;
-        encoderOptions: number;
-        backgroundColor: string;
-        canvg: (canvas: HTMLCanvasElement, src: HTMLImageElement) => void;
-        scale: number;
-        responsive: boolean;
-        width: number;
-        height: number;
-        left: number;
-        top: number;
-        static Default(): Options;
-    }
-    class styles {
-        static doStyles(el: SVGSVGElement, options: Options, cssLoadedCallback: (css: string) => void): void;
-        private static processCssRules;
-        private static processFontQueue;
-        private static getFontMimeTypeFromUrl;
-        private static warnFontNotSupport;
-    }
-}
-interface DataURI {
-    mime_type: string;
-    /**
-     * base64 string or array buffer blob
-    */
-    data: string | ArrayBuffer;
-}
-/**
- * 前端与后台之间的get/post的消息通信格式的简单接口抽象
-*/
-interface IMsg<T> {
-    /**
-     * 错误代码，一般使用零表示没有错误
-    */
-    code: number;
-    /**
-     * 消息的内容
-     * 当code不等于零的时候，表示发生错误，则这个时候的错误消息将会以字符串的形式返回
-    */
-    info: string | T;
-    url: string;
-}
-declare namespace HttpHelpers {
-    /**
-     * Javascript动态加载帮助函数
-    */
-    class Imports {
-        /**
-         * 发生加载错误的脚本，例如404，脚本文件不存在等错误
-        */
-        private errors;
-        private jsURL;
-        private i;
-        /**
-         * 当脚本执行的时候抛出异常的时候是否继续执行下去？
-        */
-        private onErrorResumeNext;
-        private echo;
-        /**
-         * @param modules javascript脚本文件的路径集合
-         * @param onErrorResumeNext On Error Resume Next Or Just Break
-        */
-        constructor(modules: string | string[], onErrorResumeNext?: boolean, echo?: boolean);
-        private nextScript;
-        /**
-         * 开始进行异步的脚本文件加载操作
-         *
-         * @param callback 在所有指定的脚本文件都完成了加载操作之后所调用的异步回调函数
-        */
-        doLoad(callback?: () => void): void;
-        /**
-         * 完成向服务器的数据请求操作之后
-         * 加载代码文本
-        */
-        private doExec;
-        /**
-         * @param script 这个函数可以支持base64字符串格式的脚本的动态加载
-         * @param context 默认是添加在当前文档窗口环境之中
-        */
-        static doEval(script: string, callback?: () => void, context?: Window): void;
-        /**
-         * 得到相对于当前路径而言的目标脚本全路径
-        */
-        static getFullPath(url: string): string;
-    }
-}
-declare namespace HttpHelpers {
-    const contentTypes: {
-        form: string;
-        /**
-         * 请注意：如果是php服务器，则$_POST很有可能不会自动解析json数据，导致$_POST变量为空数组
-         * 则这个时候会需要你在php文件之中手动处理一下$_POST变量：
-         *
-         * ```php
-         * $json  = file_get_contents("php://input");
-         * $_POST = json_decode($json, true);
-         * ```
-        */
-        json: string;
-        text: string;
-        /**
-         * 传统的表单post格式
-        */
-        www: string;
-    };
-    interface httpCallback {
-        (response: string, code: number, contentType: string): void;
-    }
-    function measureContentType(obj: any): string;
-    /**
-     * 这个函数只会返回200成功代码的响应内容，对于其他的状态代码都会返回null
-     * (这个函数是同步方式的)
-    */
-    function GET(url: string): string;
-    /**
-     * 使用异步调用的方式进行数据的下载操作
-     *
-     * @param callback ``callback(http.responseText, http.status)``
-    */
-    function GetAsyn(url: string, callback: httpCallback): void;
-    function POST(url: string, postData: PostData, callback: (response: string, code: number) => void): void;
-    /**
-     * 使用multipart form类型的数据进行文件数据的上传操作
-     *
-     * @param url 函数会通过POST方式将文件数据上传到这个url所指定的服务器资源位置
-     *
-    */
-    function UploadFile(url: string, postData: File | Blob | string, fileName: string, callback: (response: string, code: number) => void): void;
-    function serialize<T extends {}>(a: T, nullAsStringFactor?: boolean): string;
-    /**
-     * 在这个数据包对象之中应该包含有
-     *
-     * + ``type``属性，用来设置``Content-type``
-     * + ``data``属性，可以是``formData``或者一个``object``
-    */
-    class PostData {
-        /**
-         * content type
-        */
-        type: string;
-        /**
-         * 将要进行POST上传的数据包
-        */
-        data: FormData | object | string | Blob | File;
-        sendContentType: boolean;
-        toString(): string;
-    }
-}
-/**
- * http://www.rfc-editor.org/rfc/rfc4180.txt
-*/
-declare namespace csv {
-    /**
-     * Common Format and MIME Type for Comma-Separated Values (CSV) Files
-    */
-    const contentType: string;
-    /**
-     * ``csv``文件模型
-    */
-    class dataframe extends IEnumerator<csv.row> {
-        /**
-         * Csv文件的第一行作为header
-        */
-        readonly headers: IEnumerator<string>;
-        /**
-         * 获取除了第一行作为``header``数据的剩余的所有的行数据
-        */
-        readonly contents: IEnumerator<row>;
-        /**
-         * 从行序列之中构建出一个csv对象模型
-        */
-        constructor(rows: row[] | IEnumerator<row>);
-        /**
-         * 获取指定列名称的所有的行的列数据
-         *
-         * @param name csv文件的列名称，第一行之中的文本数据的内容
-         *
-         * @returns 该使用名称所指定的列的所有的内容字符串的枚举序列对象
-        */
-        Column(name: string): IEnumerator<string>;
-        /**
-         * 向当前的数据框对象之中添加一行数据
-        */
-        AppendLine(line: row): dataframe;
-        /**
-         * 向当前的数据框对象之中添加多行数据
-        */
-        AppendRows(data: IEnumerator<row> | row[]): dataframe;
-        /**
-         * 将当前的这个数据框对象转换为csv文本内容
-        */
-        buildDoc(tsvFormat?: boolean): string;
-        /**
-         * 使用反射操作将csv文档转换为特定类型的对象数据序列
-         *
-         * @param fieldMaps 这个参数是一个对象，其描述了如何将csv文档之中在js之中
-         *     的非法标识符转换为合法的标识符的映射
-         * @param activator 这个函数指针描述了如何创建一个新的指定类型的对象的过程，
-         *     这个函数指针不可以有参数的传递。
-         *
-         * @returns 这个函数返回类型约束的对象Linq序列集合
-        */
-        Objects<T>(fieldMaps?: object, activator?: () => T): IEnumerator<T>;
-        private static ensureMapsAll;
-        /**
-         * 使用ajax将csv文件保存到服务器
-         *
-         * @param url csv文件数据将会被通过post方法保存到这个url所指定的网络资源上面
-         * @param callback ajax异步回调，默认是打印返回结果到终端之上
-         *
-        */
-        save(url: string, fileName?: string, callback?: (response: string) => void): void;
-        /**
-         * 使用ajax GET加载csv文件数据，不推荐使用这个方法处理大型的csv文件数据
-         *
-         * @param callback 当这个异步回调为空值的时候，函数使用同步的方式工作，返回csv对象
-         *                 如果这个参数不是空值，则以异步的方式工作，此时函数会返回空值
-         * @param parseText 如果url返回来的数据之中还包含有其他的信息，则会需要这个参数来进行csv文本数据的解析
-        */
-        static Load(url: string, callback?: (csv: dataframe) => void, parseText?: (response: string, contentType?: string) => content): dataframe;
-        private static isTsv;
-        /**
-         * 默认是直接加个csv标签将格式设为默认的csv文件
-        */
-        private static defaultContent;
-        /**
-         * 将所给定的文本文档内容解析为数据框对象
-         *
-         * @param tsv 所需要进行解析的文本内容是否为使用``<TAB>``作为分割符的tsv文本文件？
-         *   默认不是，即默认使用逗号``,``作为分隔符的csv文本文件。
-        */
-        static Parse(text: string, tsv?: boolean): dataframe;
-    }
-    interface content {
-        /**
-         * 文档的类型为``csv``还是``tsv``
-        */
-        type: string;
-        content: string;
-    }
-}
-declare namespace csv.HTML {
-    /**
-     * 将数据框对象转换为HTMl格式的表格对象的html代码
-     *
-     * @param tblClass 所返回来的html表格代码之中的table对象的类型默认是bootstrap类型的，
-     * 所以默认可以直接应用bootstrap的样式在这个表格之上
-     *
-     * @returns 表格的HTML代码
-    */
-    function toHTMLTable(data: dataframe, tblClass?: string[]): string;
-    function createHTMLTable<T extends object>(data: IEnumerator<T>, tblClass?: string[]): string;
-}
-declare namespace csv {
-    /**
-     * csv文件之中的一行数据，相当于当前行的列数据的集合
-    */
-    class row extends IEnumerator<string> {
-        /**
-         * 当前的这一个行对象的列数据集合
-         *
-         * 注意，你无法通过直接修改这个数组之中的元素来达到修改这个行之中的值的目的
-         * 因为这个属性会返回这个行的数组值的复制对象
-        */
-        readonly columns: string[];
-        /**
-         * 这个只读属性仅用于生成csv文件
-        */
-        readonly rowLine: string;
-        constructor(cells: string[] | IEnumerator<string>);
-        /**
-         * Returns the index of the first occurrence of a value in an array.
-         *
-         * 函数得到指定的值在本行对象之中的列的编号
-         *
-         * @param value The value to locate in the array.
-         * @param fromIndex The array index at which to begin the search. If ``fromIndex`` is omitted,
-         *      the search starts at index 0.
-         *
-         * @returns 如果这个函数返回-1则表示找不到
-        */
-        indexOf(value: string, fromIndex?: number): number;
-        ProjectObject(headers: string[] | IEnumerator<string>): object;
-        private static autoEscape;
-        static Parse(line: string): row;
-        static ParseTsv(line: string): row;
-    }
-}
-declare namespace csv {
-    /**
-     * 通过Chars枚举来解析域，分隔符默认为逗号
-     * > https://github.com/xieguigang/sciBASIC/blame/701f9d0e6307a779bb4149c57a22a71572f1e40b/Data/DataFrame/IO/csv/Tokenizer.vb#L97
-     *
-    */
-    function CharsParser(s: string, delimiter?: string, quot?: string): string[];
-}
-declare namespace csv {
-    /**
-     * 将对象序列转换为``dataframe``对象
-     *
-     * 这个函数只能够转换object类型的数据，对于基础类型将不保证能够正常工作
-     *
-     * @param data 因为这个对象序列对象是具有类型约束的，所以可以直接从第一个
-     *    元素对象之中得到所有的属性名称作为csv文件头的数据
-    */
-    function toDataFrame<T extends object>(data: IEnumerator<T> | T[]): dataframe;
-    function isTsvFile(content: string): boolean;
 }

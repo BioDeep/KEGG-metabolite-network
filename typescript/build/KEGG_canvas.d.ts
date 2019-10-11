@@ -1,6 +1,20 @@
 /// <reference path="svg.d.ts" />
 /// <reference path="linq.d.ts" />
 /// <reference types="d3" />
+declare namespace ConvexHull {
+    module impl {
+        function JarvisMatch(points: Canvas.Point[]): Canvas.Point[];
+    }
+    class Polygon {
+        group: string;
+        points: TagPoint[];
+        toString(): string;
+    }
+    class TagPoint extends Canvas.Point {
+        group: string;
+        toString(): string;
+    }
+}
 declare namespace Graph {
     class edge {
         A: string;
@@ -41,20 +55,6 @@ declare namespace Graph {
         nodes: node[];
         style: string;
         types: object;
-    }
-}
-declare namespace ConvexHull {
-    module impl {
-        function JarvisMatch(points: Canvas.Point[]): Canvas.Point[];
-    }
-    class Polygon {
-        group: string;
-        points: TagPoint[];
-        toString(): string;
-    }
-    class TagPoint extends Canvas.Point {
-        group: string;
-        toString(): string;
     }
 }
 /**
