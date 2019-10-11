@@ -6,8 +6,11 @@
 */
 var KEGGBrite;
 (function (KEGGBrite) {
+    /**
+     * 将目标brite json文件或者对象解析为对象entry枚举
+    */
     function parse(briteText) {
-        var tree = JSON.parse(briteText);
+        var tree = typeof briteText == "string" ? JSON.parse(briteText) : briteText;
         var list = new List();
         for (var i = 0; i < tree.children.length; i++) {
             list.AddRange(treeTravel(tree.children[i]));
@@ -29,7 +32,11 @@ var KEGGBrite;
         }
         else {
             class_path = class_path.slice();
-            class_path.push(Class.name);
+            // there is a child count number in class name
+            // removes this count number tags
+            //
+            // example as: Prokaryotes (5639)
+            class_path.push(Class.name.replace(/\s+[(]\d+[)]/ig, ""));
             Class.children.forEach(function (node) { return treeTravel(node, class_path, list); });
         }
         return list;

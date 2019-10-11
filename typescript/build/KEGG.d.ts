@@ -5,7 +5,10 @@
  * https://www.kegg.jp/kegg/brite.html
 */
 declare namespace KEGGBrite {
-    function parse(briteText: string): IEnumerator<IBriteEntry>;
+    /**
+     * 将目标brite json文件或者对象解析为对象entry枚举
+    */
+    function parse(briteText: string | IKEGGBrite): IEnumerator<IBriteEntry>;
 }
 declare namespace KEGGBrite {
     interface IKEGGBrite {

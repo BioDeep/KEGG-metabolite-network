@@ -7,8 +7,11 @@
 */
 namespace KEGGBrite {
 
-    export function parse(briteText: string): IEnumerator<IBriteEntry> {
-        var tree: IKEGGBrite = JSON.parse(briteText);
+    /**
+     * 将目标brite json文件或者对象解析为对象entry枚举
+    */
+    export function parse(briteText: string | IKEGGBrite): IEnumerator<IBriteEntry> {
+        var tree: IKEGGBrite = typeof briteText == "string" ? JSON.parse(briteText) : briteText;
         var list = new List<IBriteEntry>();
 
         for (var i: number = 0; i < tree.children.length; i++) {
@@ -29,7 +32,11 @@ namespace KEGGBrite {
             });
         } else {
             class_path = [...class_path];
-            class_path.push(Class.name);
+            // there is a child count number in class name
+            // removes this count number tags
+            //
+            // example as: Prokaryotes (5639)
+            class_path.push(Class.name.replace(/\s+[(]\d+[)]/ig, ""));
 
             Class.children.forEach(node => treeTravel(node, class_path, list));
         }
